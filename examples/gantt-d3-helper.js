@@ -114,5 +114,11 @@ var ganttHelper = {
 			flights[i].startDate = new Date(flights[i].startDate);
 			flights[i].endDate = new Date(flights[i].endDate);
 		}
+	},
+
+
+
+	showButton : function(d) {
+		$('.button-assign').addClass('show-buttons');
 	}
 };
