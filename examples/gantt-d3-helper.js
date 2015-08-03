@@ -121,10 +121,11 @@ var ganttHelper = {
 	showButton : function(d) {
 		if(!d)
 			return false;
-
 		constants.elementSpacing.top = constants.y(d.taskName) + 50;
 		constants.elementSpacing.start = constants.x(d.startDate) + 70;
-		constants.elementSpacing.end = constants.x(d.endDate);
+		constants.elementSpacing.end = constants.x(d.endDate) + 70;
+		console.log(constants.elementSpacing.start);
+		console.log(constants.elementSpacing.end);
 
 		$('.button-assign').removeClass('hide-element')
 			.addClass('show-element')
@@ -144,7 +145,7 @@ var ganttHelper = {
 	showPencil : function() {
 		$('.pencil-logo').removeClass('hide-element')
 			.addClass('show-element')
-			.css("left", constants.elementSpacing.start + 50)
+			.css("left", constants.elementSpacing.end)
 			.css("top", constants.elementSpacing.top);
 	},
 
