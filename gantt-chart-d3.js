@@ -106,14 +106,6 @@ d3.gantt = function() {
 
 
 
-    function drawButtons(buttonGroup) {
-    	buttonGroup.append("button")
-    		.attr("class", "button-assign");
-    };
-
-
-
-
     function drawTimeStamp(line) {
 		line.append("line")
 				.attr("x1", constants.x( new Date()) )
@@ -161,18 +153,12 @@ d3.gantt = function() {
 			.attr("class", "group");
 
 
-		var buttonGroup = svg.append("g")
-			.attr("class", "button-group");
-
-
 		//call function to draw rectangles
 		drawRects(group);
 		//call function to draw text
 		drawTexts(group);
 		//call function to draw line positioned at actual time
 		drawTimeStamp(line);
-		//
-		drawButtons(buttonGroup);
 
 
 		 

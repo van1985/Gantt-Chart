@@ -119,6 +119,45 @@ var ganttHelper = {
 
 
 	showButton : function(d) {
-		$('.button-assign').addClass('show-buttons');
+		if(!d)
+			return false;
+
+		constants.elementSpacing.top = constants.y(d.taskName) + 50;
+		constants.elementSpacing.start = constants.x(d.startDate) + 70;
+		constants.elementSpacing.end = constants.x(d.endDate);
+
+		$('.button-assign').removeClass('hide-element')
+			.addClass('show-element')
+			.css("left", constants.elementSpacing.start)
+			.css("top", constants.elementSpacing.top);
+	},
+
+
+
+	hideButton : function() {
+		$('.button-assign').removeClass('show-element')
+			.addClass('hide-element');
+	},
+
+
+
+	showPencil : function() {
+		$('.pencil-logo').removeClass('hide-element')
+			.addClass('show-element')
+			.css("left", constants.elementSpacing.start + 50)
+			.css("top", constants.elementSpacing.top);
+	},
+
+
+
+	hidePencil : function() {
+		$('.pencil-logo').removeClass('hide-element')
+			.addClass('show-element');	
+	},
+
+
+
+	assignFlight : function assignFlight() {
+		ganttHelper.showPencil();
 	}
 };

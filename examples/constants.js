@@ -16,6 +16,12 @@ var constants = {
         left : 80
     },
 
+    "elementSpacing" : {
+        top : 20,
+        start : 20,
+        end : 20
+    },
+
     "taskNames" : [
         "Tail#1 Flight", "Tail#2 Flight", "Tail#3 Flight", "Tail#4 Flight", "Tail#5 Flight"
     ],    
