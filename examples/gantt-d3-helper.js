@@ -114,5 +114,51 @@ var ganttHelper = {
 			flights[i].startDate = new Date(flights[i].startDate);
 			flights[i].endDate = new Date(flights[i].endDate);
 		}
+	},
+
+
+
+	showButton : function(d) {
+		if(!d)
+			return false;
+		constants.elementSpacing.top = constants.y(d.taskName) + 50;
+		constants.elementSpacing.start = constants.x(d.startDate) + 70;
+		constants.elementSpacing.end = constants.x(d.endDate) + 70;
+		console.log(constants.elementSpacing.start);
+		console.log(constants.elementSpacing.end);
+
+		$('.button-assign').removeClass('hide-element')
+			.addClass('show-element')
+			.css("left", constants.elementSpacing.start)
+			.css("top", constants.elementSpacing.top);
+	},
+
+
+
+	hideButton : function() {
+		$('.button-assign').removeClass('show-element')
+			.addClass('hide-element');
+	},
+
+
+
+	showPencil : function() {
+		$('.pencil-logo').removeClass('hide-element')
+			.addClass('show-element')
+			.css("left", constants.elementSpacing.end)
+			.css("top", constants.elementSpacing.top);
+	},
+
+
+
+	hidePencil : function() {
+		$('.pencil-logo').removeClass('hide-element')
+			.addClass('show-element');	
+	},
+
+
+
+	assignFlight : function assignFlight() {
+		ganttHelper.showPencil();
 	}
 };

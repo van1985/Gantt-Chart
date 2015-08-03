@@ -74,6 +74,7 @@ function removeTask() {
 
 
 function zoom(direction) {
+    ganttHelper.hideButton();
     ganttHelper.zoom(direction);
     changeTimeDomain(constants.timeDomainString, direction);
 };
@@ -82,4 +83,10 @@ function zoom(direction) {
 
 function viewActualTime() {
     ganttHelper.viewActualTime();
+};
+
+
+
+function assignFlight() {
+    ganttHelper.assignFlight();
 };

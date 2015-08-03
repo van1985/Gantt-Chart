@@ -2,3 +2,41 @@
 	stroke: black;
 	stroke-width: 2px;
 }
+
+
+
+.button-assign {
+	position: absolute;
+	min-width: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+
+
+.pencil-logo {
+	height: 20px;
+	width: 20px;
+	border: 1px solid black;
+	border-radius: 20px;
+	position: absolute;
+}
+
+
+
+.pencil-logo img{	
+	width: 100%;
+    height: auto;
+}
+
+
+
+.hide-element {
+	visibility: hidden;
+}
+
+
+
+.show-element {
+	visibility: visible;
+}

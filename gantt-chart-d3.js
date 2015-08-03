@@ -62,7 +62,8 @@ d3.gantt = function() {
 			.insert("g", ":first-child")
 			.on("click", function(d) {
 				d3.select(".selected").classed("selected", false);
-            	d3.select(this).classed("selected", true);            	
+            	d3.select(this).classed("selected", true);
+            	ganttHelper.showButton(d);
 			})
 			.append("rect")
 				.attr("rx", 5)
@@ -87,7 +88,7 @@ d3.gantt = function() {
     
     //function to dra text
     function drawTexts(group) {
-    	group.selectAll("text")
+    	group.selectAll("g text")
 			.data(constants.tasks)
 			.enter()
 			.append("text")
