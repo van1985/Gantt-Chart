@@ -10,6 +10,7 @@ var _mainModules = [
     ,'ngAnimate'
     ,'ngTouch'
     ,'ScheduleDisplay'
+    ,'d3'
     // yo:ngMainModules
 ];
 
