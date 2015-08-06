@@ -35,6 +35,8 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
     ganttHelper.defineDomain(timeDomainString, endDate);
     
     constants.gantt.tickFormat(constants.format);
+    constants.service.hideButtonAssign();
+    constants.service.hideButtonProgress();
     constants.gantt.redraw(constants.tasks);
 }
 

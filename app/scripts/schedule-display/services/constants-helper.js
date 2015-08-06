@@ -135,7 +135,18 @@ constants.service = {
             .addClass('show-element');
     },
 
+    drawLogo : function() {
+        var flights = d3.selectAll(".group g").filter( function(d) { return d.statusAlert !== 'none' } );
 
+        flights.append("circle")
+            .attr("cx", function(d) { return constants.x(d.endDate) })
+            .attr("cy", function(d) { return constants.y(d.taskName) })
+            .attr("r", 10)
+            .attr("fill", "#fff")
+            .attr("fill", "url(#pending-background)")
+            .attr("stroke", "black")
+            .attr("stroke-width", 1);
+    },
 
     hideElement : function(element) {
         element.removeClass('show-element')
@@ -143,7 +154,6 @@ constants.service = {
     },
 
     assignFlight : function() {
-        console.log("asd");
         constants.actualSelection.statusAlert = "pending";
 
         var flight = constants.actualSelection;
@@ -153,7 +163,7 @@ constants.service = {
 
         constants.service.processFlight();
 
-        //constants.service.drawLogo();
+        constants.service.drawLogo();
     },
 
 
