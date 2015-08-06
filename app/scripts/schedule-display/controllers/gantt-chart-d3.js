@@ -167,6 +167,15 @@ d3.gantt = function() {
 						.attr("xlink:href", "../resources/imgs/pending.png")
 						.attr("height", 20)
 						.attr("width", 20);
+
+			defs.append("svg:pattern")
+					.attr("id", "process-background")
+					.attr("height", 20)
+					.attr("width", 20)					
+						.append("svg:image")
+						.attr("xlink:href", "../resources/imgs/process.png")
+						.attr("height", 15)
+						.attr("width", 16);
 		
 
 		//call function to draw rectangles

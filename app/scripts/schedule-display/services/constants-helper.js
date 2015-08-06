@@ -138,12 +138,30 @@ constants.service = {
     drawLogo : function() {
         var flights = d3.selectAll(".group g").filter( function(d) { return d.statusAlert !== 'none' } );
 
+        //remove circle imageStatus to re append new image
+        flights.selectAll("circle").remove();
+
         flights.append("circle")
             .attr("cx", function(d) { return constants.x(d.endDate) })
             .attr("cy", function(d) { return constants.y(d.taskName) })
             .attr("r", 10)
             .attr("fill", "#fff")
-            .attr("fill", "url(#pending-background)")
+            .attr("fill", function(d) {
+                var status = d.statusAlert,
+                    url = "url(#pending-background)";
+
+                //determine wath image should be attached to circle
+                switch(status) {                    
+                    case 'process':
+                        console.log("process");
+                        url = "url(#process-background)";
+                        break;
+                    case 'done':
+                        url = "url(#done-background)";
+                        break;
+                }
+                return url; 
+            } )
             .attr("stroke", "black")
             .attr("stroke-width", 1);
     },
@@ -161,15 +179,16 @@ constants.service = {
         constants.selectedFlights.push(flight);
         //constants.service.showLogo(flight.statusAlert, constants.selectedFlights.length-1);
 
-        constants.service.processFlight();
+        constants.service.hideButtonAssign();
+        constants.service.showButtonProgress();
 
         constants.service.drawLogo();
     },
 
 
     processFlight : function () {
-        constants.service.hideButtonAssign();
-        constants.service.showButtonProgress();
+        constants.actualSelection.statusAlert = "process";
+        constants.service.drawLogo();
     },
 
 
