@@ -61,7 +61,7 @@ d3.gantt = function() {
             	d3.select(this).classed("selected", true);
             	constants.actualSelection = d;
                 //TODO: REMOVE THIS TO GANTT HELPER FILE
-                constants.service.showButtonAssign(d);
+                constants.service.showButton(d);
 			})
 			.append("rect")
 				.attr("rx", 5)
@@ -158,24 +158,26 @@ d3.gantt = function() {
 
 		
 		var defs = svg.append("svg:defs");
-			
-			defs.append("svg:pattern")
-					.attr("id", "pending-background")
+		
+		//define a def with pending image to append to circle
+		defs.append("svg:pattern")
+				.attr("id", "pending-background")
+				.attr("height", 20)
+				.attr("width", 20)					
+					.append("svg:image")
+					.attr("xlink:href", "../resources/imgs/pending.png")
 					.attr("height", 20)
-					.attr("width", 20)					
-						.append("svg:image")
-						.attr("xlink:href", "../resources/imgs/pending.png")
-						.attr("height", 20)
-						.attr("width", 20);
+					.attr("width", 20);
 
-			defs.append("svg:pattern")
-					.attr("id", "process-background")
-					.attr("height", 20)
-					.attr("width", 20)					
-						.append("svg:image")
-						.attr("xlink:href", "../resources/imgs/process.png")
-						.attr("height", 15)
-						.attr("width", 16);
+		//define a def with process image to append to circle
+		defs.append("svg:pattern")
+				.attr("id", "process-background")
+				.attr("height", 20)
+				.attr("width", 20)					
+					.append("svg:image")
+					.attr("xlink:href", "../resources/imgs/process.png")
+					.attr("height", 15)
+					.attr("width", 16);
 		
 
 		//call function to draw rectangles
