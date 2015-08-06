@@ -35,6 +35,8 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
     ganttHelper.defineDomain(timeDomainString, endDate);
     
     constants.gantt.tickFormat(constants.format);
+    constants.service.hideButtonAssign();
+    constants.service.hideButtonProgress();
     constants.gantt.redraw(constants.tasks);
 }
 
@@ -78,6 +80,18 @@ $scope.zoom = function(direction) {
 
 $scope.viewActualTime = function() {
     ganttHelper.viewActualTime();
+};
+
+
+
+$scope.assignFlight = function() {
+    constants.service.assignFlight();
+};
+
+
+
+$scope.processFlight = function() {
+    constants.service.processFlight();
 };
 
 

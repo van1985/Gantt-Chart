@@ -3,3 +3,37 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #444;
 }
+
+.selected {
+       stroke: black;
+       stroke-width: 2px;
+}
+
+.button-status {
+       position: absolute;
+       min-width: 20px;
+       width: 20px;
+       height: 20px;
+}
+
+.status-logo {
+       height: 20px;
+       width: 20px;
+       border: 1px solid black;
+       border-radius: 20px;
+       position: absolute;
+       background-color: white;
+}
+
+.status-logo img {
+       width: 100%;
+    height: auto;
+}
+
+.hide-element {
+       visibility: hidden;
+}
+
+.show-element {
+       visibility: visible;
+ }

@@ -58,7 +58,10 @@ d3.gantt = function() {
 			.insert("g", ":first-child")
 			.on("click", function(d) {
 				d3.select(".selected").classed("selected", false);
-            	d3.select(this).classed("selected", true);            	
+            	d3.select(this).classed("selected", true);
+            	constants.actualSelection = d;
+                //TODO: REMOVE THIS TO GANTT HELPER FILE
+                constants.service.showButtonAssign(d);
 			})
 			.append("rect")
 				.attr("rx", 5)
@@ -74,6 +77,8 @@ d3.gantt = function() {
 				.attr("width", function(d) {
 				    	return (constants.x(d.endDate) - constants.x(d.startDate));
 				    });
+
+		constants.service.drawLogo();
 
 		rect.exit().remove();
     };
@@ -151,6 +156,27 @@ d3.gantt = function() {
 		var group = svg.append("g")
 			.attr("class", "group");
 
+		
+		var defs = svg.append("svg:defs");
+			
+			defs.append("svg:pattern")
+					.attr("id", "pending-background")
+					.attr("height", 20)
+					.attr("width", 20)					
+						.append("svg:image")
+						.attr("xlink:href", "../resources/imgs/pending.png")
+						.attr("height", 20)
+						.attr("width", 20);
+
+			defs.append("svg:pattern")
+					.attr("id", "process-background")
+					.attr("height", 20)
+					.attr("width", 20)					
+						.append("svg:image")
+						.attr("xlink:href", "../resources/imgs/process.png")
+						.attr("height", 15)
+						.attr("width", 16);
+		
 
 		//call function to draw rectangles
 		drawRects(group);
@@ -158,6 +184,8 @@ d3.gantt = function() {
 		drawTexts(group);
 		//call function to draw line positioned at actual time
 		drawTimeStamp(line);
+
+
 
 
 		 
