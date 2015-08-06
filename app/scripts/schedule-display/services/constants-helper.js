@@ -76,53 +76,36 @@ constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
 
 constants.service = {
 
-    showButtonAssign : function(d) {
-        if(!d)
-            return false;
-
-        var buttonAssign = $('.button-assign'),
-            buttonProgress = $('.button-progress');
+    showButton : function(d) {
+        var status = d.statusAlert,
+            buttonAssign = $('.button-assign'),
+            buttonProcess = $('.button-process'),
+            buttonResolve = $('.button-resolve');
 
         constants.elementSpacing.top = constants.y(d.taskName) + 25;
         constants.elementSpacing.start = constants.x(d.startDate) + 70;
         constants.elementSpacing.end = constants.x(d.endDate) + 70;
 
-        constants.actualSelection = d;
-
-        constants.service.positionButton(buttonAssign);
-        constants.service.positionButton(buttonProgress);
-
-        if(!constants.service.flightIsAssigned(d)) {
-            constants.service.hideElement(buttonProgress);
-            constants.service.showElement(buttonAssign);
-        } else {
-            constants.service.hideElement(buttonAssign);          
-            constants.service.showElement(buttonProgress);
-        }
-
-    },
-
-    hideButtonAssign : function() {
-        var buttonAssign = $('.button-assign');
-
         constants.service.hideElement(buttonAssign);
-    },
+        constants.service.hideElement(buttonProcess);
+        constants.service.hideElement(buttonResolve);
 
-    showButtonProgress : function() {
-        var buttonAssign = $('.button-assign'),
-            buttonProgress = $('.button-progress');
-        
-        constants.service.hideElement(buttonAssign);
-        constants.service.positionButton(buttonProgress);
-        constants.service.showElement(buttonProgress);
-    },
+        switch(status){
+            case 'none':
+                constants.service.positionButton(buttonAssign);
+                constants.service.showElement(buttonAssign);
+                break;
 
+            case 'pending':
+                constants.service.positionButton(buttonProcess);
+                constants.service.showElement(buttonProcess);
+                break;
 
-
-    hideButtonProgress : function() {
-        var buttonProgress = $('.button-progress');
-
-        constants.service.hideElement(buttonProgress);
+            case 'process':
+                constants.service.positionButton(buttonResolve);
+                constants.service.showElement(buttonResolve);
+                break;
+        }        
     },
 
     positionButton : function(button) {
@@ -133,6 +116,11 @@ constants.service = {
     showElement : function(element) {
         element.removeClass('hide-element')
             .addClass('show-element');
+    },
+
+    hideElement : function(element) {
+        element.removeClass('show-element')
+            .addClass('hide-element');
     },
 
     drawLogo : function() {
@@ -151,25 +139,14 @@ constants.service = {
                     url = "url(#pending-background)";
 
                 //determine wath image should be attached to circle
-                switch(status) {                    
-                    case 'process':
-                        console.log("process");
+                if(status === 'process')
                         url = "url(#process-background)";
-                        break;
-                    case 'done':
-                        url = "url(#done-background)";
-                        break;
-                }
+
                 return url; 
             } )
             .attr("stroke", "black")
             .attr("stroke-width", 1);
-    },
-
-    hideElement : function(element) {
-        element.removeClass('show-element')
-            .addClass('hide-element');
-    },
+    },    
 
     assignFlight : function() {
         constants.actualSelection.statusAlert = "pending";
@@ -177,20 +154,32 @@ constants.service = {
         var flight = constants.actualSelection;
 
         constants.selectedFlights.push(flight);
-        //constants.service.showLogo(flight.statusAlert, constants.selectedFlights.length-1);
 
-        constants.service.hideButtonAssign();
-        constants.service.showButtonProgress();
+        constants.service.hideElement($('.button-assign'));
+        constants.service.showButton(flight);
 
         constants.service.drawLogo();
     },
-
 
     processFlight : function () {
         constants.actualSelection.statusAlert = "process";
         constants.service.drawLogo();
+
+        constants.service.hideElement($('.button-process'));
+        constants.service.showButton(constants.actualSelection);        
     },
 
+    resolveFlight : function() {        
+        constants.service.hideElement($('.button-resolve'));
+        var selection = d3.select(".selected"),
+            flight = selection[0][0].__data__,
+            index = $.inArray(flight, constants.tasks);
+
+        if(index >= 0){
+            constants.tasks.splice(index, 1);
+            constants.gantt.redraw();
+        }
+    },
 
     flightIsAssigned : function(d) {
         var length = constants.selectedFlights.length;
@@ -202,7 +191,4 @@ constants.service = {
 
         return false;
     }
-
-
-
 };
