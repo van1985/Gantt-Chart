@@ -89,4 +89,10 @@ $scope.assignFlight = function() {
 };
 
 
+
+$scope.processFlight = function() {
+    constants.service.processFlight();
+};
+
+
 });
