@@ -1,0 +1,50 @@
+.container{
+  width:100% !important;
+}
+
+.Table
+    {
+        display: table;
+        width:100%;
+        margin-top:12px;
+    }
+    .Heading
+    {
+        display: table-row;
+        color:#D7D7D7;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .Cell
+    {
+        display: table-cell;
+        padding-left: 5px;
+        padding-right: 5px;
+        border:none;
+    }
+    .span-cell{
+              color:#2A2A2A;
+    }
+
+
+ .chart-container {
+  margin-top:45px;
+}
+
+.add-todotask{
+    height: 16px;
+    width: 16px;
+    background: url("../resources/images/plus.svg");
+    display: inline-block;
+    margin-top:6px;
+}
+
+.details-task{
+    height: 16px;
+    width: 16px;
+    background: url("../resources/images/flickr.svg");
+    display: inline-block;
+    margin-top:6px;
+}

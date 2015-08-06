@@ -11,6 +11,8 @@ var _mainModules = [
     ,'ngTouch'
     ,'ScheduleDisplay'
     ,'d3'
+    ,'Dashboard'
+    ,'ngDraggable'
     // yo:ngMainModules
 ];
 
@@ -29,6 +31,14 @@ angular.module('CrewSchedGUI', _mainModules )
             params: {
                 templateUrl: 'scripts/schedule-display/views/main.html',
                 controller: 'mainCtrl'
+            }
+        });
+
+        routes.push({
+            name: '/dashboard',
+            params: {
+                templateUrl: 'scripts/dashboard/views/dashboard.html',
+                controller: 'dashboardCtrl'
             }
         });
 
