@@ -81,4 +81,10 @@ $scope.viewActualTime = function() {
 };
 
 
+
+$scope.assignFlight = function() {
+    constants.service.assignFlight();
+};
+
+
 });

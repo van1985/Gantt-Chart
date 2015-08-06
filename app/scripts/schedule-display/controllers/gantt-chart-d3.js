@@ -58,7 +58,10 @@ d3.gantt = function() {
 			.insert("g", ":first-child")
 			.on("click", function(d) {
 				d3.select(".selected").classed("selected", false);
-            	d3.select(this).classed("selected", true);            	
+            	d3.select(this).classed("selected", true);
+            	constants.actualSelection = d;
+                //TODO: REMOVE THIS TO GANTT HELPER FILE
+                constants.service.showButtonAssign(d);
 			})
 			.append("rect")
 				.attr("rx", 5)
