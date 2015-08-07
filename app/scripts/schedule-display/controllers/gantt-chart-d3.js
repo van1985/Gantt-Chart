@@ -273,7 +273,8 @@ d3.gantt = function() {
     		length = tasks.length;
 
 		for(var i = 0; i < length; i++) {
-    		tasks[i].textVisible = tasks[i].startDate >= start && tasks[i].endDate <= end ? tasks[i].textVisible = "visible" : tasks[i].textVisible = "hidden";
+    		//tasks[i].textVisible = tasks[i].startDate >= start && tasks[i].endDate <= end ? tasks[i].textVisible = "visible" : tasks[i].textVisible = "hidden";
+    		tasks[i].textVisible = constants.service.inRangeDate(dates, [tasks[i].startDate, tasks[i].endDate]) ? "visible" : "hidden";
     	}
     };
 
