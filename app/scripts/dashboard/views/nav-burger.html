@@ -1,0 +1,82 @@
+<style>
+snap-content {
+  background-color:#1775bb;
+}
+navburguer
+{
+  background-color:#666666 !important;
+  opacity: 0.1;
+}
+</style>
+
+
+<snap-drawers>
+
+     
+    
+      <div snap-drawer="right" class="navburger" >
+
+      <!--
+        <div class="container-nav">
+          <div class="container-title">
+              <span class="title" >Account</span>
+          </div>
+
+          <div class="container-option">
+            <div class="row-option">
+              <div class="account-info-navburger"></div>
+              <a class="name" href="#/account-information">
+                Account Information
+              </a>
+            </div>
+          </div>
+
+          <div class="container-option">
+            <div class="row-option">
+              <div class="voicemail-info"></div>
+              <a class="name center-width" href="#/voicemails">
+                Voicemails
+              </a>
+            </div>
+          </div>
+        </div>
+-->
+        <div class="container-nav second-container">
+          <div class="container-title">
+              <span class="title">App</span>
+          </div>
+
+          <div class="container-option">
+              <div class="row-option" ng-click="report()">
+                <div class="department-icon"></div>
+                <div class="name">Departments</div>
+              </div>
+          </div>
+
+          <div class="container-option">
+              <div class="row-option" ng-click="report()">
+                <div class="bug-icon"></div>
+                <div class="name">Report a bug/feedback</div>
+              </div>
+          </div>
+
+          <div class="container-option">
+            <div class="row-option" ng-click="disconnect()" >
+              
+              <div class="logout-icon"></div>
+              <div class="name">Logout</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style="  width: 100%;position: absolute;bottom: 0;">
+          <span style="color:white;text-align:center;margin-left:100px;">Version 1.0</span>
+        </div>
+
+      </div>
+
+
+
+</snap-drawers>
+

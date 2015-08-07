@@ -15,7 +15,9 @@
   <body ng-app="CrewSchedGUI">
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <div class="app">
+        <div ng-view=""></div>
+    </div>
 
     <!-- build:js scripts/modules.js -->
     
@@ -37,7 +39,8 @@
     <script src="resources/lib/canvasjs.min.js"></script>
     <script src="resources/lib/dragster.js"></script>
     <script src="resources/lib/handlebars-v3.0.0.js"></script>
-    <script src="resources/lib/handlebars-v3.0.0.js"></script>
+    <script src="resources/lib/snap/snap.js"></script>
+    <script src="resources/lib/snap/snap.min.js"></script>
 
     <!-- build:js(app) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
