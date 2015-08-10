@@ -62,7 +62,7 @@ constants.maxDate = constants.tasks.length > 0 ? constants.tasks[constants.tasks
 
 constants.minDate = constants.tasks.length > 0 ? constants.tasks[0].startDate : new Date();
 
-constants.lastDate = constants.tasks.length - 1;
+constants.lastDate = constants.tasks.length;
 
 constants.gantt = d3.gantt().taskTypes(constants.taskNames).taskStatus(constants.taskStatus).tickFormat(constants.format);
 
