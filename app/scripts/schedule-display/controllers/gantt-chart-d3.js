@@ -76,7 +76,11 @@ d3.gantt = function() {
 				.attr("height", function(d, i) { return constants.y.rangeBand(); })
 				.attr("width", function(d) {
 				    	return (constants.x(d.endDate) - constants.x(d.startDate));
-				    });
+				    })
+				.attr("visibility", function(d) {
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+				});
 
 		constants.service.drawLogo();
 
@@ -99,7 +103,8 @@ d3.gantt = function() {
 				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
 		       	.attr("text-anchor", "middle")				
 				.attr("visibility", function(d){
-					return d.textVisible;
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
 				});
     };
 

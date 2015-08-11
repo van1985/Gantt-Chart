@@ -124,8 +124,7 @@ constants.service = {
     },
 
     drawLogo : function() {
-        var flights = d3.selectAll(".group g").filter( function(d) { return d.statusAlert !== 'none' } ),
-            dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+        var flights = d3.selectAll(".group g").filter( function(d) { return d.statusAlert !== 'none' } );
         
 
         //remove circle imageStatus to re append new image
@@ -136,7 +135,8 @@ constants.service = {
             .attr("cy", function(d) { return constants.y(d.taskName) })
             .attr("r", 10)
             .attr("fill", "#fff")
-            .attr("visibility", function(d) {                
+            .attr("visibility", function(d) {
+                var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
                 return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
             })
             .attr("fill", function(d) {
@@ -154,7 +154,7 @@ constants.service = {
     },
 
     inRangeDate : function(dates, values) {
-        return values[0] >= dates[0] && values[1] <= dates[dates.length -1];
+        return (values[0] >= dates[0] || values[1] >= dates[0]) && values[1] <= dates[dates.length -1];
     },
 
     assignFlight : function() {
