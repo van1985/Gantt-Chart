@@ -35,8 +35,11 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
     ganttHelper.defineDomain(timeDomainString, endDate);
     
     constants.gantt.tickFormat(constants.format);
-    constants.service.hideButtonAssign();
-    constants.service.hideButtonProgress();
+
+    constants.service.hideElement($('.button-assign'));
+    constants.service.hideElement($('.button-process'));
+    constants.service.hideElement($('.button-resolve'));
+
     constants.gantt.redraw(constants.tasks);
 }
 
@@ -94,5 +97,10 @@ $scope.processFlight = function() {
     constants.service.processFlight();
 };
 
+
+
+$scope.resolveFlight = function() {
+    constants.service.resolveFlight();
+};
 
 });

@@ -61,7 +61,7 @@ d3.gantt = function() {
             	d3.select(this).classed("selected", true);
             	constants.actualSelection = d;
                 //TODO: REMOVE THIS TO GANTT HELPER FILE
-                constants.service.showButtonAssign(d);
+                constants.service.showButton(d);
 			})
 			.append("rect")
 				.attr("rx", 5)
@@ -76,7 +76,11 @@ d3.gantt = function() {
 				.attr("height", function(d, i) { return constants.y.rangeBand(); })
 				.attr("width", function(d) {
 				    	return (constants.x(d.endDate) - constants.x(d.startDate));
-				    });
+				    })
+				.attr("visibility", function(d) {
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+				});
 
 		constants.service.drawLogo();
 
@@ -99,7 +103,8 @@ d3.gantt = function() {
 				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
 		       	.attr("text-anchor", "middle")				
 				.attr("visibility", function(d){
-					return d.textVisible;
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
 				});
     };
 
@@ -108,14 +113,36 @@ d3.gantt = function() {
 
     function drawTimeStamp(line) {
 		line.append("line")
-				.attr("x1", constants.x( new Date()) )
-				.attr("x2", constants.x( new Date()) )
-				.attr("y1", 0)
-				.attr("y2", constants.height - constants.margin.bottom)
-				.attr("stroke-width", 2)
-		     	.attr("stroke", "red")
-				.attr("height", constants.height)
-    }
+			.attr("x1", constants.x( new Date()) )
+			.attr("x2", constants.x( new Date()) )
+			.attr("y1", 0)
+			.attr("y2", constants.height - constants.margin.bottom)
+			.attr("stroke-width", 2)
+			.attr("stroke", "red")
+			.attr("height", constants.height);
+
+		line.append("circle")
+			.attr("cx", constants.x( new Date()))
+		    .attr("cy", 0)
+		    .attr("r", 5)
+		    .attr("stroke", "black")
+			.attr("stroke-width", 1);
+    };
+
+
+
+    function drawColoredAxis(colorRects) {
+    	colorRects.selectAll("rect")
+    		.data(constants.taskNames)
+    		.enter()
+    		.append("rect")
+    			.attr("y", function(d, i) { return constants.y(d) - 45; })
+    			.attr("height", function(d, i) { return constants.height; })
+    			.attr("width", function(d, i) { return constants.width; })
+    			.attr("fill", function(d, i){
+    				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
+    			});
+    };
 
 
 
@@ -148,8 +175,12 @@ d3.gantt = function() {
 				.attr("transform", "translate(" + constants.margin.left + ", " + constants.margin.top + ")");
 
 
+		var colorRects = svg.append("g")
+			.attr("class", "colored-axis");
+
+
 		var line = svg.append("g")
-			.attr("class", "time-stamp");
+			.attr("class", "time-stamp");			
 
 
 		//append g to group data in pairs (rectangle-text)
@@ -158,32 +189,37 @@ d3.gantt = function() {
 
 		
 		var defs = svg.append("svg:defs");
-			
-			defs.append("svg:pattern")
-					.attr("id", "pending-background")
+		
+		//define a def with pending image to append to circle
+		defs.append("svg:pattern")
+				.attr("id", "pending-background")
+				.attr("height", 20)
+				.attr("width", 20)					
+					.append("svg:image")
+					.attr("xlink:href", "../resources/imgs/pending.png")
 					.attr("height", 20)
-					.attr("width", 20)					
-						.append("svg:image")
-						.attr("xlink:href", "../resources/imgs/pending.png")
-						.attr("height", 20)
-						.attr("width", 20);
+					.attr("width", 20);
 
-			defs.append("svg:pattern")
-					.attr("id", "process-background")
-					.attr("height", 20)
-					.attr("width", 20)					
-						.append("svg:image")
-						.attr("xlink:href", "../resources/imgs/process.png")
-						.attr("height", 15)
-						.attr("width", 16);
+		//define a def with process image to append to circle
+		defs.append("svg:pattern")
+				.attr("id", "process-background")
+				.attr("height", 20)
+				.attr("width", 20)					
+					.append("svg:image")
+					.attr("xlink:href", "../resources/imgs/process.png")
+					.attr("height", 15)
+					.attr("width", 16);
+
+
 		
 
+		drawColoredAxis(colorRects);
 		//call function to draw rectangles
 		drawRects(group);
 		//call function to draw text
 		drawTexts(group);
 		//call function to draw line positioned at actual time
-		drawTimeStamp(line);
+		drawTimeStamp(line);		
 
 
 
@@ -229,7 +265,7 @@ d3.gantt = function() {
 
 		//remove all data from the groups
 		group.selectAll("*").data([]).exit().remove();
-		line.selectAll("line").data([]).exit().remove();
+		line.selectAll("*").data([]).exit().remove();
 
 
         //var rect = group.selectAll("rect").data(tasks, keyFunction);        
@@ -271,7 +307,8 @@ d3.gantt = function() {
     		length = tasks.length;
 
 		for(var i = 0; i < length; i++) {
-    		tasks[i].textVisible = tasks[i].startDate >= start && tasks[i].endDate <= end ? tasks[i].textVisible = "visible" : tasks[i].textVisible = "hidden";
+    		//tasks[i].textVisible = tasks[i].startDate >= start && tasks[i].endDate <= end ? tasks[i].textVisible = "visible" : tasks[i].textVisible = "hidden";
+    		tasks[i].textVisible = constants.service.inRangeDate(dates, [tasks[i].startDate, tasks[i].endDate]) ? "visible" : "hidden";
     	}
     };
 
