@@ -113,13 +113,20 @@ d3.gantt = function() {
 
     function drawTimeStamp(line) {
 		line.append("line")
-				.attr("x1", constants.x( new Date()) )
-				.attr("x2", constants.x( new Date()) )
-				.attr("y1", 0)
-				.attr("y2", constants.height - constants.margin.bottom)
-				.attr("stroke-width", 2)
-		     	.attr("stroke", "red")
-				.attr("height", constants.height)
+			.attr("x1", constants.x( new Date()) )
+			.attr("x2", constants.x( new Date()) )
+			.attr("y1", 0)
+			.attr("y2", constants.height - constants.margin.bottom)
+			.attr("stroke-width", 2)
+				.attr("stroke", "red")
+			.attr("height", constants.height);
+
+		line.append("circle")
+			.attr("cx", constants.x( new Date()))
+		    .attr("cy", 0)
+		    .attr("r", 5)
+		    .attr("stroke", "black")
+			.attr("stroke-width", 1);
     }
 
 
@@ -154,7 +161,7 @@ d3.gantt = function() {
 
 
 		var line = svg.append("g")
-			.attr("class", "time-stamp");
+			.attr("class", "time-stamp");			
 
 
 		//append g to group data in pairs (rectangle-text)
@@ -236,7 +243,7 @@ d3.gantt = function() {
 
 		//remove all data from the groups
 		group.selectAll("*").data([]).exit().remove();
-		line.selectAll("line").data([]).exit().remove();
+		line.selectAll("*").data([]).exit().remove();
 
 
         //var rect = group.selectAll("rect").data(tasks, keyFunction);        
