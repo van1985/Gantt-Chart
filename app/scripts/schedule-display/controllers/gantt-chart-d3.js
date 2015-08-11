@@ -118,7 +118,7 @@ d3.gantt = function() {
 			.attr("y1", 0)
 			.attr("y2", constants.height - constants.margin.bottom)
 			.attr("stroke-width", 2)
-				.attr("stroke", "red")
+			.attr("stroke", "red")
 			.attr("height", constants.height);
 
 		line.append("circle")
@@ -127,7 +127,22 @@ d3.gantt = function() {
 		    .attr("r", 5)
 		    .attr("stroke", "black")
 			.attr("stroke-width", 1);
-    }
+    };
+
+
+
+    function drawColoredAxis(colorRects) {
+    	colorRects.selectAll("rect")
+    		.data(constants.taskNames)
+    		.enter()
+    		.append("rect")
+    			.attr("y", function(d, i) { return constants.y(d) - 45; })
+    			.attr("height", function(d, i) { return constants.height; })
+    			.attr("width", function(d, i) { return constants.width; })
+    			.attr("fill", function(d, i){
+    				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
+    			});
+    };
 
 
 
@@ -160,6 +175,10 @@ d3.gantt = function() {
 				.attr("transform", "translate(" + constants.margin.left + ", " + constants.margin.top + ")");
 
 
+		var colorRects = svg.append("g")
+			.attr("class", "colored-axis");
+
+
 		var line = svg.append("g")
 			.attr("class", "time-stamp");			
 
@@ -190,14 +209,17 @@ d3.gantt = function() {
 					.attr("xlink:href", "../resources/imgs/process.png")
 					.attr("height", 15)
 					.attr("width", 16);
+
+
 		
 
+		drawColoredAxis(colorRects);
 		//call function to draw rectangles
 		drawRects(group);
 		//call function to draw text
 		drawTexts(group);
 		//call function to draw line positioned at actual time
-		drawTimeStamp(line);
+		drawTimeStamp(line);		
 
 
 
