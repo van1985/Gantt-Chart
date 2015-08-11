@@ -118,7 +118,7 @@ d3.gantt = function() {
 			.attr("y1", 0)
 			.attr("y2", constants.height - constants.margin.bottom)
 			.attr("stroke-width", 2)
-			.attr("stroke", "red")
+			.attr("stroke", "black")
 			.attr("height", constants.height);
 
 		line.append("circle")
