@@ -57,6 +57,7 @@ d3.gantt = function() {
 		rect.enter()
 			.insert("g", ":first-child")
 			.on("click", function(d) {
+				console.log(d);
 				d3.select(".selected").classed("selected", false);
             	d3.select(this).classed("selected", true);
             	constants.actualSelection = d;
@@ -97,7 +98,8 @@ d3.gantt = function() {
 			.enter()
 			.append("text")
 				.text(function(d){
-					return d.id % 2 === 0 ? "\u2192" + "OUT-ONO" : "\u2191 " + "OUT-ONO";
+					var arrow = d.id % 2 === 0 ? "\u2192" : "\u2191 ";
+					return arrow + "OUT-ONO";
 				})
 				.style("font-weight", "bold")
 				.attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
