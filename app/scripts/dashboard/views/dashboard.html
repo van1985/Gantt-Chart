@@ -232,7 +232,7 @@
 </div>
 <div class="row">
       <div class="col-md-6" >
-      <div style="width: 100%;height: 500px;display: inline-block; background-color:white;border: 1px solid #D3D3D3;">
+      <div style="width: 100%;height: 388px;display: inline-block; background-color:white;border: 1px solid #D3D3D3;">
       </div>
   </div>
   <div class="col-md-3" >
@@ -270,7 +270,7 @@
       </div>
   </div>
     <div class="col-md-3">
-      <div style="width: 100%;height: 500px;display: inline-block;background-color:white;border: 1px solid #D3D3D3;">
+      <div style="width: 100%;height: 388px;display: inline-block;background-color:white;border: 1px solid #D3D3D3;">
         <!--
          <ul class="draggable-objects">
             <li  ng-repeat="obj in draggableObjects" >
@@ -278,14 +278,34 @@
             </li>
         </ul>
         -->
-        <div style="width:100%;height:40px;border-bottom:1px solid #D6D6D6;">
-          <div style="float:left;display:block;font-size:15px;font-family:arial;margin-top:8px;padding-left:15px;">My To Do List Status</div>
+        <div style="    width: 92%;
+    height: 56px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-left: 4%;">
+          <div style="float:left;display:block;font-size:14px;font-family:Clan OT;margin-top:20px;color:#555555;">My To Do List Status</div>
+          <div style="float:right;display:block;font-size:10px;font-family:Clan OT;margin-top:24px;color:#009BDD;font-weight:bold;">View My Lists</div>
         </div>
-        <div style="width: 90%;height: 40px;border-bottom: 1px solid grey;margin-left: 29px;">
-          <div style="float:left;display:block;font-size:15px;font-family:arial;margin-top:8px;padding-left:15px;font-weight:bold;">4 Left</div>
+        <div style="    width: 92%;
+    height: 45px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-left: 4%;">
+          <div style="float: left;
+    display: block;
+    font-size: 14px;
+    font-family: Clan OT;
+    margin-top: 12px;
+    padding-left: 5px;
+    font-weight: bold;
+    color: #555555;">4 Left</div>
         </div>
 
-        <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)" >
+        <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)" style="    width: 92%;
+    height: 50px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-left: 4%;
+    font-family:Clan OT;
+    font-size:14px;
+    color:#555555;" >
 
             <div ng-repeat="obj in droppedObjects1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                 <input type="checkbox" ng-model="string" style="height:30px;width:30px;float:left;margin-top:-15px;" >
@@ -293,7 +313,10 @@
                 <div class="details-task" style="float: right;margin-top: -9px;margin-right: 30px;"></div>
             </div>
         </div>
-        <div ng-drop="true" ng-drop-success="onDropComplete2($data,$event)" >
+        <div ng-drop="true" ng-drop-success="onDropComplete2($data,$event)" style="    width: 92%;
+    height: 50px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-left: 4%;">
 
             <div ng-repeat="obj in droppedObjects2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                 <input type="checkbox" ng-model="string" style="height:30px;width:30px;float:left;margin-top:-15px;" >
@@ -301,7 +324,13 @@
                 <div class="details-task" style="float: right;margin-top: -9px;margin-right: 30px;"></div>
             </div>
         </div>
-        <div ng-drop="true" ng-drop-success="onDropComplete3($data,$event)" >
+        <div ng-drop="true" ng-drop-success="onDropComplete3($data,$event)" style="    width: 92%;
+    height: 50px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-left: 4%;
+        font-family:Clan OT;
+    font-size:14px;
+    color:#555555;" >
 
             <div ng-repeat="obj in droppedObjects3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                 <input type="checkbox" ng-model="string" style="height:30px;width:30px;float:left;margin-top:-15px;" >
@@ -309,7 +338,13 @@
                 <div class="details-task" style="float: right;margin-top: -9px;margin-right: 30px;"></div>
             </div>
         </div>
-        <div ng-drop="true" ng-drop-success="onDropComplete4($data,$event)" >
+        <div ng-drop="true" ng-drop-success="onDropComplete4($data,$event)" style="    width: 92%;
+    height: 50px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-left: 4%;
+        font-family:Clan OT;
+    font-size:14px;
+    color:#555555;">
 
             <div ng-repeat="obj in droppedObjects4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                 <input type="checkbox" ng-model="string" style="height:30px;width:30px;float:left;margin-top:-15px;" >
@@ -319,22 +354,19 @@
         </div>
 
                 <div style="width:100%;height:40px;">
-          <div style="float:left;display:block;font-size:15px;font-family:arial;margin-top:8px;padding-left: 47px;">
+          <div style="float:left;display:block;font-size:15px;font-family:arial;margin-top:8px;padding-left: 28px;">
             <div class="add-todotask" style="float:left;"></div>
-            <div style="margin-left: 20px;float: left;margin-top: 5px;font-size: 13px;"> Add new item </div>
+            <div style="margin-left: 20px;float: left;margin-top: 5px;font-family:Clan OT;
+    font-size:14px;
+    color:#555555;"> Add new item </div>
           </div>
         </div>
 
-        <div style="width: 90%;height: 40px;border-bottom: 1px solid grey;margin-left: 29px;    margin-top: 15px;">
-          <div style="float:left;display:block;font-size:15px;font-family:arial;margin-top:8px;padding-left:15px;font-weight:bold;">6 Done</div>
-        </div>
-                <div ng-drop="true" >
-
-            <div ng-repeat="obj in droppedObjectsDone" ng-drag="true" ng-drag-data="obj"  ng-center-anchor="{{centerAnchor}}">
-                <input type="checkbox"  checked ng-model="string" style="height:30px;width:30px;float:left;margin-top:-15px;" >
-                <div style="float:left;margin-top:-10px;text-decoration:line-through;">{{obj.name}}</div>
-                <div class="details-task" style="float: right;margin-top: -9px;margin-right: 30px;"></div>
-            </div>
+        <div style="    width: 90%;
+    height: 40px;
+    margin-left: 15px;
+    margin-top: 5px;">
+          <div style="float:left;display:block;font-size:14px;font-family:arial;margin-top:8px;padding-left:15px;font-weight:bold;color:#555555;font-family:Clan OT;">6 Done</div>
         </div>
 
       </div>
@@ -357,10 +389,10 @@
     }
     [ng-drag]{
       width: 100%;
-      height: 59px;
+      height: 40px;
       color: grey;
       text-align: left;
-      padding-top: 30px;
+      padding-top: 26px;
       display: inline-block;
       cursor: move;
       margin-left: 14px;
@@ -377,21 +409,21 @@
         height:100px;
     }
     [ng-drag].drag-over{
-        border:solid 1px red;
+        border:solid 1px #555555;
     }
     [ng-drag].dragging{
         opacity: 0.5;
     }
     [ng-drop]{
     text-align: center;
-    height: 60px;
+    height: 40px;
     display: block;
     margin: auto;
     position: relative;
     border-bottom: solid 1px grey;
     }
     [ng-drop].drag-enter{
-        border:solid 5px red;
+        border:solid 2px #555555;
     }
     [ng-drop] span.title{
         display: block;

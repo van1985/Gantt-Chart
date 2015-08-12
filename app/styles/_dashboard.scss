@@ -34,17 +34,17 @@
 }
 
 .add-todotask{
-    height: 16px;
-    width: 16px;
-    background: url("../resources/images/plus.svg");
+    height: 12px;
+    width: 12px;
+    background: url("../resources/images/add-expand.png");
     display: inline-block;
-    margin-top:6px;
+    margin-top:8px;
 }
 
 .details-task{
-    height: 16px;
-    width: 16px;
-    background: url("../resources/images/flickr.svg");
+    height: 13px;
+    width: 2px;
+    background: url("../resources/images/expand-drag.png");
     display: inline-block;
     margin-top:6px;
 }
@@ -163,6 +163,7 @@
     background: url("../resources/images/edit-icon.png");
     display: inline-block;
 }
+
 
 .circle-msg {
     width: 20px;
