@@ -97,8 +97,9 @@ d3.gantt = function() {
 			.enter()
 			.append("text")
 				.text(function(d){
-					return d.task;
+					return d.id % 2 === 0 ? "\u2192" + "OUT-ONO" : "\u2191 " + "OUT-ONO";
 				})
+				.style("font-weight", "bold")
 				.attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
 				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
 		       	.attr("text-anchor", "middle")				
