@@ -44,6 +44,7 @@ d3.gantt = function() {
 		constants.x = d3.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, constants.width ]).clamp(true);
 		constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .7);
 		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
 		constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
 		constants.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.width ]);
 
@@ -232,6 +233,17 @@ d3.gantt = function() {
 			.attr("transform", "translate(0, " + "0)")
 			.transition()
 			.call(constants.xAxis);
+
+
+		svg.append("g")
+			.attr("class", "x axis GMT")
+			//modify to 0, 0 to poss hour indicator to top
+			.attr("transform", "translate(0, " + "0)")
+			.transition()
+			.call(constants.xAxisGMT);
+
+
+
 		
 		//append y-axis (tasks)
 		svg.append("g").attr("class", "y axis").transition().call(constants.yAxis);
@@ -279,6 +291,7 @@ d3.gantt = function() {
 
 
 		svg.select(".x").transition().call(constants.xAxis);
+		svg.select(".GMT").transition().call(constants.xAxisGMT);
 		svg.select(".y").transition().call(constants.yAxis);
 		
 		return gantt;

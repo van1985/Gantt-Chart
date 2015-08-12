@@ -44,6 +44,10 @@ var constants = {
 
     "timeDomainEnd" : d3.time.hour.offset(new Date(),+3),
 
+    "timeDomainStartGMT" : d3.time.day.offset(new Date(Date.UTC()),-3),
+
+    "timeDomainEndGMT" : d3.time.hour.offset(new Date(Date.UTC()),+3),
+
     "taskTypes" : [],
 
     "tickFormat" : "%H:%M"
@@ -67,10 +71,14 @@ constants.lastDate = constants.tasks.length;
 constants.gantt = d3.gantt().taskTypes(constants.taskNames).taskStatus(constants.taskStatus).tickFormat(constants.format);
 
 constants.x = d3.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, constants.width ]).clamp(true);
+
+constants.xGMT = d3.time.scale().domain([ constants.timeDomainStartGMT, constants.timeDomainEndGMT ]).range([ 0, constants.width ]).clamp(true);
     
 constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .1);
 
 constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+
+constants.xAxisGMT = d3.svg.axis().scale(constants.xGMT).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
 
 constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
 
