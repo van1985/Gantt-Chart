@@ -18,9 +18,9 @@ angular.module('Directives')
                             };
 
                               scope.dataset = [
-                                  {name: "A", val: 11975},  
-                                  {name: "B", val: 5871}, 
-                                  {name: "C", val: 8916}
+                                  {name: "A", val: 13975},  
+                                  {name: "B", val: 6771}, 
+                                  {name: "C", val: 7816}
                               ];
 
                                   // Watch for resize event
@@ -38,6 +38,7 @@ angular.module('Directives')
                                   h = 150,
                                   r = Math.min(w, h) / 2,
                                   labelr = r + 30, // radius for label anchor
+                                  //['#D8B6C9','#B8E8DE','#FDD99F'];
                                   color = d3.scale.category20(),
                                   donut = d3.layout.pie(),
                                   arc = d3.svg.arc().innerRadius(r * .6).outerRadius(r);
