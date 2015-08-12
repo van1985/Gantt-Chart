@@ -20,6 +20,8 @@ angular.module('Dashboard').controller('dashboardCtrl', function ($scope) {
         $scope.droppedObjectsDone.push($scope.draggableObjects[3]);
 
 
+
+
         $scope.onDropComplete1=function(data,evt){
 
             var getActualData = $scope.droppedObjects1[0];
@@ -119,5 +121,8 @@ angular.module('Dashboard').controller('dashboardCtrl', function ($scope) {
         var inArray = function(array, obj) {
             var index = array.indexOf(obj);
         }
+
+        // COLLAPSE =====================
+        $scope.isCollapsed = false;
 
 });

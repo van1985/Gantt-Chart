@@ -34,8 +34,8 @@ angular.module('Directives')
 
                               svg.selectAll('*').remove();
 
-                              var w = 300,
-                                  h = 300,
+                              var w = 150,
+                                  h = 150,
                                   r = Math.min(w, h) / 2,
                                   labelr = r + 30, // radius for label anchor
                                   color = d3.scale.category20(),
@@ -72,8 +72,8 @@ angular.module('Directives')
                                       // are we past the center?
                                       return (d.endAngle + d.startAngle)/2 > Math.PI ?
                                           "end" : "start";
-                                  })
-                                  .text(function(d, i) { return d.value.toFixed(2); });
+                                  });
+                                  //.text(function(d, i) { return d.value.toFixed(2); });
 
 
                           
