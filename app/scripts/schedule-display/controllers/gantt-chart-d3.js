@@ -43,8 +43,8 @@ d3.gantt = function() {
     var initAxis = function() {
 		constants.x = d3.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, constants.width ]).clamp(true);
 		constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .7);
-		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
-		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
+		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
 		constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
 		constants.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.width ]);
 
@@ -120,7 +120,7 @@ d3.gantt = function() {
 			.attr("x1", constants.x( new Date()) )
 			.attr("x2", constants.x( new Date()) )
 			.attr("y1", 0)
-			.attr("y2", constants.height - constants.margin.bottom)
+			.attr("y2", constants.height - constants.margin.bottom -50)
 			.attr("stroke-width", 2)
 			.attr("stroke", "black")
 			.attr("height", constants.height);
