@@ -55,17 +55,19 @@ d3.gantt = function() {
     function drawRects(group) {
     	var rect = group.selectAll("rect").data(constants.tasks, keyFunction);    	
 
-		rect.enter()
-			.insert("g", ":first-child")
-			.on("click", function(d) {
-				console.log(d);
-				d3.select(".selected").classed("selected", false);
-            	d3.select(this).classed("selected", true);
-            	constants.actualSelection = d;
-                //TODO: REMOVE THIS TO GANTT HELPER FILE
-                constants.service.showButton(d);
-			})
-			.append("rect")
+		var g = rect.enter()
+				.append("g")
+				.style("cursor", "pointer")
+				.on("click", function(d) {
+					console.log(d);
+					d3.select(".selected").classed("selected", false);
+	            	d3.select(this).classed("selected", true);
+	            	constants.actualSelection = d;
+	                //TODO: REMOVE THIS TO GANTT HELPER FILE
+	                constants.service.showButton(d);
+				});
+				
+			g.append("rect")
 				.attr("rx", 5)
 		    	.attr("ry", 5)
 				.attr("class", function(d){ 
@@ -84,6 +86,22 @@ d3.gantt = function() {
 					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
 				});
 
+
+			g.append("text")			
+				.text(function(d){
+					var arrow = d.id % 2 === 0 ? "\u2192" : "\u2191 ";
+					return arrow + "OUT-ONO";
+				})
+				.style("font-weight", "bold")
+				.attr("stroke-width", 0)
+				.attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
+				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
+		       	.attr("text-anchor", "middle")		       	
+				.attr("visibility", function(d){
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+				});
+
 		constants.service.drawLogo();
 
 		rect.exit().remove();
@@ -92,25 +110,7 @@ d3.gantt = function() {
 
 
     
-    //function to dra text
-    function drawTexts(group) {
-    	group.selectAll("text")
-			.data(constants.tasks)
-			.enter()
-			.append("text")
-				.text(function(d){
-					var arrow = d.id % 2 === 0 ? "\u2192" : "\u2191 ";
-					return arrow + "OUT-ONO";
-				})
-				.style("font-weight", "bold")
-				.attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
-				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
-		       	.attr("text-anchor", "middle")				
-				.attr("visibility", function(d){
-					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
-					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
-				});
-    };
+    
 
 
 
@@ -219,9 +219,7 @@ d3.gantt = function() {
 
 		drawColoredAxis(colorRects);
 		//call function to draw rectangles
-		drawRects(group);
-		//call function to draw text
-		drawTexts(group);
+		drawRects(group);		
 		//call function to draw line positioned at actual time
 		drawTimeStamp(line);		
 
@@ -281,14 +279,10 @@ d3.gantt = function() {
 		//remove all data from the groups
 		group.selectAll("*").data([]).exit().remove();
 		line.selectAll("*").data([]).exit().remove();
-
-
-        //var rect = group.selectAll("rect").data(tasks, keyFunction);        
+		
 
         //call function to draw rectangles
-        drawRects(group);
-        //call function to draw text
-		drawTexts(group);
+        drawRects(group);        
 		//call function to draw line positioned at actual time
 		drawTimeStamp(line);
 
@@ -310,31 +304,11 @@ d3.gantt = function() {
 		return gantt;
     };
 
-
-
-    //hide the text of a rectangle whenever this is out of boundaries
-    gantt.hideText = function(dates, tasks) {
-    	
-    	if(!tasks)
-    		return false;
-
-    	var start = dates[0],
-    		end = dates[1],
-    		length = tasks.length;
-
-		for(var i = 0; i < length; i++) {
-    		//tasks[i].textVisible = tasks[i].startDate >= start && tasks[i].endDate <= end ? tasks[i].textVisible = "visible" : tasks[i].textVisible = "hidden";
-    		tasks[i].textVisible = constants.service.inRangeDate(dates, [tasks[i].startDate, tasks[i].endDate]) ? "visible" : "hidden";
-    	}
-    };
-
-
     
 
     gantt.timeDomain = function(value, tasks) {
 		if (!arguments.length)
 		    return [ constants.timeDomainStart, constants.timeDomainEnd ];
-		gantt.hideText(value, tasks);
 		constants.timeDomainStart = +value[0], constants.timeDomainEnd = +value[1];
 		return gantt;
     };
