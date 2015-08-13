@@ -65,13 +65,13 @@
 
       <div collapse="!isCollapsed">
 
-        <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                   <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">Information</div>
         </div>
 
-        <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                             <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">Notifications</div>
@@ -84,13 +84,13 @@
         </div>
         </div>
 
-        <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                             <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">To do lists</div>
         </div>
 
-        <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                             <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">Settings</div>
@@ -230,7 +230,7 @@
          <div class="Row" style="width:100%;"> 
             <div class="Cell" style="width:350px;">
            <div class="chart-container">
-            <div id="pairing-status-chart" class="chart" donut-chart></div>
+            <div id="alert-status-chart" class="chart" donut-chart data="pairingStatusData" height="donutPairingStatusHeight"></div>
           </div>
           </div>
 
@@ -436,6 +436,153 @@
 <div class="row">
       <div class="col-md-6" >
       <div style="width: 100%;height: 388px;display: inline-block; background-color:white;border: 1px solid #D3D3D3;">
+            <div style="height:55px;width:100%;">
+        <div style="    float: left;
+    display: block;
+    font-size: 18px;
+    font-family: Clan OT;
+    margin-top: 20px;
+    color: #555555;
+    margin-left: 2%;">Alerts Status (24)</div>
+          <div style="float:right;display:block;font-size:10px;font-family:Clan OT;margin-top:24px;color:#009BDD;font-weight:bold;margin-right:15px;">View My Lists</div>
+      </div>
+        <ul class="nav nav-tabs" style="padding-left:10px;padding-right:10px;">
+        <li  role="presentation" style="background-color:white;border-right:1px solid #D3D3D3;width:20%;height:59px;
+        border-top:4px solid #A9A9A9;text-align:center;">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##CANC</div>
+        </li>
+        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##MSCT</div>
+        </li>
+        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##STAFF</div>
+        </li>
+                <li style="background-color:#E3E5E7;border-right:0px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3; border-right:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##DLY</div>
+                </li>
+                               <li style="background-color:#E3E5E7;border-right:0px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3; border-right:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##OTHER</div>
+                </li>
+      </ul>
+
+              <div class="table">
+         <div class="Row" style="width:100%;"> 
+            <div class="Cell" style="width:350px;">
+           <div class="chart-container">
+            <div id="pairing-status-chart" class="chart" donut-chart data="AlertStatusData" height="donutAlertStatusHeight"></div>
+          </div>
+          </div>
+
+          <div class="Cell" >
+            <div style="    padding-top: 12%;
+    width: 100%;
+    display: inline-block;">
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">50%</div>
+              <div style="color: #5D5D5D;
+    font-family: Clan OT;
+    font-size: 12px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 5px;">Scheduled</div>
+            </div>
+            <div style="    display: inline-block;
+    width: 100%;
+}">
+              <div style="    float: left;
+    margin-left: 50px;" class="arrow-up-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">10</div>
+            </div>
+                        <div style="
+    width: 100%;
+    display: inline-block;">
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25%</div>
+              <div style="color: #5D5D5D;
+    font-family: Clan OT;
+    font-size: 12px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 5px;">Affected</div>
+            </div>
+            <div style="    display: inline-block;
+    width: 100%;
+}">
+              <div style="    float: left;
+    margin-left: 50px;" class="arrow-up-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">23</div>
+                  <div style="    float: left;
+    margin-left: 15px;" class="arrow-right-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">10</div>
+
+
+                      <div style="    float: left;
+    margin-left: 15px;" class="arrow-down-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">32</div>
+
+
+            </div>
+                        <div style="
+    width: 100%;
+    display: inline-block;">
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25%</div>
+              <div style="color: #5D5D5D;
+    font-family: Clan OT;
+    font-size: 12px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 5px;">Open</div>
+            </div>
+            <div style="    display: inline-block;
+    width: 100%;
+}">
+              <div style="    float: left;
+    margin-left: 50px;" class="arrow-up-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">23</div>
+
+
+                  <div style="    float: left;
+    margin-left: 15px;" class="arrow-right-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">10</div>
+
+
+                      <div style="    float: left;
+    margin-left: 15px;" class="arrow-down-grey-img"></div>
+              <div style="    float: left;
+    margin-left: 10px;
+    font-family: Clan OT;
+    color: #5D5D5D;
+    font-size: 12px;">32</div>
+            </div>
+
+
+
+          </div>
+          </div>
+        </div>
+
       </div>
   </div>
   <div class="col-md-3" >

@@ -125,4 +125,21 @@ angular.module('Dashboard').controller('dashboardCtrl', function ($scope) {
         // COLLAPSE =====================
         $scope.isCollapsed = false;
 
+        //Donut Chart
+        $scope.donutAlertStatusHeight =225; 
+        $scope.donutPairingStatusHeight =225;
+        $scope.pairingStatusData = [
+                                                
+                                                {  y: 25, indexLabel: "", color: "#B8E8DE", indexLabelLineColor: "#B8E8DE " },         
+                                                {  y: 25, indexLabel: "", color: "#FDD99F", indexLabelLineColor: "#FDD99F" },
+                                                {  y: 50, indexLabel: "",color: "#D8B6C9", indexLabelLineColor: "#D8B6C9" }
+                                          ];
+        $scope.AlertStatusData = [
+                                                
+                                                {  y: 25, indexLabel: "", color: "#32BC76", indexLabelLineColor: "#32BC76 " },         
+                                                {  y: 25, indexLabel: "", color: "#F4C138", indexLabelLineColor: "#F4C138" },
+                                                {  y: 25, indexLabel: "",color: "#AAAAAA", indexLabelLineColor: "#AAAAAA" },
+                                                {  y: 25, indexLabel: "",color: "#4F8FCB", indexLabelLineColor: "#4F8FCB" }
+                                          ];
+
 });

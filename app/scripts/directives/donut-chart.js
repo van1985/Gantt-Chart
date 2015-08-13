@@ -4,11 +4,15 @@ angular.module('Directives')
       .directive('donutChart', function() {
             return {
             restrict: 'A',
+            scope:{
+              data: '=data',
+              height: '=height'
+            },
             controller: function ($scope, $attrs) {
 
                         $scope.chart = new CanvasJS.Chart($attrs.id, {
                               theme: 'theme2',
-                              height: 225,
+                              height: $scope.height,
                               width: 320,
                               backgroundColor: null,
                         animationEnabled: true,
@@ -35,12 +39,7 @@ angular.module('Directives')
                                       indexLabelFontColor: "#999999",
                                       indexLabelFontWeight: "normal",
                                       indexLabelFontStyle: "normal",
-                                          dataPoints: [
-                                                
-                                                {  y: 25, indexLabel: "", color: "#B8E8DE", indexLabelLineColor: "#B8E8DE " },         
-                                                {  y: 25, indexLabel: "", color: "#FDD99F", indexLabelLineColor: "#FDD99F" },
-                                                {  y: 50, indexLabel: "",color: "#D8B6C9", indexLabelLineColor: "#D8B6C9" }
-                                          ]
+                                          dataPoints: $scope.data
                                     }
                               ]
                         });
