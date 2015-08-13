@@ -6,12 +6,11 @@
     {
         display: table;
         width:100%;
-        margin-top:12px;
+        padding-top:12px;
     }
     .Heading
     {
         display: table-row;
-        color:#D7D7D7;
     }
     .Row
     {
@@ -176,4 +175,42 @@
 
 .col-md-6, .col-md-3{
     padding-top:15px;
+}
+
+
+.nav-tabs {
+    border-bottom: 0px solid #ddd !important;
+}
+
+.table{
+    width:98% !important;
+    margin-left:1%;
+    margin-bottom:0px !important;
+}
+
+.table>thead>tr>th {
+    border-bottom: 1px solid #ddd !Important;
+}
+
+.arrow-up-yellow-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-up-yellow.png");
+    display: inline-block;
+}
+
+
+.arrow-down-yellow-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-down-yellow.png");
+    display: inline-block;
+}
+
+
+.arrow-right-yellow-img{
+    height: 12px;
+    width: 15px;
+    background: url("../resources/images/arrow-right-yellow.png");
+    display: inline-block;
 }
