@@ -6,12 +6,11 @@
     {
         display: table;
         width:100%;
-        margin-top:12px;
+        padding-top:12px;
     }
     .Heading
     {
         display: table-row;
-        color:#D7D7D7;
     }
     .Row
     {
@@ -30,21 +29,212 @@
 
 
  .chart-container {
-  margin-top:45px;
+  margin-top:0px;
 }
 
 .add-todotask{
-    height: 16px;
-    width: 16px;
-    background: url("../resources/images/plus.svg");
+    height: 12px;
+    width: 12px;
+    background: url("../resources/images/add-expand.png");
+    display: inline-block;
+    margin-top:8px;
+}
+
+.details-task{
+    height: 13px;
+    width: 2px;
+    background: url("../resources/images/expand-drag.png");
     display: inline-block;
     margin-top:6px;
 }
 
-.details-task{
-    height: 16px;
-    width: 16px;
-    background: url("../resources/images/flickr.svg");
+.dashboard-img{
+    height: 21px;
+    width: 21px;
+    background: url("../resources/images/dashboard-img.png");
     display: inline-block;
     margin-top:6px;
+}
+
+.schedule-img{
+    height: 17px;
+    width: 22px;
+    background: url("../resources/images/gantt-img.png");
+    display: inline-block;
+    margin-top:6px;
+}
+
+.alerts-img{
+    height: 20px;
+    width: 23px;
+    background: url("../resources/images/alert-img.png");
+    display: inline-block;
+    margin-top:6px;
+}
+
+.history-img{
+    height: 21px;
+    width: 21px;
+    background: url("../resources/images/history-img.png");
+    display: inline-block;
+    margin-top:6px;
+}
+
+.myprofile-img{
+    height: 22px;
+    width: 19px;
+    background: url("../resources/images/profile-img.png");
+    display: inline-block;
+    margin-top:6px;
+}
+
+.help-img{
+    height: 23px;
+    width: 23px;
+    background: url("../resources/images/help-img.png");
+    display: inline-block;
+    margin-top:6px;
+}
+
+
+.oval {
+    width: 37px;
+    height: 24px;
+    background: #7AA7E0;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 60px / 50px;
+}
+
+.nav-burger-img{
+    height: 21px;
+    width: 27px;
+    background: url("../resources/images/nav-burger.png");
+    display: inline-block;
+    margin-top:14px;
+}
+
+.search-img{
+    height: 22px;
+    width: 22px;
+    background: url("../resources/images/search-img.png");
+    display: inline-block;
+    margin-top:10px;
+}
+
+.mail-img{
+    height: 22px;
+    width: 28px;
+    background: url("../resources/images/mail-img.png");
+    display: inline-block;
+    margin-top:10px;
+}
+
+.arrow-down-icon{
+    height: 7px;
+    width: 10px;
+    background: url("../resources/images/arrow-down-icon.png");
+    display: inline-block;
+    margin-top:10px;
+}
+
+.background-profile-img{
+    height: 94px;
+    width: 100%;
+    background: url("../resources/images/background-profile.png");
+    display: inline-block;
+    background-size: cover;
+}
+
+.profile-user-img{
+    height: 102px;
+    width: 102px;
+    background: url("../resources/images/profile-user-img.png");
+    display: inline-block;
+    background-size: cover;
+    margin-top: -70px;
+    margin-left: 35%;
+}
+
+.edit-icon-img{
+    height: 17px;
+    width: 17px;
+    background: url("../resources/images/edit-icon.png");
+    display: inline-block;
+}
+
+
+.circle-msg {
+    width: 20px;
+    height: 20px;
+    background: #FFBF3B;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.col-md-6, .col-md-3{
+    padding-top:15px;
+}
+
+
+.nav-tabs {
+    border-bottom: 0px solid #ddd !important;
+}
+
+.table{
+    width:98% !important;
+    margin-left:1%;
+    margin-bottom:0px !important;
+}
+
+.table>thead>tr>th {
+    border-bottom: 1px solid #ddd !Important;
+}
+
+.arrow-up-yellow-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-up-yellow.png");
+    display: inline-block;
+}
+
+
+.arrow-down-yellow-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-down-yellow.png");
+    display: inline-block;
+}
+
+
+.arrow-right-yellow-img{
+    height: 12px;
+    width: 15px;
+    background: url("../resources/images/arrow-right-yellow.png");
+    display: inline-block;
+}
+
+
+.arrow-up-grey-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-up-grey.png");
+    display: inline-block;
+}
+
+
+.arrow-down-grey-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-down-grey.png");
+    display: inline-block;
+}
+
+
+.arrow-right-grey-img{
+    height: 12px;
+    width: 15px;
+    background: url("../resources/images/arrow-right-grey.png");
+    display: inline-block;
 }

@@ -13,6 +13,8 @@ var _mainModules = [
     ,'d3'
     ,'Dashboard'
     ,'ngDraggable'
+    ,'snap'
+    ,'ui.bootstrap'
     // yo:ngMainModules
 ];
 
@@ -21,7 +23,7 @@ angular.module('CrewSchedGUI', _mainModules )
     .config( function($routeProvider){
         //redirect any invalid hash to /home
         $routeProvider.otherwise({
-            redirectTo: '/schedule-display'
+            redirectTo: '/dashboard'
         });
 
         var routes = [];
