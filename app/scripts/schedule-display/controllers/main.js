@@ -56,7 +56,8 @@ $scope.addTask = function() {
 	"startDate" : d3.time.hour.offset(lastEndDate, Math.ceil(1 * Math.random())),
 	"endDate" : d3.time.hour.offset(lastEndDate, (Math.ceil(Math.random() * 3)) + 1),
 	"taskName" : taskName,
-	"status" : taskStatusName
+	"status" : taskStatusName,
+    "statusAlert" : "none"
     });
 
     constants.lastDate++;
