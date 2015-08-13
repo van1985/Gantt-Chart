@@ -57,6 +57,7 @@ d3.gantt = function() {
 
 		var g = rect.enter()
 				.append("g")
+				.style("cursor", "pointer")
 				.on("click", function(d) {
 					console.log(d);
 					d3.select(".selected").classed("selected", false);
@@ -95,8 +96,7 @@ d3.gantt = function() {
 				.attr("stroke-width", 0)
 				.attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
 				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
-		       	.attr("text-anchor", "middle")
-		       	.style("cursor", "default")
+		       	.attr("text-anchor", "middle")		       	
 				.attr("visibility", function(d){
 					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
 					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
