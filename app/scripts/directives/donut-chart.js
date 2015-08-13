@@ -1,86 +1,125 @@
 'use strict';
 
 angular.module('Directives')
-      .directive('donutChart', function(d3Service, $window) {
+      .directive('donutChart', function() {
             return {
-            restrict: 'EA',
-            scope: {},
-            link: function (scope, ele, attrs) {
+            restrict: 'A',
+            controller: function ($scope, $attrs) {
 
-                        d3Service.d3().then(function(d3) {
-
-                            var svg = d3.select(ele[0])
-                                .append("svg:svg");
-
-                            // Browser onresize event
-                            window.onresize = function() {
-                              scope.$apply();
-                            };
-
-                              scope.dataset = [
-                                  {name: "A", val: 13975},  
-                                  {name: "B", val: 6771}, 
-                                  {name: "C", val: 7816}
-                              ];
-
-                                  // Watch for resize event
-                            scope.$watch(function() {
-                              return angular.element($window)[0].innerWidth;
-                            }, function() {
-                              scope.render(scope.dataset);
-                            });
-
-                        scope.render = function(data) {
-
-                              svg.selectAll('*').remove();
-
-                              var w = 150,
-                                  h = 150,
-                                  r = Math.min(w, h) / 2,
-                                  labelr = r + 30, // radius for label anchor
-                                  //['#D8B6C9','#B8E8DE','#FDD99F'];
-                                  color = d3.scale.category20(),
-                                  donut = d3.layout.pie(),
-                                  arc = d3.svg.arc().innerRadius(r * .6).outerRadius(r);
-
-                              svg = d3.select("svg")
-                                  .data([data])
-                                  .attr("width", w + 150)
-                                  .attr("height", h);
-
-                              var arcs = svg.selectAll("g.arc")
-                                  .data(donut.value(function(d) { return d.val }))
-                                .enter().append("svg:g")
-                                  .attr("class", "arc")
-                                  .attr("transform", "translate(" + (r + 30) + "," + r + ")");
-
-                              arcs.append("svg:path")
-                                  .attr("fill", function(d, i) { return color(i); })
-                                  .attr("d", arc);
-
-                              arcs.append("svg:text")
-                                  .attr("transform", function(d) {
-                                      var c = arc.centroid(d),
-                                          x = c[0],
-                                          y = c[1],
-                                          // pythagorean theorem for hypotenuse
-                                          h = Math.sqrt(x*x + y*y);
-                                      return "translate(" + (x/h * labelr) +  ',' +
-                                         (y/h * labelr) +  ")"; 
-                                  })
-                                  .attr("dy", ".35em")
-                                  .attr("text-anchor", function(d) {
-                                      // are we past the center?
-                                      return (d.endAngle + d.startAngle)/2 > Math.PI ?
-                                          "end" : "start";
-                                  });
-                                  //.text(function(d, i) { return d.value.toFixed(2); });
-
-
-                          
-                        }
-
+                        $scope.chart = new CanvasJS.Chart($attrs.id, {
+                              theme: 'theme2',
+                              height: 225,
+                              width: 320,
+                              backgroundColor: null,
+                        animationEnabled: true,
+                        axisY: {
+                            tickThickness: 0,
+                            lineThickness: 0,
+                            valueFormatString: " ",
+                            gridThickness: 0                 
+                        },
+                        axisX: {
+                            tickThickness: 0,
+                            lineThickness: 0,
+                            labelFontSize: 10,
+                            labelFontColor: "Peru",
+                            interval: 1
+                        },
+                        data: [
+                                    {
+                                          type: "doughnut",
+                                          fillOpacity: "1",
+                                          startAngle: 60,
+                                          indexLabelFontSize: 16,
+                                      indexLabelFontFamily: "helvetica",
+                                      indexLabelFontColor: "#999999",
+                                      indexLabelFontWeight: "normal",
+                                      indexLabelFontStyle: "normal",
+                                          dataPoints: [
+                                                
+                                                {  y: 25, indexLabel: "", color: "#B8E8DE", indexLabelLineColor: "#B8E8DE " },         
+                                                {  y: 25, indexLabel: "", color: "#FDD99F", indexLabelLineColor: "#FDD99F" },
+                                                {  y: 50, indexLabel: "",color: "#D8B6C9", indexLabelLineColor: "#D8B6C9" }
+                                          ]
+                                    }
+                              ]
                         });
+              
+                        $scope.chart.render(); //render the chart for the first time
+                        //Delete canvasjs credit
+                        $('.canvasjs-chart-credit').remove();
                   }
             };
       });
+/*
+'use strict';
+
+angular.module('storeManagerApp')
+  .directive('donutChart', function() {
+    return {
+            restrict: 'A',
+            scope: {
+              stats: '='
+            },
+            controller: function ($scope, $attrs) {
+
+              $scope.$watch('stats', function() {
+                if ($scope.stats) {
+                  $scope.chartData = $scope.stats;
+                  initializeChart();
+                }
+              });
+
+              var initializeChart = function() {
+                var dataPoints = [];
+
+                for (var i = 0; i < $scope.chartData.length; i++) {
+                  var dataPoint = {
+                    y: $scope.chartData[i].callsAmount,
+                    indexLabel: $scope.chartData[i].departmentId,
+                    indexLabelMaxWidth: 120
+                  };
+
+                  var color;
+                  switch (i%4) {
+                    case 0:
+                      color = "66CCCC";
+                      break;
+                    case 1:
+                      color = "339966";
+                      break;
+                    case 2:
+                      color = "666666";
+                      break;
+                    default:
+                      color = "99CC66";
+                  }
+
+                  dataPoint.color = "#" + color;
+                  dataPoint.indexLabelLineColor = color;
+
+                  dataPoints.push(dataPoint);
+                }
+
+          $scope.chart = new CanvasJS.Chart($attrs.id, {
+            backgroundColor: null,
+                  animationEnabled: true,
+                  data: [
+              {
+                type: "doughnut",
+                indexLabelFontSize: 13,
+                    indexLabelFontFamily: "helvetica",
+                    indexLabelFontColor: "#999999",
+                    indexLabelFontWeight: "normal",
+                    indexLabelFontStyle: "normal",
+                dataPoints: dataPoints
+              }
+            ]
+          });
+
+          $scope.chart.render(); //render the chart for the first time
+        }
+      }
+    };
+  });
+*/

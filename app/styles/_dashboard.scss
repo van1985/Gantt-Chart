@@ -29,7 +29,7 @@
 
 
  .chart-container {
-  margin-top:45px;
+  margin-top:0px;
 }
 
 .add-todotask{
@@ -212,5 +212,29 @@
     height: 12px;
     width: 15px;
     background: url("../resources/images/arrow-right-yellow.png");
+    display: inline-block;
+}
+
+
+.arrow-up-grey-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-up-grey.png");
+    display: inline-block;
+}
+
+
+.arrow-down-grey-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-down-grey.png");
+    display: inline-block;
+}
+
+
+.arrow-right-grey-img{
+    height: 12px;
+    width: 15px;
+    background: url("../resources/images/arrow-right-grey.png");
     display: inline-block;
 }
