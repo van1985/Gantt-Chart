@@ -43,8 +43,8 @@ d3.gantt = function() {
     var initAxis = function() {
 		constants.x = d3.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, constants.width ]).clamp(true);
 		constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .7);
-		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
-		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
+		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
 		constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
 		constants.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.width ]);
 
@@ -120,7 +120,7 @@ d3.gantt = function() {
 			.attr("x1", constants.x( new Date()) )
 			.attr("x2", constants.x( new Date()) )
 			.attr("y1", 0)
-			.attr("y2", constants.height - constants.margin.bottom)
+			.attr("y2", constants.height - constants.margin.bottom -50)
 			.attr("stroke-width", 2)
 			.attr("stroke", "black")
 			.attr("height", constants.height);
@@ -142,10 +142,80 @@ d3.gantt = function() {
     		.append("rect")
     			.attr("y", function(d, i) { return constants.y(d) - 45; })
     			.attr("height", function(d, i) { return constants.height; })
-    			.attr("width", function(d, i) { return constants.width; })
+    			.attr("width", function(d, i) { return constants.width + 35; })
     			.attr("fill", function(d, i){
     				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
     			});
+    };
+
+
+
+    function drawTimeRect(timeRect) {
+    	var g = timeRect.append("g")
+					.attr("class", "time-domain");
+
+
+		g.append("rect")
+			//.attr("class", )
+			.attr("transform", function() {
+				return "translate(" + 5 + ", " + 0 + ")";
+			})
+			.attr("height", 45)
+			.attr("width", constants.width + 111)
+			.attr("stroke", "black")
+			.attr("stroke-width", 2)
+			.attr("fill", "transparent");
+    };
+
+
+
+    function drawGraphComponents(svg) {
+    	svg.append("text")
+			.text("ORD")
+			.style("font-weight", "bold")
+			.attr("x", -70)
+			.attr("y", -1)
+
+
+
+		svg.append("text")
+			.text("GMT")
+			.style("font-weight", "bold")
+			.attr("x", -70)
+			.attr("y", 13)
+
+
+
+		svg.append("line")
+			.attr("x1", -75)
+			.attr("x2", -75)
+			.attr("y1", 0)
+			.attr("y2", constants.height - constants.margin.bottom -50)
+			.attr("stroke-width", 2)
+			.attr("stroke", "black")
+			.attr("height", constants.height);
+
+
+
+		svg.append("line")
+			.attr("x1", constants.width + 36)
+			.attr("x2", constants.width + 36)
+			.attr("y1", 0)
+			.attr("y2", constants.height - constants.margin.bottom -50)
+			.attr("stroke-width", 2)
+			.attr("stroke", "black")
+			.attr("height", constants.height);
+
+
+
+		svg.append("line")
+			.attr("x1", -75)
+			.attr("x2", constants.width + 36)
+			.attr("y1", constants.height - constants.margin.bottom -50	)
+			.attr("y2", constants.height - constants.margin.bottom -50)
+			.attr("stroke-width", 2)
+			.attr("stroke", "black")
+			.attr("height", constants.height);
     };
 
 
@@ -179,6 +249,11 @@ d3.gantt = function() {
 				.attr("transform", "translate(" + constants.margin.left + ", " + constants.margin.top + ")");
 
 
+
+		var timeRect = d3.select("svg");			
+
+
+
 		var colorRects = svg.append("g")
 			.attr("class", "colored-axis");
 
@@ -193,6 +268,8 @@ d3.gantt = function() {
 
 		
 		var defs = svg.append("svg:defs");
+
+
 		
 		//define a def with pending image to append to circle
 		defs.append("svg:pattern")
@@ -222,8 +299,8 @@ d3.gantt = function() {
 		drawRects(group);		
 		//call function to draw line positioned at actual time
 		drawTimeStamp(line);		
-
-
+		drawTimeRect(timeRect);		
+		drawGraphComponents(svg);
 
 
 		 
