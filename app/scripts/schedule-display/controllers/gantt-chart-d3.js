@@ -166,7 +166,7 @@ d3.gantt = function() {
 		}
 		
 		//sets the svg to draw on
-		var svg = d3.select("body")
+		var svg = d3.select("#gantt-chart")
 			.append("svg")
 				.attr("class", "chart")
 				.attr("width", constants.width + constants.margin.left + constants.margin.right)

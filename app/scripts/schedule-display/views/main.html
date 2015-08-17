@@ -1,3 +1,245 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="http://www.emc.com/_admin/js/jquery.js"></script>
+
+<style type="text/css">
+    snap-content {
+  background-color: white;
+  border-left: 1px solid #ccc;
+}
+</style>
+
+<snap-drawer>
+  <div style="height:100%;width:240px;background-color:#393F51;font-size:14px;color:white;font-family:Clan OT;">
+      <div style="height:50px;background-color:#61A9E3;">
+        <div style="font-size: 16px;
+    font-weight: bold;
+    margin: 0 auto;
+    line-height: 70px;
+    width: 100%;
+    margin-left: 20px;">Mathew  Smith</div>
+      </div>
+
+      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+        <div class="dashboard-img" style="float: left;
+    margin-left: 15px;
+    margin-top: 20px;"></div>
+        <div style="    float: left;
+    margin-left: 15px;
+    margin-top: 20px;">Dashboard</div>
+      </div>
+
+      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+                <div class="schedule-img" style="float: left;
+    margin-left: 15px;
+    margin-top: 20px;"></div>
+        <div style="    float: left;
+    margin-left: 15px;
+    margin-top: 20px;">Schedule display</div>
+      </div>
+
+      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+                <div class="alerts-img" style="float: left;
+    margin-left: 15px;
+    margin-top: 20px;"></div>
+        <div style="    float: left;
+    margin-left: 15px;
+    margin-top: 20px;">Alerts</div>
+      </div>
+
+      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+                <div class="history-img" style="float: left;
+    margin-left: 15px;
+    margin-top: 20px;"></div>
+        <div style="    float: left;
+    margin-left: 15px;
+    margin-top: 20px;">History</div>
+      </div>
+
+      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;" ng-click="isCollapsed = !isCollapsed">
+                <div class="myprofile-img" style="float: left;
+    margin-left: 15px;
+    margin-top: 20px;"></div>
+        <div style="    float: left;
+    margin-left: 15px;
+    margin-top: 20px;">My Profile</div>
+      </div>
+
+      <div collapse="!isCollapsed">
+
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+                  <div style="    float: left;
+    margin-left: 50px;
+    margin-top: 20px;">Information</div>
+        </div>
+
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+                            <div style="    float: left;
+    margin-left: 50px;
+    margin-top: 20px;">Notifications</div>
+        <div class="oval" style="    float: right;
+    margin-top: 18px;
+    margin-right: 10px;
+    padding-left: 13px;
+    padding-top: 2px;">
+          2
+        </div>
+        </div>
+
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+                            <div style="    float: left;
+    margin-left: 50px;
+    margin-top: 20px;">To do lists</div>
+        </div>
+
+        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+                            <div style="    float: left;
+    margin-left: 50px;
+    margin-top: 20px;">Settings</div>
+        </div>
+
+      </div>
+
+      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+                <div class="help-img" style="float: left;
+    margin-left: 15px;
+    margin-top: 20px;"></div>
+        <div style="    float: left;
+    margin-left: 15px;
+    margin-top: 20px;">Help</div>
+      </div>
+
+  </div>
+</snap-drawer>
+
+<snap-content style="background-color:#E3E5E8;">
+
+<nav class="navbar navbar-default navbar-fixed-top" style="    z-index: -1;
+    position: relative;">
+      <div class="container" style="background-color:#009BDD;height:127px;">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <div snap-toggle="" class="nav-burger-img" style="cursor: pointer; cursor: hand;"></div>
+            </li>
+          </ul>
+<ul class="nav navbar-nav navbar-right">
+            <li style="
+    padding-top: 3px;
+">
+              <div class="search-img" style="margin-right:33px;"></div>
+            </li>
+            <li style="width: 66px;
+  position: relative;height: 50px;padding-top: 3px;">
+              <div class="circle-msg" style="
+    position: absolute;      
+    margin-top: 20px;
+    margin-left: 18px;
+    z-index: 10;
+    padding-left: 6px;
+    font-family: Clan OT;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 2px;
+">3</div>
+              <div class="mail-img" style="margin-right:33px;position: absolute;"></div>
+
+            </li>
+            <li style="
+    padding-top: 3px;
+">
+              <div class="myprofile-img" style="margin-right:10px;margin-top:10px;"></div>
+            </li>
+            <li style="
+    padding-top: 3px;
+">
+              <div style="font-family:Clan OT; color:white;font-size:14px;margin-top:14px;margin-right:10px;">Mathew Smith</div>
+            </li>
+            <li style="
+    padding-top: 3px;
+">
+              <div class="arrow-down-icon" style="margin-top:21px;margin-right:40px;"></div>
+            </li>
+          </ul>
+        </div>
+
+<div style="    font-family: Clan OT;
+    font-size: 20px;
+    color: white;
+    margin-left: 39px;
+    display: inline-block;
+    margin-top: 5px;
+    float: left;">Pairing D6340</div>
+<div style="    font-family: Clan OT;
+    font-size: 11px;
+    color: white;
+    margin-top: 15px;
+    float: left;
+    display: inline-block;
+    margin-left: 13px;">Updated 17:17</div>
+
+      </div>
+
+
+
+    </nav>
+
+    <div style="background-color: white;
+    width: 92%;
+    height: 74px;
+    margin-top: -60px;
+    margin-left: 4%;
+    border:1px solid #DDE1E1;">
+
+    <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;width:11%;">
+    	<div>Date</div>	
+    	<div style="margin-top:10px;">DD HH YY</div>	
+    </div>
+
+     <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">Total Pairings</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">Total Flights</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">Scheduled</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">IRROP</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">Open</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">Alert Displayed</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%">
+    	<div style="margin-left:10px;">Total Alerts</div>	
+    	<div style="margin-top:10px;margin-left:10px;">####</div>	
+    </div>
+
+    </div>
+
+<div style="margin-top:15px;">
 <button type="button" ng-click="addTask()">Add Task</button>
 <button type="button" ng-click="removeTask()">Remove Task</button>
 <button type="button" ng-click="changeTimeDomain('1hr')">1 HR</button>
@@ -12,5 +254,10 @@
 <button type="button" ng-click="assignFlight()" class="button-assign button-status hide-element">+</button>
 <button type="button" ng-click="processFlight()" class="button-process button-status hide-element">W</button>
 <button type="button" ng-click="resolveFlight()" class="button-resolve button-status hide-element">R</button>
+</div>
+
+<div id="gantt-chart" style="margin-top:20px;">
+</div>
 
 <!-- <div d3-bars bar-height="20" bar-padding="5"></div> -->
+</snap-content>
