@@ -219,3 +219,20 @@ html,body,#wrapper {
     display: inline-block;
     margin-top:8px;
 }
+
+
+//Rewrite modal from bootstrap
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    opacity: 0.5 !important;
+}
+
+.fade{
+  opacity:1 !important;
+}
+
+.modal-content{
+    height: 500px;
+    margin-top: 200px;
+}
+

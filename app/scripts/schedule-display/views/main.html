@@ -171,14 +171,11 @@
             <li style="
     padding-top: 3px;
 ">
-              <div class="arrow-down-icon" style="margin-top:21px;margin-right:25px;"></div>
+              <div class="arrow-down-icon" style="margin-top:21px;margin-right:25px;" ng-click="open()"></div>
             </li>
                         <li style="
     padding-top: 10px;
 ">
-
-      <!--<div class="advanced-filter-img " for="menu-checkbox" style="margin-right:40px;">
-  </div>-->
   <label  for='menu-checkbox'>
     <div class="three-lines advanced-filter-img " for="menu-checkbox" style="margin-right:40px;">
   </label>
@@ -475,16 +472,16 @@ ng-show="showMyAlerts"
 <!-- Scheduled Display -->
 
 <div style="margin-top:15px;">
-<button type="button" ng-click="addTask()">Add Task</button>
-<button type="button" ng-click="removeTask()">Remove Task</button>
-<button type="button" ng-click="changeTimeDomain('1hr')">1 HR</button>
-<button type="button" ng-click="changeTimeDomain('3hr')">3 HR</button>
-<button type="button" ng-click="changeTimeDomain('6hr')">6 HR</button>
-<button type="button" ng-click="changeTimeDomain('1day')">1 DAY</button>
-<button type="button" ng-click="changeTimeDomain('1week')">1 WEEK</button>
-<button type="button" ng-click="zoom('left')"><</button>
-<button type="button" ng-click="zoom('right')">></button>
-<button type="button" ng-click="viewActualTime()">Actual Date</button>
+<button type="button" ng-click="addTask()" style="color:white;">Add Task</button>
+<button type="button" ng-click="removeTask()" style="color:white;">Remove Task</button>
+<button type="button" ng-click="changeTimeDomain('1hr')" style="color:white;">1 HR</button>
+<button type="button" ng-click="changeTimeDomain('3hr')" style="color:white;">3 HR</button>
+<button type="button" ng-click="changeTimeDomain('6hr')" style="color:white;">6 HR</button>
+<button type="button" ng-click="changeTimeDomain('1day')" style="color:white;">1 DAY</button>
+<button type="button" ng-click="changeTimeDomain('1week')" style="color:white;">1 WEEK</button>
+<button type="button" ng-click="zoom('left')" style="color:white;"><</button>
+<button type="button" ng-click="zoom('right')" style="color:white;">></button>
+<button type="button" ng-click="viewActualTime()" style="color:white;">Actual Date</button>
 
 <button type="button" ng-click="assignFlight()" class="button-assign button-status hide-element">+</button>
 <button type="button" ng-click="processFlight()" class="button-process button-status hide-element">W</button>
