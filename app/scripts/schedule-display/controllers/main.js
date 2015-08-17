@@ -109,11 +109,6 @@ $scope.showAlertTotalsView = function(){
     $scope.showAlertTotals = !$scope.showAlertTotals;
 }
 
-$scope.showMyAlerts = false;
-$scope.showMyAlertsView =function(){
-    $scope.showMyAlerts = !$scope.showMyAlerts;   
-}
-
 
 $scope.items = ['item1', 'item2', 'item3'];
 

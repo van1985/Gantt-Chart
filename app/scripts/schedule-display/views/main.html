@@ -242,13 +242,13 @@
     	<div style="margin-top:10px;margin-left:10px;">####</div>	
     </div>
 
-         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%" ng-click="showMyAlertsView()">
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%;cursor:pointer;" ng-click="showMyAlerts = !showMyAlerts">
     	<div style="margin-left:10px;">Alert Displayed</div>	
     	<div style="margin-top:10px;margin-left:10px;" ng-class="{'active-link': showMyAlerts}">####</div>	
     </div>
 
-         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%"
-         ng-click="showAlertTotalsView()">
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:11%; cursor:pointer;"
+         ng-click="showAlertTotals = !showAlertTotals">
     	<div style="margin-left:10px;" >Total Alerts</div>	
     	<div style="margin-top:10px;margin-left:10px;" ng-class="{'active-link': showAlertTotals}">####</div>	
     </div>
@@ -261,7 +261,7 @@
 border-right: 1px solid #D3D3D3;
 border-left: 1px solid #D3D3D3;
 border-bottom: 1px solid #D3D3D3;"
-ng-show="showAlertTotals">
+collapse="!showAlertTotals">
 
 
     <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:40px;margin-top:10px;float:left;width:9.5%;">
@@ -368,11 +368,11 @@ ng-show="showAlertTotals">
 
 <!-- My Alerts -->
 
-<div id="my-alerts" style="width:92%;margin-left:4%;height:50px;background-color:#EFECEC;
+<div id="my-alerts" style="width:92%;margin-left:4%;height:50px !important;background-color:#EFECEC;
 border-right: 1px solid #D3D3D3;
 border-left: 1px solid #D3D3D3;
 border-bottom: 1px solid #D3D3D3;"
-ng-show="showMyAlerts"
+collapse="!showMyAlerts"
 >    
     <div style="color:black;font-family:Clan OT;font-size:12px;margin-left:40px;margin-top:17px;font-weight:bold;float:left;width:5%;">
       My Alerts
@@ -471,7 +471,7 @@ ng-show="showMyAlerts"
 
 <!-- Scheduled Display -->
 
-<div style="margin-top:15px;">
+<div style="margin-top:20px;">
 <button type="button" ng-click="addTask()" style="color:white;">Add Task</button>
 <button type="button" ng-click="removeTask()" style="color:white;">Remove Task</button>
 <button type="button" ng-click="changeTimeDomain('1hr')" style="color:white;">1 HR</button>
