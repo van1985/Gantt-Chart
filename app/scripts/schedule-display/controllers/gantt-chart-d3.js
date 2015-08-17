@@ -59,14 +59,17 @@ d3.gantt = function() {
 				.append("g")
 				.style("cursor", "pointer")
 				.on("click", function(d) {
-					console.log(d);
-					d3.select(".selected").classed("selected", false);
-	            	d3.select(this).classed("selected", true);
-	            	constants.actualSelection = d;
+					// get x position
+					//var currentx = d3.transform(g.attr("transform")).translate[0];
+					//$('#info-flight').attr('left',currentx);
+					//console.log(d);
+					//d3.select(".selected").classed("selected", false);
+	            	//d3.select(this).classed("selected", true);
+	            	//constants.actualSelection = d;
 	                //TODO: REMOVE THIS TO GANTT HELPER FILE
-	                constants.service.showButton(d);
+	                //constants.service.showButton(d);
 				});
-				
+
 			g.append("rect")
 				.attr("rx", 5)
 		    	.attr("ry", 5)
@@ -95,12 +98,30 @@ d3.gantt = function() {
 				.style("font-weight", "bold")
 				.attr("stroke-width", 0)
 				.attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
-				.attr("y", function(d) { return constants.y(d.taskName) + 25; })
+				.attr("y", function(d) { return constants.y(d.taskName) + 15; })
 		       	.attr("text-anchor", "middle")		       	
 				.attr("visibility", function(d){
 					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
 					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
 				});
+
+
+				var div = d3.select("snap-content").append("div")
+			    .attr("class", "tooltip")
+			    .style("opacity", 1e-6);
+				g.on("mouseover", function(d) {      
+	            div.transition()        
+	                .duration(200)      
+	                .style("opacity", .9);      
+	            div .html('formatTime(d.date)' + "<br/>"  + d.close)  
+	                .style("left", (d3.event.pageX - 200) + "px")     
+	                .style("top", (d3.event.pageY + 22) + "px");    
+	            })                  
+		        .on("mouseout", function(d) {       
+		            div.transition()        
+		                .duration(500)      
+		                .style("opacity", 0);   
+		        });
 
 		constants.service.drawLogo();
 
@@ -164,7 +185,8 @@ d3.gantt = function() {
 			.attr("width", constants.width + 111)
 			.attr("stroke", "black")
 			.attr("stroke-width", 2)
-			.attr("fill", "transparent");
+			.attr("fill", "transparent")
+			.attr("transform","translate(65,0)");
     };
 
 

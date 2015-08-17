@@ -11,9 +11,9 @@ var constants = {
 
     "margin" : {
         top : 20,
-        right : 40,
+        right : 90,
         bottom : 20,
-        left : 80
+        left : 140
     },
 
     "elementSpacing" : {

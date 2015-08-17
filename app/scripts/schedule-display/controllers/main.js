@@ -104,4 +104,14 @@ $scope.resolveFlight = function() {
     constants.service.resolveFlight();
 };
 
+$scope.showAlertTotals = false;
+$scope.showAlertTotalsView = function(){
+    $scope.showAlertTotals = !$scope.showAlertTotals;
+}
+
+$scope.showMyAlerts = false;
+$scope.showMyAlertsView =function(){
+    $scope.showMyAlerts = !$scope.showMyAlerts;   
+}
+
 });
