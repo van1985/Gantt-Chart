@@ -58,17 +58,6 @@ d3.gantt = function() {
 		var g = rect.enter()
 				.append("g")
 				.style("cursor", "pointer")
-				.on("click", function(d) {
-					// get x position
-					//var currentx = d3.transform(g.attr("transform")).translate[0];
-					//$('#info-flight').attr('left',currentx);
-					//console.log(d);
-					//d3.select(".selected").classed("selected", false);
-	            	//d3.select(this).classed("selected", true);
-	            	//constants.actualSelection = d;
-	                //TODO: REMOVE THIS TO GANTT HELPER FILE
-	                //constants.service.showButton(d);
-				});
 
 			g.append("rect")
 				.attr("rx", 5)
