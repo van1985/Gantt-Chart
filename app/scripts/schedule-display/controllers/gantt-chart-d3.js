@@ -124,13 +124,12 @@ d3.gantt = function() {
 	            	)  
 	                .style("left", (d3.event.pageX - 200) + "px")     
 	                .style("top", (d3.event.pageY + 22) + "px");    
-	            });
-	            /*                 
+	            })                
 		        .on("blur", function() {      
 				        div.transition()        
 		                .duration(500)      
 		                .style("opacity", 0);
-		        });*/
+		        });
 
 		constants.service.drawLogo();
 
