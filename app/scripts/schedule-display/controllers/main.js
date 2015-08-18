@@ -118,6 +118,7 @@ $scope.items = ['item1', 'item2', 'item3'];
 
     var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
+      //templateUrl: '../crew-sched-gui/scripts/schedule-display/views/flight-information.html',
       templateUrl: '../scripts/schedule-display/views/flight-information.html',
       controller: 'ModalFlightInformationCtrl',
       size: size,

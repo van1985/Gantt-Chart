@@ -10,6 +10,7 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
     $http({
       method: 'GET',
       url: '/scripts/schedule-display/services/api/flight.json'
+      //url:  url: '../crew-sched-gui/scripts/schedule-display/services/api/flight.json'
     })
     .success(
       function(response) {
