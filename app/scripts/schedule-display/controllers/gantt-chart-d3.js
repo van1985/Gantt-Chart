@@ -297,7 +297,7 @@ d3.gantt = function() {
 
      	svg.append("circle")
             .attr("cx", -32)
-            .attr("cy", 170)
+            .attr("cy", 155)
             .attr("r", 10)           
             .attr("fill", "url(#watch-background)")
             .attr("stroke", "black")
