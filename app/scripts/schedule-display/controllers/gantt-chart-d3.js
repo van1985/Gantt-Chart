@@ -140,14 +140,15 @@ d3.gantt = function() {
 			.attr("y1", 0)
 			.attr("y2", constants.height - constants.margin.bottom -50)
 			.attr("stroke-width", 2)
-			.attr("stroke", "black")
+			.attr("stroke", "#706A6A")			
 			.attr("height", constants.height);
 
 		line.append("circle")
 			.attr("cx", constants.x( new Date()))
 		    .attr("cy", 0)
 		    .attr("r", 5)
-		    .attr("stroke", "black")
+		    .attr("stroke", "#706A6A")
+		    .attr("fill", "#706A6A")
 			.attr("stroke-width", 1);
     };
 
@@ -158,9 +159,10 @@ d3.gantt = function() {
     		.data(constants.taskNames)
     		.enter()
     		.append("rect")
+    			.attr("x", -75)
     			.attr("y", function(d, i) { return constants.y(d) - 45; })
-    			.attr("height", function(d, i) { return constants.height; })
-    			.attr("width", function(d, i) { return constants.width + 35; })
+    			.attr("height", function(d, i) { return constants.height - 780; })
+    			.attr("width", function(d, i) { return constants.width + 112; })
     			.attr("fill", function(d, i){
     				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
     			});
