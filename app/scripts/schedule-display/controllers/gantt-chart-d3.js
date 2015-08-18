@@ -45,7 +45,7 @@ d3.gantt = function() {
 		constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .7);
 		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
 		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
-		constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
+		constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0).tickPadding(50);
 		constants.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.width ]);
 
     };
@@ -159,10 +159,10 @@ d3.gantt = function() {
     		.data(constants.taskNames)
     		.enter()
     		.append("rect")
-    			.attr("x", -75)
+    			.attr("x", -120)
     			.attr("y", function(d, i) { return constants.y(d) - 45; })
     			.attr("height", function(d, i) { return constants.height - 741; })
-    			.attr("width", function(d, i) { return constants.width + 112; })
+    			.attr("width", function(d, i) { return constants.width + 155; })
     			.attr("fill", function(d, i){
     				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
     			});
@@ -176,16 +176,13 @@ d3.gantt = function() {
 
 
 		g.append("rect")
-			//.attr("class", )
-			.attr("transform", function() {
-				return "translate(" + 5 + ", " + 0 + ")";
-			})
+			//.attr("class", )			
 			.attr("height", 45)
-			.attr("width", constants.width + 111)
+			.attr("width", constants.width + 156)
 			.attr("stroke", "black")
 			.attr("stroke-width", 2)
 			.attr("fill", "transparent")
-			.attr("transform","translate(65,0)");
+			.attr("transform","translate(20,0)");
     };
 
 
@@ -194,7 +191,7 @@ d3.gantt = function() {
     	svg.append("text")
 			.text("ORD")
 			.style("font-weight", "bold")
-			.attr("x", -70)
+			.attr("x", -110)
 			.attr("y", -1)
 
 
@@ -202,35 +199,35 @@ d3.gantt = function() {
 		svg.append("text")
 			.text("GMT")
 			.style("font-weight", "bold")
-			.attr("x", -70)
+			.attr("x", -110)
 			.attr("y", 13)
 
 
-
+		//left
 		svg.append("line")
-			.attr("x1", -75)
-			.attr("x2", -75)
-			.attr("y1", 0)
+			.attr("x1", -120)
+			.attr("x2", -120)
+			.attr("y1", 26)
 			.attr("y2", constants.height - constants.margin.bottom -50)
 			.attr("stroke-width", 2)
 			.attr("stroke", "black")
 			.attr("height", constants.height);
 
 
-
+		//right
 		svg.append("line")
 			.attr("x1", constants.width + 36)
 			.attr("x2", constants.width + 36)
-			.attr("y1", 0)
+			.attr("y1", 26)
 			.attr("y2", constants.height - constants.margin.bottom -50)
 			.attr("stroke-width", 2)
 			.attr("stroke", "black")
 			.attr("height", constants.height);
 
 
-
+		//bottom
 		svg.append("line")
-			.attr("x1", -75)
+			.attr("x1", -120)
 			.attr("x2", constants.width + 36)
 			.attr("y1", constants.height - constants.margin.bottom -50	)
 			.attr("y2", constants.height - constants.margin.bottom -50)
@@ -243,8 +240,8 @@ d3.gantt = function() {
 
     function drawLineSeparation(svg) {
     	svg.append("line")
-			.attr("x1", 45)
-			.attr("x2", 45)
+			.attr("x1", -15)
+			.attr("x2", -15)
 			.attr("y1", -12)
 			.attr("y2", 16)
 			.attr("stroke-width", 2)
@@ -253,13 +250,58 @@ d3.gantt = function() {
 
 
 		svg.append("line")
-			.attr("x1", 45)
-			.attr("x2", 45)
+			.attr("x1", -15)
+			.attr("x2", -15)
 			.attr("y1", 24)
 			.attr("y2", constants.height - constants.margin.bottom -50)
 			.attr("stroke-width", 2)
 			.attr("stroke", "#706A6A")			
 			.attr("height", constants.height);
+	};
+
+
+
+	function defineDefsSwimlane(defs) {
+		defs.append("svg:pattern")
+				.attr("id", "watch-background")
+				.attr("height", 20)
+				.attr("width", 20)
+				.append("svg:image")
+					.attr("xlink:href", "../resources/images/watch-alert-preview.png")
+					.attr("height", 20)
+					.attr("width", 20);
+
+
+		defs.append("svg:pattern")
+				.attr("id", "user-background")
+				.attr("height", 20)
+				.attr("width", 20)
+				.append("svg:image")
+					.attr("xlink:href", "../resources/images/user-alert-preview.png")
+					.attr("height", 20)
+					.attr("width", 20);
+	};
+
+
+
+	function drawLogoSwimlane(svg) {
+		svg.append("circle")
+            .attr("cx", -32)
+            .attr("cy", 80)
+            .attr("r", 10)           
+            .attr("fill", "url(#user-background)")
+            .attr("stroke", "black")
+            .attr("stroke-width", 1);
+
+
+
+     	svg.append("circle")
+            .attr("cx", -32)
+            .attr("cy", 170)
+            .attr("r", 10)           
+            .attr("fill", "url(#watch-background)")
+            .attr("stroke", "black")
+            .attr("stroke-width", 1);
 	};
 
 
@@ -309,7 +351,8 @@ d3.gantt = function() {
 
 
 
-		
+		/*
+
 		defs.append("svg:pattern")
 				.attr("id", "pending-background")
 				.attr("height", 20)
@@ -327,17 +370,19 @@ d3.gantt = function() {
 					.attr("xlink:href", "../resources/imgs/process.png")
 					.attr("height", 15)
 					.attr("width", 16);
-
+		*/
 
 		
 
 		drawColoredAxis(colorRects);
 		//call function to draw rectangles
-		drawRects(group);		
+		drawRects(group);
 		//call function to draw line positioned at actual time
-		drawTimeStamp(line);		
-		drawTimeRect(timeRect);	
-		drawLineSeparation(svg);	
+		drawTimeStamp(line);
+		drawTimeRect(timeRect);
+		drawLineSeparation(svg);
+		defineDefsSwimlane(defs);
+		drawLogoSwimlane(svg);
 		drawGraphComponents(svg);
 
 
