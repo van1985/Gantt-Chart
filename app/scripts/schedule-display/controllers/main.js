@@ -119,7 +119,7 @@ $scope.items = ['item1', 'item2', 'item3'];
     var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
       templateUrl: '../scripts/schedule-display/views/flight-information.html',
-      controller: 'ModalInstanceCtrl',
+      controller: 'ModalFlightInformationCtrl',
       size: size,
       resolve: {
         items: function () {
@@ -137,6 +137,11 @@ $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+
+    $scope.showTitle=true;
+  $scope.change = function(){
+    $scope.showTitle = !$scope.showTitle;
   };
 
 });

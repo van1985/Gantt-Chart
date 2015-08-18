@@ -1,25 +1,353 @@
-<div ng-controller="mainCtrl">
-    <script type="text/ng-template" id="flight-information.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Im a modal!</h3>
+<div ng-controller="ModalFlightInformationCtrl">
+    <div style="width:100%;height:100%;display:inline-block;">
+        <div style="width:92%;height:40px;display:inline-block;border-bottom:1px solid #D3D3D3;margin-left:4%;">
+            <div style="color:#555555;font-size:16px;font-family:Clan OT;margin-top:10px;" ng-show="showTitle">Flight Information</div>
+            <div class="close-img" style="float:right;margin-top:-20px;"></div>
         </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
 
-    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
-    <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
-    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+        <div style="height:60px;width:92%;display:inline-block;margin-left:4%;margin-top:10px;">
+            <div style="100%;height:30px;">
+            <div style="float:left;display:inline-block;color:#555555;font-size:20px;font-family:Clan OT;">Flight 250 ORI-DES</div>
+            <div style="float:left;display:inline-block;color:#555555;font-size:12px;font-family:Clan OT;margin-left:10px;margin-top:10px;">Delayed</div>
+            <div style="float:right;display:inline-block;">
+                <div class="download-icon" style="margin-right:10px;"></div>
+                <div class="new-window-icon"></div>
+            </div>
+            </div>
+            <div style="margin-top:10px;">
+                <div style="color:#555555;font-family:Clan OT;font-size:12px;float:left;">3 changes,</div>
+                <div style="color:#009BDD;font-family:Clan OT;font-size:12px;float:left;"> last updates 22:33</div>
+            </div>
+        </div>
+
+        <div style="height:60px;width:92%;display:inline-block;border:1px solid #D3D3D3;margin-left:4%;">
+            <div style="float:left;height:100%;width:5px;background-color:#FFD52B;"></div>
+            <div style="width:150px;height:100%;display:inline-block;float:left;">
+                <div class="arrow-up-alert-img" style="float:left;margin-left: 10px;margin-top: 18px;"></div>
+                <div style="float: left;color: #555555;font-size: 16px;font-family: Clan OT;margin-top: 16px;margin-left: 10px;">Delay Type</div>
+            </div>
+            <div class="arrow-flight-icon" style="float:left;"></div>
+<div style="height:60px;display:inline-block;float: left;width: 76%;">
+                  <div style="float:left;display:inline-block;width:18%;margin-top:8px;margin-left:15px;">
+                      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;margin-bottom:5px;">Pairing</div>
+                      <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;margin-top:8px;">H2008, T2108</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Crew</div>
+                      <div style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:bold;margin-top:8px;">2 pilots / 1 FA</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Assign to</div>
+                      <div style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:bold;margin-top:8px;">Name Lastname</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Watchers</div>
+                      <div style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:bold;margin-top:8px;">###</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Last updated</div>
+                      <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;margin-top:8px;">HH:MM</div>
+                  </div>
+            </div>
+        </div>
+
+        <div style="height:102px;width:92%;margin-left:4%;display:inline-block;border:1px solid #D3D3D3;">
+          <div style="float:left;display:inline-block;width:22%;margin-top:8px;margin-left:15px;border-right:1px solid #D3D3D3;height:85%;">
+                  <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">Date</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 70px;font-weight:bold;">02/19-15</div>
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">Dtp gate</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 78px;font-weight:bold;">B27</div>
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;">Arr gate</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 78px;font-weight:bold;">A10</div>
+          </div>
+          </div>
+
+                    <div style="float:left;display:inline-block;width:23%;margin-top:8px;margin-left:15px;border-right:1px solid #D3D3D3;height:85%;">
+                    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">Tail</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-right: 10px;float:right;font-weight:bold;margin-top:10px;">0067</div>
+    </div>
+
+
+    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">Equipment</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-right: 10px;font-weight:bold;float:right;margin-top:10px;">77Y</div>
+    </div>
+
+    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;">Dispatcher</div>
+              <div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-right: 10px;margin-top:10px;font-weight:bold;float:right;">899 33 8764</div>
+</div>
+
+
+          </div>
+
+                              <div style="float:left;display:inline-block;width:23%;margin-top:8px;margin-left:15px;border-right:1px solid #D3D3D3;height:85%;">
+              
+                  <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">Departure</div>
+              <div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 10px;font-weight:bold;">HH:MM/HH:MM</div>
+    </div>
+
+        <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">Arrival</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 32px;font-weight:bold;">HH:MM/HH:MM</div>
+    </div>
+
+        <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;">Flight time</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 10px;font-weight:bold;">HH:MM/HH:MM</div>
+    </div>
+          </div>
+
+                              <div style="float:left;display:inline-block;width:22%;margin-top:8px;margin-left:15px;height:85%;">
+                    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">FDP CCO</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 40px;font-weight:bold;">--:--</div>
+    </div>
+
+        <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">BLK CCO</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 40px;font-weight:bold;">--:--</div>
+    </div>
+
+        <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;">BMT</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 64px;font-weight:bold;">--:--</div>
+    </div>
+          </div>
+
+
+        </div>
+
+ <div style="height:100%;width:92%;margin-left:4%;display:inline-block;">
+              <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr style="height:40px;border-bottom:1px solid #ddd !important;">
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Pairing</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:bold;">Employee</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Domicilie</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Status</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">DHD</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Alert</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Last update</th>
+                </tr>
+              </thead>
+              <tbody style="font-size:12px;color:#555555;font-family:Clan OT;">
+                <tr style="background-color:#F3F3F3;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div ng-click="ok()" style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+
+
+                <tr style="background-color:white;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+
+
+                <tr style="background-color:#F3F3F3;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+
+
+                <tr style="background-color:white;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+                <tr style="background-color:#F3F3F3;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+                <tr style="background-color:white;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+
+                <tr style="background-color:#F3F3F3;height:45px;border-right:1px solid #D3D3D3;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                    <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+    margin-top: 7px;
+    margin-left: 5px;">H2008</div>
+                    <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">CA01</div> <div style="color:#009BDD;font-weight:bold;float:left;    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;">06167899</div> 
+                    <div style="display:inline-block;float:left;">Miers, David</div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;">SFO</td>
+                  <td style="vertical-align:middle;">LH</td>
+                  <td style="vertical-align:middle;">No</td>
+                  <td style="vertical-align:middle;">Type</td>
+                  <td style="vertical-align:middle;">23:22</td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+</div>
+
+    </div>
 </div>

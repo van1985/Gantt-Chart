@@ -232,7 +232,8 @@ html,body,#wrapper {
 }
 
 .modal-content{
-    height: 500px;
+    width: 817px;
+    height: 665px;
     margin-top: 200px;
 }
 
@@ -244,3 +245,56 @@ html,body,#wrapper {
       height: 50px !important;
 }
 
+.arrow-up-alert-img{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-up-alert-preview.png");
+    display: inline-block;
+    margin-top:8px;
+}
+
+.watch-alert-img{
+    height: 12px;
+    width: 19px;
+    background: url("../resources/images/watch-alert-preview.png");
+    display: inline-block;
+    margin-top:8px;
+}
+
+.user-alert-img{
+    height: 18px;
+    width: 14px;
+    background: url("../resources/images/user-alert-preview.png");
+    display: inline-block;
+    margin-top:8px;
+}
+
+.download-icon{
+    height: 20px;
+    width: 20px;
+    background: url("../resources/images/download-icon-img.png");
+    display: inline-block;
+    margin-top:8px;
+}
+
+.new-window-icon{
+    height: 20px;
+    width: 26px;
+    background: url("../resources/images/new-window-icon.png");
+    display: inline-block;
+    margin-top:8px;
+}
+
+.arrow-flight-icon{
+    height: 60px;
+    width: 21px;
+    background: url("../resources/images/arrow-flight.png");
+    display: inline-block;
+}
+
+.close-img{
+    height: 19px;
+    width: 19px;
+    background: url("../resources/images/close-img.png");
+    display: inline-block;
+}
