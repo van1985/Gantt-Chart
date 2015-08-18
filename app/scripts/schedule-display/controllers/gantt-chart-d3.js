@@ -161,7 +161,7 @@ d3.gantt = function() {
     		.append("rect")
     			.attr("x", -75)
     			.attr("y", function(d, i) { return constants.y(d) - 45; })
-    			.attr("height", function(d, i) { return constants.height - 780; })
+    			.attr("height", function(d, i) { return constants.height - 741; })
     			.attr("width", function(d, i) { return constants.width + 112; })
     			.attr("fill", function(d, i){
     				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
@@ -241,6 +241,29 @@ d3.gantt = function() {
 
 
 
+    function drawLineSeparation(svg) {
+    	svg.append("line")
+			.attr("x1", 45)
+			.attr("x2", 45)
+			.attr("y1", -12)
+			.attr("y2", 16)
+			.attr("stroke-width", 2)
+			.attr("stroke", "#706A6A")			
+			.attr("height", constants.height);
+
+
+		svg.append("line")
+			.attr("x1", 45)
+			.attr("x2", 45)
+			.attr("y1", 24)
+			.attr("y2", constants.height - constants.margin.bottom -50)
+			.attr("stroke-width", 2)
+			.attr("stroke", "#706A6A")			
+			.attr("height", constants.height);
+	};
+
+
+
 
 
 
@@ -270,29 +293,23 @@ d3.gantt = function() {
 				.attr("transform", "translate(" + constants.margin.left + ", " + constants.margin.top + ")");
 
 
+			//rect to higlight time header
+		var timeRect = d3.select("svg"),
+			//grey white rects for checkerboard background chart
+			colorRects = svg.append("g")
+				.attr("class", "colored-axis"),
+			//line indicating actual time
+			line = svg.append("g")
+				.attr("class", "time-stamp"),
+			//append g to group data in pairs (rectangle-text)
+			group = svg.append("g")
+				.attr("class", "group"),			
+			//def with image to append to circle
+			defs = svg.append("svg:defs");
 
-		var timeRect = d3.select("svg");			
-
-
-
-		var colorRects = svg.append("g")
-			.attr("class", "colored-axis");
-
-
-		var line = svg.append("g")
-			.attr("class", "time-stamp");			
-
-
-		//append g to group data in pairs (rectangle-text)
-		var group = svg.append("g")
-			.attr("class", "group");
-
-		
-		var defs = svg.append("svg:defs");
 
 
 		
-		//define a def with pending image to append to circle
 		defs.append("svg:pattern")
 				.attr("id", "pending-background")
 				.attr("height", 20)
@@ -301,8 +318,7 @@ d3.gantt = function() {
 					.attr("xlink:href", "../resources/imgs/pending.png")
 					.attr("height", 20)
 					.attr("width", 20);
-
-		//define a def with process image to append to circle
+		
 		defs.append("svg:pattern")
 				.attr("id", "process-background")
 				.attr("height", 20)
@@ -320,7 +336,8 @@ d3.gantt = function() {
 		drawRects(group);		
 		//call function to draw line positioned at actual time
 		drawTimeStamp(line);		
-		drawTimeRect(timeRect);		
+		drawTimeRect(timeRect);	
+		drawLineSeparation(svg);	
 		drawGraphComponents(svg);
 
 
