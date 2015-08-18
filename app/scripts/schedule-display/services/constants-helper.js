@@ -3,10 +3,15 @@ var constants = {
     "tasks" : [],
 
     "taskStatus" : {
-        "SUCCEEDED" : "bar height-flight",
-        "FAILED" : "bar-failed height-flight",
-        "RUNNING" : "bar-running height-flight",
-        "KILLED" : "bar-killed height-flight"
+        "CANCELLATION" : "bar-cancellation height-flight",
+        "FAR" : "bar-far height-flight",
+        "UNASSIGNEDBOUND" : "bar-unassigned-bound height-flight",
+        "TAXI" : "bar-taxi height-flight",
+        "DELAY" : "bar-delay height-flight",
+        "MISCONNECTION": "bar-misconnection height-flight",
+        "UASTAFFING" : "bar-ua-staffing height-flight",
+        "CREWREST" : "bar-crew-rest height-flight",
+        "FLIGHTONTIME" : "bar-flight-on-time height-flight"
     },
 
     "margin" : {

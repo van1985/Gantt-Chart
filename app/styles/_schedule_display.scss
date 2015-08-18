@@ -146,24 +146,41 @@ html,body,#wrapper {
   shape-rendering: crispEdges;
 }
 
-.bar {
-  fill: #33b5e5;
+
+.bar-far {
+  fill: #37CDC0;
 }
 
-.bar-failed {
-  fill: #CC0000;
+.bar-unassigned-bound {
+  fill: #C9B58D;
 }
 
-.bar-running {
-  fill: #669900;
+.bar-taxi {
+  fill: #7DBBF4;
 }
 
-.bar-succeeded {
-  fill: #33b5e5;
+.bar-cancellation {
+  fill: #FD7145;
 }
 
-.bar-killed {
-  fill: #ffbb33;
+.bar-delay {
+  fill: #ffd52b;
+}
+
+.bar-misconnection{
+  fill: #AD86B3;
+}
+
+.bar-ua-staffing{
+  fill: #E397C3;
+}
+
+.bar-crew-rest{
+  fill: #BAE08A;
+}
+
+.bar-flight-on-time{
+  fill: #999999;
 }
 
 #forkme_banner {

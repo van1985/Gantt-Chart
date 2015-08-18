@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi,ganttHelper,$modal) {
+angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi,ganttHelper,$modal, $interval) {
 
 
 FlightSrvApi.getFlights().
@@ -44,7 +44,7 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
 }
 
 
-$scope.addTask = function() {
+$scope.addTask = function(flight) {
 
     var lastEndDate = ganttHelper.getEndDate();
     var taskStatusKeys = Object.keys(constants.taskStatus);
@@ -52,16 +52,17 @@ $scope.addTask = function() {
     var taskName = constants.taskNames[Math.floor(Math.random() * constants.taskNames.length)];
 
     constants.tasks.push({
-    "task": "asdd",
-	"startDate" : d3.time.hour.offset(lastEndDate, Math.ceil(1 * Math.random())),
-	"endDate" : d3.time.hour.offset(lastEndDate, (Math.ceil(Math.random() * 3)) + 1),
-	"taskName" : taskName,
-	"status" : taskStatusName,
-    "statusAlert" : "none"
+    "task": flight.task,
+  	"startDate" : flight.startDate,//d3.time.hour.offset(lastEndDate, Math.ceil(1 * Math.random())),
+  	"endDate" : flight.endDate,//d3.time.hour.offset(lastEndDate, (Math.ceil(Math.random() * 3)) + 1),
+  	"taskName" : flight.taskName,
+  	"status" : flight.status,
+    "statusAlert" : flight.statusAlert
     });
 
     constants.lastDate++;
-    $scope.changeTimeDomain(constants.timeDomainString);
+    //constants.gantt.redraw(constants.tasks);
+    //$scope.changeTimeDomain(constants.timeDomainString);
 };
 
 
@@ -144,5 +145,44 @@ $scope.items = ['item1', 'item2', 'item3'];
   $scope.change = function(){
     $scope.showTitle = !$scope.showTitle;
   };
+
+
+//TODO: Change to underscore
+function removeArrayElement(array, task){
+
+
+  for (var i = 0; i < array.length; i++) {
+    var object = array[i];
+    if (object.task === task){
+        array.splice(i,1);
+        return true;
+    }    
+}
+  return false;
+};
+
+$interval(function(){
+  FlightSrvApi.getNewFlightAlert().
+  then(function(data){
+    var flight=ganttHelper.verifyDateFormat(data.global.flights);
+    if (!removeArrayElement(constants.tasks,flight[0].task)){
+        $scope.addTask(flight[0]);
+    }
+    constants.gantt.redraw(constants.tasks);
+  });
+}, 5000);
+
+
+$interval(function(){
+
+    if ( constants.tasks[0].status!=='DELAY'){
+        constants.tasks[0].status='DELAY';
+    }
+    else{
+        constants.tasks[0].status='TAXI'; 
+    }
+    constants.gantt.redraw(constants.tasks);
+}, 7000);
+
 
 });
