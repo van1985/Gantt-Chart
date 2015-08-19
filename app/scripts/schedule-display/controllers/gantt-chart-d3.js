@@ -58,6 +58,8 @@ d3.gantt = function() {
 		var g = rect.enter()
 				.append("g")
 				.style("cursor", "pointer")
+				.style("stroke", "black")
+				.style("stroke-width", 1.4);
 
 			g.append("rect")
 				.attr("rx", 5)
@@ -329,6 +331,44 @@ d3.gantt = function() {
 
 
 
+	function drawDelays(delay) {
+		var delays = delay.selectAll("rect").data(constants.tasks.filter( function(d) { return d.id%2 === 0; }));
+
+			console.log(delays);
+		delays.selectAll("*").data([]).exit().remove();
+		
+			
+		delays.enter()
+			.append("rect")
+			.attr("rx", 5)
+	    	.attr("ry", 5)
+			.attr("transform", function(d, i) {
+				
+				var start = d.startDate,
+					hs = start.getHours() > 0 ? start.getHours() -1 : 23;
+
+				start = constants.x(d.startDate) - hs;
+				
+				
+
+				return "translate(" + start + "," + constants.y(d.taskName) + ")";
+			})
+			.attr("height", function(d, i) { return constants.y.rangeBand(); })
+			.attr("width", function(d, i) {
+					
+			    	return (constants.x(d.endDate) - constants.x(d.startDate));
+			    })
+			.attr("fill", "transparent")
+			.style("stroke", "black")
+			.style("stroke-width", 1.4)
+			.attr("visibility", function(d) {
+				var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+				return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+			});
+	};
+
+
+
 
 
 
@@ -363,12 +403,14 @@ d3.gantt = function() {
 			//grey white rects for checkerboard background chart
 			colorRects = svg.append("g")
 				.attr("class", "colored-axis"),
+			delays = svg.append("g")
+				.attr("class", "delays"),
 			//line indicating actual time
+			//append g to group data in pairs (rectangle-text)
 			line = svg.append("g")
 				.attr("class", "time-stamp"),
-			//append g to group data in pairs (rectangle-text)
 			group = svg.append("g")
-				.attr("class", "group"),			
+				.attr("class", "group"),
 			//def with image to append to circle
 			defs = svg.append("svg:defs");
 
@@ -401,6 +443,7 @@ d3.gantt = function() {
 		//call function to draw rectangles
 		drawRects(group);
 		//call function to draw line positioned at actual time
+		drawDelays(delays);
 		drawTimeStamp(line);
 		drawTimeRect(timeRect);
 		drawLineSeparation(svg);
@@ -459,14 +502,18 @@ d3.gantt = function() {
         //select the groups (rectangles-texts) 
 		var group = svg.selectAll(".gantt-chart .group");
 
+		var delays = svg.selectAll(".delays");
+
 		//remove all data from the groups
 		group.selectAll("*").data([]).exit().remove();
 		line.selectAll("*").data([]).exit().remove();
+		delays.selectAll("*").data([]).exit().remove();
 		
 
         //call function to draw rectangles
         drawRects(group);        
 		//call function to draw line positioned at actual time
+		drawDelays(delays);
 		drawTimeStamp(line);
 
 
