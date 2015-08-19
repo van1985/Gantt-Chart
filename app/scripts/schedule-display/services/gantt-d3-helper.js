@@ -80,7 +80,12 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 	service.getLastDate= function(i) {
 	    var lastDate = Date.now();
 	    if (constants.tasks.length > 0) {
-	        lastDate = constants.tasks[i].endDate;
+	    	if(i > constants.tasks.length)
+	        	lastDate = constants.tasks[constants.tasks.length-1].endDate;
+	        else if(i < constants.tasks.length)
+	        	lastDate = constants.tasks[0].endDate;
+	        else
+	        	lastDate = constants.tasks[i-1].endDate;
 	    }
 
 	    return lastDate;
