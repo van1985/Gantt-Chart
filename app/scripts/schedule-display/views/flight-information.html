@@ -1,7 +1,9 @@
+
+
 <div ng-controller="ModalFlightInformationCtrl">
-    <div style="width:100%;height:100%;display:inline-block;">
+    <div id="flight-information" style="width:100%;height:100%;display:inline-block;">
         <div style="width:92%;height:40px;display:inline-block;border-bottom:1px solid #D3D3D3;margin-left:4%;">
-            <div style="color:#555555;font-size:16px;font-family:Clan OT;margin-top:10px;" ng-show="showTitle">Flight Information</div>
+            <div style="color:#555555;font-size:16px;font-family:Clan OT;margin-top:10px;" >Flight Information</div>
             <div class="close-img" style="float:right;margin-top:-20px;"></div>
         </div>
 
@@ -178,7 +180,7 @@
                 border-left:1px solid #D3D3D3;
                 border-bottom:1px solid #D3D3D3;">
                   <td>
-                    <div ng-click="ok()" style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
+                    <div onclick="showPairingInformation()" ng- style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;
     margin-top: 7px;
     margin-left: 5px;">H2008</div>
                     <!--<div class="arrow-up-yellow-img" style="margin-top:5px;text-align:center;"></div>-->
@@ -350,4 +352,266 @@
 </div>
 
     </div>
+
+
+
+    <!-- pairing information modal -->
+    <div id="pairing-information" style="width:100%;height:100%;background-color:white;display:none;">
+              <div style="width:92%;height:40px;display:inline-block;border-bottom:1px solid #D3D3D3;margin-left:4%;">
+            <div style="color:#555555;font-size:16px;font-family:Clan OT;margin-top:10px;" >Pairing Information</div>
+            <div class="close-img" style="float:right;margin-top:-20px;"></div>
+        </div>
+
+        <div style="height:60px;width:92%;display:inline-block;margin-left:4%;margin-top:10px;">
+            <div style="100%;height:30px;">
+            <div style="float:left;display:inline-block;color:#555555;font-size:20px;font-family:Clan OT;">H2008</div>
+            <div style="float:left;display:inline-block;color:#555555;font-size:12px;font-family:Clan OT;margin-left:10px;margin-top:10px;">Delayed</div>
+            <div style="float:right;display:inline-block;">
+                <div class="download-icon" style="margin-right:10px;"></div>
+                <div class="new-window-icon"></div>
+            </div>
+            </div>
+            <div style="margin-top:10px;">
+                <div style="color:#555555;font-family:Clan OT;font-size:12px;float:left;">3 changes,</div>
+                <div style="color:#009BDD;font-family:Clan OT;font-size:12px;float:left;"> last updates 22:33</div>
+            </div>
+        </div>
+
+        <div style="height:60px;width:92%;display:inline-block;border:1px solid #D3D3D3;margin-left:4%;background-color:#4F5571;">
+            <div style="float:left;height:100%;width:5px;background-color:#FFD52B;"></div>
+            <div style="width:150px;height:100%;display:inline-block;float:left;">
+                <div class="arrow-up-alert-img" style="float:left;margin-left: 10px;margin-top: 18px;"></div>
+                <div style="float: left;color:white;font-size: 16px;font-family: Clan OT;margin-top: 16px;margin-left: 10px;">Delay Type</div>
+            </div>
+            <div class="arrow-flight-icon" style="float:left;"></div>
+<div style="height:60px;display:inline-block;float: left;width: 76%;">
+                  <div style="float:left;display:inline-block;width:18%;margin-top:8px;margin-left:15px;">
+                      <div style="font-size:12px;color:white;font-family:Clan OT;margin-bottom:5px;">Flight</div>
+                      <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;margin-top:8px;" onclick="showPairingInformation()">F250 ORI-DES</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:white;font-family:Clan OT;">Crew</div>
+                      <div style="font-size:12px;color:white;font-family:Clan OT;font-weight:bold;margin-top:8px;">2 pilots / 1 FA</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:white;font-family:Clan OT;">Assign to</div>
+                      <div style="font-size:12px;color:white;font-family:Clan OT;font-weight:bold;margin-top:8px;">Name Lastname</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:white;font-family:Clan OT;">Watchers</div>
+                      <div style="font-size:12px;color:white;font-family:Clan OT;font-weight:bold;margin-top:8px;">###</div>
+                  </div>
+                  <div style="float:left;display:inline-block;width:18%;margin-top:6px;margin-left:10px;">
+                      <div style="font-size:12px;color:white;font-family:Clan OT;">Last updated</div>
+                      <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;margin-top:8px;">HH:MM</div>
+                  </div>
+            </div>
+        </div>
+
+
+
+                <div style="height:102px;width:92%;margin-left:4%;display:inline-block;border:1px solid #D3D3D3;    margin-bottom: 20px;">
+          <div style="float:left;display:inline-block;width:31%;margin-top:8px;margin-left:15px;border-right:1px solid #D3D3D3;height:85%;">
+                  <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">Pairing days</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 120px;font-weight:bold;">NN</div>
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">Total Segments</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 104px;font-weight:bold;">NN</div>
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;">Flight time</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 55px;font-weight:bold;">HH:MM/HH:MM</div>
+          </div>
+          </div>
+
+                    <div style="float:left;display:inline-block;width:31%;margin-top:8px;margin-left:15px;border-right:1px solid #D3D3D3;height:85%;">
+                    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">Layover cities</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-right: 10px;float:right;font-weight:bold;margin-top:10px;">###, ###, ###</div>
+    </div>
+
+
+    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">Time away</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-right: 10px;font-weight:bold;float:right;margin-top:10px;">NN h</div>
+    </div>
+
+    <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;"></div>
+              <div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-right: 10px;margin-top:10px;font-weight:bold;float:right;"></div>
+</div>
+
+
+          </div>
+
+                              <div style="float:left;display:inline-block;width:31%;margin-top:8px;margin-left:15px;height:85%;">
+              
+                  <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:7px;display:inline-block;">Departure</div>
+              <div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 60px;font-weight:bold;">HH:MM/HH:MM</div>
+    </div>
+
+        <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;margin-top:10px;display:inline-block;">Arrival</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 82px;font-weight:bold;">HH:MM/HH:MM</div>
+    </div>
+
+        <div style="width:100%;display:inline-block;">
+              <div style="font-size:12px;color:#555555;font-family:Clan OT;;margin-top:10px;display:inline-block;">Flight time</div><div style="color: #555555;
+    font-size: 12px;
+    font-family: Clan OT;
+    display: inline-block;
+    margin-left: 60px;font-weight:bold;">HH:MM/HH:MM</div>
+    </div>
+          </div>
+
+
+        </div>
+
+                <div style="width:10%;height:200px;display:inline-block;background-color:white;float:left;">
+                  <div class="timeline-img" style="margin-top:10px;"></div>
+                </div>
+
+
+        <div style="width:90%;height:100%;display:inline-block;float:left;">
+          <div style="width:699px;height:55px;background-color:#E7E7E7;border-left:solid 3px #003399;border-top:solid 1px #999999; border-bottom:solid 1px #999999; border-right:solid 1px #999999;">
+            <div style="height:100%;display:inline-block;float:left;">
+              <div class="watch-pairing-img" style="margin-top: 20px;
+    margin-left: 20px;"></div>
+            </div>
+            <div style="height:100%;display:inline-block;float:left;">
+              <div style="font-size:16px;font-family:Clan OT;color:black;    margin-top: 16px;
+    margin-left: 15px;">Duty Period 01</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 50px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Report Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">09:30</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Debrief Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">20:20</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Duty Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">09:45/10:45</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Flight Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">09:45</div>
+            </div>
+
+          </div>
+        </div>
+
+                <div style="width:90%;height:100%;display:inline-block;float:left;">
+          <div style="width:699px;height:55px;background-color:#E7E7E7;border-left:solid 3px #003399;border-top:solid 1px #999999; border-bottom:solid 1px #999999; border-right:solid 1px #999999;">
+            <div style="height:100%;display:inline-block;float:left;">
+              <div class="watch-pairing-img" style="margin-top: 20px;
+    margin-left: 20px;"></div>
+            </div>
+            <div style="height:100%;display:inline-block;float:left;">
+              <div style="font-size:16px;font-family:Clan OT;color:black;    margin-top: 16px;
+    margin-left: 15px;">Layover time</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 62px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Station</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">SFO</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 74px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Layover time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">HH:MM</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+             
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              
+            </div>
+
+          </div>
+        </div>
+
+
+                <div style="width:90%;height:100%;display:inline-block;float:left;">
+          <div style="width:699px;height:55px;background-color:#E7E7E7;border-left:solid 3px #003399;border-top:solid 1px #999999; border-bottom:solid 1px #999999; border-right:solid 1px #999999;">
+            <div style="height:100%;display:inline-block;float:left;">
+              <div class="watch-pairing-img" style="margin-top: 20px;
+    margin-left: 20px;"></div>
+            </div>
+            <div style="height:100%;display:inline-block;float:left;">
+              <div style="font-size:16px;font-family:Clan OT;color:black;    margin-top: 16px;
+    margin-left: 15px;">Duty Period 02</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 50px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Report Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">09:30</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Debrief Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">20:20</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Duty Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">09:45/10:45</div>
+            </div>
+
+            <div style="height:100%;display:inline-block;float:left;    margin-left: 42px;
+    margin-top: 10px;">
+              <div style="font-size:12px;font-family:Clan OT;color:black;">Flight Time</div>
+              <div style="font-size:14px;font-family:Clan OT;color:black;">09:45</div>
+            </div>
+
+          </div>
+        </div>
+      
+    </div>
+
+
+
 </div>

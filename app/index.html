@@ -93,3 +93,24 @@
 
 </body>
 </html>
+
+<!-- TODO: Remove this function from here and put inside Flight Information modal -->
+<script Type="text/javascript">
+function showPairingInformation(){
+  if ( $('#pairing-information').is(":visible") ){
+    $('#pairing-information').hide();
+    $('.modal-content').attr('style','height:665px');
+    $('#flight-information').show();
+  }
+  else{
+    $('#pairing-information').show();
+    $('.modal-content').attr('style','height:526px'); //pairing height
+    $('#flight-information').hide();
+  }
+  
+
+  
+
+
+}
+</script>
