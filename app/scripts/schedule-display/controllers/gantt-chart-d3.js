@@ -160,11 +160,13 @@ d3.gantt = function() {
     		.enter()
     		.append("rect")
     			.attr("x", -120)
-    			.attr("y", function(d, i) { return constants.y(d) - 45; })
-    			.attr("height", function(d, i) { return constants.height - 741; })
+    			.attr("y", function(d, i) { return constants.y(d) - 100; })
+    			.attr("height", function(d, i) { return constants.height; })
+    			.attr("stroke",'#d3d3d3')
+    			.attr("stroke-width",1)
     			.attr("width", function(d, i) { return constants.width + 155; })
     			.attr("fill", function(d, i){
-    				return i%2 === 0 ? "#E9E7E7" : "#FAFAFA";
+    				return i%2 === 0 ? "#f3f3f3" : "#E9E7E7";
     			});
     };
 
@@ -179,8 +181,8 @@ d3.gantt = function() {
 			//.attr("class", )			
 			.attr("height", 45)
 			.attr("width", constants.width + 156)
-			.attr("stroke", "black")
-			.attr("stroke-width", 2)
+			.attr("stroke", "#d3d3d3")
+			.attr("stroke-width", 1)
 			.attr("fill", "transparent")
 			.attr("transform","translate(20,0)");
     };
@@ -191,6 +193,8 @@ d3.gantt = function() {
     	svg.append("text")
 			.text("ORD")
 			.style("font-weight", "bold")
+			.style("fill","#565656")
+			.style("font-size","12")
 			.attr("x", -110)
 			.attr("y", -1)
 
@@ -199,6 +203,8 @@ d3.gantt = function() {
 		svg.append("text")
 			.text("GMT")
 			.style("font-weight", "bold")
+			.style("fill","#565656")
+			.style("font-size","12")
 			.attr("x", -110)
 			.attr("y", 13)
 
@@ -209,8 +215,8 @@ d3.gantt = function() {
 			.attr("x2", -120)
 			.attr("y1", 26)
 			.attr("y2", constants.height - constants.margin.bottom -50)
-			.attr("stroke-width", 2)
-			.attr("stroke", "black")
+			.attr("stroke-width", 1)
+			.attr("stroke", "#d3d3d3")
 			.attr("height", constants.height);
 
 
@@ -220,8 +226,8 @@ d3.gantt = function() {
 			.attr("x2", constants.width + 36)
 			.attr("y1", 26)
 			.attr("y2", constants.height - constants.margin.bottom -50)
-			.attr("stroke-width", 2)
-			.attr("stroke", "black")
+			.attr("stroke-width", 0)
+			.attr("stroke", "#d3d3d3")
 			.attr("height", constants.height);
 
 
@@ -231,8 +237,8 @@ d3.gantt = function() {
 			.attr("x2", constants.width + 36)
 			.attr("y1", constants.height - constants.margin.bottom -50	)
 			.attr("y2", constants.height - constants.margin.bottom -50)
-			.attr("stroke-width", 2)
-			.attr("stroke", "black")
+			.attr("stroke-width", 1)
+			.attr("stroke", "#d3d3d3")
 			.attr("height", constants.height);
     };
 
@@ -244,8 +250,8 @@ d3.gantt = function() {
 			.attr("x2", -15)
 			.attr("y1", -12)
 			.attr("y2", 16)
-			.attr("stroke-width", 2)
-			.attr("stroke", "#706A6A")			
+			.attr("stroke-width", 1)
+			.attr("stroke", "#d3d3d3")			
 			.attr("height", constants.height);
 
 
@@ -254,13 +260,13 @@ d3.gantt = function() {
 			.attr("x2", -15)
 			.attr("y1", 24)
 			.attr("y2", constants.height - constants.margin.bottom -50)
-			.attr("stroke-width", 2)
-			.attr("stroke", "#706A6A")			
+			.attr("stroke-width", 1)
+			.attr("stroke", "#d3d3d3")			
 			.attr("height", constants.height);
 	};
 
 
-
+	/*
 	function defineDefsSwimlane(defs) {
 		defs.append("svg:pattern")
 				.attr("id", "watch-background")
@@ -281,17 +287,33 @@ d3.gantt = function() {
 					.attr("height", 20)
 					.attr("width", 20);
 	};
+	*/
 
 
 
 	function drawLogoSwimlane(svg) {
+
+		svg.append("svg:image")
+		   .attr('x',-45)
+		   .attr('y',52)
+		   .attr('width', 20)
+		   .attr('height', 20)
+		   .attr("xlink:href","../resources/images/watch-alert-preview.png");
+
+		svg.append("svg:image")
+		   .attr('x',-45)
+		   .attr('y',124)
+		   .attr('width', 20)
+		   .attr('height', 20)
+		   .attr("xlink:href","../resources/images/user-alert-preview.png");
+   /*
 		svg.append("circle")
-            .attr("cx", -32)
-            .attr("cy", 80)
+            .attr("rx", -32)
+            .attr("ry", 80)
             .attr("r", 10)           
             .attr("fill", "url(#user-background)")
-            .attr("stroke", "black")
-            .attr("stroke-width", 1);
+            .attr("stroke", "d3d3d3")
+            .attr("stroke-width", 0);
 
 
 
@@ -302,6 +324,7 @@ d3.gantt = function() {
             .attr("fill", "url(#watch-background)")
             .attr("stroke", "black")
             .attr("stroke-width", 1);
+            */
 	};
 
 
@@ -381,7 +404,7 @@ d3.gantt = function() {
 		drawTimeStamp(line);
 		drawTimeRect(timeRect);
 		drawLineSeparation(svg);
-		defineDefsSwimlane(defs);
+		//defineDefsSwimlane(defs);
 		drawLogoSwimlane(svg);
 		drawGraphComponents(svg);
 

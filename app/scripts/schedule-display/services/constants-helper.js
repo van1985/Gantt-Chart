@@ -32,7 +32,7 @@ var constants = {
     "selectedFlights" : [],
 
     "taskNames" : [
-        "Tail#1 Flight", "Tail#2 Flight", "Tail#3 Flight", "Tail#4 Flight", "Tail#5 Flight", "Tail#6 Flight", "Tail#7 Flight", "Tail#8 Flight"
+        "Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8"
     ],    
 
     "addMinutes" : 25,

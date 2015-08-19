@@ -148,15 +148,15 @@ html,body,#wrapper {
 
 
 .bar-far {
-  fill: #37CDC0;
+  fill: #E397C3;
 }
 
 .bar-unassigned-bound {
-  fill: #C9B58D;
+  fill: #c9b58d;
 }
 
 .bar-taxi {
-  fill: #7DBBF4;
+  fill: #7ebbf5;
 }
 
 .bar-cancellation {
@@ -168,15 +168,15 @@ html,body,#wrapper {
 }
 
 .bar-misconnection{
-  fill: #AD86B3;
+  fill: #ae87b4;
 }
 
 .bar-ua-staffing{
-  fill: #E397C3;
+  fill: #e497c3;
 }
 
 .bar-crew-rest{
-  fill: #BAE08A;
+  fill: #bbe18b;
 }
 
 .bar-flight-on-time{
@@ -314,4 +314,18 @@ html,body,#wrapper {
     width: 19px;
     background: url("../resources/images/close-img.png");
     display: inline-block;
+}
+
+.x{
+  font-size: 12px;
+  fill: #565656;
+  font-family: Clan OT;
+  font-weight:bold;
+}
+
+.y{
+  font-size: 14px;
+  fill: #565656;
+  font-family: Clan OT;
+  font-weight:bold;
 }
