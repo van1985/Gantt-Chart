@@ -42,6 +42,7 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
       function(response) {
         console.log('Get Available Flights - success');
         console.log(response);
+        setDates(response);
         deferred.resolve(response);
       })
     .error(
