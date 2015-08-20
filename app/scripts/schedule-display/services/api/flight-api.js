@@ -16,6 +16,7 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
       function(response) {
         console.log('Get Available Flights - success');
         console.log(response);
+        setDates(response);
         deferred.resolve(response);
       })
     .error(
@@ -51,6 +52,36 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
       });
 
     return deferred.promise;
+  };
+
+
+  function setDates(data) {
+    var flights = data.global.flights,
+        len = flights.length,
+        startDate,
+        endDate,
+        start;        
+
+    for(var i = 0; i < len; i++){
+      startDate = new Date();
+      endDate = new Date();
+
+      start = startDate.getHours();      
+
+      if(i < 5) {
+        startDate.setHours(i + start + 5);
+        endDate.setHours(i + start + Math.floor((Math.random() * 10) + 6));
+      } else if(i < 10) {
+        startDate.setHours(i + start + 15);
+        endDate.setHours(i + start + Math.floor((Math.random() * 8) + 16));
+      } else {
+        startDate.setHours(i + start + 30);
+        endDate.setHours(i + start + Math.floor((Math.random() * 7) + 32));
+      }
+
+      flights[i].startDate = startDate;
+      flights[i].endDate = endDate;
+    }
   };
 
   return service;
