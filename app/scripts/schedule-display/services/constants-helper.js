@@ -167,7 +167,7 @@ constants.service = {
     },
 
     inRangeDate : function(dates, values) {
-        return (values[0] >= dates[0] || values[1] >= dates[0]) && values[1] <= dates[dates.length -1];
+        return (values[0] >= dates[0] || values[1] >= dates[0]) && (values[1] <= dates[dates.length -1] || values[0] <= dates[dates.length -1]);
     },
 
     assignFlight : function() {

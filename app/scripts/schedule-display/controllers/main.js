@@ -29,7 +29,21 @@ FlightSrvApi.getFlights().
 
 
 $scope.changeTimeDomain = function(timeDomainString, direction) {
-    var endDate = !direction ? ganttHelper.getEndDate() : ganttHelper.getLastDate(constants.lastDate);
+    var endDate = !direction ? ganttHelper.getEndDate() : ganttHelper.getLastDate(constants.lastDate),
+        dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]),
+        nextDate = dates[dates.length-1];
+
+    if(direction) {
+        if(timeDomainString === '1week') {
+            nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 12);        
+            endDate = timeDomainString === '1week' ? nextDate : nextDate + 100000;
+        } else {
+            nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 3);
+            endDate = nextDate;            
+        }
+
+    }
+
 
     constants.timeDomainString = timeDomainString;
     ganttHelper.defineDomain(timeDomainString, endDate);
