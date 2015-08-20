@@ -25,7 +25,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 	        case '1hr':
 	            constants.format = '%e %b %H:%M:%S';
 	            range = 1;
-	            constants.addMinutes = 25;
+	            constants.addMinutes = 60;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
 	            constants.gantt.timeDomain([ d3.time.hour.offset(date, -range), date ], constants.tasks);
 	            break;
@@ -33,7 +33,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 	        case '3hr':
 	            constants.format = '%e %b %H:%M';
 	            range = 3;
-	            constants.addMinutes = 75;
+	            constants.addMinutes = 190;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
 	            constants.gantt.timeDomain([ d3.time.hour.offset(date, -range), date ], constants.tasks);
 	            break;
@@ -41,7 +41,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 	        case '6hr':
 	            constants.format = '%e %b %H:%M';
 	            range = 6;
-	            constants.addMinutes = 150;
+	            constants.addMinutes = 450;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
 	            constants.gantt.timeDomain([ d3.time.hour.offset(date, -range), date ], constants.tasks);
 	            break;
@@ -49,7 +49,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 	        case '1day':
 	            constants.format = '%e %b %H:%M';
 	            range = 1;
-	            constants.addMinutes = 600;
+	            constants.addMinutes = 1500;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
 	            constants.gantt.timeDomain([ d3.time.day.offset(date, -range), date ], constants.tasks);
 	            break;
@@ -57,7 +57,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 	        case '1week':
 	            constants.format = '%e %b %H:%M';
 	            range = 7;
-	            constants.addMinutes = 4200;
+	            constants.addMinutes = 10500;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
 	            constants.gantt.timeDomain([ d3.time.day.offset(date, -range), date ], constants.tasks);
 	            break;
