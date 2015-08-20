@@ -96,6 +96,41 @@ d3.gantt = function() {
 					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
 				}); 
 
+			//append ORI text
+			g.append("text")
+				.text("ORI")
+				.style("stroke-width", 0)
+				.attr("x", function(d) {					
+					var start = d.startDate,
+						hs = start.getHours() > 0 ? start.getHours() -1 : 23,
+						start = constants.x(d.startDate) - hs,
+						x = d.id%2 === 0 ? (start -30) : (constants.x(d.startDate) -30);
+					return x;
+				})
+				.attr("y", function(d) { return constants.y(d.taskName) + 15; })
+				.attr("visibility", function(d){
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+				});
+
+
+
+			//append DES text
+			g.append("text")
+				.text("DES")
+				.style("stroke-width", 0)
+				.attr("x", function(d) {
+					return constants.x(d.endDate) + 10;
+				})
+				.attr("y", function(d) { return constants.y(d.taskName) + 15; })
+				.attr("visibility", function(d){
+					var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+					return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+				});
+
+
+
+
 				var div = d3.select("snap-content").append("g")
 			    .attr("class", "tooltip")
 			    .attr("ng-click","open();")
