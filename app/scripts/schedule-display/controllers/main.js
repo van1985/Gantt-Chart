@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi,ganttHelper,$modal, $interval) {
+angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi,ganttHelper,$modal, $interval,$location) {
 
 
 FlightSrvApi.getFlights().
@@ -183,6 +183,16 @@ $interval(function(){
     }
     constants.gantt.redraw(constants.tasks);
 }, 7000);
+
+
+  $scope.navigateTo = function(view){
+      if (view==='dashboard'){
+          $location.path('/dashboard')
+      }
+      if (view ==='schedule'){
+          $location.path('/schedule-display')
+      }
+  };
 
 
 });

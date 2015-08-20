@@ -238,3 +238,16 @@
     background: url("../resources/images/arrow-right-grey.png");
     display: inline-block;
 }
+
+.navbar{
+    margin-bottom:0px !important;
+}
+
+.small-circle {
+    width: 12px;
+    height: 12px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+

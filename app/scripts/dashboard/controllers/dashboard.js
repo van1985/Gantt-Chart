@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Dashboard').controller('dashboardCtrl', function ($scope) {
+angular.module('Dashboard').controller('dashboardCtrl', function ($scope,$location) {
 
 		$scope.centerAnchor = true;
         $scope.toggleCenterAnchor = function () {$scope.centerAnchor = !$scope.centerAnchor}
@@ -130,16 +130,25 @@ angular.module('Dashboard').controller('dashboardCtrl', function ($scope) {
         $scope.donutPairingStatusHeight =225;
         $scope.pairingStatusData = [
                                                 
-                                                {  y: 25, indexLabel: "", color: "#B8E8DE", indexLabelLineColor: "#B8E8DE " },         
-                                                {  y: 25, indexLabel: "", color: "#FDD99F", indexLabelLineColor: "#FDD99F" },
-                                                {  y: 50, indexLabel: "",color: "#D8B6C9", indexLabelLineColor: "#D8B6C9" }
+                                                {  y: 25, indexLabel: "", color: "#b9e9df", indexLabelLineColor: "#b9e9df " },         
+                                                {  y: 25, indexLabel: "", color: "#fed99f", indexLabelLineColor: "#fed99f" },
+                                                {  y: 50, indexLabel: "",color: "#b6b6b6", indexLabelLineColor: "#b6b6b6" }
                                           ];
         $scope.AlertStatusData = [
                                                 
-                                                {  y: 25, indexLabel: "", color: "#32BC76", indexLabelLineColor: "#32BC76 " },         
-                                                {  y: 25, indexLabel: "", color: "#F4C138", indexLabelLineColor: "#F4C138" },
-                                                {  y: 25, indexLabel: "",color: "#AAAAAA", indexLabelLineColor: "#AAAAAA" },
-                                                {  y: 25, indexLabel: "",color: "#4F8FCB", indexLabelLineColor: "#4F8FCB" }
+                                                {  y: 25, indexLabel: "", color: "#fd7145", indexLabelLineColor: "#fd7145 " },         
+                                                {  y: 25, indexLabel: "", color: "#f4c138", indexLabelLineColor: "#f4c138" },
+                                                {  y: 25, indexLabel: "",color: "#1fc3b4", indexLabelLineColor: "#1fc3b4" },
+                                                {  y: 25, indexLabel: "",color: "#71b5f5", indexLabelLineColor: "#71b5f5" },
+                                                {  y: 25, indexLabel: "",color: "#aaaaaa", indexLabelLineColor: "#aaaaaa" }
                                           ];
+        $scope.navigateTo = function(view){
+            if (view==='dashboard'){
+                $location.path('/dashboard')
+            }
+            if (view ==='schedule'){
+                $location.path('/schedule-display')
+            }
+        };
 
 });

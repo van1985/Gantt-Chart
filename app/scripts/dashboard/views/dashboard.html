@@ -18,7 +18,7 @@
     margin-left: 20px;">Mathew  Smith</div>
       </div>
 
-      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+      <div style="height:50px;border-bottom:1px solid #262A3F;" ng-click="navigateTo('dashboard')">
         <div class="dashboard-img" style="float: left;
     margin-left: 15px;
     margin-top: 20px;"></div>
@@ -27,7 +27,7 @@
     margin-top: 20px;">Dashboard</div>
       </div>
 
-      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+      <div style="height:50px;border-bottom:1px solid #262A3F;" ng-click="navigateTo('schedule')">
                 <div class="schedule-img" style="float: left;
     margin-left: 15px;
     margin-top: 20px;"></div>
@@ -36,7 +36,7 @@
     margin-top: 20px;">Schedule display</div>
       </div>
 
-      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+      <div style="height:50px;border-bottom:1px solid #262A3F;">
                 <div class="alerts-img" style="float: left;
     margin-left: 15px;
     margin-top: 20px;"></div>
@@ -45,7 +45,7 @@
     margin-top: 20px;">Alerts</div>
       </div>
 
-      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+      <div style="height:50px;border-bottom:1px solid #262A3F;">
                 <div class="history-img" style="float: left;
     margin-left: 15px;
     margin-top: 20px;"></div>
@@ -54,7 +54,7 @@
     margin-top: 20px;">History</div>
       </div>
 
-      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;" ng-click="isCollapsed = !isCollapsed">
+      <div style="height:50px;background-color:#3E4362;border-bottom:1px solid #262A3F;" ng-click="isCollapsed = !isCollapsed">
                 <div class="myprofile-img" style="float: left;
     margin-left: 15px;
     margin-top: 20px;"></div>
@@ -65,13 +65,13 @@
 
       <div collapse="!isCollapsed">
 
-        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                   <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">Information</div>
         </div>
 
-        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                             <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">Notifications</div>
@@ -84,13 +84,13 @@
         </div>
         </div>
 
-        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                             <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">To do lists</div>
         </div>
 
-        <div style="height:60px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
+        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
                             <div style="    float: left;
     margin-left: 50px;
     margin-top: 20px;">Settings</div>
@@ -98,7 +98,7 @@
 
       </div>
 
-      <div style="height:60px;background-color:#3E4362;border-bottom:1px solid #262A3F;">
+      <div style="height:50px;border-bottom:1px solid #262A3F;">
                 <div class="help-img" style="float: left;
     margin-left: 15px;
     margin-top: 20px;"></div>
@@ -123,12 +123,16 @@
 
 <snap-content style="background-color:#E3E5E8;">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container" style="background-color:#4B7FAB;">
+<nav class="navbar navbar-default navbar-fixed-top" style="    z-index: -1;
+    position: relative;">
+      <div class="container" style="background-color:#009BDD;height:50px;">
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active">
               <div snap-toggle="" class="nav-burger-img" style="cursor: pointer; cursor: hand;"></div>
+            </li>
+            <li>
+              <div class="logo-united-img" style="margin-left:50px;margin-top:12px;"></div>
             </li>
           </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -167,15 +171,53 @@
             <li style="
     padding-top: 3px;
 ">
-              <div class="arrow-down-icon" style="margin-top:21px;margin-right:40px;"></div>
+              <div class="arrow-down-icon" style="margin-top:21px;margin-right:25px;" ng-click="open()"></div>
             </li>
+                        <li style="
+    padding-top: 7px;
+">
+  <label  for='menu-checkbox'>
+    <div class="settings-img advanced-filter-img " for="menu-checkbox" style="margin-right:40px;">
+  </label>
+  </li>
+
           </ul>
         </div>
+<!--<div style="    font-family: Clan OT;
+    font-size: 20px;
+    color: white;
+    margin-left: 39px;
+    display: inline-block;
+    margin-top: 5px;
+    float: left;">Schedule Display</div>
+<div style="    font-family: Clan OT;
+    font-size: 11px;
+    color: white;
+    margin-top: 15px;
+    float: left;
+    display: inline-block;
+    margin-left: 13px;">Updated 17:17</div>-->
+
+
+          <!--<div style="float:right;display:inline-block;">
+        <div style="float:left;display:inline-block;font-size:14px;color:#4F5571;font-family:Clan OT;margin-top: 6px;
+    margin-right: 10px;font-weight:bold;">Sort by</div>
+        <div style="border:1px solid #4F5571;width:106px;height:32px;display:inline-block;margin-right:38px;">
+          <div style="font-family:Clan OT;font-size:14px;color:#4F5571;float:left;margin-top:5px;margin-left:8px;">Flight#</div>
+          <div class="img-arrow-down" style="float:left;margin-top:12px;margin-left:15px;"></div>
+        </div>
+      </div>-->
+
       </div>
+
+
+
+
+
     </nav>
 
 
-<div class="container" style="margin-top:50px;">
+<div class="container">
 <div class="row">
   <div class="col-md-6" >
       <div style="width: 100%;height: 339px;display: inline-block;background-color:white;border: 1px solid #D3D3D3;">
@@ -238,7 +280,12 @@
             <div style="    padding-top: 12%;
     width: 100%;
     display: inline-block;">
-              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">50%</div>
+              <div class="small-circle" style="background-color: #b9e9df;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25</div>
               <div style="color: #5D5D5D;
     font-family: Clan OT;
     font-size: 12px;
@@ -250,17 +297,22 @@
     width: 100%;
 }">
               <div style="    float: left;
-    margin-left: 50px;" class="arrow-up-grey-img"></div>
+    margin-left: 50px;" class="arrow-down-grey-img"></div>
               <div style="    float: left;
     margin-left: 10px;
     font-family: Clan OT;
     color: #5D5D5D;
-    font-size: 12px;">10</div>
+    font-size: 12px;">25</div>
             </div>
                         <div style="
     width: 100%;
     display: inline-block;">
-              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25%</div>
+    <div class="small-circle" style="background-color: #b6b6b6;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">70</div>
               <div style="color: #5D5D5D;
     font-family: Clan OT;
     font-size: 12px;
@@ -277,7 +329,7 @@
     margin-left: 10px;
     font-family: Clan OT;
     color: #5D5D5D;
-    font-size: 12px;">23</div>
+    font-size: 12px;">20</div>
                   <div style="    float: left;
     margin-left: 15px;" class="arrow-right-grey-img"></div>
               <div style="    float: left;
@@ -293,14 +345,19 @@
     margin-left: 10px;
     font-family: Clan OT;
     color: #5D5D5D;
-    font-size: 12px;">32</div>
+    font-size: 12px;">40</div>
 
 
             </div>
                         <div style="
     width: 100%;
     display: inline-block;">
-              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25%</div>
+                  <div class="small-circle" style="background-color: #fed99f;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25</div>
               <div style="color: #5D5D5D;
     font-family: Clan OT;
     font-size: 12px;
@@ -317,7 +374,7 @@
     margin-left: 10px;
     font-family: Clan OT;
     color: #5D5D5D;
-    font-size: 12px;">23</div>
+    font-size: 12px;">5</div>
 
 
                   <div style="    float: left;
@@ -335,7 +392,7 @@
     margin-left: 10px;
     font-family: Clan OT;
     color: #5D5D5D;
-    font-size: 12px;">32</div>
+    font-size: 12px;">10</div>
             </div>
 
 
@@ -363,18 +420,19 @@
         <ul class="nav nav-tabs" style="padding-left:10px;padding-right:10px;">
         <li  role="presentation" style="background-color:white;border-right:1px solid #D3D3D3;width:25%;height:59px;
         border-top:4px solid #F3C037;text-align:center;">
-          <div style="display:block;font-size:26px;font-family:Clan OT;color:#ADADAD;">6</div>
-          <div style="display:block;font-size:12px;font-family:Clan OT;color:#ADADAD;">PENDING</div>
+          <div style="display:block;font-size:26px;font-family:Clan OT;color:#F3C037;">6</div>
+          <div style="display:block;font-size:12px;font-family:Clan OT;color:#F3C037;">PENDING</div>
         </li>
-        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:25%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;">
+        <li style="background-color:white;border-right:1px solid #D3D3D3;width:25%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #32bc76;">
                    <div style="display:block;font-size:26px;font-family:Clan OT;color:#ADADAD;">4</div>
           <div style="display:block;font-size:12px;font-family:Clan OT;color:#ADADAD;">IN PROGRESS</div>
         </li>
-        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:25%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;" role="presentation">
+        <li style="background-color:white;border-right:1px solid #D3D3D3;width:25%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #aaaaaa;" role="presentation">
                    <div style="display:block;font-size:26px;font-family:Clan OT;color:#ADADAD;">2</div>
           <div style="display:block;font-size:12px;font-family:Clan OT;color:#ADADAD;">COMPLETE</div>
         </li>
-                <li style="background-color:#E3E5E7;border-right:0px solid #D3D3D3;width:25%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3; border-right:1px solid #D3D3D3;text-align:center;" role="presentation">
+                <li style="background-color:white;border-right:0px solid #D3D3D3;width:25%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3; border-right:1px solid #D3D3D3;text-align:center;
+                border-top:4px solid #4f8fcb;" role="presentation">
                            <div style="display:block;font-size:26px;font-family:Clan OT;color:#ADADAD;">0</div>
           <div style="display:block;font-size:12px;font-family:Clan OT;color:#ADADAD;">REASSIGNED</div>
                 </li>
@@ -444,25 +502,28 @@
     margin-top: 20px;
     color: #555555;
     margin-left: 2%;">Alerts Status (24)</div>
-          <div style="float:right;display:block;font-size:10px;font-family:Clan OT;margin-top:24px;color:#009BDD;font-weight:bold;margin-right:15px;">View My Lists</div>
+          <div style="float:right;display:block;font-size:10px;font-family:Clan OT;margin-top:10px;color:#009BDD;font-weight:bold;margin-right:16px;height:37px;width:145px;border:1px solid #D3D3D3;">
+            <div style="width:50%;height:100%;background-color:#F5F5F5;border-right:1px solid #D3D3D3;float:left;display:inline-block;">
+              <div style="font-size:12px;color:#b5b5b5;font-family:Clan OT;font-weight:100;    margin-top: 9px;
+    margin-left: 9px;">Severity</div>
+            </div>
+            <div style="width:50%;height:100%;display:inline-block;float:left;">
+              <div style="font-size:12px;color:#666666;font-family:Clan OT;font-weight:100;    margin-top: 9px;
+    margin-left: 20px;">Type</div>
+            </div>
+          </div>
       </div>
         <ul class="nav nav-tabs" style="padding-left:10px;padding-right:10px;">
-        <li  role="presentation" style="background-color:white;border-right:1px solid #D3D3D3;width:20%;height:59px;
+        <li  role="presentation" style="background-color:white;border-right:1px solid #D3D3D3;width:33%;height:59px;
         border-top:4px solid #A9A9A9;text-align:center;">
-          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##CANC</div>
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##HIGH</div>
         </li>
-        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;">
-          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##MSCT</div>
+        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:33%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##MEDIUM</div>
         </li>
-        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
-          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##STAFF</div>
+        <li style="background-color:#E3E5E7;border-right:1px solid #D3D3D3;width:33%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
+          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##LOW</div>
         </li>
-                <li style="background-color:#E3E5E7;border-right:0px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3; border-right:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
-          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##DLY</div>
-                </li>
-                               <li style="background-color:#E3E5E7;border-right:0px solid #D3D3D3;width:20%;height:59px;border-bottom:1px solid #D3D3D3;border-top:1px solid #D3D3D3; border-right:1px solid #D3D3D3;text-align:center;border-top:4px solid #A9A9A9;" role="presentation">
-          <div style="display:block;font-size:14px;font-family:Clan OT;color:#555555;    margin-top: 18px;">##OTHER</div>
-                </li>
       </ul>
 
               <div class="table">
@@ -477,104 +538,86 @@
             <div style="    padding-top: 12%;
     width: 100%;
     display: inline-block;">
-              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">50%</div>
+                            <div class="small-circle" style="background-color: #f4c138;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25</div>
               <div style="color: #5D5D5D;
     font-family: Clan OT;
     font-size: 12px;
     float: left;
     margin-left: 15px;
-    margin-top: 5px;">Scheduled</div>
-            </div>
-            <div style="    display: inline-block;
-    width: 100%;
-}">
-              <div style="    float: left;
-    margin-left: 50px;" class="arrow-up-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
-    font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">10</div>
+    margin-top: 5px;">Cancellation</div>
             </div>
                         <div style="
-    width: 100%;
+    width: 100%;    margin-top: 10px;
     display: inline-block;">
-              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25%</div>
+                            <div class="small-circle" style="background-color: #fd7145;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25</div>
               <div style="color: #5D5D5D;
     font-family: Clan OT;
     font-size: 12px;
     float: left;
     margin-left: 15px;
-    margin-top: 5px;">Affected</div>
-            </div>
-            <div style="    display: inline-block;
-    width: 100%;
-}">
-              <div style="    float: left;
-    margin-left: 50px;" class="arrow-up-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
-    font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">23</div>
-                  <div style="    float: left;
-    margin-left: 15px;" class="arrow-right-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
-    font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">10</div>
-
-
-                      <div style="    float: left;
-    margin-left: 15px;" class="arrow-down-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
-    font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">32</div>
-
-
+    margin-top: 5px;">Misconnect</div>
             </div>
                         <div style="
-    width: 100%;
+    width: 100%;    margin-top: 10px;
     display: inline-block;">
-              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">25%</div>
+                               <div class="small-circle" style="background-color: #4f8fcb;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">8</div>
               <div style="color: #5D5D5D;
     font-family: Clan OT;
     font-size: 12px;
     float: left;
     margin-left: 15px;
-    margin-top: 5px;">Open</div>
+    margin-top: 5px;">Staffing</div>
             </div>
-            <div style="    display: inline-block;
-    width: 100%;
-}">
-              <div style="    float: left;
-    margin-left: 50px;" class="arrow-up-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
+
+
+                                    <div style="
+    width: 100%;    margin-top: 10px;
+    display: inline-block;">
+                               <div class="small-circle" style="background-color: #b9e9df;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">8</div>
+              <div style="color: #5D5D5D;
     font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">23</div>
+    font-size: 12px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 5px;">Delay</div>
+            </div>
 
-
-                  <div style="    float: left;
-    margin-left: 15px;" class="arrow-right-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
+                                    <div style="
+    width: 100%;    margin-top: 10px;
+    display: inline-block;">
+                               <div class="small-circle" style="background-color: #b6b6b6;
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    margin-right: 10px;"></div>
+              <div style="color:#5D5D5D;font-family:Clan OT;font-size:18px;font-weight:500;float:left;">8</div>
+              <div style="color: #5D5D5D;
     font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">10</div>
-
-
-                      <div style="    float: left;
-    margin-left: 15px;" class="arrow-down-grey-img"></div>
-              <div style="    float: left;
-    margin-left: 10px;
-    font-family: Clan OT;
-    color: #5D5D5D;
-    font-size: 12px;">32</div>
+    font-size: 12px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 5px;">Other</div>
             </div>
 
 
