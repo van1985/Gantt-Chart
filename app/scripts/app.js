@@ -44,6 +44,14 @@ angular.module('CrewSchedGUI', _mainModules )
             }
         });
 
+        routes.push({
+            name: '/alert-display',
+            params: {
+                templateUrl: 'scripts/alert-display/views/alert-display.html',
+                controller: 'dashboardCtrl'
+            }
+        });
+
 // yo:ngRoutes
 
         routes.forEach(function(route){
