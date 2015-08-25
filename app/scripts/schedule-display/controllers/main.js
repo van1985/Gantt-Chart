@@ -50,10 +50,6 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
     
     constants.gantt.tickFormat(constants.format);
 
-    constants.service.hideElement($('.button-assign'));
-    constants.service.hideElement($('.button-process'));
-    constants.service.hideElement($('.button-resolve'));
-
     constants.gantt.redraw(constants.tasks);
 }
 
