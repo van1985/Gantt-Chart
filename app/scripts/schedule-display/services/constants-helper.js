@@ -212,5 +212,287 @@ constants.service = {
         }
 
         return false;
+    },
+
+    drawTimeStamp : function(line) {
+        var height = constants.height - constants.margin.bottom;
+        
+        constants.service.drawLine(line, constants.x( new Date()), constants.x( new Date()), 0, height - 50, 2, "#706A6A");        
+
+        line.append("circle")
+            .attr("cx", constants.x( new Date()))
+            .attr("cy", 0)
+            .attr("r", 5)
+            .attr("stroke", "#706A6A")
+            .attr("fill", "#706A6A")
+            .attr("stroke-width", 1);
+    },
+
+    drawColoredAxis : function(colorRects) {
+        colorRects.selectAll("rect")
+            .data(constants.taskNames)
+            .enter()
+            .append("rect")
+                .attr("x", -120)
+                .attr("y", function(d, i) { return constants.y(d) - 100; })
+                .attr("height", function(d, i) { return constants.height; })
+                .attr("stroke",'#d3d3d3')
+                .attr("stroke-width",1)
+                .attr("width", function(d, i) { return constants.width + 155; })
+                .attr("fill", function(d, i){
+                    return i%2 === 0 ? "#f3f3f3" : "#E9E7E7";
+                });
+    },
+
+    drawTimeRect : function() {
+        var timeRect = d3.select("svg"),
+            g = timeRect.append("g")
+                .attr("class", "time-domain");        
+
+        g.append("rect")
+            //.attr("class", )          
+            .attr("height", 45)
+            .attr("width", constants.width + 156)
+            .attr("stroke", "#d3d3d3")
+            .attr("stroke-width", 1)
+            .attr("fill", "transparent")
+            .attr("transform","translate(20,0)");
+    },
+
+    drawGraphBoundaries : function(svg) {
+        var height = constants.height - constants.margin.bottom;
+        //appends text to indicate scale
+        svg.append("text")
+            .text("ORD")
+            .style("font-weight", "bold")
+            .style("fill","#565656")
+            .style("font-size","12")
+            .attr("x", -110)
+            .attr("y", -1);
+
+
+
+        svg.append("text")
+            .text("GMT")
+            .style("font-weight", "bold")
+            .style("fill","#565656")
+            .style("font-size","12")
+            .attr("x", -110)
+            .attr("y", 13);
+
+
+        //append lines determine chart boundaries
+        //left
+        constants.service.drawLine(svg, -120, -120, 26, height - 50, 1, "#d3d3d3");
+
+        //right
+        constants.service.drawLine(svg, constants.width + 36, constants.width + 36, 26, height - 50, 1, "#d3d3d3");
+
+        //bottom
+        constants.service.drawLine(svg, -120, constants.width + 36, height - 50, height - 50, 1, "#d3d3d3");
+    },
+
+    drawLineSeparation : function(svg) {
+        var y2 = constants.height - constants.margin.bottom -50;
+
+        constants.service.drawLine(svg, -15, -15, -12, -16, 1, "#d3d3d3");
+        constants.service.drawLine(svg, -15, -15, 24, y2, 1, "#d3d3d3");        
+    },
+
+    drawLine : function(svg, x1, x2, y1, y2, strokeWidth, strokeColor) {
+        svg.append("line")
+            .attr("x1", x1)
+            .attr("x2", x2)
+            .attr("y1", y1)
+            .attr("y2", y2)
+            .style("stroke-width", strokeWidth)
+            .style("stroke", strokeColor);
+    },
+
+    drawDelays : function(delay) {
+        var delays = delay.selectAll("rect").data(constants.tasks.filter( function(d) { return d.id%2 === 0; }));
+
+        delays.selectAll("*").data([]).exit().remove();     
+            
+        delays.enter()
+            .append("rect")
+            .attr("rx", 5)
+            .attr("ry", 5)
+            .attr("transform", function(d, i) {
+                
+                var start = d.startDate,
+                    hs = start.getHours() > 0 ? start.getHours() -1 : 23;
+
+                start = constants.x(d.startDate) - hs;      
+
+                return "translate(" + start + "," + constants.y(d.taskName) + ")";
+            })
+            .attr("height", function(d, i) { return constants.y.rangeBand(); })
+            .attr("width", function(d, i) {
+                    
+                    return (constants.x(d.endDate) - constants.x(d.startDate));
+                })
+            .attr("fill", "transparent")
+            .style("stroke", "black")
+            .style("stroke-width", 1.4)
+            .attr("visibility", function(d) {
+                var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+                return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+            });
+    },
+
+    drawLogoSwimlane : function(svg) {
+
+        svg.append("svg:image")
+           .attr('x',-45)
+           .attr('y',52)
+           .attr('width', 20)
+           .attr('height', 20)
+           .attr("xlink:href","../resources/images/watch-alert-preview.png");
+
+        svg.append("svg:image")
+           .attr('x',-45)
+           .attr('y',124)
+           .attr('width', 20)
+           .attr('height', 20)
+           .attr("xlink:href","../resources/images/user-alert-preview.png");
+   /*
+        svg.append("circle")
+            .attr("rx", -32)
+            .attr("ry", 80)
+            .attr("r", 10)           
+            .attr("fill", "url(#user-background)")
+            .attr("stroke", "d3d3d3")
+            .attr("stroke-width", 0);
+
+
+
+        svg.append("circle")
+            .attr("cx", -32)
+            .attr("cy", 155)
+            .attr("r", 10)           
+            .attr("fill", "url(#watch-background)")
+            .attr("stroke", "black")
+            .attr("stroke-width", 1);
+            */
+    },
+
+    //function to draw rectangles
+    drawRects : function(group) {
+        var rect = group.selectAll("rect").data(constants.tasks, keyFunction);      
+
+        var g = rect.enter()
+                .append("g")
+                .style("cursor", "pointer")
+                .style("stroke", "black")
+                .style("stroke-width", 1.4);
+
+            g.append("rect")
+                .attr("rx", 5)
+                .attr("ry", 5)
+                .attr("class", function(d){ 
+                    if(constants.taskStatus[d.status] == null){ return "bar";}
+                        return constants.taskStatus[d.status];
+                    })
+                //.transition()
+                .attr("y", 0)
+                .attr("transform", rectTransform)
+                .attr("height", function(d, i) { return constants.y.rangeBand(); })
+                .attr("width", function(d) {
+                        return (constants.x(d.endDate) - constants.x(d.startDate));
+                    })
+                .attr("visibility", function(d) {
+                    var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+                    return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+                });
+
+
+            g.append("text")            
+                .text(function(d){
+                    var arrow = d.id % 2 === 0 ? "\u2192" : "\u2191 ";
+                    return arrow + "OUT-ONO";
+                })
+                .style("font-weight", "bold")
+                .attr("stroke-width", 0)
+                .attr("x", function(d) { return ( (constants.x(d.startDate) + constants.x(d.endDate)) / 2 ); })
+                .attr("y", function(d) { return constants.y(d.taskName) + 15; })
+                .attr("text-anchor", "middle")              
+                .attr("visibility", function(d){
+                    var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+                    return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+                }); 
+
+            //append ORI text
+            g.append("text")
+                .text("ORI")
+                .style("stroke-width", 0)
+                .attr("x", function(d) {                    
+                    var start = d.startDate,
+                        hs = start.getHours() > 0 ? start.getHours() -1 : 23,
+                        start = constants.x(d.startDate) - hs,
+                        x = d.id%2 === 0 ? (start -30) : (constants.x(d.startDate) -30);
+                    return x;
+                })
+                .attr("y", function(d) { return constants.y(d.taskName) + 15; })
+                .attr("visibility", function(d){
+                    var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+                    return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+                });
+
+
+
+            //append DES text
+            g.append("text")
+                .text("DES")
+                .style("stroke-width", 0)
+                .attr("x", function(d) {
+                    return constants.x(d.endDate) + 10;
+                })
+                .attr("y", function(d) { return constants.y(d.taskName) + 15; })
+                .attr("visibility", function(d){
+                    var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
+                    return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
+                });
+
+
+
+
+                var div = d3.select("snap-content").append("g")
+                .attr("class", "tooltip")
+                .attr("ng-click","open();")
+                .style("opacity", 1e-6) 
+                .on("click",function(d){
+                    //Change to another object with display none
+                    $('.arrow-down-icon').click();
+                });
+                g.on("click", function(d) {   
+
+                div.transition()        
+                    .duration(400)      
+                    .style("opacity", .9);      
+                div .html(
+                    //'formatTime(d.date)' + "<br/>"  + d.close
+                    $('#tooltipDiv').html()
+                    )  
+                    .style("left", (d3.event.pageX - 200) + "px")     
+                    .style("top", (d3.event.pageY + 22) + "px");    
+                })                
+                .on("blur", function() {      
+                        div.transition()        
+                        .duration(500)      
+                        .style("opacity", 0);
+                });
+
+        function keyFunction(d) {
+            return d.startDate + d.taskName + d.endDate;
+        };
+
+        function rectTransform(d) {
+            return "translate(" + constants.x(d.startDate) + "," + constants.y(d.taskName) + ")";
+        };
+
+        constants.service.drawLogo();
+
+        rect.exit().remove();
     }
 };
