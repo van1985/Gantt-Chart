@@ -1,15 +1,6 @@
 
 d3.gantt = function() {
 
-
-    
-
-
-
-    
-
-
-
     var initTimeDomain = function(tasks) {
     	var tasks = constants.tasks;
 		if (constants.timeDomainMode === constants.FIT_TIME_DOMAIN_MODE) {
@@ -35,7 +26,6 @@ d3.gantt = function() {
 
 
 
-
     var initAxis = function() {
 		constants.x = d3.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, constants.width ]).clamp(true);
 		constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .7);
@@ -45,36 +35,6 @@ d3.gantt = function() {
 		constants.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.width ]);
 
     };
-    
-
-
-	/*
-	function defineDefsSwimlane(defs) {
-		defs.append("svg:pattern")
-				.attr("id", "watch-background")
-				.attr("height", 20)
-				.attr("width", 20)
-				.append("svg:image")
-					.attr("xlink:href", "../resources/images/watch-alert-preview.png")
-					.attr("height", 20)
-					.attr("width", 20);
-
-
-		defs.append("svg:pattern")
-				.attr("id", "user-background")
-				.attr("height", 20)
-				.attr("width", 20)
-				.append("svg:image")
-					.attr("xlink:href", "../resources/images/user-alert-preview.png")
-					.attr("height", 20)
-					.attr("width", 20);
-	};
-	*/
-
-
-
-
-
 
 
     
@@ -117,30 +77,6 @@ d3.gantt = function() {
 			defs = svg.append("svg:defs");
 
 
-
-		/*
-
-		defs.append("svg:pattern")
-				.attr("id", "pending-background")
-				.attr("height", 20)
-				.attr("width", 20)					
-					.append("svg:image")
-					.attr("xlink:href", "../resources/imgs/pending.png")
-					.attr("height", 20)
-					.attr("width", 20);
-		
-		defs.append("svg:pattern")
-				.attr("id", "process-background")
-				.attr("height", 20)
-				.attr("width", 20)					
-					.append("svg:image")
-					.attr("xlink:href", "../resources/imgs/process.png")
-					.attr("height", 15)
-					.attr("width", 16);
-		*/
-
-		
-
 		constants.service.drawColoredAxis(colorRects);
 		//call function to draw rectangles
 		constants.service.drawRects(group);
@@ -152,7 +88,6 @@ d3.gantt = function() {
 		constants.service.drawLogoSwimlane(svg);
 		constants.service.drawGraphBoundaries(svg);
 		constants.service.drawTimeRect();
-
 
 		 
 		//appeng x-axis (time scale)
@@ -171,8 +106,6 @@ d3.gantt = function() {
 			.transition()
 			.call(constants.xAxisGMT);
 
-
-
 		
 		//append y-axis (tasks)
 		svg.append("g").attr("class", "y axis").transition().call(constants.yAxis);		
@@ -181,14 +114,7 @@ d3.gantt = function() {
 		return gantt;
     };
 
-
-
-
-
     
-
-    
-
 
     gantt.redraw = function(tasks) {
 		initTimeDomain(tasks);
@@ -290,5 +216,3 @@ d3.gantt = function() {
     
     return gantt;
 };
-
-

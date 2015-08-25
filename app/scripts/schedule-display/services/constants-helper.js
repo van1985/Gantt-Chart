@@ -89,138 +89,17 @@ constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0);
 
 constants.service = {
 
-    showButton : function(d) {
-        var status = d.statusAlert,
-            buttonAssign = $('.button-assign'),
-            buttonProcess = $('.button-process'),
-            buttonResolve = $('.button-resolve');
-
-        constants.elementSpacing.top = constants.y(d.taskName) + 25;
-        constants.elementSpacing.start = constants.x(d.startDate) + 70;
-        constants.elementSpacing.end = constants.x(d.endDate) + 70;
-
-        constants.service.hideElement(buttonAssign);
-        constants.service.hideElement(buttonProcess);
-        constants.service.hideElement(buttonResolve);
-
-        switch(status){
-            case 'none':
-                constants.service.positionButton(buttonAssign);
-                constants.service.showElement(buttonAssign);
-                break;
-
-            case 'pending':
-                constants.service.positionButton(buttonProcess);
-                constants.service.showElement(buttonProcess);
-                break;
-
-            case 'process':
-                constants.service.positionButton(buttonResolve);
-                constants.service.showElement(buttonResolve);
-                break;
-        }        
-    },
-
-    positionButton : function(button) {
-        button.css("left", constants.elementSpacing.start)
-            .css("top", constants.elementSpacing.top);
-    },
-
-    showElement : function(element) {
-        element.removeClass('hide-element')
-            .addClass('show-element');
-    },
-
-    hideElement : function(element) {
-        element.removeClass('show-element')
-            .addClass('hide-element');
-    },
-
-    drawLogo : function() {
-        var flights = d3.selectAll(".group g").filter( function(d) { return d.statusAlert !== 'none' } );
-        
-
-        //remove circle imageStatus to re append new image
-        flights.selectAll("circle").remove();
-
-        flights.append("circle")
-            .attr("cx", function(d) { return constants.x(d.endDate) })
-            .attr("cy", function(d) { return constants.y(d.taskName) })
-            .attr("r", 10)
-            .attr("fill", "#fff")
-            .attr("visibility", function(d) {
-                var dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]);
-                return constants.service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
-            })
-            .attr("fill", function(d) {
-                var status = d.statusAlert,
-                    url = "url(#pending-background)";
-
-                //determine wath image should be attached to circle
-                if(status === 'process')
-                        url = "url(#process-background)";
-
-                return url; 
-            } )
-            .attr("stroke", "black")
-            .attr("stroke-width", 1);
-    },
-
     inRangeDate : function(dates, values) {
         return (values[0] >= dates[0] || values[1] >= dates[0]) && (values[1] <= dates[dates.length -1] || values[0] <= dates[dates.length -1]);
-    },
-
-    assignFlight : function() {
-        constants.actualSelection.statusAlert = "pending";
-
-        var flight = constants.actualSelection;
-
-        constants.selectedFlights.push(flight);
-
-        constants.service.hideElement($('.button-assign'));
-        constants.service.showButton(flight);
-
-        constants.service.drawLogo();
-    },
-
-    processFlight : function () {
-        constants.actualSelection.statusAlert = "process";
-        constants.service.drawLogo();
-
-        constants.service.hideElement($('.button-process'));
-        constants.service.showButton(constants.actualSelection);        
-    },
-
-    resolveFlight : function() {        
-        constants.service.hideElement($('.button-resolve'));
-        var selection = d3.select(".selected"),
-            flight = selection[0][0].__data__,
-            index = $.inArray(flight, constants.tasks);
-
-        if(index >= 0){
-            constants.tasks.splice(index, 1);
-            constants.gantt.redraw();
-        }
-    },
-
-    flightIsAssigned : function(d) {
-        var length = constants.selectedFlights.length;
-
-        for(var i = 0; i < length; i++) {
-            if(constants.selectedFlights[i].startDate === d.startDate)
-                return true
-        }
-
-        return false;
     },
 
     drawTimeStamp : function(line) {
         var height = constants.height - constants.margin.bottom;
         
-        constants.service.drawLine(line, constants.x( new Date()), constants.x( new Date()), 0, height - 50, 2, "#706A6A");        
+        constants.service.drawLine(line, constants.x(new Date()), constants.x(new Date()), 0, height - 50, 2, "#706A6A");        
 
         line.append("circle")
-            .attr("cx", constants.x( new Date()))
+            .attr("cx", constants.x(new Date()))
             .attr("cy", 0)
             .attr("r", 5)
             .attr("stroke", "#706A6A")
@@ -270,8 +149,6 @@ constants.service = {
             .attr("x", -110)
             .attr("y", -1);
 
-
-
         svg.append("text")
             .text("GMT")
             .style("font-weight", "bold")
@@ -284,10 +161,8 @@ constants.service = {
         //append lines determine chart boundaries
         //left
         constants.service.drawLine(svg, -120, -120, 26, height - 50, 1, "#d3d3d3");
-
         //right
         constants.service.drawLine(svg, constants.width + 36, constants.width + 36, 26, height - 50, 1, "#d3d3d3");
-
         //bottom
         constants.service.drawLine(svg, -120, constants.width + 36, height - 50, height - 50, 1, "#d3d3d3");
     },
@@ -356,25 +231,6 @@ constants.service = {
            .attr('width', 20)
            .attr('height', 20)
            .attr("xlink:href","../resources/images/user-alert-preview.png");
-   /*
-        svg.append("circle")
-            .attr("rx", -32)
-            .attr("ry", 80)
-            .attr("r", 10)           
-            .attr("fill", "url(#user-background)")
-            .attr("stroke", "d3d3d3")
-            .attr("stroke-width", 0);
-
-
-
-        svg.append("circle")
-            .attr("cx", -32)
-            .attr("cy", 155)
-            .attr("r", 10)           
-            .attr("fill", "url(#watch-background)")
-            .attr("stroke", "black")
-            .attr("stroke-width", 1);
-            */
     },
 
     //function to draw rectangles
@@ -490,8 +346,6 @@ constants.service = {
         function rectTransform(d) {
             return "translate(" + constants.x(d.startDate) + "," + constants.y(d.taskName) + ")";
         };
-
-        constants.service.drawLogo();
 
         rect.exit().remove();
     }
