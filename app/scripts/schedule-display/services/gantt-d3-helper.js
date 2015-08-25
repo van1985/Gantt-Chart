@@ -111,6 +111,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function() {
 
 	    return lastEndDate;
 	};
+	
   
   return service;
 });
