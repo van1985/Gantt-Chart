@@ -1,12 +1,20 @@
 
 d3.gantt = function() {
 
+	if(!constants.helperLoaded) {
+			constants.helperLoaded = true;
+			console.log("gantt");
+		angular.injector(['ng', 'ScheduleDisplay']).invoke(function (ganttHelper) {
+			constants.ganttHelper = ganttHelper;
+		});
+	}
+
     var initTimeDomain = function(tasks) {
     	var tasks = constants.tasks;
-		if (constants.timeDomainMode === constants.FIT_TIME_DOMAIN_MODE) {
+		if (constants.ganttHelper.timeDomainMode === constants.ganttHelper.FIT_TIME_DOMAIN_MODE) {
 		    if (tasks === undefined || tasks.length < 1) {
-				constants.timeDomainStart = d3.time.day.offset(new Date(), -3);
-				constants.timeDomainEnd = d3.time.hour.offset(new Date(), +3);
+				constants.ganttHelper.timeDomainStart = d3.time.day.offset(new Date(), -3);
+				constants.ganttHelper.timeDomainEnd = d3.time.hour.offset(new Date(), +3);
 				return;
 	    	}
 
@@ -14,26 +22,25 @@ d3.gantt = function() {
 				return a.endDate - b.endDate;
 		    });
 
-		    constants.timeDomainEnd = tasks[tasks.length - 1].endDate;
+		    constants.ganttHelper.timeDomainEnd = tasks[tasks.length - 1].endDate;
 
 		    tasks.sort(function(a, b) {
 				return a.startDate - b.startDate;
 		    });
 
-		    constants.timeDomainStart = tasks[0].startDate;
+		    constants.ganttHelper.timeDomainStart = tasks[0].startDate;
 		}
     };
 
 
 
     var initAxis = function() {
-		constants.x = d3.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, constants.width ]).clamp(true);
-		constants.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.height - constants.margin.top - constants.margin.bottom ], .7);
-		constants.xAxis = d3.svg.axis().scale(constants.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
-		constants.xAxisGMT = d3.svg.axis().scale(constants.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
-		constants.yAxis = d3.svg.axis().scale(constants.y).orient("left").tickSize(0).tickPadding(50);
-		constants.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.width ]);
-
+		constants.ganttHelper.x = d3.time.scale().domain([ constants.ganttHelper.timeDomainStart, constants.ganttHelper.timeDomainEnd ]).range([ 0, constants.ganttHelper.width ]).clamp(true);
+		constants.ganttHelper.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, constants.ganttHelper.height - constants.margin.top - constants.margin.bottom ], .7);
+		constants.ganttHelper.xAxis = d3.svg.axis().scale(constants.ganttHelper.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
+		constants.ganttHelper.xAxisGMT = d3.svg.axis().scale(constants.ganttHelper.x).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(false).tickSize(0).tickPadding(3);
+		constants.ganttHelper.yAxis = d3.svg.axis().scale(constants.ganttHelper.y).orient("left").tickSize(0).tickPadding(50);
+		constants.ganttHelper.stamp = d3.time.scale().domain([ new Date()]).range([ 0, constants.ganttHelper.width ]);
     };
 
 
@@ -43,7 +50,7 @@ d3.gantt = function() {
 		initTimeDomain(tasks);
 		initAxis();
 
-		if ( ( constants.height + constants.margin.top + constants.margin.bottom ) < 0 ){
+		if ( ( constants.ganttHelper.height + constants.margin.top + constants.margin.bottom ) < 0 ){
 			console.log('leo');
 		}
 		
@@ -51,13 +58,13 @@ d3.gantt = function() {
 		var svg = d3.select("#gantt-chart")
 			.append("svg")
 				.attr("class", "chart")
-				.attr("width", constants.width + constants.margin.left + constants.margin.right)
-				.attr("height", constants.height + constants.margin.top + constants.margin.bottom)
+				.attr("width", constants.ganttHelper.width + constants.margin.left + constants.margin.right)
+				.attr("height", constants.ganttHelper.height + constants.margin.top + constants.margin.bottom)
 			//append a group g with class gantt-chart to attach x, y axes and drawings
 			.append("g")
 	    	    .attr("class", "gantt-chart")
-				.attr("width", constants.width + constants.margin.left + constants.margin.right)
-				.attr("height", constants.height + constants.margin.top + constants.margin.bottom)
+				.attr("width", constants.ganttHelper.width + constants.margin.left + constants.margin.right)
+				.attr("height", constants.ganttHelper.height + constants.margin.top + constants.margin.bottom)
 				.attr("transform", "translate(" + constants.margin.left + ", " + constants.margin.top + ")");
 
 
@@ -77,17 +84,17 @@ d3.gantt = function() {
 			defs = svg.append("svg:defs");
 
 
-		constants.service.drawColoredAxis(colorRects);
+		constants.ganttHelper.drawColoredAxis(colorRects);
 		//call function to draw rectangles
-		constants.service.drawRects(group);
+		constants.ganttHelper.drawRects(group);
 		//call function to draw line positioned at actual time
-		constants.service.drawDelays(delays);
-		constants.service.drawTimeStamp(line);
-		constants.service.drawLineSeparation(svg);
+		constants.ganttHelper.drawDelays(delays);
+		constants.ganttHelper.drawTimeStamp(line);
+		constants.ganttHelper.drawLineSeparation(svg);
 		//defineDefsSwimlane(defs);
-		constants.service.drawLogoSwimlane(svg);
-		constants.service.drawGraphBoundaries(svg);
-		constants.service.drawTimeRect();
+		constants.ganttHelper.drawLogoSwimlane(svg);
+		constants.ganttHelper.drawGraphBoundaries(svg);
+		constants.ganttHelper.drawTimeRect();
 
 		 
 		//appeng x-axis (time scale)
@@ -96,7 +103,7 @@ d3.gantt = function() {
 			//modify to 0, 0 to poss hour indicator to top
 			.attr("transform", "translate(0, " + "0)")
 			.transition()
-			.call(constants.xAxis);
+			.call(constants.ganttHelper.xAxis);
 
 
 		svg.append("g")
@@ -104,11 +111,11 @@ d3.gantt = function() {
 			//modify to 0, 0 to poss hour indicator to top
 			.attr("transform", "translate(0, " + "0)")
 			.transition()
-			.call(constants.xAxisGMT);
+			.call(constants.ganttHelper.xAxisGMT);
 
 		
 		//append y-axis (tasks)
-		svg.append("g").attr("class", "y axis").transition().call(constants.yAxis);		
+		svg.append("g").attr("class", "y axis").transition().call(constants.ganttHelper.yAxis);		
 		 
 
 		return gantt;
@@ -134,15 +141,15 @@ d3.gantt = function() {
 		
 
         //call function to draw rectangles
-        constants.service.drawRects(group);        
+        constants.ganttHelper.drawRects(group);        
 		//call function to draw line positioned at actual time
-		constants.service.drawDelays(delays);
-		constants.service.drawTimeStamp(line);
+		constants.ganttHelper.drawDelays(delays);
+		constants.ganttHelper.drawTimeStamp(line);
 
 
-		svg.select(".x").transition().call(constants.xAxis);
-		svg.select(".GMT").transition().call(constants.xAxisGMT);
-		svg.select(".y").transition().call(constants.yAxis);
+		svg.select(".x").transition().call(constants.ganttHelper.xAxis);
+		svg.select(".GMT").transition().call(constants.ganttHelper.xAxisGMT);
+		svg.select(".y").transition().call(constants.ganttHelper.yAxis);
 		
 		return gantt;
     };
@@ -158,9 +165,10 @@ d3.gantt = function() {
     
 
     gantt.timeDomain = function(value, tasks) {
+    	//console.log(constants.ganttHelper);
 		if (!arguments.length)
-		    return [ constants.timeDomainStart, constants.timeDomainEnd ];
-		constants.timeDomainStart = +value[0], constants.timeDomainEnd = +value[1];
+		    return [ constants.ganttHelper.timeDomainStart, constants.ganttHelper.timeDomainEnd ];
+		constants.ganttHelper.timeDomainStart = +value[0], constants.ganttHelper.timeDomainEnd = +value[1];
 		return gantt;
     };
 
@@ -171,7 +179,7 @@ d3.gantt = function() {
      */
     gantt.timeDomainMode = function(value) {
 		if (!arguments.length)
-		    return constants.timeDomainMode;
+		    return constants.ganttHelper.timeDomainMode;
 	    constants.timeDomainMode = value;
 	    return gantt;
 
@@ -179,35 +187,35 @@ d3.gantt = function() {
 
     gantt.taskTypes = function(value) {
 		if (!arguments.length)
-		    return constants.taskTypes;
+		    return constants.ganttHelper.taskTypes;
 		constants.taskTypes = value;
 		return gantt;
     };
     
     gantt.taskStatus = function(value) {
 		if (!arguments.length)
-		    return constants.taskStatus;
+		    return constants.ganttHelper.taskStatus;
 		constants.taskStatus = value;
 		return gantt;
     };
 
     gantt.width = function(value) {
 		if (!arguments.length)
-		    return constants.width;
-		constants.width = +value;
+		    return constants.ganttHelper.width;
+		constants.ganttHelper.width = +value;
 		return gantt;
     };
 
     gantt.height = function(value) {
 		if (!arguments.length)
-		    return constants.height;
-		constants.height = +value;
+		    return constants.ganttHelper.height;
+		constants.ganttHelper.height = +value;
 		return gantt;
     };
 
     gantt.tickFormat = function(value) {
 		if (!arguments.length)
-		    return constants.tickFormat;
+		    return constants.ganttHelper.tickFormat;
 		constants.tickFormat = value;
 		return gantt;
     };
