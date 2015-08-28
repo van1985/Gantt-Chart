@@ -2,6 +2,7 @@
 
 angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi, ganttHelper, $modal, $interval, $location) {
 
+console.log("main");
 
 FlightSrvApi.getFlights().
 	then(function(data){
@@ -33,16 +34,18 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
         dates = ganttHelper.xAxis.scale().ticks(ganttHelper.xAxis.ticks()[0]),
         nextDate = dates[dates.length-1];
 
+        //console.log(d3);
+
     console.log("endDate");
-    console.log(dates);
+    //console.log(ganttHelper);
 
     if(direction) {
         if(timeDomainString === '1week') {
-            nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 12);        
+            nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 12);
             endDate = timeDomainString === '1week' ? nextDate : nextDate + 100000;
         } else {
             nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 3);
-            endDate = nextDate;            
+            endDate = nextDate;
         }
 
     }

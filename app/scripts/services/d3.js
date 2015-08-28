@@ -2,6 +2,9 @@ angular.module('d3',[])
   .factory('d3Service', ['$document', '$q', '$rootScope',
     function($document, $q, $rootScope) {
       var d = $q.defer();
+
+      console.log(window.d3);
+
       function onScriptLoad() {
         // Load client in the browser
         $rootScope.$apply(function() { d.resolve(window.d3); });

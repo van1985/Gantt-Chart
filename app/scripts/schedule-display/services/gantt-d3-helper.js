@@ -1,44 +1,53 @@
 'use strict';
 
-angular.module('ScheduleDisplay').service('ganttHelper', function(d3Service) {
+angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3Service) {
 	var service = {};
 
+	console.log("ganttHelper");
+	//console.log(d3Service);
 
-	service.B = document.body;
+	/*$rootScope.$on('d3Ready', function() {
+		service.initializationD3Service();
+	});*/
 
-	service.H = document.documentElement;
 
-	service.timeDomainStart = d3Service.time.day.offset(new Date(),-3);
+	service.initializationD3Service = function() {
+		service.B = document.body;
 
-    service.timeDomainEnd = d3Service.time.hour.offset(new Date(),+3);
+		service.H = document.documentElement;
 
-    service.timeDomainStartGMT = d3Service.time.day.offset(new Date(Date.UTC()),-3);
+		service.timeDomainStart = d3Service.time.day.offset(new Date(),-3);
 
-    service.timeDomainEndGMT = d3Service.time.hour.offset(new Date(Date.UTC()),+3);
+	    service.timeDomainEnd = d3Service.time.hour.offset(new Date(),+3);
 
-    service.height = (Math.max( service.B.scrollHeight, service.B.offsetHeight, service.H.clientHeight, service.H.scrollHeight, service.H.offsetHeight )) - constants.margin.top - constants.margin.bottom-5;
+	    service.timeDomainStartGMT = d3Service.time.day.offset(new Date(Date.UTC()),-3);
 
-	service.width = document.body.clientWidth - constants.margin.right - constants.margin.left-5;
+	    service.timeDomainEndGMT = d3Service.time.hour.offset(new Date(Date.UTC()),+3);
 
-	service.maxDate = constants.tasks.length > 0 ? constants.tasks[constants.tasks.length - 1].endDate : new Date();
+	    service.height = (Math.max( service.B.scrollHeight, service.B.offsetHeight, service.H.clientHeight, service.H.scrollHeight, service.H.offsetHeight )) - constants.margin.top - constants.margin.bottom-5;
 
-	service.minDate = constants.tasks.length > 0 ? constants.tasks[0].startDate : new Date();
+		service.width = document.body.clientWidth - constants.margin.right - constants.margin.left-5;
 
-	service.lastDate = constants.tasks.length;
+		service.maxDate = constants.tasks.length > 0 ? constants.tasks[constants.tasks.length - 1].endDate : new Date();
 
-	service.gantt = d3Service.gantt().taskTypes(constants.taskNames).taskStatus(constants.taskStatus).tickFormat(constants.format);
+		service.minDate = constants.tasks.length > 0 ? constants.tasks[0].startDate : new Date();
 
-	service.x = d3Service.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, service.width ]).clamp(true);
+		service.lastDate = constants.tasks.length;
 
-	service.xGMT = d3Service.time.scale().domain([ constants.timeDomainStartGMT, constants.timeDomainEndGMT ]).range([ 0, service.width ]).clamp(true);
-	    
-	service.y = d3Service.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, service.height - constants.margin.top - constants.margin.bottom ], .1);
+		service.gantt = d3Service.gantt().taskTypes(constants.taskNames).taskStatus(constants.taskStatus).tickFormat(constants.format);
 
-	service.xAxis = d3Service.svg.axis().scale(service.x).orient("bottom").tickFormat(d3Service.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		service.x = d3Service.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, service.width ]).clamp(true);
 
-	service.xAxisGMT = d3Service.svg.axis().scale(service.xGMT).orient("top").tickFormat(d3Service.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		service.xGMT = d3Service.time.scale().domain([ constants.timeDomainStartGMT, constants.timeDomainEndGMT ]).range([ 0, service.width ]).clamp(true);
+		    
+		service.y = d3Service.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, service.height - constants.margin.top - constants.margin.bottom ], .1);
 
-	service.yAxis = d3Service.svg.axis().scale(service.y).orient("left").tickSize(0);
+		service.xAxis = d3Service.svg.axis().scale(service.x).orient("bottom").tickFormat(d3Service.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+
+		service.xAxisGMT = d3Service.svg.axis().scale(service.xGMT).orient("top").tickFormat(d3Service.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+
+		service.yAxis = d3Service.svg.axis().scale(service.y).orient("left").tickSize(0);
+	}
 
 	
 	
