@@ -13,3 +13,4 @@ app/styles/*.css
 *.cache
 mockeyDebugFile.log
 app/scripts/services/environment-config.js
+app/scripts/config.js

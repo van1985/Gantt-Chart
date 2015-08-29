@@ -9,8 +9,8 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
 
     $http({
       method: 'GET',
-      //url: '/scripts/schedule-display/services/api/flight.json'
-      url: '../crew-sched-gui/scripts/schedule-display/services/api/flight.json'
+      url: '/scripts/schedule-display/services/api/flight.json'
+      //url: '../crew-sched-gui/scripts/schedule-display/services/api/flight.json'
     })
     .success(
       function(response) {
@@ -35,8 +35,8 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
 
     $http({
       method: 'GET',
-      //url: '/scripts/schedule-display/services/api/newAlertFlight.json'
-      url: '../crew-sched-gui/scripts/schedule-display/services/api/newAlertFlight.json'
+      url: '/scripts/schedule-display/services/api/newAlertFlight.json'
+      //url: '../crew-sched-gui/scripts/schedule-display/services/api/newAlertFlight.json'
     })
     .success(
       function(response) {
