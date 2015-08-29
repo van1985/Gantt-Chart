@@ -1,11 +1,18 @@
 'use strict';
 
-angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi,ganttHelper,$modal, $interval,$location) {
+angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi, ganttHelper, $modal, $interval, $location, $rootScope) {
 
+console.log("main");
+
+  $rootScope.$on('d3Ready', function() {
+    initializeScheduleDisplay();
+  });
+
+function initializeScheduleDisplay(){
 
 FlightSrvApi.getFlights().
 	then(function(data){
-		constants.tasks=ganttHelper.verifyDateFormat(data.global.flights);
+		constants.tasks = ganttHelper.verifyDateFormat(data.global.flights);
 
 		constants.tasks.sort(function(a, b) {
 		    return a.endDate - b.endDate;
@@ -16,30 +23,36 @@ FlightSrvApi.getFlights().
 		    return a.startDate - b.startDate;
 		});
 
-		constants.gantt.margin(constants.margin);
+		ganttHelper.gantt.margin(constants.margin);
 
-		constants.gantt.timeDomainMode("fixed");
+		ganttHelper.gantt.timeDomainMode("fixed");
 		$scope.changeTimeDomain(constants.timeDomainString);
 
 		ganttHelper.viewActualTime();
 
-		constants.gantt(constants.tasks);
+		ganttHelper.gantt(constants.tasks);
 
 	});
+};
 
 
 $scope.changeTimeDomain = function(timeDomainString, direction) {
-    var endDate = !direction ? ganttHelper.getEndDate() : ganttHelper.getLastDate(constants.lastDate),
-        dates = constants.xAxis.scale().ticks(constants.xAxis.ticks()[0]),
+    var endDate = !direction ? ganttHelper.getEndDate() : ganttHelper.getLastDate(ganttHelper.lastDate),
+        dates = ganttHelper.xAxis.scale().ticks(ganttHelper.xAxis.ticks()[0]),
         nextDate = dates[dates.length-1];
+
+        //console.log(d3);
+
+    console.log("endDate");
+    //console.log(ganttHelper);
 
     if(direction) {
         if(timeDomainString === '1week') {
-            nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 12);        
+            nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 12);
             endDate = timeDomainString === '1week' ? nextDate : nextDate + 100000;
         } else {
             nextDate = direction === 'left' ? nextDate.setHours(nextDate.getHours() - 3) : nextDate.setHours(nextDate.getHours() + 3);
-            endDate = nextDate;            
+            endDate = nextDate;
         }
 
     }
@@ -48,9 +61,9 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
     constants.timeDomainString = timeDomainString;
     ganttHelper.defineDomain(timeDomainString, endDate);
     
-    constants.gantt.tickFormat(constants.format);
+    ganttHelper.gantt.tickFormat(constants.format);
 
-    constants.gantt.redraw(constants.tasks);
+    ganttHelper.gantt.redraw(constants.tasks);
 }
 
 
@@ -71,7 +84,7 @@ $scope.addTask = function(flight) {
     });
 
     constants.lastDate++;
-    //constants.gantt.redraw(constants.tasks);
+    //ganttHelper.gantt.redraw(constants.tasks);
     //$scope.changeTimeDomain(constants.timeDomainString);
 };
 
@@ -178,7 +191,7 @@ $interval(function(){
     if (!removeArrayElement(constants.tasks,flight[0].task)){
         $scope.addTask(flight[0]);
     }
-    constants.gantt.redraw(constants.tasks);
+    ganttHelper.gantt.redraw(constants.tasks);
   });
 }, 5000);
 
@@ -191,7 +204,7 @@ $interval(function(){
     else{
         constants.tasks[0].status='TAXI'; 
     }
-    constants.gantt.redraw(constants.tasks);
+    ganttHelper.gantt.redraw(constants.tasks);
 }, 7000);
 
 

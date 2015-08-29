@@ -2,9 +2,15 @@ angular.module('d3',[])
   .factory('d3Service', ['$document', '$q', '$rootScope',
     function($document, $q, $rootScope) {
       var d = $q.defer();
+
+      console.log(window.d3);
+
       function onScriptLoad() {
         // Load client in the browser
-        $rootScope.$apply(function() { d.resolve(window.d3); });
+        $rootScope.$apply(function() { 
+          d.resolve(window.d3); 
+          $rootScope.$broadcast('d3Ready');
+        });
       }
       // Create a script tag with d3 as the source
       // and call our onScriptLoad callback when it
@@ -20,7 +26,7 @@ angular.module('d3',[])
 
       var s = $document[0].getElementsByTagName('body')[0];
       s.appendChild(scriptTag);
-
+      
       return {
         d3: function() { return d.promise; }
       };
