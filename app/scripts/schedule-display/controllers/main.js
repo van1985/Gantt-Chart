@@ -1,8 +1,14 @@
 'use strict';
 
-angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi, ganttHelper, $modal, $interval, $location) {
+angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi, ganttHelper, $modal, $interval, $location, $rootScope) {
 
 console.log("main");
+
+  $rootScope.$on('d3Ready', function() {
+    initializeScheduleDisplay();
+  });
+
+function initializeScheduleDisplay(){
 
 FlightSrvApi.getFlights().
 	then(function(data){
@@ -27,6 +33,7 @@ FlightSrvApi.getFlights().
 		ganttHelper.gantt(constants.tasks);
 
 	});
+};
 
 
 $scope.changeTimeDomain = function(timeDomainString, direction) {

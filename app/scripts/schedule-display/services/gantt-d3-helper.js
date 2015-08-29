@@ -3,26 +3,29 @@
 angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3Service) {
 	var service = {};
 
-	console.log("ganttHelper");
-	//console.log(d3Service);
 
-	/*$rootScope.$on('d3Ready', function() {
+	$rootScope.$on('d3Ready', function() {
 		service.initializationD3Service();
-	});*/
+	});
 
-
+    var d3 = null;
 	service.initializationD3Service = function() {
+        //Initialize d3 variable
+        d3 = d3Service.d3().$$state.value;
+
+        InitializeGantt(d3);
+
 		service.B = document.body;
 
 		service.H = document.documentElement;
 
-		service.timeDomainStart = d3Service.time.day.offset(new Date(),-3);
+		service.timeDomainStart = d3.time.day.offset(new Date(),-3);
 
-	    service.timeDomainEnd = d3Service.time.hour.offset(new Date(),+3);
+	    service.timeDomainEnd = d3.time.hour.offset(new Date(),+3);
 
-	    service.timeDomainStartGMT = d3Service.time.day.offset(new Date(Date.UTC()),-3);
+	    service.timeDomainStartGMT = d3.time.day.offset(new Date(Date.UTC()),-3);
 
-	    service.timeDomainEndGMT = d3Service.time.hour.offset(new Date(Date.UTC()),+3);
+	    service.timeDomainEndGMT = d3.time.hour.offset(new Date(Date.UTC()),+3);
 
 	    service.height = (Math.max( service.B.scrollHeight, service.B.offsetHeight, service.H.clientHeight, service.H.scrollHeight, service.H.offsetHeight )) - constants.margin.top - constants.margin.bottom-5;
 
@@ -34,19 +37,19 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 
 		service.lastDate = constants.tasks.length;
 
-		service.gantt = d3Service.gantt().taskTypes(constants.taskNames).taskStatus(constants.taskStatus).tickFormat(constants.format);
+		service.gantt = d3.gantt().taskTypes(constants.taskNames).taskStatus(constants.taskStatus).tickFormat(constants.format);
 
-		service.x = d3Service.time.scale().domain([ constants.timeDomainStart, constants.timeDomainEnd ]).range([ 0, service.width ]).clamp(true);
+		service.x = d3.time.scale().domain([ service.timeDomainStart, service.timeDomainEnd ]).range([ 0, service.width ]).clamp(true);
 
-		service.xGMT = d3Service.time.scale().domain([ constants.timeDomainStartGMT, constants.timeDomainEndGMT ]).range([ 0, service.width ]).clamp(true);
+		service.xGMT = d3.time.scale().domain([ service.timeDomainStartGMT, service.timeDomainEndGMT ]).range([ 0, service.width ]).clamp(true);
 		    
-		service.y = d3Service.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, service.height - constants.margin.top - constants.margin.bottom ], .1);
+		service.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, service.height - constants.margin.top - constants.margin.bottom ], .1);
 
-		service.xAxis = d3Service.svg.axis().scale(service.x).orient("bottom").tickFormat(d3Service.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		service.xAxis = d3.svg.axis().scale(service.x).orient("bottom").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
 
-		service.xAxisGMT = d3Service.svg.axis().scale(service.xGMT).orient("top").tickFormat(d3Service.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+		service.xAxisGMT = d3.svg.axis().scale(service.xGMT).orient("top").tickFormat(d3.time.format(constants.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
 
-		service.yAxis = d3Service.svg.axis().scale(service.y).orient("left").tickSize(0);
+		service.yAxis = d3.svg.axis().scale(service.y).orient("left").tickSize(0);
 	}
 
 	
@@ -74,7 +77,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 	            range = 1;
 	            constants.addMinutes = 60;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
-	            service.gantt.timeDomain([ d3Service.time.hour.offset(date, -range), date ], constants.tasks);
+	            service.gantt.timeDomain([ d3.time.hour.offset(date, -range), date ], constants.tasks);
 	            break;
 
 	        case '3hr':
@@ -82,7 +85,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 	            range = 3;
 	            constants.addMinutes = 190;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
-	            service.gantt.timeDomain([ d3Service.time.hour.offset(date, -range), date ], constants.tasks);
+	            service.gantt.timeDomain([ d3.time.hour.offset(date, -range), date ], constants.tasks);
 	            break;
 
 	        case '6hr':
@@ -90,7 +93,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 	            range = 6;
 	            constants.addMinutes = 450;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
-	            service.gantt.timeDomain([ d3Service.time.hour.offset(date, -range), date ], constants.tasks);
+	            service.gantt.timeDomain([ d3.time.hour.offset(date, -range), date ], constants.tasks);
 	            break;
 
 	        case '1day':
@@ -98,7 +101,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 	            range = 1;
 	            constants.addMinutes = 1500;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
-	            service.gantt.timeDomain([ d3Service.time.day.offset(date, -range), date ], constants.tasks);
+	            service.gantt.timeDomain([ d3.time.day.offset(date, -range), date ], constants.tasks);
 	            break;
 
 	        case '1week':
@@ -106,7 +109,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 	            range = 7;
 	            constants.addMinutes = 10500;
 	            service.addMinutes(actualTime, date, constants.addMinutes);
-	            service.gantt.timeDomain([ d3Service.time.day.offset(date, -range), date ], constants.tasks);
+	            service.gantt.timeDomain([ d3.time.day.offset(date, -range), date ], constants.tasks);
 	            break;
 	    
 	        default:
@@ -183,7 +186,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
             .enter()
             .append("rect")
                 .attr("x", -120)
-                .attr("y", function(d, i) { return service.y(d) - 100; })
+                .attr("y", function(d, i) { return service.y(d) - 60; })
                 .attr("height", function(d, i) { return service.height; })
                 .attr("stroke",'#d3d3d3')
                 .attr("stroke-width",1)
@@ -194,7 +197,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
     };
 
     service.drawTimeRect = function() {
-        var timeRect = d3Service.select("svg"),
+        var timeRect = d3.select("svg"),
             g = timeRect.append("g")
                 .attr("class", "time-domain");        
 
@@ -238,7 +241,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
     };
 
     service.drawLineSeparation = function(svg) {
-        var y2 = service.height - constants.margin.bottom -50;
+        var y2 = service.height - service.margin.bottom -50;
 
         service.drawLine(svg, -15, -15, -12, -16, 1, "#d3d3d3");
         service.drawLine(svg, -15, -15, 24, y2, 1, "#d3d3d3");        
@@ -269,10 +272,11 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
                     hs = start.getHours() > 0 ? start.getHours() -1 : 23;
 
                 start = service.x(d.startDate) - hs;      
+                var ynew = service.y(d.taskName)+28;
 
-                return "translate(" + start + "," + service.y(d.taskName) + ")";
+                return "translate(" + start + "," + ynew + ")";
             })
-            .attr("height", function(d, i) { return service.y.rangeBand(); })
+            .attr("height", function(d, i) { return 50; })
             .attr("width", function(d, i) {
                     
                     return (service.x(d.endDate) - service.x(d.startDate));
@@ -321,9 +325,9 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
                         return constants.taskStatus[d.status];
                     })
                 //.transition()
-                .attr("y", 0)
+                .attr("y", 28)
                 .attr("transform", rectTransform)
-                .attr("height", function(d, i) { return service.y.rangeBand(); })
+                .attr("height", function(d, i) { return 50; })
                 .attr("width", function(d) {
                         return (service.x(d.endDate) - service.x(d.startDate));
                     })
@@ -341,7 +345,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
                 .style("font-weight", "bold")
                 .attr("stroke-width", 0)
                 .attr("x", function(d) { return ( (service.x(d.startDate) + service.x(d.endDate)) / 2 ); })
-                .attr("y", function(d) { return service.y(d.taskName) + 15; })
+                .attr("y", function(d) { return service.y(d.taskName) + 60; })
                 .attr("text-anchor", "middle")              
                 .attr("visibility", function(d){
                     var dates = service.xAxis.scale().ticks(service.xAxis.ticks()[0]);
@@ -359,7 +363,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
                         x = d.id%2 === 0 ? (start -30) : (service.x(d.startDate) -30);
                     return x;
                 })
-                .attr("y", function(d) { return service.y(d.taskName) + 15; })
+                .attr("y", function(d) { return service.y(d.taskName) + 60; })
                 .attr("visibility", function(d){
                     var dates = service.xAxis.scale().ticks(service.xAxis.ticks()[0]);
                     return service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
@@ -374,7 +378,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
                 .attr("x", function(d) {
                     return service.x(d.endDate) + 10;
                 })
-                .attr("y", function(d) { return service.y(d.taskName) + 15; })
+                .attr("y", function(d) { return service.y(d.taskName) + 60; })
                 .attr("visibility", function(d){
                     var dates = service.xAxis.scale().ticks(service.xAxis.ticks()[0]);
                     return service.inRangeDate(dates, [d.startDate, d.endDate]) ? "visible" : "hidden";
@@ -383,7 +387,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 
 
 
-                var div = d3Service.select("snap-content").append("g")
+                var div = d3.select("snap-content").append("g")
                 .attr("class", "tooltip")
                 .attr("ng-click","open();")
                 .style("opacity", 1e-6) 
@@ -400,8 +404,8 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
                     //'formatTime(d.date)' + "<br/>"  + d.close
                     $('#tooltipDiv').html()
                     )  
-                    .style("left", (d3Service.event.pageX - 200) + "px")     
-                    .style("top", (d3Service.event.pageY + 22) + "px");    
+                    .style("left", (d3.event.pageX - 200) + "px")     
+                    .style("top", (d3.event.pageY + 22) + "px");    
                 })                
                 .on("blur", function() {      
                         div.transition()        
@@ -419,6 +423,248 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 
         rect.exit().remove();
     };
+
+
+
+
+
+    function InitializeGantt(d3){
+
+      //---------------------------------------------//
+
+
+      d3.gantt = function() {
+
+        /*
+        if(!constants.helperLoaded) {
+            constants.helperLoaded = true;
+            console.log("gantt");
+          angular.injector(['ng', 'ScheduleDisplay']).invoke(function (ganttHelper) {
+            constants.ganttHelper = ganttHelper;
+          });
+        }*/
+
+          var initTimeDomain = function(tasks) {
+            var tasks = constants.tasks;
+          if (constants.timeDomainMode === constants.FIT_TIME_DOMAIN_MODE) {
+              if (tasks === undefined || tasks.length < 1) {
+              service.timeDomainStart = d3.time.day.offset(new Date(), -3);
+              service.timeDomainEnd = d3.time.hour.offset(new Date(), +3);
+              return;
+              }
+
+              tasks.sort(function(a, b) {
+              return a.endDate - b.endDate;
+              });
+
+              service.timeDomainEnd = tasks[tasks.length - 1].endDate;
+
+              tasks.sort(function(a, b) {
+              return a.startDate - b.startDate;
+              });
+
+              service.timeDomainStart = tasks[0].startDate;
+          }
+          };
+
+
+
+          var initAxis = function() {
+            service.x = d3.time.scale().domain([ service.timeDomainStart, service.timeDomainEnd ]).range([ 0, service.width ]).clamp(true);
+            service.xGMT = d3.time.scale().domain([ service.timeDomainStartGMT, service.timeDomainEndGMT ]).range([ 0, service.width ]).clamp(true);
+            service.y = d3.scale.ordinal().domain(constants.taskTypes).rangeRoundBands([ 0, service.height - service.margin.top - service.margin.bottom ], .1);
+            service.xAxis = d3.svg.axis().scale(service.x).orient("bottom").tickFormat(d3.time.format(service.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+            service.xAxisGMT = d3.svg.axis().scale(service.xGMT).orient("top").tickFormat(d3.time.format(service.tickFormat)).tickSubdivide(true).tickSize(5).tickPadding(3);
+            service.yAxis = d3.svg.axis().scale(service.y).orient("left").tickSize(0);
+            service.stamp = d3.time.scale().domain([ new Date()]).range([ 0, service.width ]);
+          };
+
+
+          
+          function gantt(tasks) {
+
+          initTimeDomain(tasks);
+          initAxis();
+
+          
+          //sets the svg to draw on
+          var svg = d3.select("#gantt-chart")
+            .append("svg")
+              .attr("class", "chart")
+              .attr("width", service.width + service.margin.left + service.margin.right)
+              .attr("height", service.height + service.margin.top + service.margin.bottom)
+            //append a group g with class gantt-chart to attach x, y axes and drawings
+            .append("g")
+                  .attr("class", "gantt-chart")
+              .attr("width", service.width + service.margin.left + service.margin.right)
+              .attr("height", service.height + service.margin.top + service.margin.bottom)
+              .attr("transform", "translate(" + service.margin.left + ", " + service.margin.top + ")");
+
+
+            //rect to higlight time header
+            //grey white rects for checkerboard background chart
+          var colorRects = svg.append("g")
+              .attr("class", "colored-axis"),
+            delays = svg.append("g")
+              .attr("class", "delays"),
+            //line indicating actual time
+            line = svg.append("g")
+              .attr("class", "time-stamp"),
+            //append g to group data in pairs (rectangle-text)
+            group = svg.append("g")
+              .attr("class", "group"),
+            //def with image to append to circle
+            defs = svg.append("svg:defs");
+
+
+          service.drawColoredAxis(colorRects);
+          //call function to draw rectangles
+          service.drawRects(group);
+          //call function to draw line positioned at actual time
+          service.drawDelays(delays);
+          service.drawTimeStamp(line);
+          service.drawLineSeparation(svg);
+          //defineDefsSwimlane(defs);
+          service.drawLogoSwimlane(svg);
+          service.drawGraphBoundaries(svg);
+          service.drawTimeRect();
+
+           
+          //appeng x-axis (time scale)
+          svg.append("g")
+            .attr("class", "x axis")
+            //modify to 0, 0 to poss hour indicator to top
+            .attr("transform", "translate(0, " + "0)")
+            .transition()
+            .call(service.xAxis);
+
+
+          svg.append("g")
+            .attr("class", "x axis GMT")
+            //modify to 0, 0 to poss hour indicator to top
+            .attr("transform", "translate(0, " + "0)")
+            .transition()
+            .call(service.xAxisGMT);
+
+          
+          //append y-axis (tasks)
+          svg.append("g")
+            .attr("class", "y axis")
+            .attr("transform","translate(-50, " + "20)")
+            .transition()
+            .call(service.yAxis);   
+           
+
+          return gantt;
+          };
+
+          
+
+          gantt.redraw = function(tasks) {
+          initTimeDomain(tasks);
+          initAxis();
+
+          //select the svg
+              var svg = d3.select("svg"),        //
+                line = svg.selectAll(".time-stamp"),
+                //select the groups (rectangles-texts) 
+            group = svg.selectAll(".gantt-chart .group"),
+            delays = svg.selectAll(".delays");
+
+          //remove all data from the groups
+          group.selectAll("*").data([]).exit().remove();
+          line.selectAll("*").data([]).exit().remove();
+          delays.selectAll("*").data([]).exit().remove();
+          
+
+              //call function to draw rectangles
+          service.drawRects(group);        
+          //call function to draw line positioned at actual time
+          service.drawDelays(delays);
+          service.drawTimeStamp(line);
+
+
+          svg.select(".x").transition().call(service.xAxis);
+          svg.select(".GMT").transition().call(service.xAxisGMT);
+          svg.select(".y").transition().call(service.yAxis);
+          
+          return gantt;
+          };
+
+
+          gantt.margin = function(value) {
+          if (!arguments.length)
+              return service.margin;
+          service.margin = value;
+          return gantt;
+          };
+
+          
+
+          gantt.timeDomain = function(value, tasks) {
+            //console.log(constants.ganttHelper);
+          if (!arguments.length)
+              return [ service.timeDomainStart, service.timeDomainEnd ];
+          service.timeDomainStart = +value[0], service.timeDomainEnd = +value[1];
+          return gantt;
+          };
+
+          /**
+           * @param {string}
+           *                vale The value can be "fit" - the domain fits the data or
+           *                "fixed" - fixed domain.
+           */
+          gantt.timeDomainMode = function(value) {
+          if (!arguments.length)
+              return service.timeDomainMode;
+            service.timeDomainMode = value;
+            return gantt;
+
+          };
+
+          gantt.taskTypes = function(value) {
+          if (!arguments.length)
+              return constants.taskTypes;
+          constants.taskTypes = value;
+          return gantt;
+          };
+          
+          gantt.taskStatus = function(value) {
+          if (!arguments.length)
+              return constants.taskStatus;
+          constants.taskStatus = value;
+          return gantt;
+          };
+
+          gantt.width = function(value) {
+          if (!arguments.length)
+              return service.width;
+          service.width = +value;
+          return gantt;
+          };
+
+          gantt.height = function(value) {
+          if (!arguments.length)
+              return service.height;
+          service.height = +value;
+          return gantt;
+          };
+
+          gantt.tickFormat = function(value) {
+          if (!arguments.length)
+              return service.tickFormat;
+          service.tickFormat = value;
+          return gantt;
+          };
+
+
+          
+          return gantt;
+      };
+
+      //---------------------------------------------//
+    };
+
 	
   
   return service;
