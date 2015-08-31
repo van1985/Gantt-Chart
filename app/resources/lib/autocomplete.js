@@ -159,6 +159,13 @@ app.directive('autocomplete', function() {
         }, 150);
       }, true);
 
+
+      document.addEventListener("focus", function(e) {
+        scope.completing = true;
+        scope.$apply();
+      }, true);
+
+
       element[0].addEventListener("keydown",function (e){
         var keycode = e.keyCode || e.which;
 
