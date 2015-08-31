@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Dashboard').controller('dashboardCtrl', function ($scope,$location) {
+angular.module('Dashboard').controller('dashboardCtrl', function (searchTyping, $scope, $location) {
 
 		$scope.centerAnchor = true;
         $scope.toggleCenterAnchor = function () {$scope.centerAnchor = !$scope.centerAnchor}
@@ -149,6 +149,11 @@ angular.module('Dashboard').controller('dashboardCtrl', function ($scope,$locati
             if (view ==='schedule'){
                 $location.path('/schedule-display')
             }
+        };
+
+
+        $scope.searchType = function(typed) {
+            $scope.flights = searchTyping.getFlights(typed);
         };
 
 });
