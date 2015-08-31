@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="style/autocomplete.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -136,6 +137,9 @@
             </li>
           </ul>
 <ul class="nav navbar-nav navbar-right">
+            <li>
+              <autocomplete ng-model="result" attr-placeholder="type to search flight..." click-activation="true" data="flights" on-type="searchType" on-select="searchSelected"></autocomplete>
+            </li>
             <li style="
     padding-top: 3px;
 ">

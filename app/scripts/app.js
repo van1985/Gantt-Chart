@@ -15,6 +15,8 @@ var _mainModules = [
     ,'ngDraggable'
     ,'snap'
     ,'ui.bootstrap'
+    ,'autocomplete'
+    ,'searchTyping'
     // yo:ngMainModules
 ];
 
