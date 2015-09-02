@@ -1,5 +1,3 @@
-/* --- Made by justgoscha and licensed under MIT license --- */
-
 var app = angular.module('autocomplete', []);
 
 app.directive('autocomplete', function() {
@@ -9,11 +7,11 @@ app.directive('autocomplete', function() {
     restrict: 'E',
     scope: {
       searchParam: '=ngModel',
-      flights: '=flights',
-      //suggestions: '=data',
+      suggestions: '=data',
       onType: '=onType',
       onSelect: '=onSelect',
-      autocompleteRequired: '='
+      autocompleteRequired: '=',
+      flights: '=flights',
     },
     controller: ['$scope', function($scope){
       // the index of the suggestions that's currently selected
@@ -50,7 +48,6 @@ app.directive('autocomplete', function() {
 
         if(watching && typeof $scope.searchParam !== 'undefined' && $scope.searchParam !== null) {
           $scope.completing = true;
-          //console.log($scope.flights);
           $scope.searchFilter = $scope.searchParam;
           $scope.selectedIndex = -1;
         }
@@ -161,13 +158,6 @@ app.directive('autocomplete', function() {
         }, 150);
       }, true);
 
-
-      document.addEventListener("focus", function(e) {
-        scope.completing = true;
-        scope.$apply();
-      }, true);
-
-
       element[0].addEventListener("keydown",function (e){
         var keycode = e.keyCode || e.which;
 
@@ -258,21 +248,15 @@ app.directive('autocomplete', function() {
             class="{{ attrs.inputclass }}"\
             id="{{ attrs.inputid }}"\
             ng-required="{{ autocompleteRequired }}" />\
-          <ul>\
-            <li ng-repeat="category in flights">\
-                {{category.category}}\
-                <ul>\
-                    <li\
-                        suggestion\
-                        ng-repeat="flight in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
-                        index="{{ $index }}"\
-                        ng-class="{ active: ($index === selectedIndex) }"\
-                        ng-click="select(flight)"\
-                        ng-bind-html="flight | highlight:searchParam">\
-                        {{flight.flight}}\
-                    </li>\
-                </ul>\
-            </li>\
+          <ul ng-show="completing && (suggestions | filter:searchFilter).length > 0">\
+            <li\
+              suggestion\
+              ng-repeat="suggestion in suggestions | filter:searchFilter | orderBy:\'toString()\' track by $index"\
+              index="{{ $index }}"\
+              val="{{ suggestion }}"\
+              ng-class="{ active: ($index === selectedIndex) }"\
+              ng-click="select(suggestion)"\
+              ng-bind-html="suggestion | highlight:searchParam"></li>\
           </ul>\
         </div>'
   };
@@ -280,7 +264,7 @@ app.directive('autocomplete', function() {
 
 app.filter('highlight', ['$sce', function ($sce) {
   return function (input, searchParam) {
-    if (typeof input === 'function' || searchParam === '') return '';
+    if (typeof input === 'function') return '';
     if (searchParam) {
       var words = '(' +
             searchParam.split(/\ /).join(' |') + '|' +
@@ -288,8 +272,7 @@ app.filter('highlight', ['$sce', function ($sce) {
           ')',
           exp = new RegExp(words, 'gi');
       if (words.length) {
-        //input = input.replace(exp, "<span class=\"highlight\">$1</span>");
-        input = input.flight.replace(exp, "<span class=\"highlight\">$1</span>");
+        input = input.replace(exp, "<span>$1</span>");
       }
     }
     return $sce.trustAsHtml(input);
