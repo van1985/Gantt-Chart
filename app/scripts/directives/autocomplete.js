@@ -102,7 +102,8 @@ app.directive('autocomplete', function() {
         scope.$apply();
       }, 250);
 
-      var attr = '';
+      var attr = '',
+          key = {left: 37, up: 38, right: 39, down: 40 , enter: 13, esc: 27, tab: 9};
 
       // Default atts
       scope.attrs = {
@@ -133,7 +134,6 @@ app.directive('autocomplete', function() {
         };
       }
 
-      var key = {left: 37, up: 38, right: 39, down: 40 , enter: 13, esc: 27, tab: 9};
 
       document.addEventListener("keydown", function(e){
         var keycode = e.keyCode || e.which;
@@ -253,10 +253,8 @@ app.directive('autocomplete', function() {
               suggestion\
               ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
               index="{{ $index }}"\
-              val="{{ category.category }}"\
               ng-class="{ active: ($index === selectedIndex) }"\
-              ng-click="select(suggestion)"\
-              ng-bind-html="suggestion | highlight:searchParam">\
+              html="category">\
               <div class="header-section">\
               {{ category.category}}</div>\
               <ul class="section">\
@@ -270,23 +268,6 @@ app.directive('autocomplete', function() {
   };
 });
 
-app.filter('highlight', ['$sce', function ($sce) {
-  return function (input, searchParam) {
-    if (typeof input === 'function') return '';
-    if (searchParam) {
-      var words = '(' +
-            searchParam.split(/\ /).join(' |') + '|' +
-            searchParam.split(/\ /).join('|') +
-          ')',
-          exp = new RegExp(words, 'gi');
-      if (words.length) {
-         //input = input.category.replace(exp, "<span>$1</span>");
-         input = input.category.replace(exp, "<span class=\"highlight\">$1</span>");
-      }
-    }
-    return $sce.trustAsHtml(input);
-  };
-}]);
 
 app.directive('suggestion', function(){
   return {

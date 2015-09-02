@@ -157,4 +157,8 @@ angular.module('Dashboard').controller('dashboardCtrl', function (searchTyping, 
             $scope.categoryFlights = searchTyping.getCategoryFlights(typed);
         };
 
+
+        $scope.searchSelected = function(selected) {
+            console.log(selected);
+        };
 });
