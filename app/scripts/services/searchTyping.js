@@ -6,7 +6,7 @@ angular.module("searchTyping", [])
                 var flights,                	
                     categoryFlights = [
                     				{
-                    					"category": "1",
+                    					"category": "Categoria 1",
                     					"flights": [
 	                    						{ flight: "The Wolverine"},
 	                    						{ flight: "The Smurfs 2"},
@@ -14,7 +14,7 @@ angular.module("searchTyping", [])
                     						]
                     				},
                     				{
-                    					"category": "2",
+                    					"category": "Categoria 2",
                     					"flights": [
 	                    						{ flight: "Red 2"},
 	                    						{ flight: "Jobs"},
@@ -24,7 +24,7 @@ angular.module("searchTyping", [])
                     						]
                     				},
                     				{
-                    					"category": "3",
+                    					"category": "Categoria 3",
                     					"flights": [
 	                    						{ flight: "Only God Forgives"},
 	                    						{ flight: "I Give It a Year"},
@@ -32,7 +32,7 @@ angular.module("searchTyping", [])
                     						]
                     				},
                     				{
-                    					"category": "4",
+                    					"category": "Categoria 4",
                     					"flights": [
                     							{ flight: "Europa Report"},
                     							{ flight: "Stuck in Love"},
@@ -42,7 +42,7 @@ angular.module("searchTyping", [])
                 							]
                     				},
                     				{
-                    					"category": "5",
+                    					"category": "Categoria 5",
                     					"flights": [
                     							{ flight: "White House Down"},
                     							{ flight: "Lovelace"},

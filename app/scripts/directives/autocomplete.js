@@ -164,7 +164,7 @@ app.directive('autocomplete', function() {
         var l = angular.element(this).find('li').length;
 
         // this allows submitting forms by pressing Enter in the autocompleted field
-        if(!scope.completing || l == 0) return;
+        //if(!scope.completing || l == 0) return;
 
         // implementation of the up and down movement in the list of suggestions
         switch (keycode){
@@ -241,22 +241,30 @@ app.directive('autocomplete', function() {
     },
     template: '\
         <div class="autocomplete {{ attrs.class }}" id="{{ attrs.id }}">\
-          <input\
-            type="text"\
-            ng-model="searchParam"\
-            placeholder="{{ attrs.placeholder }}"\
-            class="{{ attrs.inputclass }}"\
-            id="{{ attrs.inputid }}"\
-            ng-required="{{ autocompleteRequired }}" />\
-          <ul ng-show="completing && (suggestions | filter:searchFilter).length > 0">\
+          <input ng-model="searchParam"\
+            type="text" placeholder="{{ attrs.placeholder }}"\
+            class="{{ attrs.inputclass }} search-box"\
+            id="autocomplete1"\
+            ng-required="{{ autocompleteRequired }}">\
+             <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>\
+            </input>\
+          <ul   ng-show="completing && (suggestions | filter:searchFilter).length > 0" >\
             <li\
               suggestion\
-              ng-repeat="suggestion in suggestions | filter:searchFilter | orderBy:\'toString()\' track by $index"\
+              ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
               index="{{ $index }}"\
-              val="{{ suggestion }}"\
+              val="{{ category.category }}"\
               ng-class="{ active: ($index === selectedIndex) }"\
               ng-click="select(suggestion)"\
-              ng-bind-html="suggestion | highlight:searchParam"></li>\
+              ng-bind-html="suggestion | highlight:searchParam">\
+              <div class="header-section">\
+              {{ category.category}}</div>\
+              <ul class="section">\
+                <li class="sub-menu" ng-repeat="result in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index">\
+                    {{result.flight}}\
+                </li>\
+              </ul>\
+              </li>\
           </ul>\
         </div>'
   };
@@ -272,7 +280,8 @@ app.filter('highlight', ['$sce', function ($sce) {
           ')',
           exp = new RegExp(words, 'gi');
       if (words.length) {
-        input = input.replace(exp, "<span>$1</span>");
+         //input = input.category.replace(exp, "<span>$1</span>");
+         input = input.category.replace(exp, "<span class=\"highlight\">$1</span>");
       }
     }
     return $sce.trustAsHtml(input);
