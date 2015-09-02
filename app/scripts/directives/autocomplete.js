@@ -1,5 +1,3 @@
-/* --- Made by justgoscha and licensed under MIT license --- */
-
 var app = angular.module('autocomplete', []);
 
 app.directive('autocomplete', function() {
@@ -9,11 +7,11 @@ app.directive('autocomplete', function() {
     restrict: 'E',
     scope: {
       searchParam: '=ngModel',
-      flights: '=flights',
-      //suggestions: '=data',
+      suggestions: '=data',
       onType: '=onType',
       onSelect: '=onSelect',
-      autocompleteRequired: '='
+      autocompleteRequired: '=',
+      flights: '=flights',
     },
     controller: ['$scope', function($scope){
       // the index of the suggestions that's currently selected
@@ -50,7 +48,6 @@ app.directive('autocomplete', function() {
 
         if(watching && typeof $scope.searchParam !== 'undefined' && $scope.searchParam !== null) {
           $scope.completing = true;
-          //console.log($scope.flights);
           $scope.searchFilter = $scope.searchParam;
           $scope.selectedIndex = -1;
         }
@@ -161,20 +158,13 @@ app.directive('autocomplete', function() {
         }, 150);
       }, true);
 
-
-      document.addEventListener("focus", function(e) {
-        scope.completing = true;
-        scope.$apply();
-      }, true);
-
-
       element[0].addEventListener("keydown",function (e){
         var keycode = e.keyCode || e.which;
 
         var l = angular.element(this).find('li').length;
 
         // this allows submitting forms by pressing Enter in the autocompleted field
-        if(!scope.completing || l == 0) return;
+        //if(!scope.completing || l == 0) return;
 
         // implementation of the up and down movement in the list of suggestions
         switch (keycode){
@@ -251,28 +241,30 @@ app.directive('autocomplete', function() {
     },
     template: '\
         <div class="autocomplete {{ attrs.class }}" id="{{ attrs.id }}">\
-          <input\
-            type="text"\
-            ng-model="searchParam"\
-            placeholder="{{ attrs.placeholder }}"\
-            class="{{ attrs.inputclass }}"\
-            id="{{ attrs.inputid }}"\
-            ng-required="{{ autocompleteRequired }}" />\
-          <ul>\
-            <li ng-repeat="category in flights">\
-                {{category.category}}\
-                <ul>\
-                    <li\
-                        suggestion\
-                        ng-repeat="flight in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
-                        index="{{ $index }}"\
-                        ng-class="{ active: ($index === selectedIndex) }"\
-                        ng-click="select(flight)"\
-                        ng-bind-html="flight | highlight:searchParam">\
-                        {{flight.flight}}\
-                    </li>\
-                </ul>\
-            </li>\
+          <input ng-model="searchParam"\
+            type="text" placeholder="{{ attrs.placeholder }}"\
+            class="{{ attrs.inputclass }} search-box"\
+            id="autocomplete1"\
+            ng-required="{{ autocompleteRequired }}">\
+             <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>\
+            </input>\
+          <ul   ng-show="completing && (suggestions | filter:searchFilter).length > 0" >\
+            <li\
+              suggestion\
+              ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
+              index="{{ $index }}"\
+              val="{{ category.category }}"\
+              ng-class="{ active: ($index === selectedIndex) }"\
+              ng-click="select(suggestion)"\
+              ng-bind-html="suggestion | highlight:searchParam">\
+              <div class="header-section">\
+              {{ category.category}}</div>\
+              <ul class="section">\
+                <li class="sub-menu" ng-repeat="result in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index">\
+                    {{result.flight}}\
+                </li>\
+              </ul>\
+              </li>\
           </ul>\
         </div>'
   };
@@ -280,7 +272,7 @@ app.directive('autocomplete', function() {
 
 app.filter('highlight', ['$sce', function ($sce) {
   return function (input, searchParam) {
-    if (typeof input === 'function' || searchParam === '') return '';
+    if (typeof input === 'function') return '';
     if (searchParam) {
       var words = '(' +
             searchParam.split(/\ /).join(' |') + '|' +
@@ -288,8 +280,8 @@ app.filter('highlight', ['$sce', function ($sce) {
           ')',
           exp = new RegExp(words, 'gi');
       if (words.length) {
-        //input = input.replace(exp, "<span class=\"highlight\">$1</span>");
-        input = input.flight.replace(exp, "<span class=\"highlight\">$1</span>");
+         //input = input.category.replace(exp, "<span>$1</span>");
+         input = input.category.replace(exp, "<span class=\"highlight\">$1</span>");
       }
     }
     return $sce.trustAsHtml(input);
