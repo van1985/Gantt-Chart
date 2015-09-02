@@ -7,7 +7,6 @@ app.directive('autocomplete', function() {
     restrict: 'E',
     scope: {
       searchParam: '=ngModel',
-      suggestions: '=data',
       onType: '=onType',
       onSelect: '=onSelect',
       autocompleteRequired: '=',
@@ -148,6 +147,7 @@ app.directive('autocomplete', function() {
         }
       }, true);
 
+
       document.addEventListener("blur", function(e){
         // disable suggestions on blur
         // we do a timeout to prevent hiding it before a click event is registered
@@ -157,6 +157,8 @@ app.directive('autocomplete', function() {
           scope.$apply();
         }, 150);
       }, true);
+
+
 
       element[0].addEventListener("keydown",function (e){
         var keycode = e.keyCode || e.which;
@@ -248,17 +250,16 @@ app.directive('autocomplete', function() {
             ng-required="{{ autocompleteRequired }}">\
              <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>\
             </input>\
-          <ul   ng-show="completing && (suggestions | filter:searchFilter).length > 0" >\
+          <ul   ng-show="completing && (flights | filter:searchFilter).length > 0" >\
             <li\
-              suggestion\
               ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
-              index="{{ $index }}"\
               ng-class="{ active: ($index === selectedIndex) }"\
               html="category">\
               <div class="header-section">\
               {{ category.category}}</div>\
               <ul class="section">\
-                <li class="sub-menu" ng-repeat="result in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index">\
+                <li index="{{ $index }}" class="sub-menu"\
+                    ng-repeat="result in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index" suggestion>\
                     {{result.flight}}\
                 </li>\
               </ul>\
@@ -272,16 +273,26 @@ app.directive('autocomplete', function() {
 app.directive('suggestion', function(){
   return {
     restrict: 'A',
-    require: '^autocomplete', // ^look for controller on parents element
+    require: '^autocomplete', // ^look for controller on parents element  
     link: function(scope, element, attrs, autoCtrl){
+
+      element.bind('click', function() {
+          console.log(element[0].innerText);
+      });
+      
+
+      
       element.bind('mouseenter', function() {
-        autoCtrl.preSelect(attrs.val);
+        console.log(attrs.index);
+        autoCtrl.preSelect(element[0].innerText);
         autoCtrl.setIndex(attrs.index);
       });
 
       element.bind('mouseleave', function() {
         autoCtrl.preSelectOff();
       });
+      
+
     }
   };
 });

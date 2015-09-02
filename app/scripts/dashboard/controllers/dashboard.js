@@ -154,11 +154,13 @@ angular.module('Dashboard').controller('dashboardCtrl', function (searchTyping, 
 
         $scope.searchType = function(typed) {
             $scope.flights = searchTyping.getFlights(typed);
-            $scope.categoryFlights = searchTyping.getCategoryFlights(typed);
         };
 
 
         $scope.searchSelected = function(selected) {
             console.log(selected);
+            /*if(searchTyping.selectedIsCategory(selected)) {
+                console.log(selected);
+            }*/
         };
 });
