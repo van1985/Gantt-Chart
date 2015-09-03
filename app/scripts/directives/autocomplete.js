@@ -13,6 +13,7 @@ app.directive('autocomplete', function() {
       flights: '=flights',
     },
     controller: ['$scope', function($scope){
+      var key = {left: 37, up: 38, right: 39, down: 40 , enter: 13, esc: 27, tab: 9};
       // the index of the suggestions that's currently selected
       $scope.selectedIndex = -1;
 
@@ -93,6 +94,103 @@ app.directive('autocomplete', function() {
       };
 
 
+      document.addEventListener("keydown", function(e){
+        var keycode = e.keyCode || e.which;            
+
+        switch (keycode){
+          case key.esc:
+            // disable suggestions on escape
+            $scope.select();
+            $scope.setIndex(-1);
+            $scope.$apply();
+            e.preventDefault();
+        }
+      }, true);
+
+
+
+      $scope.keyPressed = function(e, l) {
+        var keycode = e.keyCode || e.which;
+
+        // this allows submitting forms by pressing Enter in the autocompleted field
+        //if(!scope.completing || l == 0) return;
+
+        // implementation of the up and down movement in the list of suggestions
+        switch (keycode){
+          case key.up:
+
+            index = $scope.getIndex()-1;
+            if(index<-1){
+              index = l-1;
+            } else if (index >= l ){
+              index = -1;
+              $scope.setIndex(index);
+              $scope.preSelectOff();
+              break;
+            }
+            $scope.setIndex(index);
+
+            if(index!==-1)
+              $scope.preSelect(angular.element(angular.element(l).find('li')[index]).text());
+
+            $scope.$apply();
+
+            break;
+          case key.down:
+            index = $scope.getIndex()+1;
+            if(index<-1){
+              index = l-1;
+            } else if (index >= l ){
+              index = -1;
+              $scope.setIndex(index);
+              $scope.preSelectOff();
+              $scope.$apply();
+              break;
+            }
+            $scope.setIndex(index);
+
+            if(index!==-1) {
+              $scope.preSelect(angular.element(angular.element(l).find('li')[index]).text());
+            }
+
+            break;
+          case key.left:
+            break;
+          //case key.right:
+          case key.enter:
+
+            index = $scope.getIndex();
+            // scope.preSelectOff();
+            if(index !== -1) {
+              $scope.select(angular.element(angular.element(l).find('li')[index]).text().trim());
+              if(keycode == key.enter) {
+                e.preventDefault();
+              }
+            } else {
+              if(keycode == key.enter) {
+                $scope.select();
+              }
+            }
+            $scope.setIndex(-1);
+            $scope.$apply();
+
+            break;
+          case key.esc:
+            // disable suggestions on escape
+            $scope.select();
+            $scope.setIndex(-1);
+            $scope.$apply();
+            e.preventDefault();
+            break;
+          default:
+            return;
+        }
+      };
+
+
+
+
+
     }],
     link: function(scope, element, attrs){
 
@@ -134,18 +232,7 @@ app.directive('autocomplete', function() {
       }
 
 
-      document.addEventListener("keydown", function(e){
-        var keycode = e.keyCode || e.which;
-
-        switch (keycode){
-          case key.esc:
-            // disable suggestions on escape
-            scope.select();
-            scope.setIndex(-1);
-            scope.$apply();
-            e.preventDefault();
-        }
-      }, true);
+      
 
 
       document.addEventListener("blur", function(e){
@@ -167,83 +254,8 @@ app.directive('autocomplete', function() {
 
 
       element[0].addEventListener("keydown",function (e){
-        var keycode = e.keyCode || e.which;
-
-        var l = angular.element(this).find('li').length;
-
-        // this allows submitting forms by pressing Enter in the autocompleted field
-        //if(!scope.completing || l == 0) return;
-
-        // implementation of the up and down movement in the list of suggestions
-        switch (keycode){
-          case key.up:
-
-            index = scope.getIndex()-1;
-            if(index<-1){
-              index = l-1;
-            } else if (index >= l ){
-              index = -1;
-              scope.setIndex(index);
-              scope.preSelectOff();
-              break;
-            }
-            scope.setIndex(index);
-
-            if(index!==-1)
-              scope.preSelect(angular.element(angular.element(this).find('li')[index]).text());
-
-            scope.$apply();
-
-            break;
-          case key.down:
-            index = scope.getIndex()+1;
-            if(index<-1){
-              index = l-1;
-            } else if (index >= l ){
-              index = -1;
-              scope.setIndex(index);
-              scope.preSelectOff();
-              scope.$apply();
-              break;
-            }
-            scope.setIndex(index);
-
-            if(index!==-1)
-              scope.preSelect(angular.element(angular.element(this).find('li')[index]).text());
-
-            break;
-          case key.left:
-            break;
-          //case key.right:
-          case key.enter:
-
-            index = scope.getIndex();
-            // scope.preSelectOff();
-            if(index !== -1) {
-              scope.select(angular.element(angular.element(this).find('li')[index]).text().trim());
-              if(keycode == key.enter) {
-                e.preventDefault();
-              }
-            } else {
-              if(keycode == key.enter) {
-                scope.select();
-              }
-            }
-            scope.setIndex(-1);
-            scope.$apply();
-
-            break;
-          case key.esc:
-            // disable suggestions on escape
-            scope.select();
-            scope.setIndex(-1);
-            scope.$apply();
-            e.preventDefault();
-            break;
-          default:
-            return;
-        }
-
+        var l = angular.element(this).find('li');
+        scope.keyPressed(e, l);
       });
     },
     template: '\
@@ -281,16 +293,10 @@ app.directive('suggestion', function(){
     require: '^autocomplete', // ^look for controller on parents element  
     link: function(scope, element, attrs, autoCtrl){
 
-      //console.log(autoCtrl);
-      //console.log(scope);
-
-
-      element.bind('click', function(e) {
-          element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value = element[0].innerText;
-          element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].focus();
+      element.bind('click', function() {
+        element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value = element[0].innerText;
+        element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].focus();
       });
-      
-
       
       element.bind('mouseenter', function() {
         element[0].style.backgroundColor = "#9AD4E9";
@@ -299,21 +305,13 @@ app.directive('suggestion', function(){
       element.bind('mouseleave', function() {
         element[0].style.backgroundColor = "white";
       });
-      
-      element.bind('keydown', function(e) {
-        var key = {up: 38, down: 40};
-        console.log(e);
-        switch (keycode) {
-          case key.up:
-            console.log(e);
-            break;
 
-          case key.down:
-            console.log(e);
-            break;
-        }
 
-      });
+      element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].onkeydown = function(e) {
+        var l = angular.element(element);
+        //should call scope.keyPressed but not available in autoCtrl
+        //autoCtrl.preSelect(element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value);
+      };
 
     }
   };
