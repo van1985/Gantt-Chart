@@ -159,6 +159,12 @@ app.directive('autocomplete', function() {
       }, true);
 
 
+      document.addEventListener("focus", function(e) {
+        scope.completing = true;
+        scope.$apply();
+      }, true);
+
+
 
       element[0].addEventListener("keydown",function (e){
         var keycode = e.keyCode || e.which;
@@ -208,14 +214,13 @@ app.directive('autocomplete', function() {
             break;
           case key.left:
             break;
-          case key.right:
+          //case key.right:
           case key.enter:
-          case key.tab:
 
             index = scope.getIndex();
             // scope.preSelectOff();
             if(index !== -1) {
-              scope.select(angular.element(angular.element(this).find('li')[index]).text());
+              scope.select(angular.element(angular.element(this).find('li')[index]).text().trim());
               if(keycode == key.enter) {
                 e.preventDefault();
               }
@@ -276,22 +281,39 @@ app.directive('suggestion', function(){
     require: '^autocomplete', // ^look for controller on parents element  
     link: function(scope, element, attrs, autoCtrl){
 
-      element.bind('click', function() {
-          console.log(element[0].innerText);
+      //console.log(autoCtrl);
+      //console.log(scope);
+
+
+      element.bind('click', function(e) {
+          element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value = element[0].innerText;
+          element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].focus();
       });
       
 
       
       element.bind('mouseenter', function() {
-        console.log(attrs.index);
-        autoCtrl.preSelect(element[0].innerText);
-        autoCtrl.setIndex(attrs.index);
+        element[0].style.backgroundColor = "#9AD4E9";
       });
 
       element.bind('mouseleave', function() {
-        autoCtrl.preSelectOff();
+        element[0].style.backgroundColor = "white";
       });
       
+      element.bind('keydown', function(e) {
+        var key = {up: 38, down: 40};
+        console.log(e);
+        switch (keycode) {
+          case key.up:
+            console.log(e);
+            break;
+
+          case key.down:
+            console.log(e);
+            break;
+        }
+
+      });
 
     }
   };

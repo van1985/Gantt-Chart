@@ -158,9 +158,8 @@ angular.module('Dashboard').controller('dashboardCtrl', function (searchTyping, 
 
 
         $scope.searchSelected = function(selected) {
-            console.log(selected);
-            /*if(searchTyping.selectedIsCategory(selected)) {
+            if(!searchTyping.selectedIsCategory(selected)) {
                 console.log(selected);
-            }*/
+            }
         };
 });
