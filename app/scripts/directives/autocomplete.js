@@ -293,9 +293,11 @@ app.directive('suggestion', function(){
     require: '^autocomplete', // ^look for controller on parents element  
     link: function(scope, element, attrs, autoCtrl){
 
+      var inputElem = element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1];
+
       element.bind('click', function() {
-        element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value = element[0].innerText;
-        element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].focus();
+        inputElem.value = element[0].innerText;
+        inputElem.focus();
       });
       
       element.bind('mouseenter', function() {
@@ -307,7 +309,7 @@ app.directive('suggestion', function(){
       });
 
 
-      element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].onkeydown = function(e) {
+      inputElem.onkeydown = function(e) {
         var l = angular.element(element);
         //should call scope.keyPressed but not available in autoCtrl
         //autoCtrl.preSelect(element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value);
