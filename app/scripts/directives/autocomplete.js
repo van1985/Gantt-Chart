@@ -270,11 +270,10 @@ app.directive('autocomplete', function() {
           <ul   ng-show="completing && (flights | filter:searchFilter).length > 0" >\
             <li\
               ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
-              ng-class="{ active: ($index === selectedIndex) }"\
               html="category">\
               <div class="header-section">\
               {{ category.category}}</div>\
-              <ul class="section">\
+              <ul class="section dropSuggestions">\
                 <li index="{{ $index }}" class="sub-menu"\
                     ng-repeat="result in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index" suggestion>\
                     {{result.flight}}\
@@ -288,12 +287,35 @@ app.directive('autocomplete', function() {
 
 
 app.directive('suggestion', function(){
+  var suggestionsArr = [],
+      selectedIndex = -1;
   return {
     restrict: 'A',
-    require: '^autocomplete', // ^look for controller on parents element  
-    link: function(scope, element, attrs, autoCtrl){
+    controller: ['$scope', function($scope){
+
+      $scope.addSuggestion = function(suggestion) {
+        suggestionsArr.push(suggestion);
+      };
+
+      $scope.getSuggestionArr = function() {
+        return suggestionsArr;
+      };
+
+      $scope.setIndex = function(i) {
+        if(i !== undefined) {
+          selectedIndex = i;
+        }
+      };
+
+      $scope.getIndex = function() {
+        return selectedIndex;
+      };
+    }],
+    link: function(scope, element, attrs){
 
       var inputElem = element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1];
+
+      scope.addSuggestion(element[0]);
 
       element.bind('click', function() {
         inputElem.value = element[0].innerText;
@@ -301,6 +323,7 @@ app.directive('suggestion', function(){
       });
       
       element.bind('mouseenter', function() {
+        scope.setIndex(element[0].index);
         element[0].style.backgroundColor = "#9AD4E9";
       });
 
@@ -310,9 +333,33 @@ app.directive('suggestion', function(){
 
 
       inputElem.onkeydown = function(e) {
-        var l = angular.element(element);
-        //should call scope.keyPressed but not available in autoCtrl
-        //autoCtrl.preSelect(element[0].parentElement.parentElement.parentElement.parentElement.childNodes[1].value);
+
+        //var active = document.querySelector(".hover") || document.querySelector(".dropSuggestions li"),
+        var index = scope.getIndex(),
+            active = scope.getSuggestionArr()[index] || document.querySelector(".dropSuggestions li");
+
+        //active.classList.remove('hover');
+        active.style.backgroundColor = "white";
+
+        if (e.which === 40) {
+          if(index < scope.getSuggestionArr().length -1) {
+            if(index >= 0) {
+              active = active.nextElementSibling ? active.nextElementSibling : scope.getSuggestionArr()[index + 1];
+            }
+
+            scope.setIndex(index + 1);
+          }
+        } else if (e.which === 38) {
+          if(index > 0) {
+            active = active.previousElementSibling ? active.previousElementSibling : scope.getSuggestionArr()[index - 1];
+            scope.setIndex(index - 1);
+          }
+        }
+
+        active.style.backgroundColor = "#9AD4E9";
+        //active.classList.add('hover');
+
+
       };
 
     }
