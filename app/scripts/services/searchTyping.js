@@ -77,7 +77,7 @@ angular.module("searchTyping", [])
 
             service.selectedIsCategory = function(selected) {
                 //return selected.indexOf(getCategories(typing)) !== -1 ? true : false;
-                return $.inArray(selected, getCategories(typing));
+                //return $.inArray(selected, getCategories(typing));
             };
 
             
