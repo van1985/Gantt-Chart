@@ -1,0 +1,457 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<div class="solutions">
+	<div class="row">
+		<!-- left side solutions filter -->
+		<div class="solutions-filter col-md-3">
+			
+			<div class="row">
+				<div class="col-md-12">
+					<p>Solutions filters</p>
+				</div>
+			</div>
+
+			<!-- calendar from - to -->
+			<div class="row">
+				<div class="col-md-6">
+					<button type="button" class="btn btn-default">MM/DD <span class="glyphicons glyphicons-calendar"></span> </button>
+				</div>
+
+				<div class="col-md-6">
+					<button type="button" class="btn btn-default">MM/DD <span class="glyphicons glyphicons-calendar"></span> </button>
+				</div>
+			</div>
+
+			<!-- crew -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="btn-group btn-group-sm" role="group">
+					  <button type="button" class="btn btn-default">All</button>
+					  <button type="button" class="btn btn-default">Pilot</button>
+					  <button type="button" class="btn btn-default">FA</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Positions -->
+			<div class="row">
+				<div class="col-md-12">
+					<div>Positions</div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Captain & FO
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Status -->
+			<div class="row">
+				<div class="col-md-12">
+					<div>Status</div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    All
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Fleet -->
+			<div class="row">
+				<div class="col-md-12">
+					<div>Fleet</div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    747
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Domicile -->
+			<div class="row">
+				<div class="col-md-12">
+					<div>Domicile</div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    ORD
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Apply button -->
+			<div class="row">
+				<div class="col-md-12">
+					<button class="btn btn-info">Apply</button>
+				</div>
+			</div>
+
+			<!-- reset all -->
+			<div class="row">
+				<div class="col-md-12">
+					<p>Reset all</p>
+				</div>
+			</div>			
+
+		</div>
+
+
+		<!-- right side solutions results -->
+		<div class="solutions-result col-md-9">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pull-left">25 Results</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right"> <span class="glyphicon glyphicon-circle-arrow-down"></span> </div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pull-left">14 Lineholders</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right"> <span class="glyphicon glyphicon-menu-down"></span> </div>
+				</div>
+			</div>
+
+			<div class="divide-line"></div>
+
+			<!--  -->
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>Domicile</div>
+						</div>
+						<div class="col-md-8">
+							<label>Employee</label>
+						</div>
+						<div class="col-md-2">
+							<div>Pairing</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<div>Block time</div>
+						</div>
+						<div class="col-md-2">
+							<div>Duty day</div>
+						</div>
+						<div class="col-md-8">
+							<div>Next</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-4">
+							<div>Opt time</div>
+						</div>
+						<div class="col-md-4">
+							<div>Legal</div>
+						</div>
+						<div class="col-md-4">
+							<div>Info</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>###</div>
+						</div>
+						<div class="col-md-8">
+							<div>CA######## Lastname, Name</div>
+						</div>
+						<div class="col-md-2">
+							<div>#####</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-2">
+							<div>03</div>
+						</div>
+						<div class="col-md-8">
+							<div>### ORI - DES</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-4">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-4">
+							<div>View</div>
+						</div>
+						<div class="col-md-4">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>###</div>
+						</div>
+						<div class="col-md-8">
+							<div>CA######## Lastname, Name</div>
+						</div>
+						<div class="col-md-2">
+							<div>#####</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-2">
+							<div>03</div>
+						</div>
+						<div class="col-md-8">
+							<div>### ORI - DES</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-4">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-4">
+							<div>View</div>
+						</div>
+						<div class="col-md-4">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>###</div>
+						</div>
+						<div class="col-md-8">
+							<div>CA######## Lastname, Name</div>
+						</div>
+						<div class="col-md-2">
+							<div>#####</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-2">
+							<div>03</div>
+						</div>
+						<div class="col-md-8">
+							<div>### ORI - DES</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-4">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-4">
+							<div>View</div>
+						</div>
+						<div class="col-md-4">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>###</div>
+						</div>
+						<div class="col-md-8">
+							<div>CA######## Lastname, Name</div>
+						</div>
+						<div class="col-md-2">
+							<div>#####</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-2">
+							<div>03</div>
+						</div>
+						<div class="col-md-8">
+							<div>### ORI - DES</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-4">
+							<div>HH:MM</div>
+						</div>
+						<div class="col-md-4">
+							<div>View</div>
+						</div>
+						<div class="col-md-4">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="text-center"> View 9 more </div>
+			</div>
+
+
+
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pull-left">11 Reserves</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right"> <span class="glyphicon glyphicon-menu-down"></span> </div>
+				</div>
+			</div>
+
+			<div class="divide-line"></div>
+
+			
+
+			<!--  -->
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>Domicile</div>
+						</div>
+						<div class="col-md-8">
+							<label>Employee</label>
+						</div>
+						<div class="col-md-2" style="margin-left: -5px;">
+							<div>Type</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5">
+					<div class="col-md-4">
+						<div>Seniority</div>
+					</div>
+					<div class="col-md-4">
+						<div>Start date</div>
+					</div>
+					<div class="col-md-4">
+						<div>Days av.</div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="col-md-4">
+						<div style="margin-left: -60px; width: 377%">Next pairing</div>
+					</div>
+					<div class="col-md-4">
+						<div>Legal</div>
+					</div>
+					<div class="col-md-4">
+						<div>Info</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!--  -->
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div>###</div>
+						</div>
+						<div class="col-md-8">
+							<div>CA####### Lastname, Name</div>
+						</div>
+						<div class="col-md-2" style="margin-left: -5px;">
+							<div style="width: 377%">RSV type</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5">
+					<div class="col-md-4">
+						<div>#####</div>
+					</div>
+					<div class="col-md-4">
+						<div>MM/DD</div>
+					</div>
+					<div class="col-md-4">
+						<div>01</div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="col-md-4">
+						<div style="margin-left: -60px;">######</div>
+					</div>
+					<div class="col-md-4">
+						<div>view</div>
+					</div>
+					<div class="col-md-4">
+						<div style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
