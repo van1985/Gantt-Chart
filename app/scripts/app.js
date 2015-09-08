@@ -54,6 +54,13 @@ angular.module('CrewSchedGUI', _mainModules )
             }
         });
 
+        routes.push({
+            name: '/solutions-list',
+            params: {
+                templateUrl: 'scripts/solutions-list/views/solutions-list.html'
+            }
+        });
+
 // yo:ngRoutes
 
         routes.forEach(function(route){

@@ -1,0 +1,626 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<div class="solutions">
+	<div class="row">
+		<!-- left side solutions filter -->
+		<div class="solutions-filter col-md-2">
+			
+			<div class="row">
+				<div class="col-md-12">
+					<p style="margin-top: 14px;"><span class="white-font">Solutions filters</span></p>
+				</div>
+			</div>
+
+			<!-- calendar from - to -->
+			<div class="row">
+				<div class="col-md-6">
+					<div><span class="white-font">From</span></div>
+					<button type="button" class="btn btn-default grey-filters no-text-shadow">MM/DD <span class="glyphicon glyphicon-calendar"></span></button>
+				</div>
+
+				<div class="col-md-6">
+					<div><span class="white-font">To</span></div>
+					<button type="button" class="btn btn-default grey-filters no-text-shadow">MM/DD <span class="glyphicon glyphicon-calendar"></span></button>
+				</div>
+			</div>
+
+			<!-- crew -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<div><span class="white-font">Crew</span></div>
+					<div class="btn-group btn-group-md" role="group">
+					  <button type="button" class="btn btn-default grey-filters no-text-shadow">All</button>
+					  <button type="button" class="btn btn-default white-filters no-text-shadow">Pilot</button>
+					  <button type="button" class="btn btn-default grey-filters no-text-shadow">FA</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Positions -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<div><span class="white-font">Positions</span></div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Captain & FO
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Status -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<div><span class="white-font">Status</span></div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    All
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Fleet -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<div><span class="white-font">Fleet</span></div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    747
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Domicile -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<div><span class="white-font">Domicile</span></div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    ORD
+						<span class="caret"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Apply button -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<button class="btn btn-apply max-width"><span class="white-font no-text-shadow">Apply</span></button>
+				</div>
+			</div>
+
+			<!-- reset all -->
+			<div class="row group-spacing">
+				<div class="col-md-12">
+					<p class="text-center"><span class="blue-font no-text-shadow">Reset all</span></p>
+				</div>
+			</div>			
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- right side solutions results -->
+		<div class="solutions-result col-md-10">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pull-left large-font">25 Results</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right">Download <span class="glyphicon glyphicon-circle-arrow-down"></span> </div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pull-left medium-font">14 Lineholders</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right"> <span class="glyphicon glyphicon-menu-down"></span> </div>
+				</div>
+			</div>
+
+			<div class="divide-line"></div>
+
+			<!--  -->
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div style="width: 122%;">Domicile <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+						</div>
+						<div class="col-md-8">
+							<label>Employee <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></label>
+						</div>
+						<div class="col-md-2">
+							<div style="width: 104%;">Pairing <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<div style="width: 143%;">Block time <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+						</div>
+						<div class="col-md-2">
+							<div style="width: 105%">Duty day</div>
+						</div>
+						<div class="col-md-8">
+							<div>Next</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-4">
+							<div style="width: 173%;">Dpt time <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+						</div>
+						<div class="col-md-4">
+							<div>Legal</div>
+						</div>
+						<div class="col-md-4">
+							<div>Info</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			
+			<div class="solid-border">
+				<div class="solid-border grey-row">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">########</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2">
+									<div> <span class="blue-font">#####</span> </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="row">
+								
+								<div class="col-md-2">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-2">
+									<div>03</div>
+								</div>
+								<div class="col-md-8">
+									<div>### ORI - DES</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="row">
+								<div class="col-md-4">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-4">
+									<div> <span class="blue-font">View</span> </div>
+								</div>
+								<div class="col-md-4">
+									<span class="glyphicon glyphicon-option-vertical"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="solid-border">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">########</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2">
+									<div> <span class="blue-font">#####</span> </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="row">
+								
+								<div class="col-md-2">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-2">
+									<div>##</div>
+								</div>
+								<div class="col-md-8">
+									<div>### ORI - DES</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="row">
+								<div class="col-md-4">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-4">
+									<div> <span class="blue-font">View</span> </div>
+								</div>
+								<div class="col-md-4">
+									<span class="glyphicon glyphicon-option-vertical"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="solid-border grey-row">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="row row-spacing">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">########</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2">
+									<div> <span class="blue-font">#####</span> </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="row">
+								
+								<div class="col-md-2">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-2">
+									<div>##</div>
+								</div>
+								<div class="col-md-8">
+									<div>### ORI - DES</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="row">
+								<div class="col-md-4">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-4">
+									<div> <span class="blue-font">View</span> </div>
+								</div>
+								<div class="col-md-4">
+									<span class="glyphicon glyphicon-option-vertical"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="solid-border">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">########</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2">
+									<div> <span class="blue-font">#####</span> </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="row">
+								
+								<div class="col-md-2">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-2">
+									<div>##</div>
+								</div>
+								<div class="col-md-8">
+									<div>### ORI - DES</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="row">
+								<div class="col-md-4">
+									<div>HH:MM</div>
+								</div>
+								<div class="col-md-4">
+									<div> <span class="blue-font">View</span> </div>
+								</div>
+								<div class="col-md-4">
+									<span class="glyphicon glyphicon-option-vertical"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="solid-border">
+					<div class="row row-spacing">
+						<div class="text-center"> <span class="blue-font">View 9 more</span> </div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pull-left medium-font">11 Reserves</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pull-right"> <span class="glyphicon glyphicon-menu-down"></span> </div>
+				</div>
+			</div>
+
+			<div class="divide-line"></div>
+
+			
+
+			<!--  -->
+			<div class="row">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-2">
+							<div style="width: 122%;">Domicile <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+						</div>
+						<div class="col-md-8">
+							<label>Employee <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></label>
+						</div>
+						<div class="col-md-2" style="margin-left: -5px;">
+							<div>Type <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5">
+					<div class="col-md-4">
+						<div>Seniority <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+					</div>
+					<div class="col-md-4">
+						<div>Start date <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+					</div>
+					<div class="col-md-4">
+						<div>Days av. <span class="glyphicon glyphicon-triangle-bottom small-icon"></span></div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="col-md-4">
+						<div style="margin-left: -60px; width: 377%">Next pairing</div>
+					</div>
+					<div class="col-md-4">
+						<div>Legal</div>
+					</div>
+					<div class="col-md-4">
+						<div>Info</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!--  -->
+			<div class="solid-border">
+				<div class="solid-border grey-row">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">#######</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2" style="margin-left: -5px;">
+									<div style="width: 377%">RSV type</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="col-md-4">
+								<div>#####</div>
+							</div>
+							<div class="col-md-4">
+								<div>MM/DD</div>
+							</div>
+							<div class="col-md-4">
+								<div>01</div>
+							</div>
+						</div>
+
+						<div class="col-md-2">
+							<div class="col-md-4">
+								<div style="margin-left: -60px;"><span class="blue-font">######</span></div>
+							</div>
+							<div class="col-md-4">
+								<div><span class="blue-font">view</span></div>
+							</div>
+							<div class="col-md-4">
+								<div style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="solid-border">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">#######</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2" style="margin-left: -5px;">
+									<div style="width: 377%">RSV type</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="col-md-4">
+								<div>#####</div>
+							</div>
+							<div class="col-md-4">
+								<div>MM/DD</div>
+							</div>
+							<div class="col-md-4">
+								<div>##</div>
+							</div>
+						</div>
+
+						<div class="col-md-2">
+							<div class="col-md-4">
+								<div style="margin-left: -60px;"><span class="blue-font">######</span></div>
+							</div>
+							<div class="col-md-4">
+								<div><span class="blue-font">view</span></div>
+							</div>
+							<div class="col-md-4">
+								<div style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="solid-border grey-row">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">#######</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2" style="margin-left: -5px;">
+									<div style="width: 377%">RSV type</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="col-md-4">
+								<div>#####</div>
+							</div>
+							<div class="col-md-4">
+								<div>MM/DD</div>
+							</div>
+							<div class="col-md-4">
+								<div>##</div>
+							</div>
+						</div>
+
+						<div class="col-md-2">
+							<div class="col-md-4">
+								<div style="margin-left: -60px;"><span class="blue-font">######</span></div>
+							</div>
+							<div class="col-md-4">
+								<div><span class="blue-font">view</span></div>
+							</div>
+							<div class="col-md-4">
+								<div style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="solid-border">
+					<div class="row row-spacing">
+						<div class="col-md-5">
+							<div class="row">
+								<div class="col-md-2">
+									<div>###</div>
+								</div>
+								<div class="col-md-8">
+									<div>CA <span class="blue-font">#######</span> Lastname, Name</div>
+								</div>
+								<div class="col-md-2" style="margin-left: -5px;">
+									<div style="width: 377%">RSV type</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="col-md-4">
+								<div>#####</div>
+							</div>
+							<div class="col-md-4">
+								<div>MM/DD</div>
+							</div>
+							<div class="col-md-4">
+								<div>##</div>
+							</div>
+						</div>
+
+						<div class="col-md-2">
+							<div class="col-md-4">
+								<div style="margin-left: -60px;"><span class="blue-font">######</span></div>
+							</div>
+							<div class="col-md-4">
+								<div><span class="blue-font">view</span></div>
+							</div>
+							<div class="col-md-4">
+								<div style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="solid-border">
+					<div class="row row-spacing">
+						<div class="text-center"> <span class="blue-font">View 7 more</span> </div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+</div>
