@@ -7,6 +7,7 @@
 	
 	/* solutions filter - left side */
 	.solutions-filter {
+		margin-top: 20px;
 		background: #A7A7A7;
 
 		.max-width {
@@ -51,6 +52,10 @@
 			text-align: right;
 		}
 
+		.no-text-shadow {
+			text-shadow: none;
+		}
+
 		.caret {
 			float: right;
 		}
@@ -63,7 +68,8 @@
 	.solutions-result {
 
 		.divide-line {
-			
+			border: 1px solid #D3D6D7;
+			margin-bottom: 15px;
 		}
 
 		.solid-border {
@@ -77,6 +83,22 @@
 
 		.grey-row {
 			background-color: #E1E4E4;
+		}
+
+		.glyphicon {
+    		font-size: 7px;
+		}
+
+		.large-icon {
+			font-size: 1.3em;
+		}
+
+		.large-font {
+			font-size: 20px;
+		}
+
+		.medium-font {
+			font-size: 16px;	
 		}
 	}
 }
