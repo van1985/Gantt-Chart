@@ -2,17 +2,27 @@
 
 angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, FlightSrvApi, ganttHelper, $modal, $interval, $location, $rootScope) {
 
-console.log("main");
-
   $rootScope.$on('d3Ready', function() {
     initializeScheduleDisplay();
   });
+
+  function assignTasks(tailsTasks) {
+    var i,
+        tasks = [];
+
+    for(i = 0; i < 10; i++) {
+      tasks.push(tailsTasks[i]);
+    }
+
+    return tasks;
+  };
 
 function initializeScheduleDisplay(){
 
 FlightSrvApi.getFlights().
 	then(function(data){
-		constants.tasks = ganttHelper.verifyDateFormat(data.global.flights);
+    constants.tailsTasks = ganttHelper.verifyDateFormat(data.global.flights);
+    constants.tasks = assignTasks(constants.tailsTasks);
 
 		constants.tasks.sort(function(a, b) {
 		    return a.endDate - b.endDate;
@@ -41,10 +51,6 @@ $scope.changeTimeDomain = function(timeDomainString, direction) {
         dates = ganttHelper.xAxis.scale().ticks(ganttHelper.xAxis.ticks()[0]),
         nextDate = dates[dates.length-1];
 
-        //console.log(d3);
-
-    console.log("endDate");
-    //console.log(ganttHelper);
 
     if(direction) {
         if(timeDomainString === '1week') {
@@ -133,6 +139,18 @@ $scope.showAlertTotalsView = function(){
     $scope.showAlertTotals = !$scope.showAlertTotals;
 }
 
+$scope.clearFlights = function() {
+  ganttHelper.clearFlights();
+};
+
+$scope.pageUp = function(){
+  ganttHelper.pageUp();
+};
+
+$scope.pageDown = function() {
+  ganttHelper.pageDown();
+};
+
 
 $scope.items = ['item1', 'item2', 'item3'];
 
@@ -184,6 +202,7 @@ function removeArrayElement(array, task){
   return false;
 };
 
+/*
 $interval(function(){
   FlightSrvApi.getNewFlightAlert().
   then(function(data){
@@ -206,7 +225,7 @@ $interval(function(){
     }
     ganttHelper.gantt.redraw(constants.tasks);
 }, 7000);
-
+*/
 
   $scope.navigateTo = function(view){
       if (view==='dashboard'){
