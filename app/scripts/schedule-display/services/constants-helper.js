@@ -1,5 +1,7 @@
 var constants = {
 
+    "tailsTasks" : [],
+
     "tasks" : [],
 
     "taskStatus" : {
@@ -31,9 +33,13 @@ var constants = {
 
     "selectedFlights" : [],
 
+    "taskTails" : [
+        "Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8", "Tail#9", "Tail#10", "Tail#11", "Tail#12", "Tail#13", "Tail#14", "Tail#15", "Tail#16"
+    ],
+
     "taskNames" : [
         "Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8"
-    ],    
+    ],
 
     "addMinutes" : 25,
 

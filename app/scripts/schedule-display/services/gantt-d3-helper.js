@@ -307,9 +307,60 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
            .attr("xlink:href","../resources/images/user-alert-preview.png");
     };
 
+
+    service.clearFlights = function() {
+        var svg = d3.select("#gantt-chart");            
+
+        constants.taskTypes = ["Tail#9", "Tail#10", "Tail#11", "Tail#12", "Tail#13", "Tail#14", "Tail#15", "Tail#16"];
+        svg.selectAll("*").data([]).exit().remove();
+
+        service.gantt().redraw();
+    };
+
+
+    
+    service.pageUp = function() {
+        var svg = d3.select("#gantt-chart");
+
+        constants.taskTypes = ["Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8"];
+        constants.taskNames = ["Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8"];
+        constants.tasks = assignFlights(0, 10);
+        svg.selectAll("*").data([]).exit().remove();
+
+        service.gantt().redraw();
+    };
+
+
+
+    function assignFlights(start, end) {
+        var i,
+            flights = [];
+
+        for(i = start; i < end; i++) {
+            flights.push(constants.tailsTasks[i]);
+        }
+
+        return flights;
+    };
+
+
+
+    service.pageDown = function() {
+        var svg = d3.select("#gantt-chart");
+
+        constants.taskTypes = ["Tail#9", "Tail#10", "Tail#11", "Tail#12", "Tail#13", "Tail#14", "Tail#15", "Tail#16"];
+        constants.taskNames = ["Tail#9", "Tail#10", "Tail#11", "Tail#12", "Tail#13", "Tail#14", "Tail#15", "Tail#16"];
+        constants.tasks = assignFlights(10, 13);
+
+        svg.selectAll("*").data([]).exit().remove();
+
+        service.gantt().redraw(constants.tasks);
+    };
+
+
     //function to draw rectangles
     service.drawRects = function(group) {
-        var rect = group.selectAll("rect").data(constants.tasks, keyFunction);      
+        var rect = group.selectAll("rect").data(constants.tasks, keyFunction);
 
         var g = rect.enter()
                 .append("g")
@@ -467,7 +518,10 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
           }
           };
 
-
+        
+        function pInitAxis(){
+            initAxis();
+        }
 
           var initAxis = function() {
             service.x = d3.time.scale().domain([ service.timeDomainStart, service.timeDomainEnd ]).range([ 0, service.width ]).clamp(true);
@@ -480,6 +534,12 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
           };
 
 
+          gantt.initGantt = function(tasks) {
+            var svg = d3.select("#gantt-chart");
+
+            svg.selectAll("*").data([]).exit().remove();
+            gantt(tasks);
+          };
           
           function gantt(tasks) {
 
@@ -565,11 +625,11 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
           initAxis();
 
           //select the svg
-              var svg = d3.select("svg"),        //
+            var svg = d3.select("svg"),
                 line = svg.selectAll(".time-stamp"),
                 //select the groups (rectangles-texts) 
-            group = svg.selectAll(".gantt-chart .group"),
-            delays = svg.selectAll(".delays");
+                group = svg.selectAll(".gantt-chart .group"),
+                delays = svg.selectAll(".delays");
 
           //remove all data from the groups
           group.selectAll("*").data([]).exit().remove();
@@ -578,7 +638,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
           
 
               //call function to draw rectangles
-          service.drawRects(group);        
+          service.drawRects(group);
           //call function to draw line positioned at actual time
           service.drawDelays(delays);
           service.drawTimeStamp(line);

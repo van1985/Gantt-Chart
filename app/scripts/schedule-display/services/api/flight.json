@@ -58,22 +58,12 @@
 			},
 			
 			{
-				"id": 20,
+				"id": 6,
 				"task": "asdd",
 				"taskName": "Tail#3",
 				"startDate": "Wed Aug 18 2015 09:32:00 GMT-0300 (ART)",
 				"endDate": "Wed Aug 18 2015 13:32:00 GMT-0300 (ART)",
 				"status": "DELAY",
-				"statusAlert": "none",
-				"textVisible": "hidden"
-			},
-			{
-				"id": 21,
-				"task": "asdd",
-				"taskName": "Tail#4",
-				"startDate": "Wed Aug 18 2015 17:32:00 GMT-0300 (ART)",
-				"endDate": "Wed Aug 18 2015 21:32:00 GMT-0300 (ART)",
-				"status": "TAXI",
 				"statusAlert": "none",
 				"textVisible": "hidden"
 			},
@@ -117,43 +107,36 @@
 				"statusAlert": "none",
 				"textVisible": "visible"
 			},
-			{
-				"id": 10,
-				"task": "asdd",
-				"taskName": "Tail#2",
-				"startDate": "Fri Aug 19 2015 03:32:00 GMT-0300 (ART)",
-				"endDate": "Fri Aug 20 2015 06:32:00 GMT-0300 (ART)",
-				"status": "CANCELLATION",
-				"statusAlert": "none",
-				"textVisible": "visible"
-			},
+			
+
+
 			{
 				"id": 11,
 				"task": "asdd",
-				"taskName": "Tail#4",
-				"startDate": "Fri Aug 19 2015 07:32:00 GMT-0300 (ART)",
-				"endDate": "Fri Aug 20 2015 10:32:00 GMT-0300 (ART)",
-				"status": "DELAY",
+				"taskName": "Tail#11",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
 				"statusAlert": "none",
-				"textVisible": "visible"
+				"textVisible": "hidden"
 			},
 			{
 				"id": 12,
 				"task": "asdd",
-				"taskName": "Tail#5",
-				"startDate": "Wed Aug 17 2015 20:32:00 GMT-0300 (ART)",
-				"endDate": "Wed Aug 18 2015 19:32:00 GMT-0300 (ART)",
-				"status": "DELAY",
+				"taskName": "Tail#12",
+				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
+				"status": "CREWREST",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			},
 			{
 				"id": 13,
 				"task": "asdd",
-				"taskName": "Tail#3",
-				"startDate": "Thu Aug 18 2015 21:00:00 GMT-0300 (ART)",
-				"endDate": "Thu Aug 19 2015 07:32:00 GMT-0300 (ART)",
-				"status": "MISCONNECTION",
+				"taskName": "Tail#13",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "FLIGHTONTIME",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			}
