@@ -8,9 +8,11 @@ angular.module('ScheduleDisplay').controller('mainCtrl', function ($scope, Fligh
 
   function assignTasks(tailsTasks) {
     var i,
+        len = tailsTasks.length,
         tasks = [];
 
-    for(i = 0; i < 10; i++) {
+    for(i = 0; i < len; i++) {
+      if(tailsTasks[i].tail < 9)
       tasks.push(tailsTasks[i]);
     }
 
