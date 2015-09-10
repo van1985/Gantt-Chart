@@ -324,7 +324,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 
         constants.taskTypes = ["Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8"];
         constants.taskNames = ["Tail#1", "Tail#2", "Tail#3", "Tail#4", "Tail#5", "Tail#6", "Tail#7", "Tail#8"];
-        constants.tasks = assignFlights(0, 10);
+        constants.tasks = assignFlights(1, 8);
         svg.selectAll("*").data([]).exit().remove();
 
         service.gantt().redraw();
@@ -334,10 +334,13 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 
     function assignFlights(start, end) {
         var i,
+            len = constants.tailsTasks.length,
             flights = [];
 
-        for(i = start; i < end; i++) {
-            flights.push(constants.tailsTasks[i]);
+        for(i = 0; i < len; i++) {
+            if(constants.tailsTasks[i].tail >= start && constants.tailsTasks[i].tail <= end) {
+                flights.push(constants.tailsTasks[i]);
+            }
         }
 
         return flights;
@@ -350,7 +353,7 @@ angular.module('ScheduleDisplay').service('ganttHelper', function($rootScope, d3
 
         constants.taskTypes = ["Tail#9", "Tail#10", "Tail#11", "Tail#12", "Tail#13", "Tail#14", "Tail#15", "Tail#16"];
         constants.taskNames = ["Tail#9", "Tail#10", "Tail#11", "Tail#12", "Tail#13", "Tail#14", "Tail#15", "Tail#16"];
-        constants.tasks = assignFlights(10, 13);
+        constants.tasks = assignFlights(9, 16);
 
         svg.selectAll("*").data([]).exit().remove();
 
