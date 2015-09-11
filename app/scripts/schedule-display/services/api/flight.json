@@ -113,9 +113,63 @@
 				"taskName": "Tail#3",
 				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
 				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 10,
+				"task": "asdd",
+				"tail": 2,
+				"taskName": "Tail#2",
+				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
+				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
+				"status": "TAXI",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 10,
+				"task": "asdd",
+				"tail": 5,
+				"taskName": "Tail#5",
+				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
+				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
 				"status": "DELAY",
 				"statusAlert": "none",
 				"textVisible": "visible"
+			},{
+				"id": 10,
+				"task": "asdd",
+				"tail": 4,
+				"taskName": "Tail#4",
+				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
+				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
+				"status": "TAXI",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 11,
+				"task": "asdd",
+				"tail": 9,
+				"taskName": "Tail#9",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "hidden"
+			},
+			{
+				"id": 11,
+				"task": "asdd",
+				"tail": 13,
+				"taskName": "Tail#13",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "hidden"
 			},
 			{
 				"id": 11,
@@ -224,6 +278,17 @@
 				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
 				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
 				"status": "UNASSIGNEDBOUND",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 11,
+				"taskName": "Tail#11",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "DELAY",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			}
