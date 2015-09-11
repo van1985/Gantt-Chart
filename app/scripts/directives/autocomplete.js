@@ -234,7 +234,7 @@ app.directive('autocomplete', function() {
 
       
 
-
+      /*
       document.addEventListener("blur", function(e){
         // disable suggestions on blur
         // we do a timeout to prevent hiding it before a click event is registered
@@ -244,7 +244,7 @@ app.directive('autocomplete', function() {
           scope.$apply();
         }, 150);
       }, true);
-
+      */
 
       document.addEventListener("focus", function(e) {
         scope.completing = true;
@@ -267,14 +267,14 @@ app.directive('autocomplete', function() {
             ng-required="{{ autocompleteRequired }}">\
              <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>\
             </input>\
-          <ul   ng-show="completing && (flights | filter:searchFilter).length > 0" >\
-            <li\
+          <ul style="columns: 2;" ng-show="completing && (flights | filter:searchFilter).length > 0" >\
+            <li style="clear: both; float: left !important;"\
               ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
               html="category">\
               <div class="header-section">\
               {{ category.category}}</div>\
-              <ul class="section dropSuggestions">\
-                <li index="{{ $index }}" class="sub-menu"\
+              <ul style="float: right !important;" class="section dropSuggestions">\
+                <li index="{{ $setIndex }}" class="sub-menu"\
                     ng-repeat="result in category.flights | filter:searchFilter | orderBy:\'toString()\' track by $index" suggestion>\
                     {{result.flight}}\
                 </li>\
