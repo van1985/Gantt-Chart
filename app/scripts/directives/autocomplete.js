@@ -234,7 +234,7 @@ app.directive('autocomplete', function() {
 
       
 
-      /*
+      
       document.addEventListener("blur", function(e){
         // disable suggestions on blur
         // we do a timeout to prevent hiding it before a click event is registered
@@ -244,7 +244,7 @@ app.directive('autocomplete', function() {
           scope.$apply();
         }, 150);
       }, true);
-      */
+      
 
       document.addEventListener("focus", function(e) {
         scope.completing = true;
@@ -268,7 +268,7 @@ app.directive('autocomplete', function() {
              <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>\
             </input>\
           <ul style="columns: 2;" ng-show="completing && (flights | filter:searchFilter).length > 0" >\
-            <li style="clear: both; float: left !important;"\
+            <li style="clear: both; float: left !important;border-bottom: 1px solid #EFEFEF;width: 95%;margin-left: 6px;"\
               ng-repeat="category in flights | filter:searchFilter | orderBy:\'toString()\' track by $index"\
               html="category">\
               <div class="header-section">\
@@ -279,6 +279,9 @@ app.directive('autocomplete', function() {
                     {{result.flight}}\
                 </li>\
               </ul>\
+              </li>\
+              <li style="border-bottom: 1px solid #EFEFEF;line-height: 35px;cursor: pointer;">\
+              <div style="color: #26A4E0;font-size: 12px;font-weight: bold;font-family: Clan OT;text-align: center;">View all results</div>\
               </li>\
           </ul>\
         </div>'
@@ -324,7 +327,7 @@ app.directive('suggestion', function(){
       
       element.bind('mouseenter', function() {
         scope.setIndex(element[0].index);
-        element[0].style.backgroundColor = "#9AD4E9";
+        element[0].style.backgroundColor = "#E3E5E8";
       });
 
       element.bind('mouseleave', function() {
@@ -356,7 +359,7 @@ app.directive('suggestion', function(){
           }
         }
 
-        active.style.backgroundColor = "#9AD4E9";
+        active.style.backgroundColor = "#E3E5E8";
         //active.classList.add('hover');
 
 

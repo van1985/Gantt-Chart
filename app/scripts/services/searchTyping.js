@@ -8,27 +8,33 @@ angular.module("searchTyping", [])
                     				{
                     					"category": "Pairing",
                     					"flights": [
-	                    						{ flight: "The Wolverine"},
-	                    						{ flight: "The Smurfs 2"},
-	                    						{ flight: "The Mortal Instruments: City of Bones"}
+	                    						{ flight: "######    MM/DD"},
+	                    						{ flight: "######    MM/DD"},
+	                    						{ flight: "######    MM/DD"}
                     						]
                     				},
                     				{
                     					"category": "Flight",
                     					"flights": [
-	                    						{ flight: "Red 2"},
-	                    						{ flight: "Jobs"},
-	                    						{ flight: "Getaway"},
-	                    						{ flight: "Red Obsession"},
-	                    						{ flight: "2 Guns"}
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"}
                     						]
                     				},
                     				{
                     					"category": "Crew",
                     					"flights": [
-	                    						{ flight: "Only God Forgives"},
-	                    						{ flight: "I Give It a Year"},
-	                    						{ flight: "The Heat"}
+	                    						{ flight: "U123###### Lastname, N"},
+	                    						{ flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"}
                     						]
                     				}
 								];

@@ -716,7 +716,7 @@ collapse="!showMyAlerts"
 
 <!-- Scheduled Display -->
 
-<div style="margin-top:20px;">
+<div style="margin-top:20px;text-align:center;">
 <button type="button" ng-click="addTask()" style="color:white;">Add Task</button>
 <button type="button" ng-click="removeTask()" style="color:white;">Remove Task</button>
 <button type="button" ng-click="changeTimeDomain('1hr')" style="color:white;">1 HR</button>
@@ -731,11 +731,14 @@ collapse="!showMyAlerts"
 <button type="button" ng-click="assignFlight()" class="button-assign button-status hide-element">+</button>
 <button type="button" ng-click="processFlight()" class="button-process button-status hide-element">W</button>
 <button type="button" ng-click="resolveFlight()" class="button-resolve button-status hide-element">R</button>
-</div>
+
 
 <button type="button" ng-click="clearFlights()" style="color:white;">Clear</button>
 <button type="button" ng-click="pageDown()" style="color:white;"><span class="glyphicon glyphicon-menu-down"></span></button>
 <button type="button" ng-click="pageUp()" style="color:white;"><span class="glyphicon glyphicon-menu-up"></span></button>
+</div>
+
+
 
 
 <div id="gantt-chart" style="margin-top:20px;margin-left:20px;">
