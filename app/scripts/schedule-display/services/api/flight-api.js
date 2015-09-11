@@ -76,8 +76,8 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
         startDate.setHours(i + start + 15);
         endDate.setHours(i + start + Math.floor((Math.random() * 8) + 16));
       } else {
-        startDate.setHours(i + start + 30);
-        endDate.setHours(i + start + Math.floor((Math.random() * 7) + 32));
+        startDate.setHours(i + start);
+        endDate.setHours(i + start + Math.floor((Math.random() * 7) + 2));
       }
 
       flights[i].startDate = startDate;
