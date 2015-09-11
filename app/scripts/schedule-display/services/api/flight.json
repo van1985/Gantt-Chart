@@ -29,39 +29,6 @@
 				"textVisible": "hidden"
 			},
 			{
-				"id": 11,
-				"task": "asdd",
-				"tail": 11,
-				"taskName": "Tail#11",
-				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
-				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
-				"status": "UASTAFFING",
-				"statusAlert": "none",
-				"textVisible": "hidden"
-			},
-			{
-				"id": 12,
-				"task": "asdd",
-				"tail": 12,
-				"taskName": "Tail#12",
-				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
-				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
-				"status": "CREWREST",
-				"statusAlert": "none",
-				"textVisible": "visible"
-			},
-			{
-				"id": 13,
-				"task": "asdd",
-				"tail": 13,
-				"taskName": "Tail#13",
-				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
-				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
-				"status": "FLIGHTONTIME",
-				"statusAlert": "none",
-				"textVisible": "visible"
-			},
-			{
 				"id": 3,
 				"task": "asdd",
 				"tail": 6,
@@ -147,6 +114,83 @@
 				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
 				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
 				"status": "DELAY",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 11,
+				"task": "asdd",
+				"tail": 11,
+				"taskName": "Tail#11",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "hidden"
+			},
+			{
+				"id": 12,
+				"task": "asdd",
+				"tail": 12,
+				"taskName": "Tail#12",
+				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
+				"status": "CREWREST",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 13,
+				"task": "asdd",
+				"tail": 13,
+				"taskName": "Tail#13",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "FLIGHTONTIME",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 14,
+				"task": "asdd",
+				"tail": 14,
+				"taskName": "Tail#14",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "hidden"
+			},
+			{
+				"id": 15,
+				"task": "asdd",
+				"tail": 15,
+				"taskName": "Tail#15",
+				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
+				"status": "CREWREST",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 9,
+				"taskName": "Tail#9",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "FLIGHTONTIME",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 10,
+				"taskName": "Tail#10",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "FLIGHTONTIME",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			}
