@@ -69,15 +69,27 @@ angular.module('ScheduleDisplay').service('FlightSrvApi', function($http, $q) {
 
       start = startDate.getHours();      
 
-      if(i < 5) {
+      if(i < 6) {
         startDate.setHours(i + start + 5);
-        endDate.setHours(i + start + Math.floor((Math.random() * 10) + 6));
+        //endDate.setHours(i + start + Math.floor((Math.random() * 7) + 6));
+        endDate.setHours(i + start + 10);
       } else if(i < 10) {
-        startDate.setHours(i + start + 15);
-        endDate.setHours(i + start + Math.floor((Math.random() * 8) + 16));
-      } else {
+        startDate.setHours(i + start + 10);
+        //endDate.setHours(i + start + Math.floor((Math.random() * 7) + 16));
+        endDate.setHours(i + start + 17);
+      } else if(i < 15) {
+        startDate.setHours(i + start -8);
+        //endDate.setHours(i + start + Math.floor((Math.random() * 7) + 2));
+        endDate.setHours(i + start);
+      } else if(i < 17) {
+        startDate.setHours(i + start - 6);
+        endDate.setHours(i + start);
+      } else if(i < 19) {
         startDate.setHours(i + start);
-        endDate.setHours(i + start + Math.floor((Math.random() * 7) + 2));
+        endDate.setHours(i + start + 6);
+      } else {
+        startDate.setHours(i + start - 3);
+        endDate.setHours(i + start + 6);
       }
 
       flights[i].startDate = startDate;
