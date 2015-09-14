@@ -1,0 +1,768 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vertical Bootstrap 3 Tabs Widget</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<style>
+
+.vertical-tab{
+
+span{
+  font-size:13px;
+  font-family: Clan OT;
+  color:white;
+}
+
+.tabs-left {
+  margin-top: 3rem;
+}
+
+.nav-tabs {
+  float: left;
+  border-bottom: 0;
+}
+.nav-tabs li {
+  float: none;
+  margin: 0;
+}
+.nav-tabs li a {
+  margin-right: 0;
+  border: 0;
+  background-color: #4b80ab;
+}
+
+.nav-tabs li a:hover {
+  background-color: black;
+}
+
+.nav-tabs .glyphicon {
+  color: #fff;
+}
+.nav-tabs .active .glyphicon {
+  color: #333;
+}
+
+/*
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+  background-color:#3a6181;
+}
+*/
+.tab-content {
+  margin-left: 110px;
+}
+.tab-content .tab-pane {
+  display: none;
+  background-color: #fff;
+  padding: 1.6rem;
+  overflow-y: auto;
+}
+.tab-content .active {
+  display: block;
+}
+.tab-pane{
+  width:1280px;
+}
+
+.nav{
+  width:200px;
+  -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+  transition: width 1s;
+}
+
+
+.nav-clicked {
+    width: 50px;
+}
+
+.hide-detail{
+   transform: translateX(100%);
+   -webkit-transition: all 1s; / For Safari 3.1 to 6.0 /
+   transition: all 1s;
+
+}
+
+.show-detail{
+  transform: translateX(0);
+}
+
+.arrow-up-img{
+    height: 15px;
+    width: 12px;
+    background: url("arrow-up-img.png");
+    display: inline-block;
+}
+
+.watch-img{
+    height: 12px;
+    width: 19px;
+    background: url("watch-img.png");
+    display: inline-block;
+}
+
+.user-assign-img{
+    height: 18px;
+    width: 14px;
+    background: url("user-img.png");
+    display: inline-block;
+}
+
+.tab-content {
+  margin: 0 0 0 200px;
+
+  transition: all 1s;
+}
+
+.img-alert-details{
+    height: 439px;
+    width: 594px;
+    background: url("alert-detail.png");
+    display: inline-block;
+}
+
+
+
+
+}
+
+.img-arrow-up{
+    height: 15px;
+    width: 12px;
+    background: url("../resources/images/arrow-up-alert-d.png");
+    display: inline-block; 
+}
+
+.img-eye{
+    height: 12px;
+    width: 19px;
+    background: url("../resources/images/eye-alert-d.png");
+    display: inline-block; 
+}
+
+.img-user{
+    height: 18px;
+    width: 14px;
+    background: url("../resources/images/user-alert-d.png");
+    display: inline-block; 
+}
+
+.img-info{
+    height: 13px;
+    width: 2px;
+    background: url("../resources/images/info-alert-d.png");
+    display: inline-block; 
+}
+
+i a:hover {
+  background-color: black;
+}
+</style>
+
+<snap-content style="background-color:#E3E5E8;">
+
+<!--  Header --> 
+<style>
+.container{
+  padding-left:0px;
+  padding-right:0px;
+}
+</style>
+<header sectionname="'Alerts Display'"></header>
+<!-- End Header -->
+
+    <div id="body-schedule-display"
+    style="background-color: white;
+    width: 92%;
+    height: 74px;
+    margin-top: -42px;
+    margin-left: 4%;
+    border:1px solid #DDE1E1;">
+
+    <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;width:15%;">
+      <div>Date</div> 
+      <div style="margin-top:10px;color:#555555;font-weight:bold;font-size:16px;">08/12/15</div>  
+    </div>
+
+     <div style="    color: #555555;
+    font-family: Clan OT;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+    height: 86%;">
+      <div style="margin-left:10px;">Pairing affected</div> 
+      <div style="margin-top:10px;margin-left:10px;color:#555555;font-weight:bold;font-size:16px;">101</div> 
+    </div>
+
+         <div style="color: #555555;
+    font-family: Clan OT;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;">
+      <div style="margin-left:10px;">Flights affected</div>  
+      <div style="margin-top:10px;margin-left:10px;color:#555555;font-weight:bold;font-size:16px;">756</div> 
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:15%">
+      <div style="margin-left:10px;">Crew affected</div>  
+      <div style="margin-top:10px;margin-left:10px;color:#555555;font-weight:bold;font-size:16px;">152</div> 
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:15%">
+      <div style="margin-left:10px;">Alerts displayed</div>  
+      <div style="margin-top:10px;margin-left:10px;color:#009BDD;font-weight:bold;font-size:16px;">88</div> 
+    </div>
+
+         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:15%">
+      <div style="margin-left:10px;">Alerts Total</div> 
+      <div style="margin-top:10px;margin-left:10px;color:#009BDD;font-weight:bold;font-size:16px;">112</div> 
+    </div>
+
+    </div>
+
+<div class="container vertical-tab" style="margin-top:15px;">
+  <div class="row">
+    <div class="col-md-12 col-sm-5">
+      <div class="tabs-left">
+        <ul class="nav nav-tabs" style="width:19%;display:inline-block;float:left;padding-left:56px;">
+           <li onClick="resetTabs()" style="background-color:#4b80ab;border-left:8px solid #30b0a4;border-bottom:1px solid #3a6182;width:100%;">
+           <a href="#profile" data-toggle="tab" style="color:white;font-size:13;font-family:Clan OT;"><span id="titles-tab2">FAR Duty</span><span id="count-tab1">(##)</span></a></li>
+
+          <li onClick="resetTabs()" style="background-color:#4B7FAB;border-left:8px solid #42c982;border-bottom:1px solid #3a6182;width:100%;"><a href="#download" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab4">Delay</span><span id="count-tab3">(##)</span></a></li>
+
+          <li onClick="resetTabs()" style="background-color:#4B7FAB;border-left:8px solid #38cec0;border-bottom:1px solid #3a6182;width:100%;"><a href="#favourite" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab3" >FAR Block</span><span id="count-tab2">(##)</span></a></li>
+
+          <li onClick="resetTabs()" style="background-color:#4B7FAB;border-left:8px solid #ffd52b;border-bottom:1px solid #3a6182;width:100%;"><a href="#stars" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab5">Cancellation</span><span id="count-tab4">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #fd7145;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab6">Misconnection</span><span id="count-tab5">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #ae87b4;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab7">Crew Rest-Contract</span><span id="count-tab6">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #bbe18b;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab8">Taxi</span><span id="count-tab7">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #7ebbf5;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab9">UA Staffing</span><span id="count-tab8">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #e497c3;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab10">Unassigned Inbound</span><span id="count-tab9">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #c9b58d;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab11">Flight on time</span><span id="count-tab10">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #9699a8;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab12">Type</span><span id="count-tab11">(##)</span></a></li>
+          <li style="background-color:#4B7FAB;border-left:8px solid #ffffff;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab13">Type</span><span id="count-tab11">(##)</span></a></li>
+        </ul>
+
+<!-- right content -->
+<div class="tab-pane active" id="profile" style="height: 482px;background-color:white;float: left;width: 77%;display: inline-table;">
+  
+<!-- table -->
+
+    <table class="table table-striped">
+              <thead>
+                <tr style="height:40px;border-bottom:1px solid #ddd !important;">
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Severity</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:bold;">Last Update</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Pairing</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Flight</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Crew</th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;"></th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;"></th>
+                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;"></th>
+                </tr>
+              </thead>
+              <tbody style="font-size:12px;color:#555555;font-family:Clan OT;">
+                <tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+<tr style="background-color:#F3F3F3;height:40px;
+                border-left:1px solid #D3D3D3;
+                border-bottom:1px solid #D3D3D3;">
+                  <td>
+                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                  <td style="vertical-align:middle;">
+                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
+                    <div style="display:inline-block;float:left;">9:58</div> 
+                   </div>
+                   </div>
+                   </td>
+                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
+                  <td style="vertical-align:middle;">
+                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
+                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
+                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
+                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                  </td>
+                </tr>
+
+
+                </tbody>
+                </table>
+
+<!-- end table -->
+
+
+</div>
+<!-- end right content -->
+
+</div>
+    </div><!-- /col -->
+  </div><!-- /row -->
+</div><!-- /container -->
+<script>
+
+function seeDetails(){
+  $('#table2').hide(); 
+  $('#details-alert').addClass('show-detail');
+
+  //tabs behavior
+  $('.tab-content').css('margin','0 0 0 50px');
+  $('#titles-tab1').hide();
+  $('#titles-tab2').hide();
+  $('#titles-tab3').hide();
+  $('#titles-tab4').hide();
+  $('#titles-tab5').hide();
+  $('#titles-tab6').hide();
+  $('#titles-tab7').hide();
+  $('#titles-tab8').hide();
+  $('#titles-tab9').hide();
+  $('#titles-tab10').hide();
+  $('#titles-tab11').hide();
+  $('#titles-tab12').hide();
+  $('#titles-tab13').hide();
+
+  $('#count-tab1').css('margin-left','-4px');
+  $('#count-tab2').css('margin-left','-4px');
+  $('#count-tab3').css('margin-left','-4px');
+  $('#count-tab4').css('margin-left','-4px');
+  $('#count-tab5').css('margin-left','-4px');
+  $('#count-tab6').css('margin-left','-4px');
+  $('#count-tab7').css('margin-left','-4px');
+  $('#count-tab8').css('margin-left','-4px');
+  $('#count-tab9').css('margin-left','-4px');
+  $('#count-tab10').css('margin-left','-4px');
+  $('#count-tab11').css('margin-left','-4px');
+  $('#count-tab12').css('margin-left','-4px');
+  $('#count-tab13').css('margin-left','-4px');
+  
+  $('.nav').css('width','50px');
+  //$('.tab-content').css('margin-left','40px');
+}
+/*
+$('.nav').on('click', function() {
+    $(this).toggleClass('nav-clicked');
+});*/
+
+var tabsFn = (function() {
+  
+  function init() {
+    setHeight();
+  }
+  
+  function setHeight() {
+    var $tabPane = $('.tab-pane'),
+        tabsHeight = $('.nav-tabs').height();
+    
+    $tabPane.css({
+      height: tabsHeight
+    });
+  }
+    
+  $(init);
+})();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+function resetTabs(){
+    //tabs behavior
+  $('.nav').css('width','200px');
+  $('.tab-content').css('margin','0 0 0 200px');
+
+    $('#count-tab1').css('margin-left','0px');
+  $('#count-tab2').css('margin-left','0px');
+  $('#count-tab3').css('margin-left','0px');
+  $('#count-tab4').css('margin-left','0px');
+  $('#count-tab5').css('margin-left','0px');
+  $('#count-tab6').css('margin-left','0px');
+  $('#count-tab7').css('margin-left','0px');
+  $('#count-tab8').css('margin-left','0px');
+  $('#count-tab9').css('margin-left','0px');
+  $('#count-tab10').css('margin-left','0px');
+  $('#count-tab11').css('margin-left','0px');
+  $('#count-tab12').css('margin-left','0px');
+  $('#count-tab13').css('margin-left','0px');
+  
+  setTimeout(function(){
+    $('#titles-tab1').show();
+  $('#titles-tab2').show();
+  $('#titles-tab3').show();
+  $('#titles-tab4').show();
+  $('#titles-tab5').show();
+  $('#titles-tab6').show();
+  $('#titles-tab7').show();
+  $('#titles-tab8').show();
+  $('#titles-tab9').show();
+  $('#titles-tab10').show();
+  $('#titles-tab11').show();
+  $('#titles-tab12').show();
+  $('#titles-tab13').show();
+}, 1000);
+
+ 
+    $('#table2').show();
+  
+  $('#details-alert').addClass('hide-detail');
+};
+
+
+</script>
+
+</snap-content>
