@@ -4,7 +4,7 @@
       <div class="container" style="background-color:#009BDD;height:127px;">
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li class="active"     style="margin-left: 10px;">
               <div snap-toggle="" class="nav-burger-img" style="cursor: pointer; cursor: hand;"></div>
             </li>
             <li>
@@ -60,6 +60,8 @@
           </ul>
         </div>
 
+<!-- Solution List / Alert Details section -->
+
 <div style="    font-family: Clan OT;
     font-size: 20px;
     color: white;
@@ -67,7 +69,15 @@
     display: inline-block;
     margin-top: 5px;
     float: left;
-    width:100%;">Solution List</div>
+    width:100%;">
+    <div style="float:left;display:inline-block;">{{ sectionname }} </div>
+    <div style="float:left;display:inline-block;font-size:11px;font-family:Clan OT;margin-left:10px;margin-top:12px;"
+         ng-show="sectionname==='Alerts Display'">
+      Updated 17:17
+    </div>
+</div>
+
+<div ng-show="sectionname==='Solutions list'">
 <div style="    font-family: Clan OT;
     font-size: 16px;
     color: white;
@@ -95,7 +105,7 @@
     display: inline-block;
     width: 130px;"></div>
     </div>
-
+ </div>
 
           <div style="float:right;display:inline-block;" ng-show="false">
         <div style="float:left;display:inline-block;font-size:14px;color:#4F5571;font-family:Clan OT;margin-top: 6px;
