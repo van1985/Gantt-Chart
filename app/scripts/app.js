@@ -65,9 +65,9 @@ angular.module('CrewSchedGUI', _mainModules )
         });
 
         routes.push({
-            name: '/new-search',
+            name: '/alert-details',
             params: {
-                templateUrl: 'scripts/dashboard/views/newSearch.html'
+                templateUrl: 'scripts/alert-details/views/alert-details.html'
             }
         });
 
