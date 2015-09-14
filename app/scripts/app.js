@@ -10,6 +10,7 @@ var _mainModules = [
     ,'ngAnimate'
     ,'ngTouch'
     ,'ScheduleDisplay'
+    ,'SolutionList'
     ,'d3'
     ,'Dashboard'
     ,'ngDraggable'
@@ -57,7 +58,8 @@ angular.module('CrewSchedGUI', _mainModules )
         routes.push({
             name: '/solutions-list',
             params: {
-                templateUrl: 'scripts/solutions-list/views/solutions-list.html'
+                templateUrl: 'scripts/solutions-list/views/solutions-list.html',
+                controller: 'solutionListCtrl'
             }
         });
 
