@@ -6,47 +6,35 @@ angular.module("searchTyping", [])
                 var flights,                	
                     categoryFlights = [
                     				{
-                    					"category": "Categoria 1",
+                    					"category": "Pairing",
                     					"flights": [
-	                    						{ flight: "The Wolverine"},
-	                    						{ flight: "The Smurfs 2"},
-	                    						{ flight: "The Mortal Instruments: City of Bones"}
+	                    						{ flight: "######    MM/DD"},
+	                    						{ flight: "######    MM/DD"},
+	                    						{ flight: "######    MM/DD"}
                     						]
                     				},
                     				{
-                    					"category": "Categoria 2",
+                    					"category": "Flight",
                     					"flights": [
-	                    						{ flight: "Red 2"},
-	                    						{ flight: "Jobs"},
-	                    						{ flight: "Getaway"},
-	                    						{ flight: "Red Obsession"},
-	                    						{ flight: "2 Guns"}
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"},
+	                    						{ flight: "###### ORI - DES MM/DD"}
                     						]
                     				},
                     				{
-                    					"category": "Categoria 3",
+                    					"category": "Crew",
                     					"flights": [
-	                    						{ flight: "Only God Forgives"},
-	                    						{ flight: "I Give It a Year"},
-	                    						{ flight: "The Heat"}
-                    						]
-                    				},
-                    				{
-                    					"category": "Categoria 4",
-                    					"flights": [
-                    							{ flight: "Europa Report"},
-                    							{ flight: "Stuck in Love"},
-                    							{ flight: "We Steal Secrets: The Story Of Wikileaks"},
-                    							{ flight: "The Croods"},
-                    							{ flight: "This Is the End"}
-                							]
-                    				},
-                    				{
-                    					"category": "Categoria 5",
-                    					"flights": [
-                    							{ flight: "White House Down"},
-                    							{ flight: "Lovelace"},
-                    							{ flight: "Girl Most Likely"}
+	                    						{ flight: "U123###### Lastname, N"},
+	                    						{ flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"},
+                                                { flight: "U123###### Lastname, N"}
                     						]
                     				}
 								];

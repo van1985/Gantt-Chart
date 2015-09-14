@@ -63,6 +63,13 @@ angular.module('CrewSchedGUI', _mainModules )
             }
         });
 
+        routes.push({
+            name: '/new-search',
+            params: {
+                templateUrl: 'scripts/dashboard/views/newSearch.html'
+            }
+        });
+
 // yo:ngRoutes
 
         routes.forEach(function(route){

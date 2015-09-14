@@ -9,6 +9,7 @@
 			{
 				"id": 1,
 				"task": "asdd",
+				"tail": 1,
 				"taskName": "Tail#1",
 				"startDate": "Wed Aug 18 2015 16:32:00 GMT-0300 (ART)",
 				"endDate": "Wed Aug 18 2015 19:32:00 GMT-0300 (ART)",
@@ -19,6 +20,7 @@
 			{
 				"id": 2,
 				"task": "asdd",
+				"tail": 2,
 				"taskName": "Tail#2",
 				"startDate": "Thu Aug 19 2015 00:32:00 GMT-0300 (ART)",
 				"endDate": "Thu Aug 19 2015 02:32:00 GMT-0300 (ART)",
@@ -29,6 +31,7 @@
 			{
 				"id": 3,
 				"task": "asdd",
+				"tail": 6,
 				"taskName": "Tail#6",
 				"startDate": "Wed Aug 17 2015 20:32:00 GMT-0300 (ART)",
 				"endDate": "Wed Aug 18 2015 23:32:00 GMT-0300 (ART)",
@@ -39,6 +42,7 @@
 			{
 				"id": 4,
 				"task": "asdd",
+				"tail": 7,
 				"taskName": "Tail#7",
 				"startDate": "Thu Aug 19 2015 00:32:00 GMT-0300 (ART)",
 				"endDate": "Thu Aug 19 2015 06:32:00 GMT-0300 (ART)",
@@ -49,6 +53,7 @@
 			{
 				"id": 5,
 				"task": "asdd",
+				"tail": 4,
 				"taskName": "Tail#4",
 				"startDate": "Thu Aug 19 2015 00:32:00 GMT-0300 (ART)",
 				"endDate": "Thu Aug 19 2015 06:32:00 GMT-0300 (ART)",
@@ -58,8 +63,9 @@
 			},
 			
 			{
-				"id": 20,
+				"id": 6,
 				"task": "asdd",
+				"tail": 3,
 				"taskName": "Tail#3",
 				"startDate": "Wed Aug 18 2015 09:32:00 GMT-0300 (ART)",
 				"endDate": "Wed Aug 18 2015 13:32:00 GMT-0300 (ART)",
@@ -68,18 +74,9 @@
 				"textVisible": "hidden"
 			},
 			{
-				"id": 21,
-				"task": "asdd",
-				"taskName": "Tail#4",
-				"startDate": "Wed Aug 18 2015 17:32:00 GMT-0300 (ART)",
-				"endDate": "Wed Aug 18 2015 21:32:00 GMT-0300 (ART)",
-				"status": "TAXI",
-				"statusAlert": "none",
-				"textVisible": "hidden"
-			},
-			{
 				"id": 7,
 				"task": "asdd",
+				"tail": 5,
 				"taskName": "Tail#5",
 				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
 				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
@@ -90,6 +87,7 @@
 			{
 				"id": 8,
 				"task": "asdd",
+				"tail": 1,
 				"taskName": "Tail#1",
 				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
 				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
@@ -100,6 +98,7 @@
 			{
 				"id": 9,
 				"task": "asdd",
+				"tail": 7,
 				"taskName": "Tail#7",
 				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
 				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
@@ -110,50 +109,186 @@
 			{
 				"id": 10,
 				"task": "asdd",
-				"taskName": "Tail#7",
+				"tail": 3,
+				"taskName": "Tail#3",
 				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
 				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
-				"status": "DELAY",
+				"status": "UASTAFFING",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			},
 			{
 				"id": 10,
 				"task": "asdd",
+				"tail": 2,
 				"taskName": "Tail#2",
-				"startDate": "Fri Aug 19 2015 03:32:00 GMT-0300 (ART)",
-				"endDate": "Fri Aug 20 2015 06:32:00 GMT-0300 (ART)",
-				"status": "CANCELLATION",
+				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
+				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
+				"status": "TAXI",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 10,
+				"task": "asdd",
+				"tail": 5,
+				"taskName": "Tail#5",
+				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
+				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
+				"status": "DELAY",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},{
+				"id": 10,
+				"task": "asdd",
+				"tail": 4,
+				"taskName": "Tail#4",
+				"startDate": "Thu Aug 19 2015 23:32:00 GMT-0300 (ART)",
+				"endDate": "Fri Aug 20 2015 02:32:00 GMT-0300 (ART)",
+				"status": "TAXI",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			},
 			{
 				"id": 11,
 				"task": "asdd",
-				"taskName": "Tail#4",
-				"startDate": "Fri Aug 19 2015 07:32:00 GMT-0300 (ART)",
-				"endDate": "Fri Aug 20 2015 10:32:00 GMT-0300 (ART)",
-				"status": "DELAY",
+				"tail": 9,
+				"taskName": "Tail#9",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
 				"statusAlert": "none",
-				"textVisible": "visible"
+				"textVisible": "hidden"
+			},
+			{
+				"id": 11,
+				"task": "asdd",
+				"tail": 13,
+				"taskName": "Tail#13",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "hidden"
+			},
+			{
+				"id": 11,
+				"task": "asdd",
+				"tail": 10,
+				"taskName": "Tail#10",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "hidden"
 			},
 			{
 				"id": 12,
 				"task": "asdd",
-				"taskName": "Tail#5",
-				"startDate": "Wed Aug 17 2015 20:32:00 GMT-0300 (ART)",
-				"endDate": "Wed Aug 18 2015 19:32:00 GMT-0300 (ART)",
-				"status": "DELAY",
+				"tail": 12,
+				"taskName": "Tail#12",
+				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
+				"status": "CREWREST",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			},
 			{
 				"id": 13,
 				"task": "asdd",
-				"taskName": "Tail#3",
-				"startDate": "Thu Aug 18 2015 21:00:00 GMT-0300 (ART)",
-				"endDate": "Thu Aug 19 2015 07:32:00 GMT-0300 (ART)",
-				"status": "MISCONNECTION",
+				"tail": 14,
+				"taskName": "Tail#14",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "FLIGHTONTIME",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 14,
+				"task": "asdd",
+				"tail": 15,
+				"taskName": "Tail#15",
+				"startDate": "Tue Aug 18 2015 11:32:00 GMT-0300 (ART)",
+				"endDate": "Wed Aug 18 2015 14:32:00 GMT-0300 (ART)",
+				"status": "TAXI",
+				"statusAlert": "none",
+				"textVisible": "hidden"
+			},
+			{
+				"id": 15,
+				"task": "asdd",
+				"tail": 9,
+				"taskName": "Tail#9",
+				"startDate": "Thu Aug 19 2015 15:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 18:32:00 GMT-0300 (ART)",
+				"status": "CREWREST",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 11,
+				"taskName": "Tail#11",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "TAXI",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 13,
+				"taskName": "Tail#13",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "UASTAFFING",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 10,
+				"taskName": "Tail#10",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "FAR",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 12,
+				"taskName": "Tail#12",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "DELAY",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 14,
+				"taskName": "Tail#14",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "UNASSIGNEDBOUND",
+				"statusAlert": "none",
+				"textVisible": "visible"
+			},
+			{
+				"id": 16,
+				"task": "asdd",
+				"tail": 11,
+				"taskName": "Tail#11",
+				"startDate": "Thu Aug 19 2015 19:32:00 GMT-0300 (ART)",
+				"endDate": "Thu Aug 19 2015 22:32:00 GMT-0300 (ART)",
+				"status": "DELAY",
 				"statusAlert": "none",
 				"textVisible": "visible"
 			}
