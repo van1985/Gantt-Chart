@@ -8,11 +8,24 @@ console.log("main");
     initializeScheduleDisplay();
   });
 
+ function assignTasks(tailsTasks) {
+    var i,
+        len = tailsTasks.length,
+        tasks = [];
+    for(i = 0; i < len; i++) {
+      if(tailsTasks[i].tail < 9)
+      tasks.push(tailsTasks[i]);
+    }
+    return tasks;
+  };
+
 function initializeScheduleDisplay(){
 
 FlightSrvApi.getFlights().
 	then(function(data){
-		constants.tasks = ganttHelper.verifyDateFormat(data.global.flights);
+		//constants.tasks = ganttHelper.verifyDateFormat(data.global.flights);
+    constants.tailsTasks = ganttHelper.verifyDateFormat(data.global.flights);
+    constants.tasks = assignTasks(constants.tailsTasks);
 
 		constants.tasks.sort(function(a, b) {
 		    return a.endDate - b.endDate;
@@ -33,6 +46,16 @@ FlightSrvApi.getFlights().
 		ganttHelper.gantt(constants.tasks);
 
 	});
+};
+
+$scope.clearFlights = function() {
+  ganttHelper.clearFlights();
+};
+$scope.pageUp = function(){
+  ganttHelper.pageUp();
+};
+$scope.pageDown = function() {
+  ganttHelper.pageDown();
 };
 
 
@@ -184,6 +207,7 @@ function removeArrayElement(array, task){
   return false;
 };
 
+/*
 $interval(function(){
   FlightSrvApi.getNewFlightAlert().
   then(function(data){
@@ -207,7 +231,7 @@ $interval(function(){
     ganttHelper.gantt.redraw(constants.tasks);
 }, 7000);
 
-
+*/
   $scope.navigateTo = function(view){
       if (view==='dashboard'){
           $location.path('/dashboard')
