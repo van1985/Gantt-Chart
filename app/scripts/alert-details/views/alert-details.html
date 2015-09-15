@@ -1,193 +1,230 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <!-- Optional theme -->
-
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<header></header>
+<!--  Header --> 
+<style>
+.container{
+  padding-left:0px;
+  padding-right:0px;
+}
+</style>
+
+<header sectionname="'Solutions list'"></header>
+<!--  Header --> 
+
+<snap-content>
 
 	<div class="container-fluid alert-container">
 		<div class="alert-details">
 			
-			<div class="row">
-				<div class="col-md-10">
-					<label><span class="glyphicon glyphicon-arrow-up"></span> FAR Duty - Type</label>
-				</div>
-				<div class="col-md-1">
-					<div style="margin-left: 60px;"><span class="glyphicon glyphicon-download-alt"></span></div>
-				</div>
-				<div class="col-md-1">
-					<span class="glyphicon glyphicon-option-vertical"></span>
+			<div style="margin: 12px 12px -12px 12px">
+				<div class="row">
+					<div class="col-md-10">
+						<p><span class="glyphicon glyphicon-arrow-up"></span> FAR Duty - Type</p>
+					</div>
+					<div class="col-md-1">
+						<div style="margin-left: 60px;"><span class="glyphicon glyphicon-download-alt"></span></div>
+					</div>
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-option-vertical"></span>
+					</div>
 				</div>
 			</div>
 
 
-			<div class="header-info" style="margin: 5px;">
-				<div class="row">
-					<div class="col-md-2">
-						<p>Pairing</p>
-						<label class="blue-font">H2008, T2108</label>
-					</div>
-					<div class="col-md-2">
-						<p>Flight</p>
-						<label class="blue-font">Flight 250</label>
-					</div>
-					<div class="col-md-2">
-						<p>Crew</p>
-						<label>2 Pillots / 2 FA</label>
-					</div>
-					<div class="col-md-2">
-						<p>Watchers</p>
-						<label>####</label>
-					</div>
-					<div class="col-md-2">
-						<p>Assignes to</p>
-						<label class="blue-font">Name, Lastname2</label>
+			<div class="header-info">
+				<div style="padding-left: 15px; margin-top: 15px;">
+					<div class="row">
+						<div class="col-md-2">
+							<p>Pairing</p>
+							<label class="blue-font">H2008, T2108</label>
+						</div>
+						<div class="col-md-2">
+							<p>Flight</p>
+							<label class="blue-font">Flight 250</label>
+						</div>
+						<div class="col-md-2">
+							<p>Crew</p>
+							<label>2 Pillots / 2 FA</label>
+						</div>
+						<div class="col-md-2">
+							<p>Watchers</p>
+							<label>####</label>
+						</div>
+						<div class="col-md-2">
+							<p>Assignes to</p>
+							<label class="blue-font">Name, Lastname2</label>
+						</div>
 					</div>
 				</div>
 
 
 				<div class="division"></div>
 
+				<div style="padding-left: 15px; margin-bottom: 12px;">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="page-img pull-left events-icon"></div>
+							<label class="blue-font">Legality Information</label>
+						</div>
+						<div class="col-md-2">
+							<div style="width: 101%;">
+								<div class="page-img pull-left events-icon"></div>
+								<label class="blue-font pull-right">Contractual Information</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
+
+			<div style="padding-left: 23px;">
 				<div class="row">
-					<div class="col-md-2">
-						<label class="blue-font">Legality Information</label>
-					</div>
-					<div class="col-md-2">
-						<label class="blue-font">Contractual Information</label>
+					<div class="col-md-12">
+						<p><span>Events</span> last update 22:45</p>
 					</div>
 				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-md-12">
-					<p><span>Events</span> last update 22:45</p>
-				</div>
-			</div>
 
 
 
-			<div class="v-line"></div>
+				<div class="v-line"></div>
 
 
-
-			<div class="row">
-				<div class="col-md-12">
+				<div style="padding-left: 20px;">
 					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1 colored-row">
-							<div class="content-spacing">
-								<div class="dialog-img pull-left"></div>
-								<p class="pull-left content-spacing">New comment added by Name Lastname2</p>
-								<span class="glyphicon glyphicon-plus pull-right"></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1">
-							<div class="content-spacing">
-								<div class="user-img pull-left"></div>
-								<p class="pull-left content-spacing"> Alert reassigned to Name Lastname2</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1 colored-row">
-							<div>
-								<div>
-									<div class="dialog-img pull-left"></div>
-									<p class="content-spacing pull-left"> New comment added by Name Lastname1</p>
-									<span class="glyphicon glyphicon-minus pull-right"></span>
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
 								</div>
-
-								<div style="clear: both;" class="division"></div>
-
-								<div class="row">
-									<div class="col-md-4">
-										<p style="font-size: 10px;">- Left phone message on answering machine at 16:45 PM.</p>
-									</div>
-									<div class="col-md-4">
-										<p style="font-size: 10px;">16:45 PM.</p>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-4">
-										<p style="font-size: 10px;">- Please, call back no later than 19:30 PM.</p>
-									</div>
-									<div class="col-md-4">
-										<p style="font-size: 10px;">19:30 PM.</p>
+								<div class="col-md-10 col-md-pull-1 colored-row">
+									<div class="content-spacing">
+										<div class="chat-img pull-left events-icon"></div>
+										<p class="pull-left content-spacing">New comment added by Name Lastname2</p>
+										<div class="plus-img pull-left events-icon pull-right"></div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1">
-							<div class="content-spacing">
-								<div class="user-img pull-left"></div>
-								<p class="pull-left content-spacing"> Alert reassigned to Name Lastname1</p>
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1">
+									<div class="content-spacing">
+										<div class="user-img pull-left events-icon" style="margin-left: 4px;"></div>
+										<p class="pull-left content-spacing" style="padding-left: 3px;"> Alert reassigned to Name Lastname2</p>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1">
-							<div class="content-spacing">
-								<div class="watch-img pull-left"></div>
-								<p class="pull-left"> New watcher</p>
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1 colored-row">
+									<div>
+										<div>
+											<div class="chat-img pull-left events-icon"></div>
+											<p class="content-spacing pull-left"> New comment added by Name Lastname1</p>
+											<div class="minus-img pull-left events-icon pull-right"></div>
+										</div>
+
+										<div style="clear: both;" class="division"></div>
+
+										<div style="padding-left: 25px;">
+											<div class="row">
+												<div class="col-md-4">
+													<p style="font-size: 10px;">- Left phone message on answering machine at 16:45 PM.</p>
+												</div>
+												<div class="col-md-4">
+													<p style="font-size: 10px;">16:45 PM.</p>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<p style="font-size: 10px;">- Please, call back no later than 19:30 PM.</p>
+												</div>
+												<div class="col-md-4">
+													<p style="font-size: 10px;">19:30 PM.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1">
-							<div>
-								<p class="content-spacing"><span class="glyphicon glyphicon-retweet"></span> Departure time estimated time was updated: HH:MM to HH:MM</p>
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1">
+									<div class="content-spacing">
+										<div class="user-img pull-left events-icon" style="margin-left: 4px;"></div>
+										<p class="pull-left content-spacing" style="padding-left: 3px;"> Alert reassigned to Name Lastname1</p>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>HH:MM</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1 colored-row">
-							<div>
-								<p class="content-spacing"><span class="glyphicon glyphicon-retweet"></span> Flight status changed: Scheduled to Delay <span class="glyphicon glyphicon-plus pull-right"></span></p>
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1">
+									<div class="content-spacing">
+										<div class="watch-img pull-left events-icon"></div>
+										<p class="pull-left"> New watcher</p>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-2 row-spacing">
-							<p>MM/DD/YY</p>
-						</div>
-						<div class="col-md-10 col-md-pull-1">
-							<div>
-								<p class="content-spacing"> <span class="glyphicon glyphicon-warning-sign"></span> Alert detected</p>
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1">
+									<div class="content-spacing">
+										<div class="sync-img pull-left events-icon"></div>
+										<p class="pull-left"> Departure time estimated time was updated: HH:MM to HH:MM</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div class="pull-left">HH:MM</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1 colored-row">
+									<div class="content-spacing">
+										<div class="sync-img pull-left events-icon"></div>
+										<p class="pull-left"> Flight status changed: Scheduled to Delay</p>
+										<div class="plus-img pull-left events-icon pull-right" style="margin-top: 5px;"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-2 row-spacing">
+									<div style="margin-left: -23px; float: left;">MM/DD/YY</div>
+									<div class="circle"></div>
+								</div>
+								<div class="col-md-10 col-md-pull-1">
+									<div class="content-spacing">
+										<div class="alert-img pull-left events-icon"></div>
+										<p class="pull-left"> Alert detected</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -196,3 +233,4 @@
 
 		</div>
 	</div>
+</snap-content>

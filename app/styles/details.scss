@@ -4,6 +4,8 @@ body {
 
 .alert-container {
 
+	margin: 135px auto 0 auto;
+
 	.alert-details {
 
 		border: 1px solid #B5B5B5;
@@ -14,9 +16,13 @@ body {
 		    width: 2px;
 		    background-color: #30B0A4;
 		    position:absolute;
-		    top: 330px;
-		    bottom: 245px;
-		    left: 120px;
+		    top: 400px;
+		    bottom: 140px;
+		    left: 155px;
+		}
+
+		.events-icon {
+			margin-right: 8px;
 		}
 
 		.circle {
@@ -26,6 +32,8 @@ body {
 			-moz-border-radius: 50px;
 			-webkit-border-radius: 50px;
 			border-radius: 50px;
+			float: left;
+    		margin: 2px 0px 0px 30px;
 		}
 
 		.blue-font {
@@ -34,11 +42,12 @@ body {
 
 		.header-info {
 			border: 1px solid #B5B5B5;
+			margin: 15px;
 		}
 
 		.division {
 			border-top: 1px solid #B5B5B5;
-			margin: 10px;
+			margin: 15px;
 		}
 
 		.colored-row {
@@ -51,6 +60,12 @@ body {
 
 		.content-spacing {
 			margin-top: 8px;
+		}
+
+		.page-img {
+			height: 20px;
+			width: 15px;
+			background-image: url("../resources/images/page-icon.png");
 		}
 
 		.watch-img {
@@ -67,13 +82,42 @@ body {
 			margin-top: 6px;
 		}
 
-		.dialog-img {
-			height: 24px;
+		.chat-img {
+			height: 16px;
 			width: 20px;
-			background-image: url("../resources/images/new-window-icon.png");
-			margin-top: 6px;
+			background-image: url("../resources/images/chat-icon.png");
+			margin-top: 12px;
 		}
 
+		.sync-img {
+			height: 18px;
+			width: 24px;
+			background-image: url("../resources/images/sync-icon.png");
+			margin: 4px 4px 0 -1px;
+		}
+
+		.alert-img {
+			height: 18px;
+			width: 20px;
+			background-image: url("../resources/images/alert-icon.png");
+			margin: 1px 5px 0px 1px;
+		}
+
+		.plus-img {
+			height: 16px;
+			width: 16px;
+			background-image: url("../resources/images/add-icon.png");
+			margin: 8px 5px 0px 1px;
+			float: right !important;
+		}
+
+		.minus-img {
+			height: 2px;
+			width: 17px;
+			background-image: url("../resources/images/minuss-icon.png");
+			margin: 16px 5px 0px 1px;
+			float: right !important;
+		}
 
 	}
 }
