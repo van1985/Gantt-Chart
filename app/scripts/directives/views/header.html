@@ -45,14 +45,14 @@
     margin-top: 5px;
     float: left;
     width:100%;">
-    <div style="float:left;display:inline-block;">{{ sectionname }} </div>
+    <div style="float:left;display:inline-block;">{{ name }}</div>
     <div style="float:left;display:inline-block;font-size:11px;font-family:Clan OT;margin-left:10px;margin-top:12px;"
          ng-show="sectionname==='Alerts Display'">
       Updated 17:17
     </div>
 </div>
 
-<div ng-show="sectionname==='Solutions list'">
+<div ng-show="name!=='Alerts display'">
 <div style="    font-family: Clan OT;
     font-size: 16px;
     color: white;
@@ -60,11 +60,17 @@
     float: left;
     display: inline-block;
     margin-left: 38px;    width: 150px;    text-align: center;
-    line-height: 16px;">Alert details
+    line-height: 16px;
+    cursor:pointer;"
+    ng-click="navigate('alert details')"
+    >Alert details
 
-    <!--<div style="border: 3px solid #003399;
-    display: inline-block;
-    width: 130px;"></div>-->
+    <div ng-show="sectionname==='Alert details'"
+    style="border: 3px solid #003399;
+    display: block;
+        margin-top: 11px;
+    margin-left: 10px;
+    width: 130px;"></div>
 
     </div>
 <div style="    font-family: Clan OT;
@@ -75,9 +81,15 @@
     display: inline-block;
     width: 150px;
     text-align: center;
-    line-height: 16px;">Solutions list
-    <div style="border: 3px solid #003399;
-    display: inline-block;
+    line-height: 16px;
+    cursor:pointer;"
+    ng-click="navigate('solution list')"
+    >Solutions list
+    <div ng-show="sectionname==='Solutions list'"
+    style="border: 3px solid #003399;
+    display: block;
+        margin-top: 11px;
+    margin-left: 10px;
     width: 130px;"></div>
     </div>
  </div>

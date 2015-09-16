@@ -172,16 +172,19 @@ i a:hover {
   padding-right:0px;
 }
 </style>
-<header sectionname="'Alerts Display'"></header>
+<header name="'Alerts display'" sectionname="'Alert details'"></header>
 <!-- End Header -->
 
     <div id="body-schedule-display"
-    style="background-color: white;
+    style="
+        background-color: white;
     width: 92%;
     height: 74px;
-    margin-top: -42px;
+    margin-top: 85px;
     margin-left: 4%;
-    border:1px solid #DDE1E1;">
+    border: 1px solid #DDE1E1;
+    z-index: 99999;
+    position: absolute;">
 
     <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;width:15%;">
       <div>Date</div> 
@@ -230,7 +233,7 @@ i a:hover {
 
     </div>
 
-<div class="container vertical-tab" style="margin-top:15px;">
+<div class="container vertical-tab" style="margin-top:180px;">
   <div class="row">
     <div class="col-md-12 col-sm-5">
       <div class="tabs-left">
