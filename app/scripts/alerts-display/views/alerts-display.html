@@ -161,6 +161,29 @@ span{
 i a:hover {
   background-color: black;
 }
+
+.hover {
+    top:50px;
+    left:50px;
+}
+
+.tooltip {
+  background-color:white;
+  color:grey;
+  border:1px solid grey;
+  border-radius:5px;
+  opacity:0;
+  position:absolute;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition:  opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition:  opacity 0.5s;
+  transition:  opacity 0.5s;
+}
+
+.hover:hover .tooltip {
+    opacity:1;
+}
 </style>
 
 <snap-content style="background-color:#E3E5E8;">
@@ -377,7 +400,17 @@ i a:hover {
                     </div>
                   </td>
                   <td style="vertical-align:middle;">
-                    <div class="img-info" style="margin-left: 20px;margin-top: 5px;">
+                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                    
+    <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:139px;height:150px;">
+        <div style="border-bottom:1px solid grey;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
+        <div style="border-bottom:1px solid grey;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
+        <div style="border-bottom:1px solid grey;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
+        <div style="border-bottom:1px solid grey;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
+        <div style="border-bottom:1px solid grey;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+    </div>
+
+                    </div>
                   </td>
                 </tr>
 
