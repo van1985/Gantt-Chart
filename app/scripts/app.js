@@ -11,6 +11,7 @@ var _mainModules = [
     ,'ngTouch'
     ,'ScheduleDisplay'
     ,'SolutionList'
+    ,'AlertDetails'
     ,'AlertsDisplay'
     ,'d3'
     ,'Dashboard'
@@ -68,6 +69,7 @@ angular.module('CrewSchedGUI', _mainModules )
             name: '/alert-details',
             params: {
                 templateUrl: 'scripts/alert-details/views/alert-details.html'
+                //controller: 'alertDetailsCtrl'
             }
         });
 
