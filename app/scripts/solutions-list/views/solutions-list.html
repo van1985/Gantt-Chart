@@ -4,13 +4,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<!--  Header --> 
-<style>
-.container{
-  padding-left:0px;
-  padding-right:0px;
-}
-</style>
+<!--  Header -->
 
 <header name="'Alerts Information'" sectionname="'Solutions list'"></header>
 <!--  Header --> 
@@ -19,38 +13,38 @@
 
 
 
-<div class="solutions" style="margin-top:120px;background-color:#E3E5E8;">
+<div class="solutions">
 	<div class="row">
 		<!-- left side solutions filter -->
-		<div class="solutions-filter col-md-2" style="margin-left:50px;width:20%;background-color:#C4CFD3;">
+		<div class="solutions-filter col-md-2">
 			
 			<div class="row">
 				<div class="col-md-12">
-					<p style="margin-top: 14px;"><span class="white-font" style="font-size:16px;font-family:Clan OT;color:#555555;" >Solutions filters</span></p>
+					<p style="margin-top: 14px;"><span class="clanOT-font font-large" >Solutions filters</span></p>
 				</div>
 			</div>
 
 			<!-- calendar from - to -->
-			<div class="row">
+			<div class="row calendar">
 				<div class="col-md-6">
-					<div style="margin-left:5px;"><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">From</span></div>
-					<button type="button" class="btn btn-default grey-filters no-text-shadow" style="box-shadow: none;border-radius:0px;border:2px solid #8B9498;background-color:transparent;font-size:14px;color:#555555;font-family:Clan OT;width:119px;height:41px;text-align:left;margin-left:5px;">MM/DD <span style="float:right;" class="glyphicon glyphicon-calendar"></span></button>
+					<div><span class="clanOT-font font-medium">From</span></div>
+					<button type="button" class="btn btn-default grey-filters no-text-shadow clanOT-font btn-filter font-medium">MM/DD <span class="glyphicon glyphicon-calendar pull-right"></span></button>
 				</div>
 
 				<div class="col-md-6">
-					<div style="margin-left:-8px;"><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">To</span></div>
-					<button type="button" class="btn btn-default grey-filters no-text-shadow" style="box-shadow: none;border-radius:0px;border:2px solid #8B9498;background-color:transparent;font-size:14px;color:#555555;font-family:Clan OT;width:119px;height:41px;text-align:left;margin-left:-10px;">MM/DD <span style="float:right;" class="glyphicon glyphicon-calendar"></span></button>
+					<div><span class="clanOT-font font-medium">To</span></div>
+					<button type="button" class="btn btn-default grey-filters no-text-shadow clanOT-font btn-filter font-medium">MM/DD <span class="glyphicon glyphicon-calendar pull-right"></span></button>
 				</div>
 			</div>
 
 			<!-- crew -->
-			<div class="row group-spacing">
+			<div class="row group-spacing crew">
 				<div class="col-md-12">
-					<div><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">Crew</span></div>
-					<div class="btn-group btn-group-md" role="group" style="width:249px;">
-					  <button type="button" class="btn btn-default grey-filters no-text-shadow" style="box-shadow: none;height:41px;width:83px;background-color:transparent;border-radius:0px;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;">All</button>
-					  <button type="button" class="btn btn-default white-filters no-text-shadow" style="box-shadow: none;height:41px;width:83px;background-color:transparent;border-radius:0px;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;border-right:0px;border-left:0px;">Pilot</button>
-					  <button type="button" class="btn btn-default grey-filters no-text-shadow" style="box-shadow: none;height:41px;width:83px;background-color:#EDF3F5;border-radius:0px;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;">FA</button>
+					<div><span class="clanOT-font font-medium">Crew</span></div>
+					<div class="btn-group btn-group-md crew-grp" role="group">
+					  <button type="button" class="btn btn-default grey-filters no-text-shadow btn-filter font-medium" >All</button>
+					  <button type="button" class="btn btn-default white-filters no-text-shadow clanOT-font btn-filter font-medium crew-middle">Pilot</button>
+					  <button type="button" class="btn btn-default grey-filters no-text-shadow clanOT-font btn-filter font-medium">FA</button>
 					</div>
 				</div>
 			</div>
@@ -58,9 +52,9 @@
 			<!-- Positions -->
 			<div class="row group-spacing">
 				<div class="col-md-12">
-					<div><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">Positions</span></div>
+					<div><span class="clanOT-font font-medium">Positions</span></div>
 					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="box-shadow: none;height:40px;width:247px;border-radius:0px;background-color:transparent;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow clanOT-font btn-filter font-medium drop-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						    Captain & FO
 						<span class="arrow-dropdown-img"></span>
 						</button>
@@ -71,9 +65,9 @@
 			<!-- Status -->
 			<div class="row group-spacing">
 				<div class="col-md-12">
-					<div><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">Status</span></div>
+					<div><span class="clanOT-font font-medium">Status</span></div>
 					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="box-shadow: none;height:40px;width:247px;border-radius:0px;background-color:transparent;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow clanOT-font btn-filter font-medium drop-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						    All
 						<span class="arrow-dropdown-img"></span>
 						</button>
@@ -84,9 +78,9 @@
 			<!-- Fleet -->
 			<div class="row group-spacing">
 				<div class="col-md-12">
-					<div><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">Fleet</span></div>
+					<div><span class="clanOT-font font-medium">Fleet</span></div>
 					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="box-shadow: none;height:40px;width:247px;border-radius:0px;background-color:transparent;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow clanOT-font btn-filter font-medium drop-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						    747
 						<span class="arrow-dropdown-img"></span>
 						</button>
@@ -97,9 +91,9 @@
 			<!-- Domicile -->
 			<div class="row group-spacing">
 				<div class="col-md-12">
-					<div><span class="white-font" style="font-size:14px;font-family:Clan OT;color:#555555;">Domicile</span></div>
+					<div><span class="clanOT-font font-medium">Domicile</span></div>
 					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="box-shadow: none;height:40px;width:247px;border-radius:0px;background-color:transparent;font-family:Clan OT;font-size:14px;color:#555555;border:2px solid #8B9498;">
+						<button class="btn btn-default dropdown-toggle max-width grey-filters text-left no-text-shadow clanOT-font btn-filter font-medium drop-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						    ORD
 						<span class="arrow-dropdown-img"></span>
 						</button>
@@ -108,16 +102,16 @@
 			</div>
 
 			<!-- Apply button -->
-			<div class="row group-spacing">
+			<div class="row group-spacing apply">
 				<div class="col-md-12">
-					<button class="btn btn-apply max-width" style="height:41px;width:248px;font-size:12px;font-family:Clan OT;font-weight:bold;color:white;border-radius:0px;"><span class="white-font no-text-shadow">Apply</span></button>
+					<button class="btn btn-apply max-width clanOT-font font-small"><span class="no-text-shadow">Apply</span></button>
 				</div>
 			</div>
 
 			<!-- reset all -->
 			<div class="row group-spacing">
 				<div class="col-md-12">
-					<p class="text-center" style="color:#009BDD;font-size:12px;font-family:Clan OT;font-weight:bold;"><span class="blue-font no-text-shadow">Reset all</span></p>
+					<p class="text-center clanOT-font font-small" style="font-weight:bold;"><span class="blue-font no-text-shadow">Reset all</span></p>
 				</div>
 			</div>			
 
@@ -136,20 +130,20 @@
 
 
 		<!-- right side solutions results -->
-		<div class="solutions-result col-md-10" style="margin-top:20px;background-color:white;width:73.5%;padding-right:50px;padding-bottom:30px;">
+		<div class="solutions-result col-md-10">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="pull-left large-font" style="font-family:Clan OT;font-size:16px;color:#555555;">25 Results</div>
+					<div class="pull-left large-font clanOT-font font-large">25 Results</div>
 				</div>
 				<div class="col-md-6">
-					<div class="pull-right" style="font-size:12px;font-family:Clan OT;color:font-family:Clan OT;color:#555555;font-size:12px;">Download <span class="glyphicon glyphicon-circle-arrow-down"></span> </div>
+					<div class="pull-right clanOT-font font-small">Download <span class="glyphicon glyphicon-circle-arrow-down"></span> </div>
 				</div>
 			</div>
 
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="pull-left medium-font" style="font-size:14px;font-family:Clan OT;color:#555555;">14 Lineholders</div>
+					<div class="pull-left medium-font clanOT-font font-medium">14 Lineholders</div>
 				</div>
 				<div class="col-md-6">
 					<div class="pull-right"> <span class="glyphicon glyphicon-menu-down"></span> </div>
@@ -159,20 +153,20 @@
 			<div class="divide-line"></div>
 
 			<!--  -->
-			<div class="row">
+			<div class="row lineholders-header">
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-2">
-							<div style="width: 122%;font-family:Clan OT;color:#555555;font-size:12px;">Domicile 
+							<div class="clanOT-font font-small domicile">Domicile 
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>--></div>
 						</div>
 						<div class="col-md-8">
-							<label style="font-family:Clan OT;color:#555555;font-size:12px;margin-left:10px;">Employee 
+							<label class="clanOT-font font-small employee">Employee 
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 							</label>
 						</div>
 						<div class="col-md-2">
-							<div style="width: 104%;font-family:Clan OT;color:#555555;font-size:12px;">Pairing 
+							<div class="clanOT-font font-small">Pairing 
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 						</div>
 						</div>
@@ -182,30 +176,30 @@
 					<div class="row">
 						
 						<div class="col-md-3">
-							<div style="width: 143%;font-family:Clan OT;color:#555555;font-size:12px;">Block time 
+							<div class="clanOT-font font-small block-time">Block time
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div style="width: 105%;font-family:Clan OT;color:#555555;font-size:12px;">Duty day</div>
+							<div class="clanOT-font font-small duty-day">Duty day</div>
 						</div>
 						<div class="col-md-6">
-							<div style="font-family:Clan OT;color:#555555;font-size:12px;">Next</div>
+							<div class="clanOT-font font-small">Next</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-4">
-							<div style="width: 173%;font-family:Clan OT;color:#555555;font-size:12px;">Dpt time 
+							<div class="clanOT-font font-small">Dpt time 
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div style="font-family:Clan OT;color:#555555;font-size:12px;">Legal</div>
+							<div class="clanOT-font font-small">Legal</div>
 						</div>
 						<div class="col-md-4">
-							<div style="font-family:Clan OT;color:#555555;font-size:12px;">Info</div>
+							<div class="clanOT-font font-small">Info</div>
 						</div>
 					</div>
 				</div>
@@ -214,13 +208,13 @@
 
 
 			
-			<div class="solid-border">
+			<div class="solid-border lineholders-data">
 				<div class="solid-border-down grey-row">
 					<div class="row row-spacing">
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="first-section font-grid">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -231,7 +225,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -265,7 +259,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -276,7 +270,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -306,11 +300,11 @@
 				</div>
 
 				<div class="solid-border-down grey-row">
-					<div class="row">
+					<div class="row row-spacing">
 						<div class="col-md-4">
-							<div class="row row-spacing">
+							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -321,37 +315,26 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">##</div>
+									<div class="font-grid clanOT-font font-small">##</div>
 								</div>
 								<div class="col-md-6">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">### ORI - DES</div>
+									<div class="font-grid clanOT-font font-small">### ORI - DES</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;"> <span class="link" style="color:#009BDD;
-					font-weight: bold;">View</span> </div>
+									<div class="font-grid"> <span class="link">View</span> </div>
 								</div>
 								<div class="col-md-4">
 									<span class="glyphicon glyphicon-option-vertical"></span>
@@ -366,7 +349,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -377,7 +360,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -410,11 +393,11 @@
 				<div class="collapse" id="collapseLineHolders">
 
 				<div class="solid-border-down grey-row">
-					<div class="row">
+					<div class="row row-spacing">
 						<div class="col-md-4">
-							<div class="row row-spacing">
+							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -425,37 +408,26 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">##</div>
+									<div class="font-grid clanOT-font font-small">##</div>
 								</div>
 								<div class="col-md-6">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">### ORI - DES</div>
+									<div class="font-grid clanOT-font font-small">### ORI - DES</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;"> <span class="link" style="color:#009BDD;
-					font-weight: bold;">View</span> </div>
+									<div class="font-grid clanOT-font font-small"> <span class="link">View</span> </div>
 								</div>
 								<div class="col-md-4">
 									<span class="glyphicon glyphicon-option-vertical"></span>
@@ -470,7 +442,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -481,7 +453,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -511,11 +483,11 @@
 				</div>
 
 				<div class="solid-border-down grey-row">
-					<div class="row">
+					<div class="row row-spacing">
 						<div class="col-md-4">
-							<div class="row row-spacing">
+							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -526,37 +498,26 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">##</div>
+									<div class="font-grid clanOT-font font-small">##</div>
 								</div>
 								<div class="col-md-6">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">### ORI - DES</div>
+									<div class="font-grid clanOT-font font-small">### ORI - DES</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;"> <span class="link" style="color:#009BDD;
-					font-weight: bold;">View</span> </div>
+									<div class="font-grid clanOT-font font-small"> <span class="link">View</span> </div>
 								</div>
 								<div class="col-md-4">
 									<span class="glyphicon glyphicon-option-vertical"></span>
@@ -571,7 +532,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -582,7 +543,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -612,11 +573,11 @@
 				</div>
 
 				<div class="solid-border-down grey-row">
-					<div class="row">
+					<div class="row row-spacing">
 						<div class="col-md-4">
-							<div class="row row-spacing">
+							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -627,37 +588,26 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">##</div>
+									<div class="font-grid clanOT-font font-small">##</div>
 								</div>
 								<div class="col-md-6">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">### ORI - DES</div>
+									<div class="font-grid clanOT-font font-small">### ORI - DES</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;"> <span class="link" style="color:#009BDD;
-					font-weight: bold;">View</span> </div>
+									<div class="font-grid clanOT-font font-small"> <span class="link">View</span> </div>
 								</div>
 								<div class="col-md-4">
 									<span class="glyphicon glyphicon-option-vertical"></span>
@@ -672,7 +622,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -683,7 +633,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -713,11 +663,11 @@
 				</div>
 
 				<div class="solid-border-down grey-row">
-					<div class="row">
+					<div class="row row-spacing">
 						<div class="col-md-4">
-							<div class="row row-spacing">
+							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -728,37 +678,26 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">##</div>
+									<div class="font-grid clanOT-font font-small">##</div>
 								</div>
 								<div class="col-md-6">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">### ORI - DES</div>
+									<div class="font-grid clanOT-font font-small">### ORI - DES</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;"> <span class="link" style="color:#009BDD;
-					font-weight: bold;">View</span> </div>
+									<div class="font-grid clanOT-font font-small"> <span class="link">View</span> </div>
 								</div>
 								<div class="col-md-4">
 									<span class="glyphicon glyphicon-option-vertical"></span>
@@ -773,7 +712,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -784,7 +723,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
 									<div class="font-grid">HH:MM</div>
@@ -814,11 +753,11 @@
 				</div>
 
 				<div class="solid-border-down grey-row">
-					<div class="row">
+					<div class="row row-spacing">
 						<div class="col-md-4">
-							<div class="row row-spacing">
+							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid first-section">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">########</span> Lastname, Name</div>
@@ -829,37 +768,26 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="row" style="margin-top:-14px;">
+							<div class="row second-section">
 								
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-3">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">##</div>
+									<div class="font-grid clanOT-font font-small">##</div>
 								</div>
 								<div class="col-md-6">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">### ORI - DES</div>
+									<div class="font-grid clanOT-font font-small">### ORI - DES</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;">HH:MM</div>
+									<div class="font-grid clanOT-font font-small">HH:MM</div>
 								</div>
 								<div class="col-md-4">
-									<div class="font-grid" style="font-size:12px;
-				font-family:Clan OT;
-				color:#555555;"> <span class="link" style="color:#009BDD;
-					font-weight: bold;">View</span> </div>
+									<div class="font-grid clanOT-font font-small"> <span class="link">View</span> </div>
 								</div>
 								<div class="col-md-4">
 									<span class="glyphicon glyphicon-option-vertical"></span>
@@ -872,11 +800,11 @@
 				</div>
 				<!-- collapse end -->
 
-				<div style="cursor:pointer;">
+				<div class="view-more">
 					<div class="row row-spacing">
-						<div ng-click="moreLineHolders()" class="text-center font-grid" style="margin-top:5px;" > <span class="link">
-						<div ng-show="showMoreLineHoldersButton" style="display:inline-block;">View</div>
-						<div ng-show="!showMoreLineHoldersButton" style="display:inline-block;">Hide</div>
+						<div ng-click="moreLineHolders()" class="text-center font-grid"> <span class="link">
+						<div class="display-inline" ng-show="showMoreLineHoldersButton">View</div>
+						<div class="display-inline" ng-show="!showMoreLineHoldersButton">Hide</div>
 						9 more</span> </div>
 					</div>
 				</div>
@@ -891,7 +819,7 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="pull-left large-font" style="font-family:Clan OT;font-size:14px;color:#555555;">11 Reserves</div>
+					<div class="pull-left large-font clanOT-font font-medium">11 Reserves</div>
 				</div>
 				<div class="col-md-6">
 					<div class="pull-right"> <span class="glyphicon glyphicon-menu-down"></span> </div>
@@ -903,21 +831,21 @@
 			
 
 			<!--  -->
-			<div class="row">
+			<div class="row reserves-header">
 				<div class="col-md-5">
 					<div class="row">
 						<div class="col-md-2">
-							<div style="width: 122%;font-family:Clan OT;font-size:12px;color:#555555;">Domicile 
+							<div class="clanOT-font font-small domicile">Domicile
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 							</div>
 						</div>
 						<div class="col-md-8">
-							<label style="font-family:Clan OT;font-size:12px;color:#555555;margin-left:15px;">Employee 
+							<label class="clanOT-font font-small">Employee 
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 							</label>
 						</div>
-						<div class="col-md-2" style="margin-left: -5px;">
-							<div style="font-family:Clan OT;font-size:12px;color:#555555;">Type 
+						<div class="col-md-2">
+							<div class="clanOT-font font-small type">Type 
 							<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>--></div>
 						</div>
 					</div>
@@ -925,48 +853,48 @@
 
 				<div class="col-md-5">
 					<div class="col-md-4">
-						<div style="font-family:Clan OT;font-size:12px;color:#555555;">Seniority 
+						<div class="clanOT-font font-small">Seniority 
 						<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div style="font-family:Clan OT;font-size:12px;color:#555555;">Start date 
+						<div class="clanOT-font font-small">Start date 
 						<!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>-->
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div style="font-family:Clan OT;font-size:12px;color:#555555;">Days av. <!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>--></div>
+						<div class="clanOT-font font-small">Days av. <!--<span class="glyphicon glyphicon-triangle-bottom small-icon"></span>--></div>
 					</div>
 				</div>
 
 				<div class="col-md-2">
 					<div class="col-md-4">
-						<div style="margin-left: -60px;font-family:Clan OT;font-size:12px;color:#555555;">Next pairing</div>
+						<div class="clanOT-font font-small next-pair">Next pairing</div>
 					</div>
 					<div class="col-md-4">
-						<div style="font-family:Clan OT;font-size:12px;color:#555555;">Legal</div>
+						<div class="clanOT-font font-small">Legal</div>
 					</div>
 					<div class="col-md-4">
-						<div style="font-family:Clan OT;font-size:12px;color:#555555;">Info</div>
+						<div class="clanOT-font font-small">Info</div>
 					</div>
 				</div>
 			</div>
 
 
 			<!--  -->
-			<div class="solid-border">
+			<div class="solid-border reserves-data">
 				<div class="solid-border-down grey-row">
 					<div class="row row-spacing">
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -985,13 +913,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div  class="font-grid "style="margin-left: -60px;"><span class="link">######</span></div>
+								<div  class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1003,13 +931,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1028,13 +956,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1046,13 +974,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1071,13 +999,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1089,13 +1017,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div  class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1114,13 +1042,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="blue-font">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1134,13 +1062,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1159,13 +1087,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1177,13 +1105,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div  class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1202,13 +1130,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="blue-font">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1219,13 +1147,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1244,13 +1172,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1262,13 +1190,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div  class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1287,13 +1215,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="blue-font">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1304,13 +1232,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1329,13 +1257,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1347,13 +1275,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div  class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1372,13 +1300,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="blue-font">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1389,13 +1317,13 @@
 						<div class="col-md-5">
 							<div class="row">
 								<div class="col-md-2">
-									<div style="margin-left:10px;" class="font-grid">###</div>
+									<div class="font-grid domicile">###</div>
 								</div>
 								<div class="col-md-8">
 									<div class="font-grid">CA <span class="link">#######</span> Lastname, Name</div>
 								</div>
-								<div class="col-md-2" style="margin-left: -5px;">
-									<div class="font-grid" style="width: 377%">RSV type</div>
+								<div class="col-md-2">
+									<div class="font-grid rsv-type">RSV type</div>
 								</div>
 							</div>
 						</div>
@@ -1414,13 +1342,13 @@
 
 						<div class="col-md-2">
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: -60px;"><span class="link">######</span></div>
+								<div class="font-grid next-pair"><span class="link">######</span></div>
 							</div>
 							<div class="col-md-4">
 								<div class="font-grid"><span class="link">view</span></div>
 							</div>
 							<div class="col-md-4">
-								<div class="font-grid" style="margin-left: 6px"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
+								<div class="font-grid info"> <span class="glyphicon glyphicon-option-vertical"></span> </div>
 							</div>
 						</div>
 					</div>
@@ -1432,11 +1360,11 @@
 				<!-- collapse end -->
 
 
-				<div style="cursor:pointer;">
+				<div class="view-more">
 					<div class="row row-spacing">
-						<div ng-click="moreReserve()" class="text-center font-grid" style="margin-top:5px;" > <span class="link">
-						<div ng-show="showMoreReservesButton" style="display:inline-block;">View</div>
-						<div ng-show="!showMoreReservesButton" style="display:inline-block;">Hide</div>
+						<div ng-click="moreReserve()" class="text-center font-grid"> <span class="link">
+						<div class="display-inline" ng-show="showMoreReservesButton">View</div>
+						<div class="display-inline" ng-show="!showMoreReservesButton">Hide</div>
 						7 more</span> </div>
 					</div>
 				</div>

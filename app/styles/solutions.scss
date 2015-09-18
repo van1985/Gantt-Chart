@@ -1,21 +1,96 @@
 .solutions {
 
+	margin-top: 120px;
+	background-color: #E3E5E8;
+
 	.blue-font {
 		color: #4497D9;
+	}
+
+	.clanOT-font {
+		font-family: Clan OT;
+		color: #555555;
+	}
+
+	.font-large {
+		font-size: 16px;
+	}
+
+	.font-medium {
+		font-size: 14px;
+	}
+
+	.font-small {
+		font-size: 12px;
 	}
 
 	
 	/* solutions filter - left side */
 	.solutions-filter {
 		margin-top: 20px;
-		background: #A7A7A7;
+		margin-left: 50px;
+		width: 20%;
+		background-color: #C4CFD3;
 
 		.max-width {
 			width: 100%;
 		}
 
-		.white-font {
-			color: #FFFFFF;
+		/* calendar from to */
+		.calendar button {
+			width: 119px;
+			height: 41px;
+			text-align: left;
+			margin-left: 5px;
+		}
+
+		.calendar button:last-child {
+			margin-left: -10px;	
+		}
+
+		/* crew: All - Pilot - FA */
+		.crew {
+			
+			button {
+				height: 41px;
+				width: 83px;
+			}
+
+			.crew-grp {
+				width:249px;
+
+				button:last-child {
+					background-color: #EDF3F5 !important;
+				}
+			}
+
+			.crew-middle {
+				border-right: 0px;
+				border-left: 0px;
+			}
+		}
+
+		/* apply button */
+		.apply button {
+			height: 41px;
+			width: 248px;
+			font-weight: bold;
+			color: white;
+			border-radius: 0px;
+		}
+		
+		
+		/* drop down dimensions */
+		.drop-filter {
+			height: 40px !important;
+			width: 247px !important;
+		}
+
+		.btn-filter {
+			box-shadow: none;
+			background-color:transparent !important;
+			border-radius:0px;
+			border:2px solid #8B9498 !important;
 		}
 
 		.btn-apply {
@@ -73,8 +148,15 @@
 
 
 
+
 	/* solutions result - right side*/
 	.solutions-result {
+
+		margin-top: 20px;
+		background-color: white;
+		width: 73.5%;
+		padding-right: 50px;
+		padding-bottom: 30px;
 
 		.divide-line {
 			border: 1px solid #F1F3F3;
@@ -127,6 +209,88 @@
 
 		.medium-font {
 			font-size: 16px
+		}
+
+		/**/
+		.lineholders-header {
+
+			.domicile {
+				margin-top: 3px;
+			}
+
+			.employee {
+				margin-left: 10px;
+			}
+
+			.block-time {
+				width: 143%;
+			}
+
+			.duty-day {
+				width: 105%;
+			}
+		}
+
+		/**/
+		.reserves-header {
+
+			.domicile {
+				margin-top: 3px;
+			}
+
+			.type {
+				margin-left: -5px;
+			}
+
+			.next-pair {
+				margin-left: -60px;
+			}
+		}
+
+		/**/
+		.lineholders-data {
+
+			.first-section {
+				margin-left:10px;
+			}
+
+			.second-section {
+				margin-top:-14px;
+			}
+		}
+
+		/**/
+		.reserves-data {
+			
+			.domicile {
+				margin-left: 10px;
+			}
+
+			.rsv-type {
+				margin-left: -5px;
+				width: 377%;
+			}
+
+			.next-pair {
+				margin-left: -60px;
+			}
+
+			.info {
+				margin-left: 6px;
+			}
+		}
+
+		/* view more items (collapse) */
+		.view-more {
+			cursor: pointer;
+
+			.row-spacing div:first-child {
+				margin-top: 5px;
+			}
+
+			.display-inline {
+				display: inline-block;
+			}
 		}
 	}
 }
