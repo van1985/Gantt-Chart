@@ -1,3 +1,131 @@
+#body-schedule-display {
+  background-color: white;
+  width: 92%;
+  height: 74px;
+  margin-top: 85px;
+  margin-left: 4%;
+  border: 1px solid #DDE1E1;
+  z-index: 99999;
+  position: absolute;
+
+  .body-date {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    width:15%;
+
+    .date {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-pairing {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+    height: 86%;
+
+    .pairing-affected {
+      margin-left: 10px;
+    }
+
+    .pairing {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-flights {
+
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .flights-affected {
+      margin-left: 10px;
+    }
+
+    .flights {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-crew {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .crew-affected {
+      margin-left:10px;
+    }
+
+    .crew {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-alerts {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .alerts-displayed {
+      margin-left: 10px;
+    }
+    .alerts {
+      margin-top: 10px;
+      margin-left: 10px;
+      color: #009BDD;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-total {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .alerts-ttal {
+      margin-left: 10px;
+    }
+
+    .total {
+      margin-top: 10px;
+      margin-left: 10px;
+      color: #009BDD;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+
 .clanOT-font {
   color: #555555;
   font-family: Clan OT;
