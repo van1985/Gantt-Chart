@@ -1,0 +1,478 @@
+#body-schedule-display {
+  background-color: white;
+  width: 92%;
+  height: 74px;
+  margin-top: 85px;
+  margin-left: 4%;
+  border: 1px solid #DDE1E1;
+  z-index: 99999;
+  position: absolute;
+
+  .body-date {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    width:15%;
+
+    .date {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-pairing {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+    height: 86%;
+
+    .pairing-affected {
+      margin-left: 10px;
+    }
+
+    .pairing {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-flights {
+
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .flights-affected {
+      margin-left: 10px;
+    }
+
+    .flights {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-crew {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .crew-affected {
+      margin-left:10px;
+    }
+
+    .crew {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-alerts {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .alerts-displayed {
+      margin-left: 10px;
+    }
+    .alerts {
+      margin-top: 10px;
+      margin-left: 10px;
+      color: #009BDD;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .body-total {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    float: left;
+    border-left: 1px solid grey;
+    width: 15%;
+
+    .alerts-ttal {
+      margin-left: 10px;
+    }
+
+    .total {
+      margin-top: 10px;
+      margin-left: 10px;
+      color: #009BDD;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+
+.clanOT-font {
+  color: #555555;
+  font-family: Clan OT;
+}
+
+.container {
+
+  .vertical-tab{
+
+  span{
+    font-size:13px;
+    font-family: Clan OT;
+    color:white;
+  }
+
+  .tabs-left {
+    margin-top: 3rem;
+  }
+
+  .nav-tabs {
+    float: left;
+    border-bottom: 0;
+    width: 19%;
+    display: inline-block;
+    float: left;
+    padding-left: 56px;
+
+    /* colors for each tab */
+    .far-duty {
+      border-left:8px solid #30b0a4;
+    }
+
+    .delay {
+      border-left: 8px solid #42c982;
+    }
+
+    .far-block {
+      border-left: 8px solid #38cec0;
+    }
+
+    .cancellation {
+      border-left: 8px solid #ffd52b;
+    }
+
+    .misconnection {
+      border-left: 8px solid #fd7145;
+    }
+
+    .crew-rest {
+      border-left: 8px solid #ae87b4;
+    }
+
+    .taxi {
+      border-left: 8px solid #bbe18b;
+    }
+
+    .ua-staffing {
+      border-left: 8px solid #7ebbf5;
+    }
+
+    .unassigned {
+      border-left: 8px solid #e497c3;
+    }
+
+    .on-time {
+      border-left: 8px solid #c9b58d;
+    }
+
+    .type {
+      border-left: 8px solid #9699a8;
+    }
+
+    .type2 {
+      border-left: 8px solid #ffffff;
+    }
+
+  }
+  .nav-tabs li {
+    float: none;
+    margin: 0;
+    border-bottom: 1px solid #3a6182;
+    width: 100%;
+    background-color:#4B7FAB;
+
+  }
+  .nav-tabs li a {
+    margin-right: 0;
+    border: 0;
+    color: white;
+    font-size: 13;
+    font-family: Clan OT;
+  }
+
+  .nav-tabs li a:hover {
+    background-color: black;
+  }
+
+  .nav-tabs .glyphicon {
+    color: #fff;
+  }
+  .nav-tabs .active .glyphicon {
+    color: #333;
+  }
+
+  /*
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: 0;
+    background-color:#3a6181;
+  }
+  */
+  .tab-content {
+    margin-left: 110px;
+  }
+  .tab-content .tab-pane {
+    display: none;
+    background-color: #fff;
+    padding: 1.6rem;
+    overflow-y: auto;
+  }
+  .tab-content .active {
+    display: block;
+  }
+  .tab-pane{
+    width:1280px;
+    height: 482px;
+    background-color: white;
+    float: left;
+    width: 77%;
+    display: inline-table;
+  }
+
+  .nav{
+    width:200px;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s;
+  }
+
+
+  .nav-clicked {
+      width: 50px;
+  }
+
+  /* table */
+    .table {
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .time {
+        display: inline-block;
+        float: left;
+        margin-top: 2px;
+        font-size: 12px;
+      }
+
+      .pairing {
+        color: #009BDD;
+        font-family: Clan OT;
+        font-weight: bold;
+      }
+
+      .flight-num {
+        color: #009BDD;
+        font-family: Clan OT;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .flight-destination {
+        display: inline-block;
+      }
+
+      .watched {
+        margin-left: 25px;
+        margin-top: -2px;
+      }
+
+      .users {
+        margin-left:25px;
+        margin-top:2px;
+      }
+
+    }
+
+  .table thead tr {
+    height: 40px;
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  .table thead tr th {
+    color: #555555;
+    font-family: Clan OT;
+    font-size: 12px;
+    color: #555555;
+    font-family: Clan OT;
+    font-weight: 100;
+  }
+
+  .table tbody {
+    font-size: 12px;
+    color: #555555;
+    font-family: Clan OT;
+  }
+
+  .table tbody tr {
+    background-color: #F3F3F3;
+    height: 40px;
+    border-left: 1px solid #D3D3D3;
+    border-bottom: 1px solid #D3D3D3;
+  }
+
+  .table tbody tr td {
+    vertical-align: middle;
+  }
+
+
+
+
+  .hide-detail{
+     transform: translateX(100%);
+     -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+     transition: all 1s;
+
+  }
+
+  .show-detail{
+    transform: translateX(0);
+  }
+
+  .arrow-up-img{
+      height: 15px;
+      width: 12px;
+      background: url("arrow-up-img.png");
+      display: inline-block;
+  }
+
+  .watch-img{
+      height: 12px;
+      width: 19px;
+      background: url("watch-img.png");
+      display: inline-block;
+  }
+
+  .user-assign-img{
+      height: 18px;
+      width: 14px;
+      background: url("user-img.png");
+      display: inline-block;
+  }
+
+  .tab-content {
+    margin: 0 0 0 200px;
+
+    transition: all 1s;
+  }
+
+  .img-alert-details{
+      height: 439px;
+      width: 594px;
+      background: url("alert-detail.png");
+      display: inline-block;
+  }
+
+
+
+
+  }
+
+  .img-arrow-up{
+      height: 15px;
+      width: 12px;
+      background: url("../resources/images/arrow-up-alert-d.png");
+      display: inline-block;
+      margin-left: 20px;margin-top: 5px;
+  }
+
+  .img-eye{
+      height: 12px;
+      width: 19px;
+      background: url("../resources/images/eye-alert-d.png");
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 5px;
+  }
+
+  .img-user{
+      height: 18px;
+      width: 14px;
+      background: url("../resources/images/user-alert-d.png");
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 5px;
+  }
+
+  .img-info{
+      height: 13px;
+      width: 2px;
+      background: url("../resources/images/info-alert-d.png");
+      display: inline-block;
+      margin-left: 20px;margin-top: 5px;
+  }
+
+  i a:hover {
+    background-color: black;
+  }
+
+  .hover {
+      top:50px;
+      left:50px;
+  }
+
+  .tooltip {
+    background-color:white;
+    color:#6D6D6D;
+    border:1px solid #DEE1E2;
+    border-radius:5px;
+    opacity:0;
+    position:absolute;
+    margin: 5px -56px;
+    font-family: Clan OT;
+    font-size: 12px;
+    width: 110px;
+    height:150px;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition:  opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition:  opacity 0.5s;
+    transition:  opacity 0.5s;
+
+    .pointer {
+      cursor: pointer;
+    }
+
+    div {
+      border-bottom: 1px solid #DEE1E2;
+      height: 30px;
+      display: inline-block;
+      width: 100%;
+      padding-top: 6px;
+      padding-left: 8px;
+    }
+  }
+
+  .hover:hover .tooltip {
+      opacity:1;
+  }
+
+
+}

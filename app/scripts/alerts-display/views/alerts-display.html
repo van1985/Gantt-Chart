@@ -5,254 +5,47 @@
 <title>Vertical Bootstrap 3 Tabs Widget</title>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="bootstrap.min.css">
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<style>
 
-.vertical-tab{
-
-span{
-  font-size:13px;
-  font-family: Clan OT;
-  color:white;
-}
-
-.tabs-left {
-  margin-top: 3rem;
-}
-
-.nav-tabs {
-  float: left;
-  border-bottom: 0;
-}
-.nav-tabs li {
-  float: none;
-  margin: 0;
-}
-.nav-tabs li a {
-  margin-right: 0;
-  border: 0;
-  background-color: #4b80ab;
-}
-
-.nav-tabs li a:hover {
-  background-color: black;
-}
-
-.nav-tabs .glyphicon {
-  color: #fff;
-}
-.nav-tabs .active .glyphicon {
-  color: #333;
-}
-
-/*
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  border: 0;
-  background-color:#3a6181;
-}
-*/
-.tab-content {
-  margin-left: 110px;
-}
-.tab-content .tab-pane {
-  display: none;
-  background-color: #fff;
-  padding: 1.6rem;
-  overflow-y: auto;
-}
-.tab-content .active {
-  display: block;
-}
-.tab-pane{
-  width:1280px;
-}
-
-.nav{
-  width:200px;
-  -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
-  transition: width 1s;
-}
-
-
-.nav-clicked {
-    width: 50px;
-}
-
-.hide-detail{
-   transform: translateX(100%);
-   -webkit-transition: all 1s; / For Safari 3.1 to 6.0 /
-   transition: all 1s;
-
-}
-
-.show-detail{
-  transform: translateX(0);
-}
-
-.arrow-up-img{
-    height: 15px;
-    width: 12px;
-    background: url("arrow-up-img.png");
-    display: inline-block;
-}
-
-.watch-img{
-    height: 12px;
-    width: 19px;
-    background: url("watch-img.png");
-    display: inline-block;
-}
-
-.user-assign-img{
-    height: 18px;
-    width: 14px;
-    background: url("user-img.png");
-    display: inline-block;
-}
-
-.tab-content {
-  margin: 0 0 0 200px;
-
-  transition: all 1s;
-}
-
-.img-alert-details{
-    height: 439px;
-    width: 594px;
-    background: url("alert-detail.png");
-    display: inline-block;
-}
-
-
-
-
-}
-
-.img-arrow-up{
-    height: 15px;
-    width: 12px;
-    background: url("../resources/images/arrow-up-alert-d.png");
-    display: inline-block; 
-}
-
-.img-eye{
-    height: 12px;
-    width: 19px;
-    background: url("../resources/images/eye-alert-d.png");
-    display: inline-block; 
-}
-
-.img-user{
-    height: 18px;
-    width: 14px;
-    background: url("../resources/images/user-alert-d.png");
-    display: inline-block; 
-}
-
-.img-info{
-    height: 13px;
-    width: 2px;
-    background: url("../resources/images/info-alert-d.png");
-    display: inline-block; 
-}
-
-i a:hover {
-  background-color: black;
-}
-
-.hover {
-    top:50px;
-    left:50px;
-}
-
-.tooltip {
-  background-color:white;
-  color:#6D6D6D;
-  border:1px solid #DEE1E2;
-  border-radius:5px;
-  opacity:0;
-  position:absolute;
-  margin: 5px -56px;
-  -webkit-transition: opacity 0.5s;
-  -moz-transition:  opacity 0.5s;
-  -ms-transition: opacity 0.5s;
-  -o-transition:  opacity 0.5s;
-  transition:  opacity 0.5s;
-}
-
-.hover:hover .tooltip {
-    opacity:1;
-}
-</style>
 
 <snap-content style="background-color:#E3E5E8;">
 
 <!--  Header --> 
-<style>
-.container{
-  padding-left:0px;
-  padding-right:0px;
-}
-</style>
+
 <header name="'Alerts display'" sectionname="'Alert details'"></header>
 <!-- End Header -->
 
-    <div id="body-schedule-display"
-    style="
-        background-color: white;
-    width: 92%;
-    height: 74px;
-    margin-top: 85px;
-    margin-left: 4%;
-    border: 1px solid #DDE1E1;
-    z-index: 99999;
-    position: absolute;">
+    <div id="body-schedule-display">
 
-    <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;width:15%;">
-      <div>Date</div> 
-      <div style="margin-top:10px;color:#555555;font-weight:bold;font-size:16px;">08/12/15</div>  
+    <div class="clanOT-font body-date">
+      <div>Date</div>
+      <div class="clanOT-font date">08/12/15</div>
     </div>
 
-     <div style="    color: #555555;
-    font-family: Clan OT;
-    font-size: 15px;
-    margin-left: 15px;
-    margin-top: 5px;
-    float: left;
-    border-left: 1px solid grey;
-    width: 15%;
-    height: 86%;">
-      <div style="margin-left:10px;">Pairing affected</div> 
-      <div style="margin-top:10px;margin-left:10px;color:#555555;font-weight:bold;font-size:16px;">101</div> 
+     <div class="clanOT-font body-pairing">
+      <div class="pairing-affected">Pairing affected</div> 
+      <div class="clanOT-font pairing">101</div> 
     </div>
 
-         <div style="color: #555555;
-    font-family: Clan OT;
-    font-size: 15px;
-    margin-left: 15px;
-    margin-top: 5px;
-    float: left;
-    border-left: 1px solid grey;
-    width: 15%;">
-      <div style="margin-left:10px;">Flights affected</div>  
-      <div style="margin-top:10px;margin-left:10px;color:#555555;font-weight:bold;font-size:16px;">756</div> 
+      <div class="clanOT-font body-flights">
+        <div class="flights-affected">Flights affected</div>
+        <div class="clanOT-font flights">756</div>
+      </div>
+
+         <div class="clanOT-font body-crew">
+      <div class="crew-affected">Crew affected</div>
+      <div class="clanOT-font crew">152</div>
     </div>
 
-         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:15%">
-      <div style="margin-left:10px;">Crew affected</div>  
-      <div style="margin-top:10px;margin-left:10px;color:#555555;font-weight:bold;font-size:16px;">152</div> 
+         <div class="clanOT-font body-alerts">
+      <div class="alerts-displayed">Alerts displayed</div>
+      <div class="alerts">88</div>
     </div>
 
-         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:15%">
-      <div style="margin-left:10px;">Alerts displayed</div>  
-      <div style="margin-top:10px;margin-left:10px;color:#009BDD;font-weight:bold;font-size:16px;">88</div> 
-    </div>
-
-         <div style="color:#555555;font-family:Clan OT;font-size:15px;margin-left:15px;margin-top:10px;float:left;border-left:1px solid grey;width:15%">
-      <div style="margin-left:10px;">Alerts Total</div> 
-      <div style="margin-top:10px;margin-left:10px;color:#009BDD;font-weight:bold;font-size:16px;">112</div> 
+         <div class="clanOT-font body-total">
+      <div class="alerts-total">Alerts Total</div> 
+      <div class="total">112</div> 
     </div>
 
     </div>
@@ -261,506 +54,534 @@ i a:hover {
   <div class="row">
     <div class="col-md-12 col-sm-5">
       <div class="tabs-left">
-        <ul class="nav nav-tabs" style="width:19%;display:inline-block;float:left;padding-left:56px;">
-           <li onClick="resetTabs()" style="background-color:#4b80ab;border-left:8px solid #30b0a4;border-bottom:1px solid #3a6182;width:100%;">
-           <a href="#profile" data-toggle="tab" style="color:white;font-size:13;font-family:Clan OT;"><span id="titles-tab2">FAR Duty</span><span id="count-tab1">(##)</span></a></li>
+        <ul class="nav nav-tabs">
+           <li onClick="resetTabs()" class="far-duty">
+           <a href="#profile" data-toggle="tab"><span id="titles-tab2">FAR Duty</span><span id="count-tab1">(##)</span></a></li>
 
-          <li onClick="resetTabs()" style="background-color:#4B7FAB;border-left:8px solid #42c982;border-bottom:1px solid #3a6182;width:100%;"><a href="#download" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab4">Delay</span><span id="count-tab3">(##)</span></a></li>
+          <li onClick="resetTabs()" class="delay"><a href="#download" data-toggle="tab"><span id="titles-tab4">Delay</span><span id="count-tab3">(##)</span></a></li>
 
-          <li onClick="resetTabs()" style="background-color:#4B7FAB;border-left:8px solid #38cec0;border-bottom:1px solid #3a6182;width:100%;"><a href="#favourite" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab3" >FAR Block</span><span id="count-tab2">(##)</span></a></li>
+          <li onClick="resetTabs()" class="far-block"><a href="#favourite" data-toggle="tab"><span id="titles-tab3" >FAR Block</span><span id="count-tab2">(##)</span></a></li>
 
-          <li onClick="resetTabs()" style="background-color:#4B7FAB;border-left:8px solid #ffd52b;border-bottom:1px solid #3a6182;width:100%;"><a href="#stars" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab5">Cancellation</span><span id="count-tab4">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #fd7145;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab6">Misconnection</span><span id="count-tab5">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #ae87b4;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab7">Crew Rest-Contract</span><span id="count-tab6">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #bbe18b;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab8">Taxi</span><span id="count-tab7">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #7ebbf5;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab9">UA Staffing</span><span id="count-tab8">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #e497c3;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab10">Unassigned Inbound</span><span id="count-tab9">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #c9b58d;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab11">Flight on time</span><span id="count-tab10">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #9699a8;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab12">Type</span><span id="count-tab11">(##)</span></a></li>
-          <li style="background-color:#4B7FAB;border-left:8px solid #ffffff;border-bottom:1px solid #3a6182;width:100%;"><a href="#settings" style="color:white;font-size:13px;font-family:Clan OT;" data-toggle="tab"><span id="titles-tab13">Type</span><span id="count-tab11">(##)</span></a></li>
+          <li onClick="resetTabs()" class="cancellation"><a href="#stars" data-toggle="tab"><span id="titles-tab5">Cancellation</span><span id="count-tab4">(##)</span></a></li>
+
+          <li class="misconnection"><a href="#settings" data-toggle="tab"><span id="titles-tab6">Misconnection</span><span id="count-tab5">(##)</span></a></li>
+
+          <li class="crew-rest"><a href="#settings" data-toggle="tab"><span id="titles-tab7">Crew Rest-Contract</span><span id="count-tab6">(##)</span></a></li>
+
+          <li class="taxi"><a href="#settings" data-toggle="tab"><span id="titles-tab8">Taxi</span><span id="count-tab7">(##)</span></a></li>
+
+          <li class="ua-staffing"><a href="#settings" data-toggle="tab"><span id="titles-tab9">UA Staffing</span><span id="count-tab8">(##)</span></a></li>
+
+          <li class="unassigned"><a href="#settings" data-toggle="tab"><span id="titles-tab10">Unassigned Inbound</span><span id="count-tab9">(##)</span></a></li>
+
+          <li class="on-time"><a href="#settings" data-toggle="tab"><span id="titles-tab11">Flight on time</span><span id="count-tab10">(##)</span></a></li>
+
+          <li class="type"><a href="#settings" data-toggle="tab"><span id="titles-tab12">Type</span><span id="count-tab11">(##)</span></a></li>
+
+          <li class="type2"><a href="#settings" data-toggle="tab"><span id="titles-tab13">Type</span><span id="count-tab11">(##)</span></a></li>
         </ul>
 
 <!-- right content -->
-<div class="tab-pane active" id="profile" style="height: 482px;background-color:white;float: left;width: 77%;display: inline-table;">
+<div class="tab-pane active" id="profile">
   
 <!-- table -->
 
     <table class="table table-striped">
               <thead>
-                <tr style="height:40px;border-bottom:1px solid #ddd !important;">
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Severity</th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:bold;">Last Update</th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Pairing</th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Flight</th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;">Crew</th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;"></th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;"></th>
-                  <th style="font-size:12px;color:#555555;font-family:Clan OT;font-weight:100;"></th>
+                <tr>
+                  <th>Severity</th>
+                  <th class="bold">Last Update</th>
+                  <th>Pairing</th>
+                  <th>Flight</th>
+                  <th>Crew</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
-              <tbody style="font-size:12px;color:#555555;font-family:Clan OT;">
-                <tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+              <tbody>
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-
-
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-
-
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-
-
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-
-
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
-                  </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
-                  </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
-                    </div>
-                  </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
-                    </div>
-                  </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
-                    
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
-                      </div>
-
-                    </div>
-                  </td>
-                </tr>
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
-                   </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
-                  </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
-
-<tr style="background-color:#F3F3F3;height:40px;
-                border-left:1px solid #D3D3D3;
-                border-bottom:1px solid #D3D3D3;">
+                <tr>
                   <td>
-                   <div class="img-arrow-up" style="margin-left: 20px;margin-top: 5px;">
+                   <div class="img-arrow-up"></div>
                   </td>
-                  <td style="vertical-align:middle;">
-                  <div style="margin-top:1px;font-size:12px;font-family:Clan OT;color:#555555;">
-                    <div style="display:inline-block;float:left;">9:58</div> 
-                   </div>
-                   </div>
+                  <td>                    
+                    <div class="time">9:58</div>
                    </td>
-                  <td style="vertical-align:middle;color:#009BDD;font-family:Clan OT;font-weight:bold;" onclick="seeDetails()">H2008,T2108</td>
-                  <td style="vertical-align:middle;">
-                    <div style="color:#009BDD;font-family:Clan OT;font-weight:bold;display:inline-block;">2245</div> 
-                    <div style="display:inline-block;">EZE - IAH Delayed</div>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div style="display:inline-block;">2 Pilots / 1 FA</div>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-eye" style="margin-left: 20px;margin-top: 5px;">
-                    <div style="margin-left:25px;margin-top:-2px;">0</div>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-user" style="margin-left: 20px;margin-top: 5px;">
-                      <div style="margin-left:25px;margin-top:2px;">0</div>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
                     </div>
                   </td>
-                  <td style="vertical-align:middle;">
-                    <div class="img-info hover" style="margin-left: 20px;margin-top: 5px;">
+                  <td>
+                    <div class="img-info hover">
                     
-                      <div class="tooltip" style="font-family:Clan OT;font-size:12px;width:110px;height:150px;">
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;cursor:pointer;" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Add comment</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Pick up alert</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Reassign</div>
-                          <div style="border-bottom:1px solid #DEE1E2;height:30px;display:inline-block;width:100%;padding-top:6px;padding-left:8px;">Defer</div>
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
                       </div>
 
                     </div>
                   </td>
                 </tr>
 
+                <tr>
+                  <td>
+                   <div class="img-arrow-up"></div>
+                  </td>
+                  <td>                    
+                    <div class="time">9:58</div>
+                   </td>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
+                  </td>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
+                  </td>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="img-info hover">
+                    
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
+                      </div>
 
-                </tbody>
-                </table>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                   <div class="img-arrow-up"></div>
+                  </td>
+                  <td>                    
+                    <div class="time">9:58</div>
+                   </td>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
+                  </td>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
+                  </td>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="img-info hover">
+                    
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
+                      </div>
+
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                   <div class="img-arrow-up"></div>
+                  </td>
+                  <td>                    
+                    <div class="time">9:58</div>
+                   </td>
+                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                  <td>
+                    <div class="flight-num">2245</div> 
+                    <div class="flight-destination">EZE - IAH Delayed</div>
+                  </td>
+                  <td >
+                    <div>2 Pilots / 1 FA</div>
+                  </td>
+                  <td>
+                    <div class="img-eye">
+                    <div class="watched">0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="img-user">
+                      <div class="users">0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="img-info hover">
+                    
+                      <div class="tooltip">
+                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                          <div>Add comment</div>
+                          <div>Pick up alert</div>
+                          <div>Reassign</div>
+                          <div>Defer</div>
+                      </div>
+
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
 
 <!-- end table -->
 
