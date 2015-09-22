@@ -1,0 +1,885 @@
+.dashboard-nav {
+
+	z-index: -1;
+    position: relative;
+
+	.container {
+		background-color: #009BDD;
+		height: 50px;
+
+		.circle-msg {
+			position: absolute;
+		    margin-top: 20px;
+		    margin-left: 18px;
+		    z-index: 10;
+		    padding-left: 6px;
+		    font-family: Clan OT;
+		    color: white;
+		    font-size: 13px;
+		    font-weight: bold;
+		    padding-top: 2px;
+		}
+
+		.burger-toggle {
+			cursor: pointer;
+			cursor: hand;
+		}
+
+		.logo-united-img {
+			margin-left: 50px;
+			margin-top: 12px;
+		}
+
+		.mail-img {
+			margin-right: 33px;
+			position: absolute;
+		}
+
+		.myprofile-img {
+			margin-right: 10px;
+			margin-top: 13px;
+		}
+
+		.arrow-down-icon {
+			margin-top: 24px;
+			margin-right: 25px;
+		}
+
+		.username {
+			font-family: Clan OT;
+			color: white;
+			font-size: 14px;
+			margin-top: 14px;
+			margin-right: 10px;
+		}
+
+		.settings-img {
+			margin-right:40px;
+			margin-top: 14px;
+		}
+
+	}
+}
+
+
+
+
+
+
+.dashboard-container {
+	margin-top: 50px;
+	position: relative;
+	z-index: -2;
+
+	.pairing-status {
+		z-index: -2;
+
+		.pairing-container {
+			width: 100%;
+			height: 339px;
+			display: inline-block;
+			background-color: white;
+			border: 1px solid #D3D3D3;
+
+				.pairing-header {
+					height: 55px;
+					width: 98%;
+					border-bottom: 1px solid #DDE1E1;
+					margin-left: 1%;
+
+						.status {
+							    float: left;
+							    display: block;
+							    font-size: 18px;
+							    font-family: Clan OT;
+							    margin-top: 20px;
+							    color: #555555;
+							    margin-left: 1%;
+						}
+
+						.view-all {
+							float: right;
+							display: block;
+							font-size: 10px;
+							font-family: Clan OT;
+							margin-top: 24px;
+							color: #009BDD;
+							font-weight: bold;
+							margin-right: 15px;
+						}
+				}
+
+
+				.pairing-body {
+					width: 98%;
+					height: 70px;
+					border-bottom: 1px solid #DDE1E1;
+					margin-left: 1%;
+
+					.Table {
+						font-family: Clan OT;
+					    font-size: 13px;
+					    color: #555555;
+					    margin-left: 5%;
+					}
+
+					.table {
+
+						.chart-data {
+
+							.sheduled-data {
+								padding-top: 12%;
+							    width: 100%;
+							    display: inline-block;
+
+							    .small-circle {
+							    	background-color: #b9e9df;
+								    display: inline-block;
+								    float: left;
+								    margin-top: 6px;
+								    margin-right: 10px;
+							    }
+
+							    .value {
+									float: left;
+								    margin-left: 10px;
+								    font-family: Clan OT;
+								    color: #5D5D5D;
+								    font-size: 12px;
+								}
+
+							    .percentage {
+							    	color: #5D5D5D;
+							    	font-family: Clan OT;
+							    	font-size: 18px;
+							    	font-weight: 500;
+							    	float: left;
+							    }
+
+							    .title {
+							    	color: #5D5D5D;
+							    	font-family: Clan OT;
+							    	font-size: 12px;
+							    	float: left;
+							    	margin-left: 15px;
+							    	margin-top: 5px;
+							    }
+
+							    .sheduled-arrows {
+							    	display: inline-block;
+    								width: 100%;
+
+    								.arrow-down-grey-img {
+    									float: left;
+    									margin-left: 50px;
+    								}
+							    }
+							}
+
+
+
+							.affected-data {
+								width: 100%;
+    							display: inline-block;
+
+    							.small-circle {
+    								background-color: #b6b6b6;
+								    display: inline-block;
+								    float: left;
+								    margin-top: 6px;
+								    margin-right: 10px;
+    							}
+
+    							.percentage {
+    								color: #5D5D5D;
+    								font-family: Clan OT;
+    								font-size: 18px;
+    								font-weight: 500;
+    								float: left;
+    							}
+
+    							.title {
+    								color: #5D5D5D;
+								    font-family: Clan OT;
+								    font-size: 12px;
+								    float: left;
+								    margin-left: 15px;
+								    margin-top: 5px;
+    							}
+
+    							.affected-arrows {
+
+    								display: inline-block;
+    								width: 100%;
+
+									.value {
+										float: left;
+									    margin-left: 10px;
+									    font-family: Clan OT;
+									    color: #5D5D5D;
+									    font-size: 12px;
+									}
+
+    								.arrow-up-grey-img {
+    									float: left;
+    									margin-left: 50px;
+
+    								}
+
+    								.arrow-right-grey-img {
+    									float: left;
+									    margin-left: 15px;
+									}
+
+									.arrow-down-grey-img {
+										float: left;
+    									margin-left: 15px;
+    								}
+    							}
+							}
+
+
+
+
+							.open-data {
+
+								.small-circle {
+									background-color: #fed99f;
+								    display: inline-block;
+								    float: left;
+								    margin-top: 6px;
+								    margin-right: 10px;
+								}
+
+								.percentage {
+									color: #5D5D5D;
+									font-family: Clan OT;
+									font-size: 18px;
+									font-weight: 500;
+									float: left;
+								}
+
+								.title {
+									color: #5D5D5D;
+								    font-family: Clan OT;
+								    font-size: 12px;
+								    float: left;
+								    margin-left: 15px;
+								    margin-top: 5px;
+								}
+
+								.open-arrows {
+
+									display: inline-block;
+    								width: 100%;
+
+    								.value {
+    									float: left;
+									    margin-left: 10px;
+									    font-family: Clan OT;
+									    color: #5D5D5D;
+									    font-size: 12px;
+    								}
+
+									.arrow-up-grey-img {
+										float: left;
+    									margin-left: 50px;
+    								}
+
+    								.arrow-right-grey-img {
+    									float: left;
+									    margin-left: 15px;
+									}
+
+									.arrow-down-grey-img {
+										float: left;
+									    margin-left: 15px;
+									}
+								}
+							}
+						}
+					}
+				}
+		}
+	} /*pairing status*/
+
+
+
+	.my-alerts {
+		z-index:-2;
+
+		.my-alerts-container {
+			width: 100%;
+			height: 339px;
+			display: inline-block;
+			background-color: white;
+			border: 1px solid #D3D3D3;
+
+
+			.my-alerts-header {
+				height: 55px;
+				width: 100%;
+
+				.alerts {
+					float: left;
+				    display: block;
+				    font-size: 18px;
+				    font-family: Clan OT;
+				    margin-top: 20px;
+				    color: #555555;
+				    margin-left: 2%;
+				}
+
+				.view-list {
+					float: right;
+					display: block;
+					font-size: 10px;
+					font-family: Clan OT;
+					margin-top: 24px;
+					color: #009BDD;
+					font-weight: bold;
+					margin-right: 15px;
+				}
+			}
+
+			.my-alerts-status {
+
+				ul {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+
+				li {
+					background-color: white;
+					border-right: 1px solid #D3D3D3;
+					width: 25%;
+					height: 59px;
+					text-align: center;
+				}
+
+				.status {
+					display: block;
+					font-size: 12px;
+					font-family: Clan OT;
+					color: #ADADAD;
+				}
+
+				.pending {
+					border-top: 4px solid #F3C037;
+					display: block;
+					font-size: 12px;
+					font-family: Clan OT;
+					color: #F3C037;
+
+					.pendings {
+						font-size: 26px;
+					}
+				}
+
+				.in-progress {					
+					border-bottom: 1px solid #D3D3D3;
+					border-top: 4px solid #32bc76;
+					display: block;
+					font-size: 12px;
+					font-family: Clan OT;
+					color: #ADADAD;
+
+					.progres {
+						font-size: 26px;
+					}
+				}
+
+				.complete {
+					border-bottom: 1px solid #D3D3D3;
+					border-top: 1px solid #D3D3D3;
+					border-top: 4px solid #aaaaaa;
+					display: block;
+					font-size: 12px;
+					font-family: Clan OT;
+					color: #ADADAD;
+
+					.completes {
+						font-size: 26px;
+					}
+				}
+
+				.reassigned {
+					border-bottom: 1px solid #D3D3D3;
+                	border-top:4px solid #4f8fcb;
+                	display: block;
+                	font-size: 12px;
+                	font-family: Clan OT;
+                	color: #ADADAD;
+
+                	.reassignes {
+                		font-size: 26px;
+                	}
+				}
+			}
+
+
+
+			.table {
+				font-size: 12px;
+				color: #555555;
+				font-family: Clan OT;
+			}
+
+			.table thead tr {
+				height: 40px;
+				border-bottom: 1px solid #ddd !important;
+			}
+
+			.table tbody tr {
+				background-color: white;
+				height: 45px;
+
+				td {
+					vertical-align: middle;
+				}
+			}
+		}
+	} /* my alerts*/
+
+
+
+
+
+	.alerts-status {
+		z-index:-2;
+
+		.alerts-status-container {
+			width: 100%;
+			height: 388px;
+			display: inline-block;
+			background-color: white;
+			border: 1px solid #D3D3D3;
+
+			.alerts-status-header {
+				height: 55px;
+				width: 100%;
+
+				.alert-title {
+					float: left;
+				    display: block;
+				    font-size: 18px;
+				    font-family: Clan OT;
+				    margin-top: 20px;
+				    color: #555555;
+				    margin-left: 2%;
+				}
+
+				.alert-toggle {
+					float: right;
+					display: block;
+					font-size: 10px;
+					font-family: Clan OT;
+					margin-top: 10px;
+					color: #009BDD;
+					font-weight: bold;
+					margin-right: 16px;
+					height: 37px;
+					width: 145px;
+					border: 1px solid #D3D3D3;
+
+					.severity {
+						width: 50%;
+						height: 100%;
+						background-color: #F5F5F5;
+						border-right: 1px solid #D3D3D3;
+						float: left;
+						display: inline-block;
+
+						div {
+							font-size: 12px;
+							color: #b5b5b5;
+							font-family: Clan OT;
+							font-weight: 100;
+							margin-top: 9px;
+    						margin-left: 9px;
+						}
+					}
+
+					.type {
+						width: 50%;
+						height: 100%;
+						display: inline-block;
+						float: left;
+
+						div {
+							font-size: 12px;
+							color: #666666;
+							font-family: Clan OT;
+							font-weight: 100;margin-top: 9px;
+    						margin-left: 20px;
+						}
+					}
+				}
+			}
+
+
+
+			.severity-status {
+				ul {
+					padding-left: 10px;
+					padding-right: 10px;
+
+					li {
+						background-color: #E3E5E7;
+						border-right: 1px solid #D3D3D3;
+						width: 33%;
+						height: 59px;
+						border-bottom: 1px solid #D3D3D3;
+						border-top: 1px solid #D3D3D3;
+						text-align: center;
+						border-top: 4px solid #A9A9A9;
+
+						div {
+							display: block;
+							font-size: 14px;
+							font-family: Clan OT;
+							color: #555555;
+							margin-top: 18px;
+						}
+					}
+				}
+
+				.severity-high {
+					background-color: white;
+            		border-top: 4px solid #A9A9A9;
+            		border-left: 1px solid #D3D3D3;
+				}
+			}
+
+
+
+			.table {
+
+				.Row {
+					width: 100%;
+
+					.Cell:first-child {
+						width: 350px;
+					}
+
+					.alert-chart-data {
+						padding-top: 12%;
+					    width: 100%;
+					    display: inline-block;
+
+					    .status {
+					    	color: #5D5D5D;
+				            font-family: Clan OT;
+				            font-size: 12px;
+				            float: left;
+				            margin-left: 15px;
+				            margin-top: 5px;
+					    }
+
+					    .status-value {
+					    	color: #5D5D5D;
+					    	font-family: Clan OT;
+					    	font-size: 18px;
+					    	font-weight: 500;
+					    	float: left;
+					    }
+
+					    .cancellations {
+					    	.small-circle {
+					    		background-color: #f4c138;
+							    display: inline-block;
+							    float: left;
+							    margin-top: 6px;
+							    margin-right: 10px;
+					    	}
+					    }
+
+
+					    .misconnections {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+          					.small-circle {
+          						background-color: #fd7145;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+          					}
+					    }
+
+
+					    .staffing {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+					    	.small-circle {
+						    	background-color: #4f8fcb;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+					    	}
+					    }
+
+
+					    .delays {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+          					.small-circle {
+          						background-color: #b9e9df;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+          					}
+					    }
+
+
+					    .others {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+          					.small-circles {
+          						background-color: #b6b6b6;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+          					}
+					    }
+					}
+				}
+			}
+		}
+	} /*alerts status*/
+
+
+
+
+	.user-info {
+		z-index:-2;
+
+		.user-info-container {
+			width: 100%;
+			height: 388px;
+			display: inline-block;
+			background-color: white;
+			border: 1px solid #D3D3D3;
+			font-size: 14px;
+			color: #555555;
+			font-family: Clan OT;
+
+			.user-info-header {
+				width: 100%;
+			    height: 72px;
+			    margin: 0 auto;
+			    text-align: center;
+			    margin-top: 15px;
+
+			    .scheduler {
+			    	float: left;
+				    margin-left: 30%;
+				    margin-top: 10px;
+			    }
+
+			    .edit-icon-img {
+			    	float: left;
+				    margin-top: 11px;
+				    margin-left: 10px;
+			    }
+			}
+
+			.user-info-body div {
+				border-top: 1px solid #DDE1E1;
+				width: 95%;
+				height: 40px;
+				margin: 0 auto;
+	  			padding-top: 3%;
+			}
+		}
+	} /*user info*/
+
+
+
+	.list-status {
+		width: 100%;
+		height: 388px;
+		display: inline-block;
+		background-color: white;
+		border: 1px solid #D3D3D3;
+
+		.list-title {
+			width: 92%;
+		    height: 56px;
+		    border-bottom: 1px solid #D6D6D6;
+		    margin-left: 4%;
+
+			div {
+				float: left;
+				display: block;
+				font-size: 14px;
+				font-family: Clan OT;
+				margin-top: 20px;
+				color: #555555;
+			}
+
+			.view-list {
+				float: right;
+				font-size: 10px;
+				margin-top:24px;
+				color: #009BDD;
+				font-weight: bold;
+			}
+		}
+
+		.items-left {
+			width: 92%;
+		    height: 45px;
+		    border-bottom: 1px solid #D6D6D6;
+		    margin-left: 4%;
+
+		    div {
+		    	float: left;
+			    display: block;
+			    font-size: 14px;
+			    font-family: Clan OT;
+			    margin-top: 12px;
+			    padding-left: 5px;
+			    font-weight: bold;
+			    color: #555555;
+		    }
+		}
+
+
+		.add-item-section {
+			width: 100%;
+			height: 40px;
+
+			.add-item {
+				float: left;
+				display: block;
+				font-size: 15px;
+				font-family: arial;
+				margin-top: 8px;
+				padding-left: 28px;
+
+				.add-todotask {
+					float: left;
+				}
+
+				.new-item {
+					margin-left: 20px;
+					float: left;
+					margin-top: 5px;
+					font-family: Clan OT;
+					font-size:14px;
+					color: #555555;
+				}
+			}
+		}
+
+
+		.done-section {
+			width: 90%;
+		    height: 40px;
+		    margin-left: 15px;
+		    margin-top: 5px;
+
+		    div {
+		    	float: left;
+		    	display: block;
+		    	font-size: 14px;
+		    	font-family: arial;
+		    	margin-top: 8px;
+		    	padding-left: 15px;
+		    	font-weight: bold;
+		    	color: #555555;
+		    	font-family: Clan OT;
+		    }
+		}
+	} /*list status*/
+
+
+
+
+	
+    [ng-drag]{
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    [ng-drag]{
+      width: 100%;
+      height: 40px;
+      color: grey;
+      text-align: left;
+      padding-top: 26px;
+      display: inline-block;
+      cursor: move;
+      margin-left: 14px;
+    }
+    ul.draggable-objects:after{
+        display: block;
+        content:"";
+        clear:both;
+    }
+    .draggable-objects li{
+        float:left;
+        display: block;
+        width: 120px;
+        height:100px;
+    }
+    [ng-drag].drag-over{
+        border:solid 1px #555555;
+    }
+    [ng-drag].dragging{
+        opacity: 0.5;
+    }
+    [ng-drop]{
+    text-align: center;
+    height: 40px;
+    display: block;
+    margin: auto;
+    position: relative;
+    border-bottom: solid 1px grey;
+    }
+    [ng-drop].drag-enter{
+        border:solid 2px #555555;
+    }
+    [ng-drop] span.title{
+        display: block;
+        position: absolute;
+        top:50%;
+        left:50%;
+        width: 200px;
+        height: 20px;
+        margin-left: -100px;
+        margin-top: -10px;
+    }
+    [ng-drop] div{
+        position: relative;
+        z-index: 2;
+    }
+
+
+
+} /*dashboard container*/
+
+
+
+
+
+
+
+
+
+
+
