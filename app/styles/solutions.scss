@@ -36,6 +36,10 @@
 			width: 100%;
 		}
 
+		.title {
+			margin-top: 14px;
+		}
+
 		/* calendar from to */
 		.calendar button {
 			width: 119px;
@@ -143,6 +147,10 @@
 		    float: right;
     		margin-top: 7px;
 		}
+
+		.reset-all {
+			font-weight: bold;
+		}
 	}
 
 
@@ -213,6 +221,10 @@
 
 		/**/
 		.lineholders-header {
+
+			.middle-section {
+				margin-top: -14px;
+			}
 
 			.domicile {
 				margin-top: 3px;
