@@ -561,9 +561,325 @@
 					.Cell:first-child {
 						width: 350px;
 					}
+
+					.alert-chart-data {
+						padding-top: 12%;
+					    width: 100%;
+					    display: inline-block;
+
+					    .status {
+					    	color: #5D5D5D;
+				            font-family: Clan OT;
+				            font-size: 12px;
+				            float: left;
+				            margin-left: 15px;
+				            margin-top: 5px;
+					    }
+
+					    .status-value {
+					    	color: #5D5D5D;
+					    	font-family: Clan OT;
+					    	font-size: 18px;
+					    	font-weight: 500;
+					    	float: left;
+					    }
+
+					    .cancellations {
+					    	.small-circle {
+					    		background-color: #f4c138;
+							    display: inline-block;
+							    float: left;
+							    margin-top: 6px;
+							    margin-right: 10px;
+					    	}
+					    }
+
+
+					    .misconnections {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+          					.small-circle {
+          						background-color: #fd7145;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+          					}
+					    }
+
+
+					    .staffing {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+					    	.small-circle {
+						    	background-color: #4f8fcb;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+					    	}
+					    }
+
+
+					    .delays {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+          					.small-circle {
+          						background-color: #b9e9df;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+          					}
+					    }
+
+
+					    .others {
+					    	width: 100%;
+					    	margin-top: 10px;
+          					display: inline-block;
+
+          					.small-circles {
+          						background-color: #b6b6b6;
+						        display: inline-block;
+						        float: left;
+						        margin-top: 6px;
+						        margin-right: 10px;
+          					}
+					    }
+					}
 				}
 			}
 		}
-	}
+	} /*alerts status*/
+
+
+
+
+	.user-info {
+		z-index:-2;
+
+		.user-info-container {
+			width: 100%;
+			height: 388px;
+			display: inline-block;
+			background-color: white;
+			border: 1px solid #D3D3D3;
+			font-size: 14px;
+			color: #555555;
+			font-family: Clan OT;
+
+			.user-info-header {
+				width: 100%;
+			    height: 72px;
+			    margin: 0 auto;
+			    text-align: center;
+			    margin-top: 15px;
+
+			    .scheduler {
+			    	float: left;
+				    margin-left: 30%;
+				    margin-top: 10px;
+			    }
+
+			    .edit-icon-img {
+			    	float: left;
+				    margin-top: 11px;
+				    margin-left: 10px;
+			    }
+			}
+
+			.user-info-body div {
+				border-top: 1px solid #DDE1E1;
+				width: 95%;
+				height: 40px;
+				margin: 0 auto;
+	  			padding-top: 3%;
+			}
+		}
+	} /*user info*/
+
+
+
+	.list-status {
+		width: 100%;
+		height: 388px;
+		display: inline-block;
+		background-color: white;
+		border: 1px solid #D3D3D3;
+
+		.list-title {
+			width: 92%;
+		    height: 56px;
+		    border-bottom: 1px solid #D6D6D6;
+		    margin-left: 4%;
+
+			div {
+				float: left;
+				display: block;
+				font-size: 14px;
+				font-family: Clan OT;
+				margin-top: 20px;
+				color: #555555;
+			}
+
+			.view-list {
+				float: right;
+				font-size: 10px;
+				margin-top:24px;
+				color: #009BDD;
+				font-weight: bold;
+			}
+		}
+
+		.items-left {
+			width: 92%;
+		    height: 45px;
+		    border-bottom: 1px solid #D6D6D6;
+		    margin-left: 4%;
+
+		    div {
+		    	float: left;
+			    display: block;
+			    font-size: 14px;
+			    font-family: Clan OT;
+			    margin-top: 12px;
+			    padding-left: 5px;
+			    font-weight: bold;
+			    color: #555555;
+		    }
+		}
+
+
+		.add-item-section {
+			width: 100%;
+			height: 40px;
+
+			.add-item {
+				float: left;
+				display: block;
+				font-size: 15px;
+				font-family: arial;
+				margin-top: 8px;
+				padding-left: 28px;
+
+				.add-todotask {
+					float: left;
+				}
+
+				.new-item {
+					margin-left: 20px;
+					float: left;
+					margin-top: 5px;
+					font-family: Clan OT;
+					font-size:14px;
+					color: #555555;
+				}
+			}
+		}
+
+
+		.done-section {
+			width: 90%;
+		    height: 40px;
+		    margin-left: 15px;
+		    margin-top: 5px;
+
+		    div {
+		    	float: left;
+		    	display: block;
+		    	font-size: 14px;
+		    	font-family: arial;
+		    	margin-top: 8px;
+		    	padding-left: 15px;
+		    	font-weight: bold;
+		    	color: #555555;
+		    	font-family: Clan OT;
+		    }
+		}
+	} /*list status*/
+
+
+
+
+	
+    [ng-drag]{
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    [ng-drag]{
+      width: 100%;
+      height: 40px;
+      color: grey;
+      text-align: left;
+      padding-top: 26px;
+      display: inline-block;
+      cursor: move;
+      margin-left: 14px;
+    }
+    ul.draggable-objects:after{
+        display: block;
+        content:"";
+        clear:both;
+    }
+    .draggable-objects li{
+        float:left;
+        display: block;
+        width: 120px;
+        height:100px;
+    }
+    [ng-drag].drag-over{
+        border:solid 1px #555555;
+    }
+    [ng-drag].dragging{
+        opacity: 0.5;
+    }
+    [ng-drop]{
+    text-align: center;
+    height: 40px;
+    display: block;
+    margin: auto;
+    position: relative;
+    border-bottom: solid 1px grey;
+    }
+    [ng-drop].drag-enter{
+        border:solid 2px #555555;
+    }
+    [ng-drop] span.title{
+        display: block;
+        position: absolute;
+        top:50%;
+        left:50%;
+        width: 200px;
+        height: 20px;
+        margin-left: -100px;
+        margin-top: -10px;
+    }
+    [ng-drop] div{
+        position: relative;
+        z-index: 2;
+    }
+
+
 
 } /*dashboard container*/
+
+
+
+
+
+
+
+
+
+
+
