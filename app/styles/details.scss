@@ -6,6 +6,14 @@ body {
 
 	margin: 135px auto 0 auto;
 
+	.far-duty{
+		margin: 12px 12px -12px 12px;
+
+		.glyphicon-download-alt {
+			margin-left: 60px;
+		}
+	}
+
 	.alert-details {
 
 		border: 1px solid #B5B5B5;
@@ -44,11 +52,47 @@ body {
 		.header-info {
 			border: 1px solid #B5B5B5;
 			margin: 15px;
+
+			.header {
+				padding-left: 15px;
+				margin-top: 15px;
+			}
 		}
 
 		.division {
+			clear: both;
 			border-top: 1px solid #B5B5B5;
 			margin: 15px;
+		}
+
+		.legal-section {
+			padding-left: 15px;
+			margin-bottom: 12px;
+
+			.contractual {
+				width: 101%;
+			}
+		}
+
+		.event-update {
+			padding-left: 23px;
+		}
+
+		.events {
+			padding-left: 20px;
+
+			.event-date {
+				margin-left: -23px;
+				float: left;
+			}
+
+			.expandable-message {
+				padding-left: 25px;
+
+				.sub-message {
+					font-size: 10px;
+				}
+			}
 		}
 
 		.colored-row {
@@ -81,6 +125,7 @@ body {
 			width: 14px;
 			background-image: url("../resources/images/user-alert-preview.png");
 			margin-top: 6px;
+			margin-right: 15px;
 		}
 
 		.chat-img {
@@ -108,7 +153,7 @@ body {
 			height: 16px;
 			width: 16px;
 			background-image: url("../resources/images/add-icon.png");
-			margin: 8px 5px 0px 1px;
+			margin: 5px 5px 0px 1px;
 			float: right !important;
 		}
 
