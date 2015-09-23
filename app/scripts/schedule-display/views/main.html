@@ -1,74 +1,3 @@
-
-
-<div id="tooltipDiv" style="height:181px;width:373px;background-color:white;border:1px solid #D3D3D3;display:inline-block;" ng-click="open()">
-
-<div style="width:92%;border-bottom:1px solid #D3D3D3;height:85px;margin-left:4%;">
-<div style="width:100%;height:30px;display:inline-block;">
-  <div class="arrow-up-alert-img" style="float:left;"></div>
-  <div style="font-weight: bold;
-      font-family: Clan OT;
-      font-size: 14px;
-      color: #5D5D5D;
-      float: left;
-      margin-left: 10px;
-      margin-top: 7px;">DELAY</div>
-  <div style="float:right;display:inline-block;">
-    <div class="watch-alert-img" style="display:inline-block;float:left;margin-right:10px;margin-top:10px;"></div>
-    <div style="display:inline-block;float:left;margin-right:10px;margin-top:7px;">3</div>
-    <div class="user-alert-img" style="display:inline-block;float:left;margin-right:10px;"></div>
-    <div style="display:inline-block;float:left;margin-right:10px;margin-top:7px;">1</div>
-  </div>
-</div>
-<div style="height:100%;width:100%;display:inline-block;">
-  <div style="float:left;display:inline-block;width:33%;margin-top:5px;">
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Pairing</div>
-      <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;margin-top:5px;">H2008, T2108</div>
-  </div>
-    <div style="float:left;display:inline-block;width:33%;">
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Crew</div>
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">2 Pilots / 1 FA</div>
-  </div>
-    <div style="float:left;display:inline-block;width:33%;">
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Last Updated</div>
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">22:45 GTM</div>
-  </div>
-</div>
-
-</div>
-
-<div style="height:100%;width:100%;display:inline-block;">
-  <div style="width:100%;height:30px;display:inline-block;margin-top:5px;">
-  <div style="font-weight: bold;
-      font-family: Clan OT;
-      font-size: 14px;
-      color: #41ABE3;
-      float: left;
-      margin-left: 15px;
-      margin-top: 7px;">Flight 250 ORI - DES (HH:MM)</div>
-  <div style="float:right;display:inline-block;">
-    <div style="display:inline-block;float:left;margin-right:10px;margin-top:7px;color:#5D5D5D;font-size:12px;font-family:Clan OT;">08/20/15</div>
-  </div>
-
-  <div style="height:100%;width:100%;display:inline-block;    margin-top: 8px;
-    margin-left: 4%;">
-  <div style="float:left;display:inline-block;width:33%;margin-top:5px;">
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Flight Status</div>
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">Delay</div>
-  </div>
-    <div style="float:left;display:inline-block;width:33%;">
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Dep sch/ est</div>
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">HH:MM/ HH:MM</div>
-  </div>
-    <div style="float:left;display:inline-block;width:33%;">
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Arr sch/ est</div>
-      <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">HH:MM/ HH:MM</div>
-  </div>
-</div>
-  </div>
-</div>
-
-</div>
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <!-- Optional theme -->
@@ -86,104 +15,134 @@
 }
 </style>
 
+
+
+<div id="tooltipDiv" class="tooltip-section" ng-click="open()">
+
+  <div class="upper-tooltip">
+    <div class="flight-status">
+      <div class="arrow-up-alert-img"></div>
+      <div style="font-weight: bold;
+          font-family: Clan OT;
+          font-size: 14px;
+          color: #5D5D5D;
+          float: left;
+          margin-left: 10px;
+          margin-top: 7px;">DELAY</div>
+      <div style="float:right;display:inline-block;">
+        <div class="watch-alert-img" style="display:inline-block;float:left;margin-right:10px;margin-top:10px;"></div>
+        <div style="display:inline-block;float:left;margin-right:10px;margin-top:7px;">3</div>
+        <div class="user-alert-img" style="display:inline-block;float:left;margin-right:10px;"></div>
+        <div style="display:inline-block;float:left;margin-right:10px;margin-top:7px;">1</div>
+      </div>
+    </div>
+    <div style="height:100%;width:100%;display:inline-block;">
+      <div style="float:left;display:inline-block;width:33%;margin-top:5px;">
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Pairing</div>
+          <div style="font-size:12px;color:#009BDD;font-family:Clan OT;font-weight:bold;margin-top:5px;">H2008, T2108</div>
+      </div>
+        <div style="float:left;display:inline-block;width:33%;">
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Crew</div>
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">2 Pilots / 1 FA</div>
+      </div>
+        <div style="float:left;display:inline-block;width:33%;">
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Last Updated</div>
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">22:45 GTM</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:100%;width:100%;display:inline-block;">
+    <div style="width:100%;height:30px;display:inline-block;margin-top:5px;">
+      <div style="font-weight: bold;
+          font-family: Clan OT;
+          font-size: 14px;
+          color: #41ABE3;
+          float: left;
+          margin-left: 15px;
+          margin-top: 7px;">Flight 250 ORI - DES (HH:MM)</div>
+      <div style="float:right;display:inline-block;">
+        <div style="display:inline-block;float:left;margin-right:10px;margin-top:7px;color:#5D5D5D;font-size:12px;font-family:Clan OT;">08/20/15</div>
+      </div>
+
+      <div style="height:100%;width:100%;display:inline-block;    margin-top: 8px;
+        margin-left: 4%;">
+        <div style="float:left;display:inline-block;width:33%;margin-top:5px;">
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Flight Status</div>
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">Delay</div>
+        </div>
+        <div style="float:left;display:inline-block;width:33%;">
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Dep sch/ est</div>
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">HH:MM/ HH:MM</div>
+        </div>
+        <div style="float:left;display:inline-block;width:33%;">
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;">Arr sch/ est</div>
+          <div style="font-size:12px;color:#5D5D5D;font-family:Clan OT;font-weight:bold;margin-top:5px;">HH:MM/ HH:MM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
 <snap-drawer>
-  <div style="height:100%;width:240px;background-color:#393F51;font-size:14px;color:white;font-family:Clan OT;">
-      <div style="height:50px;background-color:#61A9E3;">
-        <div style="font-size: 16px;
-    font-weight: bold;
-    margin: 0 auto;
-    line-height: 70px;
-    width: 100%;
-    margin-left: 20px;">Mathew  Smith</div>
+  <div class="snap-drawer">
+      
+      <div class="user">
+        <div>Mathew  Smith</div>
       </div>
 
-      <div style="height:50px;border-bottom:1px solid #262A3F;" ng-click="navigateTo('dashboard')">
-        <div class="dashboard-img" style="float: left;
-    margin-left: 15px;
-    margin-top: 20px;"></div>
-        <div style="    float: left;
-    margin-left: 15px;
-    margin-top: 20px;">Dashboard</div>
+      <div class="navigate-dashboard" ng-click="navigateTo('dashboard')">
+        <div class="dashboard-img"></div>
+        <div class="dashboard">Dashboard</div>
       </div>
 
-      <div style="height:50px;border-bottom:1px solid #262A3F;" ng-click="navigateTo('schedule')">
-                <div class="schedule-img" style="float: left;
-    margin-left: 15px;
-    margin-top: 20px;"></div>
-        <div style="    float: left;
-    margin-left: 15px;
-    margin-top: 20px;">Schedule display</div>
+      <div class="navigate-schedule" ng-click="navigateTo('schedule')">
+        <div class="schedule-img"></div>
+        <div class="schedule">Schedule display</div>
       </div>
 
-      <div style="height:50px;border-bottom:1px solid #262A3F;">
-                <div class="alerts-img" style="float: left;
-    margin-left: 15px;
-    margin-top: 20px;"></div>
-        <div style="    float: left;
-    margin-left: 15px;
-    margin-top: 20px;">Alerts</div>
+      <div class="nagivate-alerts">
+        <div class="alerts-img"></div>
+        <div class="alerts">Alerts</div>
       </div>
 
-      <div style="height:50px;border-bottom:1px solid #262A3F;">
-                <div class="history-img" style="float: left;
-    margin-left: 15px;
-    margin-top: 20px;"></div>
-        <div style="    float: left;
-    margin-left: 15px;
-    margin-top: 20px;">History</div>
+      <div class="navigate-history">
+        <div class="history-img"></div>
+        <div class="history">History</div>
       </div>
 
-      <div style="height:50px;border-bottom:1px solid #262A3F;" ng-click="isCollapsed = !isCollapsed">
-                <div class="myprofile-img" style="float: left;
-    margin-left: 15px;
-    margin-top: 20px;"></div>
-        <div style="    float: left;
-    margin-left: 15px;
-    margin-top: 20px;">My Profile</div>
+      <div class="navigate-profile" ng-click="isCollapsed = !isCollapsed">
+        <div class="myprofile-img"></div>
+        <div class="profile">My Profile</div>
       </div>
 
-      <div collapse="!isCollapsed">
+      <div class="profile-collapsed" collapse="!isCollapsed">
 
-        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
-                  <div style="    float: left;
-    margin-left: 50px;
-    margin-top: 20px;">Information</div>
+        <div class="profile-information">
+          <div class="information">Information</div>
         </div>
 
-        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
-                            <div style="    float: left;
-    margin-left: 50px;
-    margin-top: 20px;">Notifications</div>
-        <div class="oval" style="    float: right;
-    margin-top: 18px;
-    margin-right: 10px;
-    padding-left: 13px;
-    padding-top: 2px;">
-          2
-        </div>
+        <div class="profile-notifications">
+          <div class="notifications">Notifications</div>
+          <div class="oval">2</div>
         </div>
 
-        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
-                            <div style="    float: left;
-    margin-left: 50px;
-    margin-top: 20px;">To do lists</div>
+        <div class="profile-list">
+          <div class="list">To do lists</div>
         </div>
 
-        <div style="height:50px;background-color:#4E5671;border-bottom:1px solid #262A3F;">
-                            <div style="    float: left;
-    margin-left: 50px;
-    margin-top: 20px;">Settings</div>
+        <div class="profile-settings">
+          <div class="settings">Settings</div>
         </div>
 
       </div>
 
-      <div style="height:50px;border-bottom:1px solid #262A3F;">
-                <div class="help-img" style="float: left;
-    margin-left: 15px;
-    margin-top: 20px;"></div>
-        <div style="    float: left;
-    margin-left: 15px;
-    margin-top: 20px;">Help</div>
+      <div class="navigate-help">
+        <div class="help-img"></div>
+        <div class="help">Help</div>
       </div>
 
   </div>

@@ -1,0 +1,239 @@
+.tooltip-section {
+  height: 181px;
+  width :373px;
+  background-color: white;
+  border: 1px solid #D3D3D3;
+  display: inline-block;
+
+  .upper-tooltip {
+    width: 92%;
+    border-bottom: 1px solid #D3D3D3;
+    height: 85px;
+    margin-left: 4%;
+
+    .flight-status {
+      width: 100%;
+      height: 30px;
+      display: inline-block;
+
+      .arrow-up-alert-img {
+        float: left;
+      }
+
+      .status {
+        font-weight: bold;
+        font-family: Clan OT;
+        font-size: 14px;
+        color: #5D5D5D;
+        float: left;
+        margin-left: 10px;
+        margin-top: 7px;
+      }
+
+      .logos {
+        float: right;
+        display: inline-block;
+
+        .watch-alert-img {
+          display: inline-block;
+          float: left;
+          margin-right: 10px;
+          margin-top: 10px;
+        }
+
+        .watchers {
+          display: inline-block;
+          float: left;
+          margin-right: 10px;
+          margin-top: 7px;
+        }
+
+        .user-alert-img {
+          display: inline-block;
+          float: left;
+          margin-right: 10px;
+        }
+
+        .users {
+          display: inline-block;
+          float: left;
+          margin-right: 10px;
+          margin-top: 7px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.snap-drawer {
+  height: 100%;
+  width: 240px;
+  background-color: #393F51;
+  font-size: 14px;
+  color: white;
+  font-family: Clan OT;
+
+  .navigate-to {
+    height: 50px;
+    border-bottom: 1px solid #262A3F;
+  }
+
+  .navigate-to-img {
+    float: left;
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+
+  .user {
+    height: 50px;
+    background-color: #61A9E3;
+
+    div {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 auto;
+      line-height: 70px;
+      width: 100%;
+      margin-left: 20px;
+    }
+  }
+
+  .navigate-dashboard {
+    @extend .navigate-to;
+
+    .dashboard-img {
+      @extend .navigate-to-img;
+    }
+
+    .dashboard {
+      @extend .navigate-to-img;
+    }
+  }
+
+  .navigate-schedule {
+    @extend .navigate-to;
+
+    .schedule-img {
+      @extend .navigate-to-img;
+    }
+
+    .schedule {
+      @extend .navigate-to-img;
+    }
+  }
+
+  .nagivate-alerts {
+    @extend .navigate-to;
+
+    .alerts-img {
+      @extend .navigate-to-img;
+    }
+
+    .alerts {
+      @extend .navigate-to-img;
+    }
+  }
+
+  .navigate-history {
+    @extend .navigate-to;
+
+    .history-img {
+      @extend .navigate-to-img;
+    }
+
+    .history {
+      @extend .navigate-to-img;
+    }
+  }
+
+  .navigate-profile {
+    @extend .navigate-to;
+
+    .myprofile-img {
+      @extend .navigate-to-img;
+    }
+
+    .profile {
+      @extend .navigate-to-img;
+    }
+  }
+
+  /*profile collapse*/
+  .profile-collapsed {
+
+    .profile-option {
+        @extend .navigate-to-img;
+        margin-left: 50px;
+    }
+
+    .profile-information {
+      @extend .navigate-to;
+      background-color: #4E5671;
+
+      .information {
+        @extend .profile-option;
+      }
+    }
+
+    .profile-notifications {
+      @extend .navigate-to;
+      background-color: #4E5671;
+
+      .notifications {
+        @extend .profile-option;
+      }
+
+      .oval {
+        float: right;
+        margin-top: 18px;
+        margin-right: 10px;
+        padding-left: 13px;
+        padding-top: 2px;
+      }
+    }
+
+    .profile-list {
+      @extend .navigate-to;
+      background-color: #4E5671;
+
+      .list {
+        @extend .profile-option;
+      }
+    }
+
+    .profile-settings {
+      @extend .navigate-to;
+      background-color: #4E5671;
+
+      .settings {
+        @extend .profile-option;
+      }
+    }
+  }
+  /*profile collapse end*/
+
+  .navigate-help {
+    @extend .navigate-to;
+
+    .help-img {
+      @extend .navigate-to-img;
+    }
+
+    .help {
+      @extend .navigate-to-img;
+    }
+  }
+}
