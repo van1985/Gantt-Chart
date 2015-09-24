@@ -72,12 +72,6 @@
 
 
 
-
-
-
-
-
-
 .snap-drawer {
   height: 100%;
   width: 240px;
@@ -237,3 +231,151 @@
     }
   }
 }
+/*snap drawer end*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*snap content start*/
+.schedule-snap-content {
+
+  /*header*/
+  .navbar {
+    z-index: -1;
+    position: relative;
+  }
+  /*header end*/
+
+
+
+
+  /*body*/
+  .schedule-snap-body {
+
+    background-color: white;
+    width: 92%;
+    height: 74px;
+    margin-top: -42px;
+    margin-left: 4%;
+    border:1px solid #DDE1E1;
+
+    .flights-total-status {
+
+      .data-row {
+        color: #555555;
+        font-family: Clan OT;
+        font-size: 15px;
+        margin-left: 15px;
+        margin-top: 10px;
+        float: left;
+        width: 11%;        
+      }
+
+      .row-value {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      /*rows*/
+      .date-row {
+        @extend .data-row;
+
+        .date {
+          margin-top: 10px;
+        }
+      }
+
+      
+      /**/
+      .pairings-row {
+        @extend .data-row;
+        margin-top: 5px;
+        border-left: 1px solid grey;
+        height: 86%;
+
+        .pairings {
+          margin-left:10px;
+        }
+      }
+
+
+      /**/
+      .flights-row {
+        @extend .data-row;
+        margin-top: 5px;
+        border-left: 1px solid grey;
+      
+        .flights {
+          margin-left: 10px;
+        }
+      }
+
+
+      /**/
+      .scheduled-row {
+        @extend .data-row;
+        border-left:1px solid grey;
+
+        .scheduled {
+          margin-left: 10px;
+        }
+      }
+
+
+      /**/
+      .irrop-row {
+        @extend .data-row;
+        border-left:1px solid grey;
+
+        .irrop {
+          margin-left: 10px;
+        }
+      }
+
+
+      /**/
+      .open-row {
+        @extend .data-row;
+        border-left:1px solid grey;
+
+        .open {
+          margin-left: 10px;
+        }
+      }
+
+
+      /**/
+      .alert-displayed-row {
+        @extend .data-row;
+        border-left: 1px solid grey;
+        cursor: pointer;
+        
+        .alert-displayed {
+          margin-left: 10px;
+        }
+      }
+
+
+      /**/
+      .total-alerts-row {
+        @extend .data-row;
+        border-left: 1px solid grey;
+        cursor: pointer;
+
+        .total-alerts {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  /*body end*/
+}
+/*snap contet end*/
