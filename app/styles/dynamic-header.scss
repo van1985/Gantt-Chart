@@ -1,0 +1,187 @@
+.dynamic-header {
+	
+	.container {
+		background-color: #009BDD;
+		height: 127px;
+
+		.burger {
+			margin-left: 10px;
+
+			.nav-burger-img {
+				cursor: pointer;
+				cursor: hand;
+			}
+		}
+
+		.logo-united-img {
+			margin-left: 50px;
+			margin-top: 12px;
+		}
+
+		.navbar-right {
+			
+			.search-img {
+				margin-right: 33px;
+			}
+
+			.new-messages {
+				width: 66px;
+				position: relative;
+				height: 50px;
+				padding-top: 3px;
+
+				.circle-msg {
+					position: absolute;
+					margin-top: 20px;
+					margin-left: 18px;
+					z-index: 10;
+					padding-left: 6px;
+					font-family: Clan OT;
+					color: white;
+					font-size: 13px;
+					font-weight: bold;
+					padding-top: 2px;
+				}
+
+				.mail-img {
+					margin-right: 33px;
+					position: absolute;
+				}
+			}
+
+			.my-profile {
+				padding-top: 3px;
+
+				.myprofile-img {
+					margin-right: 10px;
+					margin-top: 10px;
+				}
+			}
+
+			.user {
+				font-family: Clan OT;
+				color: white;
+				font-size: 14px;
+				margin-top: 14px;
+				margin-right: 10px;
+				padding-top: 3px;
+			}
+
+			.arrow-down-icon {
+				margin-top: 21px;
+				margin-right: 25px;
+				padding-top: 3px;
+			}
+
+			.settings {
+				padding-top: 7px;
+
+				.settings-img {
+					margin-right: 40px;
+				}
+			}
+		}
+		/*end navbar-right*/
+
+
+
+
+		.single-title {
+			font-family: Clan OT;
+		    font-size: 20px;
+		    color: white;
+		    margin-left: 39px;
+		    display: inline-block;
+		    margin-top: 5px;
+		    float: left;
+		    width:100%;
+
+		    .title {
+		    	float: left;
+		    	display: inline-block;
+		    }
+
+		    .updated {
+		    	font-family: Clan OT;
+		    	display: inline-block;
+		    	float: left;
+		    	font-size: 11px;
+		    	margin-left: 10px;
+		    	margin-top: 12px;
+		    }
+		}
+
+		.alertdetail-solutionlist {
+
+			.underlined {
+				border: 3px solid #003399;
+		      	display: block;
+		        margin-top: 11px;
+		      	margin-left: 10px;
+		      	width: 130px;
+			}
+
+			.title {
+				font-family: Clan OT;
+			    font-size: 16px;
+			    color: white;
+			    margin-top: 10px;
+			    float: left;
+			    display: inline-block;
+			    text-align: center;
+			    width: 150px;
+			    line-height: 16px;
+			    cursor:pointer;
+			}
+
+			.alert-details {
+				@extend .title;
+				margin-left: 38px;
+			}
+
+			.solutions-list {
+				@extend .title
+			}
+   		}
+
+
+   		.sort-section {
+   			float: right;
+   			display: inline-block;
+
+   			.sort-by {
+   				float: left;
+   				display: inline-block;
+   				font-size: 14px;
+   				color: #4F5571;
+   				font-family: Clan OT;
+   				margin-top: 6px;
+        		margin-right: 10px;
+        		font-weight: bold;
+   			}
+
+   			.sort-flight {
+   				border: 1px solid #4F5571;
+   				width: 106px;
+   				height: 32px;
+   				display: inline-block;
+   				margin-right: 38px;
+
+   				.flight {
+   					font-family: Clan OT;
+   					font-size: 14px;
+   					color: #4F5571;
+   					float: left;
+   					margin-top: 5px;
+   					margin-left: 8px;
+   				}
+
+   				.img-arrow-down {
+   					float: left;
+   					margin-top: 12px;
+   					margin-left: 15px;
+   				}
+   			}
+   		}
+	}
+}

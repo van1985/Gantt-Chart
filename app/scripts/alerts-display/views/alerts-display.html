@@ -13,7 +13,7 @@
 
 <!--  Header --> 
 
-<header name="'Alerts display'" sectionname="'Alert details'"></header>
+<header name="'Alerts display'" sectionname="'Alerts display'"></header>
 <!-- End Header -->
 
     <div id="body-schedule-display">
@@ -50,549 +50,551 @@
 
     </div>
 
-<div class="container vertical-tab" style="margin-top:180px;">
-  <div class="row">
-    <div class="col-md-12 col-sm-5">
-      <div class="tabs-left">
-        <ul class="nav nav-tabs">
-           <li onClick="resetTabs()" class="far-duty">
-           <a href="#profile" data-toggle="tab"><span id="titles-tab2">FAR Duty</span><span id="count-tab1">(##)</span></a></li>
+<div class="alerts-display-container">
+  <div class="container vertical-tab">
+    <div class="row">
+      <div class="col-md-12 col-sm-5">
+        <div class="tabs-left">
+          <ul class="nav nav-tabs">
+             <li onClick="resetTabs()" class="far-duty">
+             <a href="#profile" data-toggle="tab"><span id="titles-tab2">FAR Duty</span><span id="count-tab1">(##)</span></a></li>
 
-          <li onClick="resetTabs()" class="delay"><a href="#download" data-toggle="tab"><span id="titles-tab4">Delay</span><span id="count-tab3">(##)</span></a></li>
+            <li onClick="resetTabs()" class="delay"><a href="#download" data-toggle="tab"><span id="titles-tab4">Delay</span><span id="count-tab3">(##)</span></a></li>
 
-          <li onClick="resetTabs()" class="far-block"><a href="#favourite" data-toggle="tab"><span id="titles-tab3" >FAR Block</span><span id="count-tab2">(##)</span></a></li>
+            <li onClick="resetTabs()" class="far-block"><a href="#favourite" data-toggle="tab"><span id="titles-tab3" >FAR Block</span><span id="count-tab2">(##)</span></a></li>
 
-          <li onClick="resetTabs()" class="cancellation"><a href="#stars" data-toggle="tab"><span id="titles-tab5">Cancellation</span><span id="count-tab4">(##)</span></a></li>
+            <li onClick="resetTabs()" class="cancellation"><a href="#stars" data-toggle="tab"><span id="titles-tab5">Cancellation</span><span id="count-tab4">(##)</span></a></li>
 
-          <li class="misconnection"><a href="#settings" data-toggle="tab"><span id="titles-tab6">Misconnection</span><span id="count-tab5">(##)</span></a></li>
+            <li class="misconnection"><a href="#settings" data-toggle="tab"><span id="titles-tab6">Misconnection</span><span id="count-tab5">(##)</span></a></li>
 
-          <li class="crew-rest"><a href="#settings" data-toggle="tab"><span id="titles-tab7">Crew Rest-Contract</span><span id="count-tab6">(##)</span></a></li>
+            <li class="crew-rest"><a href="#settings" data-toggle="tab"><span id="titles-tab7">Crew Rest-Contract</span><span id="count-tab6">(##)</span></a></li>
 
-          <li class="taxi"><a href="#settings" data-toggle="tab"><span id="titles-tab8">Taxi</span><span id="count-tab7">(##)</span></a></li>
+            <li class="taxi"><a href="#settings" data-toggle="tab"><span id="titles-tab8">Taxi</span><span id="count-tab7">(##)</span></a></li>
 
-          <li class="ua-staffing"><a href="#settings" data-toggle="tab"><span id="titles-tab9">UA Staffing</span><span id="count-tab8">(##)</span></a></li>
+            <li class="ua-staffing"><a href="#settings" data-toggle="tab"><span id="titles-tab9">UA Staffing</span><span id="count-tab8">(##)</span></a></li>
 
-          <li class="unassigned"><a href="#settings" data-toggle="tab"><span id="titles-tab10">Unassigned Inbound</span><span id="count-tab9">(##)</span></a></li>
+            <li class="unassigned"><a href="#settings" data-toggle="tab"><span id="titles-tab10">Unassigned Inbound</span><span id="count-tab9">(##)</span></a></li>
 
-          <li class="on-time"><a href="#settings" data-toggle="tab"><span id="titles-tab11">Flight on time</span><span id="count-tab10">(##)</span></a></li>
+            <li class="on-time"><a href="#settings" data-toggle="tab"><span id="titles-tab11">Flight on time</span><span id="count-tab10">(##)</span></a></li>
 
-          <li class="type"><a href="#settings" data-toggle="tab"><span id="titles-tab12">Type</span><span id="count-tab11">(##)</span></a></li>
+            <li class="type"><a href="#settings" data-toggle="tab"><span id="titles-tab12">Type</span><span id="count-tab11">(##)</span></a></li>
 
-          <li class="type2"><a href="#settings" data-toggle="tab"><span id="titles-tab13">Type</span><span id="count-tab11">(##)</span></a></li>
-        </ul>
+            <li class="type2"><a href="#settings" data-toggle="tab"><span id="titles-tab13">Type</span><span id="count-tab11">(##)</span></a></li>
+          </ul>
 
-<!-- right content -->
-<div class="tab-pane active" id="profile">
-  
-<!-- table -->
+  <!-- right content -->
+  <div class="tab-pane active" id="profile">
+    
+  <!-- table -->
 
-    <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Severity</th>
-                  <th class="bold">Last Update</th>
-                  <th>Pairing</th>
-                  <th>Flight</th>
-                  <th>Crew</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+      <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Severity</th>
+                    <th class="bold">Last Update</th>
+                    <th>Pairing</th>
+                    <th>Flight</th>
+                    <th>Crew</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
                       </div>
-
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
                       </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
                       </div>
+                    </td>
+                  </tr>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
                       </div>
-
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
                       </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
                       </div>
+                    </td>
+                  </tr>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
                       </div>
-
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
                       </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
                       </div>
+                    </td>
+                  </tr>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
                       </div>
-
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
                       </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
 
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                   <div class="img-arrow-up"></div>
-                  </td>
-                  <td>                    
-                    <div class="time">9:58</div>
-                   </td>
-                  <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
-                  <td>
-                    <div class="flight-num">2245</div> 
-                    <div class="flight-destination">EZE - IAH Delayed</div>
-                  </td>
-                  <td >
-                    <div>2 Pilots / 1 FA</div>
-                  </td>
-                  <td>
-                    <div class="img-eye">
-                    <div class="watched">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-user">
-                      <div class="users">0</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="img-info hover">
-                    
-                      <div class="tooltip">
-                          <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
-                          <div>Add comment</div>
-                          <div>Pick up alert</div>
-                          <div>Reassign</div>
-                          <div>Defer</div>
                       </div>
+                    </td>
+                  </tr>
 
-                    </div>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
 
-              </tbody>
-            </table>
+                      </div>
+                    </td>
+                  </tr>
 
-<!-- end table -->
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                     <div class="img-arrow-up"></div>
+                    </td>
+                    <td>                    
+                      <div class="time">9:58</div>
+                     </td>
+                    <td class="pairing" onclick="seeDetails()">H2008,T2108</td>
+                    <td>
+                      <div class="flight-num">2245</div> 
+                      <div class="flight-destination">EZE - IAH Delayed</div>
+                    </td>
+                    <td >
+                      <div>2 Pilots / 1 FA</div>
+                    </td>
+                    <td>
+                      <div class="img-eye">
+                      <div class="watched">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-user">
+                        <div class="users">0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="img-info hover">
+                      
+                        <div class="tooltip">
+                            <div class="pointer" ng-click="navigate('view solutions');">View Solutions</div>
+                            <div>Add comment</div>
+                            <div>Pick up alert</div>
+                            <div>Reassign</div>
+                            <div>Defer</div>
+                        </div>
+
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+  <!-- end table -->
 
 
+  </div>
+  <!-- end right content -->
+
+  </div>
+      </div><!-- /col -->
+    </div><!-- /row -->
+  </div><!-- /container -->
 </div>
-<!-- end right content -->
-
-</div>
-    </div><!-- /col -->
-  </div><!-- /row -->
-</div><!-- /container -->
 <script>
 
 function seeDetails(){
